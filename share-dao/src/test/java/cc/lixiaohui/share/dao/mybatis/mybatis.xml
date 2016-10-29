@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="cc.lixiaohui.share.dao.bean.Comment" alias="Comment"/>
+		<typeAlias type="cc.lixiaohui.share.dao.bean.ForbidenWord" alias="ForbidenWord"/>
+		<typeAlias type="cc.lixiaohui.share.dao.bean.Picture" alias="Picture"/>
+		<typeAlias type="cc.lixiaohui.share.dao.bean.Praise" alias="Praise"/>
+		<typeAlias type="cc.lixiaohui.share.dao.bean.Role" alias="Role"/>
+		<typeAlias type="cc.lixiaohui.share.dao.bean.Share" alias="Share"/>
+		<typeAlias type="cc.lixiaohui.share.dao.bean.ShareCollection" alias="ShareCollection"/>
+		<typeAlias type="cc.lixiaohui.share.dao.bean.User" alias="User"/>
+		<typeAlias type="cc.lixiaohui.share.dao.bean.UserCollection" alias="UserCollection"/>
+	</typeAliases>	
+	
+	<environments default="env1">
+		<environment id="env1">
+			<transactionManager type="jdbc" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/sharing"/>
+				<property name="username" value="root"/>
+				<property name="password" value="root"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		
+	</mappers>
+</configuration>
+	
