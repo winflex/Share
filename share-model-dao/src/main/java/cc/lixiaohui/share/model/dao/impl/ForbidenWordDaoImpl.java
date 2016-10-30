@@ -3,12 +3,14 @@ package cc.lixiaohui.share.model.dao.impl;
 import java.util.List;
 
 import cc.lixiaohui.share.model.bean.ForbidenWord;
+import cc.lixiaohui.share.model.dao.ForbidenWordDao;
+import cc.lixiaohui.share.model.dao.SimpleDaoSupport;
 
 /**
  * @author lixiaohui
  * @date 2016年10月30日 下午9:19:58
  */
-public class ForbidenWordDaoImpl extends AbstractBaseDao<ForbidenWord> {
+public class ForbidenWordDaoImpl extends SimpleDaoSupport implements ForbidenWordDao {
 
 	/* 
 	 * @see cc.lixiaohui.share.model.dao.BaseDao#list()

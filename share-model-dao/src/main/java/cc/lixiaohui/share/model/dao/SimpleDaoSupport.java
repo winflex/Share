@@ -1,9 +1,7 @@
-package cc.lixiaohui.share.model.dao.impl;
+package cc.lixiaohui.share.model.dao;
 
 import org.hibernate.Session;
 
-import cc.lixiaohui.share.model.dao.BaseDao;
-import cc.lixiaohui.share.model.dao.DaoSupport;
 import cc.lixiaohui.share.model.util.HibernateSessionFactory;
 
 /**
@@ -12,7 +10,7 @@ import cc.lixiaohui.share.model.util.HibernateSessionFactory;
  * @author lixiaohui
  * @date 2016年10月30日 下午8:26:11
  */
-public abstract class AbstractBaseDao<T> implements BaseDao<T>, DaoSupport {
+public class SimpleDaoSupport implements DaoSupport {
 	
 	/* 
 	 * @see cc.lixiaohui.share.model.dao.DaoSupport#getSession()

@@ -3,12 +3,14 @@ package cc.lixiaohui.share.model.dao.impl;
 import java.util.List;
 
 import cc.lixiaohui.share.model.bean.Picture;
+import cc.lixiaohui.share.model.dao.PictureDao;
+import cc.lixiaohui.share.model.dao.SimpleDaoSupport;
 
 /**
  * @author lixiaohui
  * @date 2016年10月30日 下午9:20:33
  */
-public class PictureDaoImpl extends AbstractBaseDao<Picture> {
+public class PictureDaoImpl extends SimpleDaoSupport implements PictureDao {
 
 	/* 
 	 * @see cc.lixiaohui.share.model.dao.BaseDao#list()

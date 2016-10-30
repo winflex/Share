@@ -3,6 +3,8 @@ package cc.lixiaohui.share.model.dao.impl;
 import java.util.List;
 
 import cc.lixiaohui.share.model.bean.User;
+import cc.lixiaohui.share.model.dao.SimpleDaoSupport;
+import cc.lixiaohui.share.model.dao.UserDao;
 
 
 /**
@@ -11,7 +13,7 @@ import cc.lixiaohui.share.model.bean.User;
  * @author lixiaohui
  * @date 2016年10月29日 下午7:51:22
  */
-public class UserDaoImpl extends AbstractBaseDao<User>{
+public class UserDaoImpl extends SimpleDaoSupport implements UserDao{
 
 	/* 
 	 * @see cc.lixiaohui.share.model.dao.BaseDao#list()
@@ -59,6 +61,14 @@ public class UserDaoImpl extends AbstractBaseDao<User>{
 	@Override
 	public int update(User bean) {
 		return 0;
+	}
+
+	/* 
+	 * @see cc.lixiaohui.share.model.dao.UserDao#get(java.lang.String, java.lang.String)
+	 */
+	@Override
+	public User get(String username, String password) {
+		return null;
 	}
 
 	

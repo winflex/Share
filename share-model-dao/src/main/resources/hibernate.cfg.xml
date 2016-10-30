@@ -12,6 +12,8 @@
         <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
         
         <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="use_sql_comments">true</property>
         <property name="current_session_context_class">thread</property>
         
 		<mapping resource="cc/lixiaohui/share/model/conf/mapping/Role.hbm.xml"/>        

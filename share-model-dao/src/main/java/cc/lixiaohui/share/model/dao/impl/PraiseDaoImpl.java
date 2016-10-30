@@ -3,12 +3,14 @@ package cc.lixiaohui.share.model.dao.impl;
 import java.util.List;
 
 import cc.lixiaohui.share.model.bean.Praise;
+import cc.lixiaohui.share.model.dao.PraiseDao;
+import cc.lixiaohui.share.model.dao.SimpleDaoSupport;
 
 /**
  * @author lixiaohui
  * @date 2016年10月30日 下午9:21:05
  */
-public class PraiseDaoImpl extends AbstractBaseDao<Praise> {
+public class PraiseDaoImpl extends SimpleDaoSupport implements PraiseDao {
 
 	/* 
 	 * @see cc.lixiaohui.share.model.dao.BaseDao#list()

@@ -3,12 +3,14 @@ package cc.lixiaohui.share.model.dao.impl;
 import java.util.List;
 
 import cc.lixiaohui.share.model.bean.Comment;
+import cc.lixiaohui.share.model.dao.CommentDao;
+import cc.lixiaohui.share.model.dao.SimpleDaoSupport;
 
 /**
  * @author lixiaohui
  * @date 2016年10月30日 下午9:19:14
  */
-public class CommentDaoImpl extends AbstractBaseDao<Comment> {
+public class CommentDaoImpl extends SimpleDaoSupport implements CommentDao {
 
 	/* 
 	 * @see cc.lixiaohui.share.model.dao.BaseDao#list()

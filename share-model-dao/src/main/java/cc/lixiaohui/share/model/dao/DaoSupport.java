@@ -11,7 +11,7 @@ import org.hibernate.Session;
 public interface DaoSupport {
 	
 	/**
-	 * 获取hibernate session
+	 * 获取新的hibernate session
 	 * @return
 	 */
 	Session getSession();

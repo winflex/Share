@@ -12,6 +12,7 @@ import cc.lixiaohui.share.model.util.HibernateSessionFactory;
  */
 public class SessionFactoryTest {
 
+	@SuppressWarnings("unused")
 	@Test
 	public void test() {
 		SessionFactory factory = HibernateSessionFactory.getSessionFactory();
