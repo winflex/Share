@@ -5,23 +5,25 @@
 	<artifactId>share-parent</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
-	<name>share-parent</name>
+	<name>share-parent</name> 
 
-	<properties>
+	<properties> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<logback.version>1.0.11</logback.version>
 		<netty.version>4.0.10.Final</netty.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<junit.version>4.9</junit.version>
 		<mybatis.version>3.2.8</mybatis.version>
+		<digester.version>3.2</digester.version>
 	</properties>
 
 	<modules>
+		<module>../share-core</module>
 		<module>../share-client</module>
-		<module>../share-dao</module>
 		<module>../share-protocol</module>
 		<module>../share-server</module>
 		<module>../share-util</module>
+		<module>../share-model-dao</module>
 	</modules>
 
 	<dependencies>

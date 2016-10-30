@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cc.lixiaohui.share.model.bean">
+    <class name="User" table="user">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="username" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="sex" />
+        </property>
+        <property name="signature" type="java.lang.String">
+            <column name="signature" />
+        </property>
+         <property name="registerTime" type="java.sql.Timestamp">
+            <column name="register_time" />
+        </property>
+        <property name="selfForbid" type="boolean">
+            <column name="self_forbid" />
+        </property>
+        <property name="adminForbid" type="boolean">
+            <column name="admin_forbid" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="deleted" />
+        </property>
+        
+        <!-- <one-to-one name="headImage" class="cc.lixiaohui.share.model.bean.Picture" foreign-key="head_image_id" />
+         -->
+        <many-to-one name="role" class="cc.lixiaohui.share.model.bean.Role" fetch="join">
+            <column name="role_id" />
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

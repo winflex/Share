@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<server name="shareServer">
+
+	<!-- 网络相关配置 -->
+	<socketOptions>
+		<port>8888</port>
+		<bindAddress>127.0.0.1</bindAddress>
+		<!-- IO线程数,当值为0时实际线程数为(处理器线程数 + 1)-->
+		<ioEventThreads>0</ioEventThreads>
+	</socketOptions>
+	
+	<!-- 数据库相关配置 -->
+	<db>
+		<!-- 执行select时默认记录, 若不配置或者配置为非正数, 则硬编码为20 -->
+		<defaultPageSize>20</defaultPageSize>
+		
+		<mybatis>
+			<!-- MyBatis的主配置的路径(必须置于classpath下) -->
+			<configPath>aaa</configPath>
+		</mybatis>
+	</db>
+	
+</server>

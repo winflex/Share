@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>share-parent</artifactId>
+		<groupId>cc.lixiaohui.share</groupId>
+		<relativePath>../share-parent/</relativePath>
+		<version>1.0</version>
+	</parent>
+	<artifactId>share-core</artifactId>
+	<name>share-core</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-digester3</artifactId>
+			<version>${digester.version}</version>
+		</dependency>
+	</dependencies>
+</project>
