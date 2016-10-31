@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.core.lifecycle;
+package cc.lixiaohui.share.util.lifecycle;
 
 /**
  * 简单生命周期定义

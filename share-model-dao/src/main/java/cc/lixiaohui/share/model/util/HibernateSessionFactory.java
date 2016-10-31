@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * HibernateSessionFactory工程
+ * HibernateSessionFactory工厂, 单例, 线程安全
  * 
  * @author lixiaohui
  * @date 2016年10月30日 下午4:26:34
@@ -25,24 +25,25 @@ public class HibernateSessionFactory {
 	public static SessionFactory getSessionFactory() {
 		if (factory == null) {
 			synchronized (HibernateSessionFactory.class){
-				newSessionFactory();
+				if (factory == null) {
+					newSessionFactory();
+				}
 			}
 		}
 		return factory;
 	}
 	
 	/**
-	 * 提供外部配置文件
+	 * 提供外部配置文件, 当factory实例已生成时无效
 	 * @param path
 	 */
-	public static void offerPath(String filepath) {
+	public static void offerExternalPath(String filepath) {
 		if (factory != null) {
 			hibernateConfigFilePath = filepath;
 		}
 	}
 
 	private static void newSessionFactory() {
-		
 		try {
 			if (hibernateConfigFilePath == null) {
 				factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();

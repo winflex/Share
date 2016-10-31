@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.core.lifecycle;
+package cc.lixiaohui.share.util.lifecycle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,11 +26,15 @@ public abstract class AbstractLifeCycle implements LifeCycle {
 	protected volatile LifeCycleState state = LifeCycleState.NULL;
 
 	public AbstractLifeCycle(){
-		addLifeCycleListener(new LifeCycleLogger());
+		
 	}
 	
 	@Override
 	public void init() throws LifeCycleException {
+		if (autoLogState()) {
+			addLifeCycleListener(new LifeCycleLogger());
+		}
+		
 		if (state.compare(LifeCycleState.NULL) != 0) {// 不是初始前状态
 			return;
 		}
@@ -55,10 +59,10 @@ public abstract class AbstractLifeCycle implements LifeCycle {
 		setState(state, true);
 	}
 
-	protected abstract void initInternal() throws LifeCycleException;
+	protected void initInternal() throws LifeCycleException {};
 
 	@Override
-	public void start() throws LifeCycleException {
+	public final void start() throws LifeCycleException {
 		if(state.compare(LifeCycleState.INITIALIZED) != 0){ //不是已初始化
 			init();
 		}
@@ -75,7 +79,7 @@ public abstract class AbstractLifeCycle implements LifeCycle {
 		setState(LifeCycleState.STARTED);
 	}
 
-	protected abstract void startInternal() throws LifeCycleException;
+	protected void startInternal() throws LifeCycleException {};
 
 	@Override
 	public void restart() throws LifeCycleException {
@@ -92,7 +96,7 @@ public abstract class AbstractLifeCycle implements LifeCycle {
 		setState(LifeCycleState.STARTED, false);
 	}
 	
-	protected abstract void restartInternal() throws LifeCycleException;
+	protected void restartInternal() throws LifeCycleException {};
 	
 	@Override
 	public void destroy() throws LifeCycleException {
@@ -109,10 +113,30 @@ public abstract class AbstractLifeCycle implements LifeCycle {
 		setState(LifeCycleState.DESTROYED);
 	}
 
-	protected abstract void destroyInternal() throws LifeCycleException;
+	protected void destroyInternal() throws LifeCycleException {};
 	
-	protected abstract String name();
-	protected abstract String type();
+	/**
+	 * 生命周期名字
+	 * @return
+	 */
+	protected String name() {
+		return "";
+	}
+	
+	/**
+	 * 生命周期类型
+	 * @return
+	 */
+	protected String type() {
+		return "";
+	}
+	/**
+	 * 自动打印生命周期状态
+	 * @return
+	 */
+	protected boolean autoLogState() {
+		return false;
+	}
 	
 	private void fireLifeCycleEvent(LifeCycleEvent e) {
 		fireLifeCycleEvent(e, false);

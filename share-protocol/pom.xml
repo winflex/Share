@@ -21,11 +21,6 @@
 		</dependency>
 		<dependency>
 			<groupId>cc.lixiaohui.share</groupId>
-			<artifactId>share-protocol</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>cc.lixiaohui.share</groupId>
 			<artifactId>share-util</artifactId>
 			<version>${project.version}</version>
 		</dependency>
