@@ -38,6 +38,44 @@
         <many-to-one name="role" class="cc.lixiaohui.share.model.bean.Role" fetch="join">
             <column name="role_id" />
         </many-to-one>
+        <many-to-one name="headImage" class="cc.lixiaohui.share.model.bean.Picture" fetch="join">
+            <column name="head_image_id" />
+        </many-to-one>
+        <!-- <one-to-many name="shares" class="cc.lixiaohui.share.model.bean.Share" foreign-key="user_id" />
+         -->
+        <bag name="shares" inverse="true" >
+           <key column="user_id"></key>
+           <one-to-many class="cc.lixiaohui.share.model.bean.Share"></one-to-many>
+        </bag>
+        <!-- <one-to-many name="shareCollections" class="cc.lixiaohui.share.model.bean.ShareCollection" 
+        foreign-key="user_id" />
+         -->
+        <bag name="shareCollections" inverse="true" >
+           <key column="user_id"></key>
+           <one-to-many class="cc.lixiaohui.share.model.bean.ShareCollection"></one-to-many>
+        </bag>
+        <!-- <one-to-many name="userCollections" class="cc.lixiaohui.share.model.bean.UserCollection" 
+        foreign-key="user_id" />
+         -->
+        <bag name="userCollections" inverse="true">
+           <key column="user_id"></key>
+           <one-to-many class="cc.lixiaohui.share.model.bean.UserCollection"></one-to-many>
+        </bag>
+         <!-- <one-to-many name="commentsByMe" class="cc.lixiaohui.share.model.bean.Comment" 
+        foreign-key="user_id" />
+         -->
+        <bag name="commentsByMe" inverse="true" >
+           <key column="user_id"></key>
+           <one-to-many class="cc.lixiaohui.share.model.bean.Comment"></one-to-many>
+        </bag>
+         <!-- <one-to-many name="commentsForMe" class="cc.lixiaohui.share.model.bean.Comment" 
+        foreign-key="user_id" />
+         -->
+        <bag name="commentsForMe" inverse="true" >
+           <key column="user_id"></key>
+           <one-to-many class="cc.lixiaohui.share.model.bean.Comment"></one-to-many>
+        </bag>
+        
         
     </class>
 </hibernate-mapping>
