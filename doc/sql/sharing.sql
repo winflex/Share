@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2016-10-30 21:22:48
+Date: 2016-11-02 20:16:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -42,9 +42,10 @@ CREATE TABLE `comment` (
 -- ----------------------------
 DROP TABLE IF EXISTS `forbidenword`;
 CREATE TABLE `forbidenword` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `content` varchar(50) NOT NULL COMMENT '关键词',
   `usable` bit(1) NOT NULL DEFAULT b'1' COMMENT '是否启用, 0=不启用, 1=启用',
-  PRIMARY KEY (`content`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -105,7 +106,7 @@ CREATE TABLE `role` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `deleted` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否被删除, 0=未删除, 1=已删除',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for share
@@ -151,6 +152,17 @@ CREATE TABLE `share_picture_relation` (
   CONSTRAINT `FK_SharePictureRelation_Picture_0` FOREIGN KEY (`picture_id`) REFERENCES `picture` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_SharePictureRelation_Share_0` FOREIGN KEY (`share_id`) REFERENCES `share` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for sorting
+-- ----------------------------
+DROP TABLE IF EXISTS `sorting`;
+CREATE TABLE `sorting` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type` varchar(255) NOT NULL COMMENT '排序方式',
+  `description‘` varchar(255) NOT NULL COMMENT '对该排序方式的描述',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for user
