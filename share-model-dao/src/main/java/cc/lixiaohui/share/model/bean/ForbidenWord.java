@@ -9,6 +9,8 @@ package cc.lixiaohui.share.model.bean;
  */
 public class ForbidenWord {
 	
+	private int id;
+	
 	private String content;
 	
 	private boolean usable;
@@ -39,6 +41,20 @@ public class ForbidenWord {
 	 */
 	public void setUsable(boolean usable) {
 		this.usable = usable;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }
