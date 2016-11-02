@@ -11,7 +11,7 @@
 		<property name="content" type="java.lang.String" column="content" />
 		<property name="kind" type="short" column="kind" />
 		<property name="commentTime" type="java.sql.Timestamp"
-			column="comment_time" />
+			column="comment_time" /> 
 		<property name="deleted" type="boolean" column="deleted" />
 		<!-- one to one -->
 		<one-to-one name="fromUser" class="cc.lixiaohui.share.model.bean.User"

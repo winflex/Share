@@ -9,9 +9,19 @@ package cc.lixiaohui.share.model.bean;
  */
 public class ForbidenWord {
 	
+	private int id;
+	
 	private String content;
 	
 	private boolean usable;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the content
