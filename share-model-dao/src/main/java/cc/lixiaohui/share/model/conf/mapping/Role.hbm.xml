@@ -6,7 +6,7 @@
     <class name="cc.lixiaohui.share.model.bean.Role" table="role">
         <id name="id" type="int">
             <column name="id" />
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
         <property name="description" type="java.lang.String" column="description"/>
         <property name="createTime" type="java.sql.Timestamp" column="create_time" update="false" insert="false"/>

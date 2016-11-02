@@ -2,9 +2,16 @@ package cc.lixiaohui.share.model.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Transaction;
+import org.hibernate.Session;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import cc.lixiaohui.share.model.bean.Role;
 import cc.lixiaohui.share.model.bean.User;
 import cc.lixiaohui.share.model.dao.SimpleDaoSupport;
 import cc.lixiaohui.share.model.dao.UserDao;
+import cc.lixiaohui.share.model.util.HibernateSessionFactory;
 
 
 /**
@@ -14,13 +21,18 @@ import cc.lixiaohui.share.model.dao.UserDao;
  * @date 2016年10月29日 下午7:51:22
  */
 public class UserDaoImpl extends SimpleDaoSupport implements UserDao{
-
+	private static final Logger logger = LoggerFactory.getLogger(RoleDaoImpl.class);
 	/* 
 	 * @see cc.lixiaohui.share.model.dao.BaseDao#list()
 	 */
 	@Override
 	public List<User> list() {
-		return null;
+		Session session = getSession();
+		try {
+			return session.createQuery("from User").list();
+		} finally {
+			session.close();
+		}
 	}
 
 	/* 
@@ -28,7 +40,13 @@ public class UserDaoImpl extends SimpleDaoSupport implements UserDao{
 	 */
 	@Override
 	public List<User> listSome(int start, int limit) {
-		return null;
+		Session session = getSession();
+		try {
+			return getSession().createQuery("from User").setFirstResult(start)
+					.setMaxResults(limit).list();
+		} finally {
+			session.close();
+		}
 	}
 
 	/* 
@@ -36,7 +54,13 @@ public class UserDaoImpl extends SimpleDaoSupport implements UserDao{
 	 */
 	@Override
 	public User getById(int id) {
-		return null;
+		Session session = getSession();
+		try {
+			return (User) getSession().createQuery("from User u where u.id = :userId")
+					.setParameter("userId", id).uniqueResult();
+		} finally {
+			session.close();
+		}
 	}
 
 	/* 
@@ -44,7 +68,21 @@ public class UserDaoImpl extends SimpleDaoSupport implements UserDao{
 	 */
 	@Override
 	public int delete(int id) {
-		return 0;
+		Session session = getSession();
+		Transaction transaction = session.beginTransaction();
+		try {
+			User user = new User();
+			user.setId(id);
+			session.delete(user);
+			transaction.commit();
+			return 1;
+		} catch (Exception e) {
+			logger.error("error occurred while deleting user[id = {}], {}", id, e);
+			transaction.rollback();
+			return 0;
+		} finally {
+			session.close();
+		}
 	}
 
 	/* 
@@ -52,7 +90,19 @@ public class UserDaoImpl extends SimpleDaoSupport implements UserDao{
 	 */
 	@Override
 	public int add(User bean) {
-		return 0;
+		Session session = getSession();
+		Transaction transaction = session.beginTransaction();
+		try {
+			session.save(bean);
+			transaction.commit();
+			return 1;
+		} catch (Exception e) {
+			logger.error("error occurred while persisting {}, {}", bean, e);
+			transaction.rollback();
+			return 0;
+		} finally {
+			session.close();
+		}
 	}
 
 	/* 
@@ -60,7 +110,19 @@ public class UserDaoImpl extends SimpleDaoSupport implements UserDao{
 	 */
 	@Override
 	public int update(User bean) {
-		return 0;
+		Session session = getSession();
+		Transaction transaction = session.beginTransaction();
+		try {
+			session.update(bean);
+			transaction.commit();
+			return 1;
+		} catch (Exception e) {
+			logger.error("error occurred while persisting {}, {}", bean, e);
+			transaction.rollback();
+			return 0;
+		} finally {
+			session.close();
+		}
 	}
 
 	/* 
@@ -68,7 +130,16 @@ public class UserDaoImpl extends SimpleDaoSupport implements UserDao{
 	 */
 	@Override
 	public User get(String username, String password) {
-		return null;
+		Session session = getSession();
+		try {
+			return (User) getSession().createQuery("from User u where u.username = :username "
+					+ "AND u.password = :password")
+					.setParameter("username",username ).uniqueResult();
+			
+			
+		} finally {
+			session.close();
+		}
 	}
 
 	

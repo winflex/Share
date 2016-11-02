@@ -16,7 +16,7 @@ public class UserCollection {
 	
 	private User collectedUser;
 	
-	private Timestamp collectTime;
+	private Timestamp collectTime; // 无表对应
 
 	/**
 	 * @return the id

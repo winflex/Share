@@ -2,6 +2,23 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
-
+<hibernate-mapping package="cc.lixiaohui.share.model.bean">
+	<class name="Comment" table="comment">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="content" type="java.lang.String" column="content" />
+		<property name="kind" type="short" column="kind" />
+		<property name="commentTime" type="java.sql.Timestamp"
+			column="comment_time" />
+		<property name="deleted" type="boolean" column="deleted" />
+		<!-- one to one -->
+		<one-to-one name="fromUser" class="cc.lixiaohui.share.model.bean.User"
+			fetch="join" foreign-key="from_user_id">
+		</one-to-one>
+		<one-to-one name="toUser" class="cc.lixiaohui.share.model.bean.User"
+			fetch="join" foreign-key="to_user_id">
+		</one-to-one>
+	</class>
 </hibernate-mapping>

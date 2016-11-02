@@ -2,6 +2,11 @@ package cc.lixiaohui.share.model.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Transaction;
+import org.hibernate.Session;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import cc.lixiaohui.share.model.bean.Share;
 import cc.lixiaohui.share.model.dao.ShareDao;
 import cc.lixiaohui.share.model.dao.SimpleDaoSupport;
@@ -11,13 +16,18 @@ import cc.lixiaohui.share.model.dao.SimpleDaoSupport;
  * @date 2016年10月30日 下午9:30:28
  */
 public class ShareDaoImpl extends SimpleDaoSupport implements ShareDao {
-
+	private static final Logger logger = LoggerFactory.getLogger(RoleDaoImpl.class);
 	/* 
 	 * @see cc.lixiaohui.share.model.dao.BaseDao#list()
 	 */
 	@Override
 	public List<Share> list() {
-		return null;
+		Session session = getSession();
+		try {
+			return session.createQuery("from Share").list();
+		} finally {
+			session.close();
+		}
 	}
 
 	/* 
@@ -25,7 +35,13 @@ public class ShareDaoImpl extends SimpleDaoSupport implements ShareDao {
 	 */
 	@Override
 	public List<Share> listSome(int start, int limit) {
-		return null;
+		Session session = getSession();
+		try{
+			return getSession().createQuery("from Share").setFirstResult(start).
+					setMaxResults(limit).list();
+		}finally{
+			session.close();
+		}
 	}
 
 	/* 
@@ -33,7 +49,13 @@ public class ShareDaoImpl extends SimpleDaoSupport implements ShareDao {
 	 */
 	@Override
 	public Share getById(int id) {
-		return null;
+		Session session=getSession();
+		try{
+			return (Share)getSession().createQuery("from Share s where s.id := shareId").
+					setParameter("shareId", id);
+		}finally{
+			session.close();
+		}
 	}
 
 	/* 
@@ -41,7 +63,21 @@ public class ShareDaoImpl extends SimpleDaoSupport implements ShareDao {
 	 */
 	@Override
 	public int delete(int id) {
-		return 0;
+		Session session=getSession();
+		Transaction transaction=session.beginTransaction();
+		try{
+			Share share=new Share();
+			share.setId(id);
+			session.delete(share);
+			transaction.commit();
+			return 1;
+		}catch(Exception e){
+			logger.error("error occurred while delating share[id = {}],{}",id,e);
+			transaction.rollback();
+			return 0;
+		}finally{
+			session.close();
+		}
 	}
 
 	/* 
@@ -49,7 +85,19 @@ public class ShareDaoImpl extends SimpleDaoSupport implements ShareDao {
 	 */
 	@Override
 	public int add(Share bean) {
-		return 0;
+		Session session=getSession();
+		Transaction transaction=session.beginTransaction();
+		try{
+			session.save(bean);
+			transaction.commit();
+			return 1;
+		}catch(Exception e){
+			logger.error("error occured while persisting{},{}",bean,e);
+			transaction.rollback();
+			return 0;
+		}finally{
+			session.close();
+		}
 	}
 
 	/* 
@@ -57,7 +105,19 @@ public class ShareDaoImpl extends SimpleDaoSupport implements ShareDao {
 	 */
 	@Override
 	public int update(Share bean) {
-		return 0;
+		Session session=getSession();
+		Transaction transaction=session.beginTransaction();
+		try{
+			session.update(bean);
+		    transaction.commit();
+		    return 1;
+		}catch(Exception e){
+			logger.error("error occured while persisting{},{}",bean,e);
+			transaction.rollback();
+			return 0;
+		}finally{
+			session.close();
+		}
 	}
 
 }

@@ -2,6 +2,13 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
-
+<hibernate-mapping package="cc.lixiaohui.share.model.bean">
+	<class name="Picture" table="picture">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="path" type="java.lang.String" column="path" />
+		<property name="uploadTime" type="java.sql.Timestamp" column="upload_time" />
+	</class>
 </hibernate-mapping>
