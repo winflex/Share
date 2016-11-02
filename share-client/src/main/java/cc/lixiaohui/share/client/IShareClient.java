@@ -11,9 +11,17 @@ import cc.lixiaohui.share.util.lifecycle.LifeCycle;
  * 
  * 更多参数配置可参考{@link Configuration}
  * 
- * @author lixiaohui
- * @date 2016年10月31日 下午3:53:34
+ * @ * @date 2016年10月31日 下午3:53:34author lixiaohui
+
  */
-public interface IShareClient extends LifeCycle, IMessageListener{
+public interface IShareClient extends LifeCycle{
+	
+	void login(String username, String password);
+	
+	boolean isLogined();
+	
+	String loginedName();
+	
+	void logout();
 	
 }

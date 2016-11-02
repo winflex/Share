@@ -5,7 +5,7 @@
 target/
 
 # ignore jars
-.jar
+*.jar
 
 !.gitignore
 

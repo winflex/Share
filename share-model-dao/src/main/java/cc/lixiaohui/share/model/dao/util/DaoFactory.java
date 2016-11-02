@@ -11,6 +11,7 @@ import cc.lixiaohui.share.model.dao.PraiseDao;
 import cc.lixiaohui.share.model.dao.RoleDao;
 import cc.lixiaohui.share.model.dao.ShareCollectionDao;
 import cc.lixiaohui.share.model.dao.ShareDao;
+import cc.lixiaohui.share.model.dao.SortingDao;
 import cc.lixiaohui.share.model.dao.UserCollectionDao;
 import cc.lixiaohui.share.model.dao.UserDao;
 import cc.lixiaohui.share.model.dao.impl.CommentDaoImpl;
@@ -20,6 +21,7 @@ import cc.lixiaohui.share.model.dao.impl.PraiseDaoImpl;
 import cc.lixiaohui.share.model.dao.impl.RoleDaoImpl;
 import cc.lixiaohui.share.model.dao.impl.ShareCollectionDaoImpl;
 import cc.lixiaohui.share.model.dao.impl.ShareDaoImpl;
+import cc.lixiaohui.share.model.dao.impl.SortingDaoImpl;
 import cc.lixiaohui.share.model.dao.impl.UserCollectionDaoImpl;
 import cc.lixiaohui.share.model.dao.impl.UserDaoImpl;
 
@@ -59,6 +61,7 @@ public class DaoFactory {
 		daoMap.put(ShareDao.class, ShareDaoImpl.class);
 		daoMap.put(UserCollectionDao.class, UserCollectionDaoImpl.class);
 		daoMap.put(ShareCollectionDao.class, ShareCollectionDaoImpl.class);
+		daoMap.put(SortingDao.class, SortingDaoImpl.class);
 	}
 
 	@SuppressWarnings("unchecked")

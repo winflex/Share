@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.dao.mybatis;
+package cc.lixiaohui.share.dao.impl;
 
 import java.util.List;
 

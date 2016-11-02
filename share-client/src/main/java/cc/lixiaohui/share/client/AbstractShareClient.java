@@ -10,7 +10,7 @@ import cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle;
  */
 public abstract class AbstractShareClient extends AbstractLifeCycle implements IShareClient {
 
-	private Configuration config;
+	protected Configuration config;
 	
 	protected AbstractShareClient(Configuration config) {
 		this.config = config;
