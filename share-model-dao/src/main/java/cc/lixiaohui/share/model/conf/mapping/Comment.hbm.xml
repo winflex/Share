@@ -16,7 +16,7 @@
 		<!-- one to one -->
 		<one-to-one name="fromUser" class="cc.lixiaohui.share.model.bean.User"
 			fetch="join" foreign-key="from_user_id">
-		</one-to-one>
+		</one-to-one> 
 		<one-to-one name="toUser" class="cc.lixiaohui.share.model.bean.User"
 			fetch="join" foreign-key="to_user_id">
 		</one-to-one>
