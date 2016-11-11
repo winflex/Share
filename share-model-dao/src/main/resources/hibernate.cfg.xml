@@ -16,16 +16,15 @@
         <property name="use_sql_comments">true</property>
         <property name="current_session_context_class">thread</property>
         
-		<!-- <mapping resource="cc/lixiaohui/share/model/conf/mapping/Role.hbm.xml"/>        
-		<mapping resource="cc/lixiaohui/share/model/conf/mapping/User.hbm.xml"/>        
-		<mapping resource="cc/lixiaohui/share/model/conf/mapping/Share.hbm.xml"/>        
-		<mapping resource="cc/lixiaohui/share/model/conf/mapping/Picture.hbm.xml"/>        
-		<mapping resource="cc/lixiaohui/share/model/conf/mapping/Praise.hbm.xml"/>        
-		<mapping resource="cc/lixiaohui/share/model/conf/mapping/ShareCollection.hbm.xml"/>        
-		<mapping resource="cc/lixiaohui/share/model/conf/mapping/UserCollection.hbm.xml"/>        
-		<mapping resource="cc/lixiaohui/share/model/conf/mapping/Comment.hbm.xml"/>        
-		<mapping resource="cc/lixiaohui/share/model/conf/mapping/ForbidenWord.hbm.xml"/>     -->    
-		<mapping resource="cc/lixiaohui/share/model/conf/mapping/Sorting.hbm.xml"/>        
+		<mapping resource="mapping/Role.hbm.xml"/>        
+		<mapping resource="mapping/User.hbm.xml"/>        
+		<mapping resource="mapping/Share.hbm.xml"/>        
+		<mapping resource="mapping/Picture.hbm.xml"/>        
+		<mapping resource="mapping/Praise.hbm.xml"/>        
+		<mapping resource="mapping/ShareCollection.hbm.xml"/>        
+		<mapping resource="mapping/UserCollection.hbm.xml"/>        
+		<mapping resource="mapping/Comment.hbm.xml"/>        
+		<mapping resource="mapping/ForbidenWord.hbm.xml"/>        
     </session-factory>
     
 </hibernate-configuration>
