@@ -41,7 +41,7 @@
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<configuration>
-					<outputDirectory>../doc/client-lib</outputDirectory>
+					<!-- <outputDirectory>../doc/client-lib</outputDirectory> -->
 					<excludeTransitive>false</excludeTransitive>
 				</configuration>
 				<executions>
@@ -54,6 +54,7 @@
 						<configuration>
 							<includeScope>runtime</includeScope>
 							<overWriteIfNewer>true</overWriteIfNewer>
+							<outputDirectory>../doc/client-lib</outputDirectory>
 						</configuration>
 					</execution>
 					<execution>
@@ -71,26 +72,18 @@
 									<overWrite>true</overWrite>
 								</artifactItem>
 							</artifactItems>
+							<outputDirectory>../doc/client-lib</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-			
+			<!-- generate sources -->
 			<plugin>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.1.1</version>
-				<executions>
-					<execution>
-						<id>generate-sources</id>
-						<phase>package</phase>
-						<configuration>
-							<outputDirectory>../doc/client-lib</outputDirectory>
-						</configuration>
-						<goals>
-							<goal>jar-no-fork</goal>
-						</goals>
-					</execution>
-				</executions>
+			</plugin>
+			<!-- generate javadoc -->
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>

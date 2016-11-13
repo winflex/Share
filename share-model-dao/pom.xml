@@ -7,8 +7,8 @@
 		<version>1.0</version>
 		<relativePath>../share-parent/pom.xml</relativePath>
 	</parent>
-	<artifactId>share-dao</artifactId>
-	<name>share-dao</name>
+	<artifactId>share-model-dao</artifactId>
+	<name>share-model-dao</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,11 +19,6 @@
 			<groupId>cc.lixiaohui.share</groupId>
 			<artifactId>share-util</artifactId>
 			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>${mybatis.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>

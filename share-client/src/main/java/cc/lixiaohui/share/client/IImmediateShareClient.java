@@ -47,8 +47,7 @@ public interface IImmediateShareClient{
 	
 	
 	/**
-	 * 已发送的消息的监听器, 比如当你想知道你发送的消息是否送达服务器、是否送达目标客户端, 
-	 * 你就应该在对应的回调方法中实现对应的逻辑
+	 * 已发送的消息监听器
 	 * 
 	 * @author lixiaohui
 	 * @date 2016年11月6日 上午1:22:15
@@ -56,20 +55,34 @@ public interface IImmediateShareClient{
 	public interface ISentMessageListener {
 		
 		/**
-		 * 服务端已接收到消息了
-		 */
-		void onServerReceieved();
-		
-		/**
-		 * 目标客户端接收到消息了
-		 */
-		void onTargetClientRecieved();
-		
-		/**
-		 * 消息发送失败了
+		 * 发出去的消息收到响应了
+		 * 1.发送成功时:
+		 * {
+		 *   "status":0,
+		 *   "timestamp":1434232243,
+		 *   "msg":"成功发送",
+		 *   "origin":					# 原始发送的消息
+		 *   	{
+		 *   		"toUserId":2,
+		 *   		"content":"在吗?"
+		 *   	}
+		 * }
+		 * 2.发送失败时:
+		 * {
+		 *   "status":0,
+		 *   "timestamp":1443242432,
+		 *   "errmsg":"发送消息出错啦"		# 出错信息
+		 *   "errcode":1,				# 错误码
+		 *   "expmsg":"异常信息"			# 异常信息, 该域不一定有值
+		 *   "origin":					# 原始发送的消息
+		 *   	{
+		 *   		"toUserId":2,
+		 *   		"content":"在吗?"
+		 *   	}
+		 * }
 		 * @param reason 失败原因描述
 		 */
-		void onSendFailed(String reason);
+		void onResponsed(String json);
 	}
 	
 }

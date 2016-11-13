@@ -5,9 +5,9 @@
 	<artifactId>share-parent</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
-	<name>share-parent</name> 
+	<name>share-parent</name>
 
-	<properties> 
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<logback.version>1.0.11</logback.version>
 		<netty.version>4.0.10.Final</netty.version>
@@ -25,7 +25,7 @@
 		<module>../share-protocol</module>
 		<module>../share-server</module>
 		<module>../share-util</module>
-		<module>../share-dao</module>
+		<module>../share-model-dao</module>
 	</modules>
 
 	<dependencies>
@@ -53,7 +53,7 @@
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -63,7 +63,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -82,14 +82,13 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		
+
 		<pluginManagement>
 			<plugins>
 				<plugin>
 					<artifactId>maven-dependency-plugin</artifactId>
 					<version>2.2</version>
 					<configuration>
-						<outputDirectory>../share-release/lib</outputDirectory>
 						<excludeTransitive>false</excludeTransitive>
 					</configuration>
 					<executions>
@@ -102,6 +101,8 @@
 							<configuration>
 								<includeScope>runtime</includeScope>
 								<overWriteIfNewer>true</overWriteIfNewer>
+								<outputDirectory>../share-release/lib/ext</outputDirectory>
+								<excludeGroupIds>${project.groupId}</excludeGroupIds>
 							</configuration>
 						</execution>
 						<execution>
@@ -119,7 +120,44 @@
 										<overWrite>true</overWrite>
 									</artifactItem>
 								</artifactItems>
+								<outputDirectory>../share-release/lib</outputDirectory>
 							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- source code -->
+				<plugin>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.1.1</version>
+					<executions>
+						<execution>
+							<id>generate-sources</id>
+							<phase>package</phase>
+							<configuration>
+								<outputDirectory>../doc/client-lib/sources</outputDirectory>
+							</configuration>
+							<goals>
+								<goal>jar-no-fork</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- javadoc -->
+				<plugin>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.9.1</version>
+					<executions>
+						<execution>
+							<id>generate-javadoc</id>
+							<phase>package</phase>
+							<configuration>
+								<destDir>javadoc</destDir>
+								<reportOutputDirectory>../doc/client-lib</reportOutputDirectory>
+								<aggregate>true</aggregate>
+							</configuration>
+							<goals>
+								<goal>aggregate</goal>
+							</goals>
 						</execution>
 					</executions>
 				</plugin>
