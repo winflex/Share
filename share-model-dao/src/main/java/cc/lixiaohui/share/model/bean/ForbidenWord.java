@@ -10,7 +10,7 @@ public class ForbidenWord {
 	
 	private String content;
 	
-	private boolean usable;
+	private boolean deleted;
 
 	/**
 	 * @return the id
@@ -40,18 +40,22 @@ public class ForbidenWord {
 		this.content = content;
 	}
 
-	/**
-	 * @return the usable
-	 */
-	public boolean isUsable() {
-		return usable;
+	public boolean isDeleted() {
+		return deleted;
 	}
 
-	/**
-	 * @param usable the usable to set
-	 */
-	public void setUsable(boolean usable) {
-		this.usable = usable;
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 	
+	/* 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return new StringBuilder().append("ForbidenWord[")
+				.append("id").append("=").append(id)
+				.append(",content").append("=").append(content)
+				.append("]").toString();
+	}
 }

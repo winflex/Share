@@ -8,11 +8,40 @@ package cc.lixiaohui.share.core.config;
  */
 public class SocketConfig {
 	
-	private int port;
+	public static final String DEFAULT_BIND_ADDRESS = "127.0.0.1";
+	public static final int DEFAULT_BIND_PORT = 9999;
+	public static final int DEFAULT_HEARTBEAT_INTERVAL = 5 * 1000; //ms
+	public static final int MAX_HEARTBEAT_MISSTIMES = 4; //ms
+	public static final int DEFAULT_IO_THREADS = Runtime.getRuntime().availableProcessors() + 1;
+	public static final String DEFAULT_SERIALIZE_FACTORY = "cc.lixiaohui.share.protocol.codec.serialize.factory.HessianSerializeFactory";
 	
-	private String bindAddress;
+	private int port = DEFAULT_BIND_PORT;
 	
-	private int ioEventThreads;
+	private String bindAddress = DEFAULT_BIND_ADDRESS;
+	
+	private int ioEventThreads = DEFAULT_IO_THREADS;
+	
+	private int acceptorThreads = 1;
+	
+	private long heartbeatInterval = DEFAULT_HEARTBEAT_INTERVAL;
+	
+	private int maxHeartbeatMissTimes = MAX_HEARTBEAT_MISSTIMES;
+	
+	private String serializeFactoryClass = DEFAULT_SERIALIZE_FACTORY;
+
+	/**
+	 * @return the serializeFactoryClass
+	 */
+	public String getSerializeFactoryClass() {
+		return serializeFactoryClass;
+	}
+
+	/**
+	 * @param serializeFactoryClass the serializeFactoryClass to set
+	 */
+	public void setSerializeFactoryClass(String serializeFactoryClass) {
+		this.serializeFactoryClass = serializeFactoryClass;
+	}
 
 	/**
 	 * @return the port
@@ -54,6 +83,48 @@ public class SocketConfig {
 	 */
 	public void setIoEventThreads(int ioEventThreads) {
 		this.ioEventThreads = ioEventThreads;
+	}
+
+	/**
+	 * @return the acceptorThreads
+	 */
+	public int getAcceptorThreads() {
+		return acceptorThreads;
+	}
+
+	/**
+	 * @param acceptorThreads the acceptorThreads to set
+	 */
+	public void setAcceptorThreads(int acceptorThreads) {
+		this.acceptorThreads = acceptorThreads;
+	}
+
+	/**
+	 * @return the heartbeatInterval
+	 */
+	public long getHeartbeatInterval() {
+		return heartbeatInterval;
+	}
+
+	/**
+	 * @param heartbeatInterval the heartbeatInterval to set
+	 */
+	public void setHeartbeatInterval(long heartbeatInterval) {
+		this.heartbeatInterval = heartbeatInterval;
+	}
+
+	/**
+	 * @return the maxHeartbeatMissTimes
+	 */
+	public int getMaxHeartbeatMissTimes() {
+		return maxHeartbeatMissTimes;
+	}
+
+	/**
+	 * @param maxHeartbeatMissTimes the maxHeartbeatMissTimes to set
+	 */
+	public void setMaxHeartbeatMissTimes(int maxHeartbeatMissTimes) {
+		this.maxHeartbeatMissTimes = maxHeartbeatMissTimes;
 	}
 	
 }

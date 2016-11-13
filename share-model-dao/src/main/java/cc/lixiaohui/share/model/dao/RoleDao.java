@@ -8,8 +8,6 @@ import cc.lixiaohui.share.model.bean.Role;
  * @author lixiaohui
  * @date 2016年10月29日 下午11:08:31
  */
-public interface RoleDao extends BaseDao<Role>{
-	
-	
+public interface RoleDao extends DeleteableDao<Role>{
 	
 }

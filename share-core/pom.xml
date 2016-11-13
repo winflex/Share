@@ -20,5 +20,10 @@
 			<artifactId>commons-digester3</artifactId>
 			<version>${digester.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>cc.lixiaohui.share</groupId>
+			<artifactId>share-util</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 </project>

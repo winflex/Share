@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 /**
  * HibernateSessionFactory工厂, 单例, 线程安全
  * 
+ * 优先加载classpath下的
+ * 
  * @author lixiaohui
  * @date 2016年10月30日 下午4:26:34
  */
@@ -45,9 +47,10 @@ public class HibernateSessionFactory {
 
 	private static void newSessionFactory() {
 		try {
-			if (hibernateConfigFilePath == null) {
-				factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-			} else {
+			// 优先从classpath中加载
+			factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+			// classpath下没有从指定的文件加载
+			if (factory == null) {
 				File configFile = new File(hibernateConfigFilePath);
 				factory = new Configuration().configure(configFile).buildSessionFactory();
 			}
@@ -57,6 +60,15 @@ public class HibernateSessionFactory {
 	}
 
 	
+	/**
+	 * @param hibernateConfigFilePath the hibernateConfigFilePath to set
+	 */
+	public static void setHibernateConfigFilePath(String path) {
+		if (hibernateConfigFilePath != null) {
+			hibernateConfigFilePath = path;
+		}
+	}
+
 	public static void main(String[] args) {
 		getSessionFactory();
 	}

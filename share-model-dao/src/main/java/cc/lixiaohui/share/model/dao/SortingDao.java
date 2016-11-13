@@ -7,6 +7,6 @@ import cc.lixiaohui.share.model.bean.Sorting;
  * @author lixiaohui
  * @date 2016年11月2日 下午8:21:24
  */
-public interface SortingDao extends BaseDao<Sorting> {
+public interface SortingDao extends DeleteableDao<Sorting> {
 	
 }

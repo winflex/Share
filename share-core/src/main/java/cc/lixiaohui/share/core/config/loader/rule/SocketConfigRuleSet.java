@@ -17,9 +17,9 @@ public class SocketConfigRuleSet extends RuleSetSupport {
 	 */
 	@Override
 	public void addRuleInstances(Digester digester) {
-		digester.addRule(RULE_SOCKET_OPTIONS, createObjectCreateRule(SocketConfig.class));
-		digester.addRule(RULE_SOCKET_OPTIONS, createSetPropertiesRule());
-        digester.addRule(RULE_SOCKET_OPTIONS, createSetNestedPropertiesRule());
+		digester.addRule(RULE_SOCKET, createObjectCreateRule(SocketConfig.class));
+		digester.addRule(RULE_SOCKET, createSetPropertiesRule());
+        digester.addRule(RULE_SOCKET, createSetNestedPropertiesRule());
 	}
 
 }

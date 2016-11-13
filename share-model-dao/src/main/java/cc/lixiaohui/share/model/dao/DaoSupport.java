@@ -1,6 +1,7 @@
 package cc.lixiaohui.share.model.dao;
 
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 /**
  * Dao资源提供类
@@ -15,5 +16,7 @@ public interface DaoSupport {
 	 * @return
 	 */
 	Session getSession();
+	
+	SessionFactory getSessionFactory();
 	
 }

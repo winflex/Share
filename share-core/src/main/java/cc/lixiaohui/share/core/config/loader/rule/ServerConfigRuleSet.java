@@ -22,10 +22,17 @@ public class ServerConfigRuleSet extends RuleSetSupport {
         digester.addRule(RULE_SERVER, createSetNestedPropertiesRule());
         
         digester.addRuleSet(new SocketConfigRuleSet());
-        digester.addRule(RULE_SOCKET_OPTIONS, createSetNextRule("setSocketConfig"));
+        digester.addRule(RULE_SOCKET, createSetNextRule("setSocketConfig"));
+        
+        digester.addRuleSet(new SessionConfigRuleSet());
+        digester.addRule(RULE_SESSION, createSetNextRule("setSessionConfig"));
         
         digester.addRuleSet(new DatabaseConfigRuleSet());
         digester.addRule(RULE_DB, createSetNextRule("setDatabaseConfig"));
+        
+        digester.addRuleSet(new PoolConfigRuleSet());
+        digester.addRule(RULE_POOL, createSetNextRule("setPoolConfig"));
+        
 	}
 
 }

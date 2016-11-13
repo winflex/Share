@@ -1,6 +1,7 @@
 package cc.lixiaohui.share.model.dao;
 
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import cc.lixiaohui.share.model.util.HibernateSessionFactory;
 
@@ -18,6 +19,14 @@ public class SimpleDaoSupport implements DaoSupport {
 	@Override
 	public Session getSession() {
 		return HibernateSessionFactory.getSessionFactory().openSession();
+	}
+
+	/* 
+	 * @see cc.lixiaohui.share.model.dao.DaoSupport#getSessionFactory()
+	 */
+	@Override
+	public SessionFactory getSessionFactory() {
+		return HibernateSessionFactory.getSessionFactory();
 	}
 	
 }

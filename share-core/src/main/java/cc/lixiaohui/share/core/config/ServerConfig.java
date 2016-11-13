@@ -10,9 +10,27 @@ public class ServerConfig {
 	
 	private String name;
 	
+	private PoolConfig poolConfig;
+	
 	private SocketConfig socketConfig;
 	
 	private DatabaseConfig databaseConfig;
+	
+	private SessionConfig sessionConfig;
+
+	/**
+	 * @return the sessionConfig
+	 */
+	public SessionConfig getSessionConfig() {
+		return sessionConfig;
+	}
+
+	/**
+	 * @param sessionConfig the sessionConfig to set
+	 */
+	public void setSessionConfig(SessionConfig sessionConfig) {
+		this.sessionConfig = sessionConfig;
+	}
 
 	/**
 	 * @return the name
@@ -33,6 +51,20 @@ public class ServerConfig {
 	 */
 	public SocketConfig getSocketConfig() {
 		return socketConfig;
+	}
+
+	/**
+	 * @return the poolConfig
+	 */
+	public PoolConfig getPoolConfig() {
+		return poolConfig;
+	}
+
+	/**
+	 * @param poolConfig the poolConfig to set
+	 */
+	public void setPoolConfig(PoolConfig poolConfig) {
+		this.poolConfig = poolConfig;
 	}
 
 	/**

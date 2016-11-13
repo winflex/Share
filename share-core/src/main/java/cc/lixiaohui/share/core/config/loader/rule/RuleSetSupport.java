@@ -19,9 +19,10 @@ import org.apache.commons.digester3.SetPropertiesRule;
 public abstract class RuleSetSupport extends RuleSetBase {
 	
 	protected static final String RULE_SERVER = "server";
-	protected static final String RULE_SOCKET_OPTIONS = RULE_SERVER + "/socketOptions";
+	protected static final String RULE_SOCKET = RULE_SERVER + "/socket";
 	protected static final String RULE_DB = RULE_SERVER + "/db";
-	protected static final String RULE_DB_MYBATIS = RULE_DB + "/mybatis";
+	protected static final String RULE_POOL = RULE_SERVER + "/pool";
+	protected static final String RULE_SESSION = RULE_SERVER + "/session";
 	
 	
 	public Rule createObjectCreateRule(Class<?> clazz) {

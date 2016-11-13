@@ -16,6 +16,7 @@ public interface UserDao extends BaseDao<User>{
 	 * @param username
 	 * @param password
 	 * @return 若无对应user返回null, 否则返回对应用户
+	 * @throws DaoException 
 	 */
-	User get(String username, String password);
+	User get(String username, String password) throws DaoException;
 }

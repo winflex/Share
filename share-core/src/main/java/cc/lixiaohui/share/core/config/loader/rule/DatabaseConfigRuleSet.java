@@ -20,9 +20,6 @@ public class DatabaseConfigRuleSet extends RuleSetSupport {
 		digester.addRule(RULE_DB, createObjectCreateRule(DatabaseConfig.class));
 		digester.addRule(RULE_DB, createSetPropertiesRule());
         digester.addRule(RULE_DB, createSetNestedPropertiesRule());
-        
-        digester.addRuleSet(new MyBatisConfigRuleSet());
-        digester.addRule(RULE_DB_MYBATIS, createSetNextRule("setMyBatisConfig"));
 	}
 
 }

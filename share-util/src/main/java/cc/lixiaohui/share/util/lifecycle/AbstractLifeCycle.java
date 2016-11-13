@@ -82,30 +82,13 @@ public abstract class AbstractLifeCycle implements LifeCycle {
 	protected void startInternal() throws LifeCycleException {};
 
 	@Override
-	public void restart() throws LifeCycleException {
-		if(state != LifeCycleState.STARTED){
-			throw new LifeCycleException("Illegal lifecycle state: " + state);
-		}
-		setState(LifeCycleState.RESTARTING);
-		try{
-			restartInternal();
-		} catch (LifeCycleException e){
-			setState(LifeCycleState.FAILED);
-		}
-		setState(LifeCycleState.RESTARTED);
-		setState(LifeCycleState.STARTED, false);
-	}
-	
-	protected void restartInternal() throws LifeCycleException {};
-	
-	@Override
 	public void destroy() throws LifeCycleException {
 		if(state.compare(LifeCycleState.STARTED) != 0){ //不是已初始化
 			return;
 		}
 		setState(LifeCycleState.DESTROYING);
 		try {
-			startInternal();
+			destroyInternal();
 		} catch (LifeCycleException e) {
 			setState(LifeCycleState.FAILED);
 			throw e;
@@ -128,7 +111,7 @@ public abstract class AbstractLifeCycle implements LifeCycle {
 	 * @return
 	 */
 	protected String type() {
-		return "";
+		return getClass().getSimpleName();
 	}
 	/**
 	 * 自动打印生命周期状态
@@ -180,28 +163,22 @@ public abstract class AbstractLifeCycle implements LifeCycle {
 				logger.info(type() + " " + name() + " initializing...");
 				break;
 			case INITIALIZED:
-				logger.info(type() + " " + name() + " initialized...");
+				logger.info(type() + " " + name() + " initialized");
 				break;
 			case STARTING:
 				logger.info(type() + " " + name() + " starting...");
 				break;
 			case STARTED:
-				logger.info(type() + " " + name() + " started...");
-				break;
-			case RESTARTING:
-				logger.info(type() + " " + name() + " restarting...");
-				break;
-			case RESTARTED:
-				logger.info(type() + " " + name() + " restarted...");
+				logger.info(type() + " " + name() + " started");
 				break;
 			case DESTROYING:
 				logger.info(type() + " " + name() + " destorying...");
 				break;
 			case DESTROYED:
-				logger.info(type() + " " + name() + " destoryed...");
+				logger.info(type() + " " + name() + " destoryed");
 				break;
 			case FAILED:
-				logger.info(type() + " " + name() + " failed...");
+				logger.info(type() + " " + name() + " failed");
 				break;
 			default:
 				break;

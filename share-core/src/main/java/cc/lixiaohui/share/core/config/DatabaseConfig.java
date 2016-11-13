@@ -10,8 +10,6 @@ public class DatabaseConfig {
 	
 	private int defaultPageSize = 20;
 	
-	private MyBatisConfig myBatisConfig;
-
 	/**
 	 * @return the defaultPageSize
 	 */
@@ -26,18 +24,4 @@ public class DatabaseConfig {
 		this.defaultPageSize = defaultPageSize;
 	}
 
-	/**
-	 * @return the myBatisConfig
-	 */
-	public MyBatisConfig getMyBatisConfig() {
-		return myBatisConfig;
-	}
-
-	/**
-	 * @param myBatisConfig the myBatisConfig to set
-	 */
-	public void setMyBatisConfig(MyBatisConfig myBatisConfig) {
-		this.myBatisConfig = myBatisConfig;
-	}
-	
 }

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import cc.lixiaohui.share.model.bean.Role;
 import cc.lixiaohui.share.model.dao.RoleDao;
-import cc.lixiaohui.share.model.dao.util.DaoFactory;
+import cc.lixiaohui.share.model.util.DaoFactory;
 
 /**
  * @author lixiaohui
@@ -17,7 +17,7 @@ public class RoleDaoImplTest {
 	private DaoFactory factory = new DaoFactory();
 	
 	@Test
-	public void testList() throws InstantiationException, IllegalAccessException {
+	public void testList() throws Exception {
 		RoleDao dao = factory.getDao(RoleDao.class);
 		List<Role> roles = dao.list();
 		for (Role r : roles) {
@@ -26,13 +26,25 @@ public class RoleDaoImplTest {
 	}
 	
 	@Test
-	public void testDelete() throws InstantiationException, IllegalAccessException {
+	public void testDelete() throws Exception {
 		RoleDao dao = factory.getDao(RoleDao.class);
 		System.out.println(dao.delete(3));
 	}
 	
 	@Test
-	public void testAdd() throws InstantiationException, IllegalAccessException {
+	public void testVirtualDelete() throws Exception {
+		RoleDao dao = factory.getDao(RoleDao.class);
+		System.out.println(dao.vitualDelete(2));
+	}
+	
+	@Test
+	public void testRecover() throws Exception {
+		RoleDao dao = factory.getDao(RoleDao.class);
+		System.out.println(dao.recover(2));
+	}
+	
+	@Test
+	public void testAdd() throws Exception {
 		RoleDao dao = factory.getDao(RoleDao.class);
 		Role role = new Role();
 		role.setId(3);
@@ -41,7 +53,7 @@ public class RoleDaoImplTest {
 	}
 	
 	@Test
-	public void testUpdate() throws InstantiationException, IllegalAccessException {
+	public void testUpdate() throws Exception {
 		RoleDao dao = factory.getDao(RoleDao.class);
 		Role role = new Role();
 		role.setId(3);

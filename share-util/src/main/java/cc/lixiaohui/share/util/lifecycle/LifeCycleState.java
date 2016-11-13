@@ -17,10 +17,6 @@ public enum LifeCycleState{
 	
 	STARTED(4),
 	
-	RESTARTING(5),
-	
-	RESTARTED(6),
-	
 	DESTROYING(7),
 	
 	DESTROYED(8),

@@ -7,8 +7,8 @@
 		<version>1.0</version>
 		<relativePath>../share-parent/pom.xml</relativePath>
 	</parent>
-	<artifactId>share-model-dao</artifactId>
-	<name>share-model-dao</name>
+	<artifactId>share-dao</artifactId>
+	<name>share-dao</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

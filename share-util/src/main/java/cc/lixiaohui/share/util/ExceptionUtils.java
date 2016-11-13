@@ -11,6 +11,9 @@ import java.io.PrintStream;
 public class ExceptionUtils {
 	
 	public static String toDetail(Throwable e) {
+		if (e == null) {
+			return "";
+		}
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		PrintStream out = new PrintStream(baos);
 		e.printStackTrace(out);

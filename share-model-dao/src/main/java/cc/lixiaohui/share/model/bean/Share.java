@@ -27,6 +27,8 @@ public class Share {
 	private List<Praise> praises;
 	
 	private boolean deleted;
+	
+	private int commentCount;
 
 	private List<Comment> comments;
 	
@@ -43,6 +45,20 @@ public class Share {
 	 */
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
+	}
+
+	/**
+	 * @return the commentCount
+	 */
+	public int getCommentCount() {
+		return commentCount;
+	}
+
+	/**
+	 * @param commentCount the commentCount to set
+	 */
+	public void setCommentCount(int commentCount) {
+		this.commentCount = commentCount;
 	}
 
 	/**

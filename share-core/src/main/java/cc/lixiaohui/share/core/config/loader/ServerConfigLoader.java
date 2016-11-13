@@ -12,6 +12,7 @@ import org.xml.sax.SAXException;
 import cc.lixiaohui.share.core.config.ConfigException;
 import cc.lixiaohui.share.core.config.ServerConfig;
 import cc.lixiaohui.share.core.config.loader.rule.ServerConfigRuleSet;
+import cc.lixiaohui.share.util.FileUtils;
 
 /**
  * 配置文件加载类
@@ -41,14 +42,20 @@ public class ServerConfigLoader {
 	 * @throws ConfigException 配置文件不存在或者配置文件格式错误
 	 */
 	public ServerConfig load() throws ConfigException {
-		return load(getConfigAsStream());
+		try {
+			return load(FileUtils.getResourceAsStream(configFilePath));
+		} catch (IOException e) {
+			logger.error("config file not found {}", configFilePath);
+			throw new ConfigException(e);
+		}
 	}
 	
 	protected ServerConfig load(InputStream stream) throws ConfigException{
 		Digester digester = new Digester();
 		digester.addRuleSet(createRuleSet());
 		try {
-			return digester.parse(stream);
+			ServerConfig config = digester.parse(stream);
+			return config;
 		} catch (IOException e) {
 			logger.error("error occurred while parsing server.xml, please check if the configuration "
 					+ "path({}) giving is right", configFilePath);
@@ -60,10 +67,6 @@ public class ServerConfigLoader {
 		}
 	}
 	
-	private InputStream getConfigAsStream() {
-		return Thread.currentThread().getContextClassLoader().getResourceAsStream(configFilePath);
-	}
-
 	private RuleSet createRuleSet() {
 		if (ruleSet == null) {
 			synchronized (ruleSetLock) {

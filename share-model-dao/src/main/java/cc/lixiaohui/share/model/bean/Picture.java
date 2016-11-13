@@ -16,6 +16,10 @@ public class Picture {
 	
 	private String path;
 	
+	private String suffix;
+	
+	private int uploadUserId;
+	
 	private Timestamp uploadTime;
 	
 	/**
@@ -24,12 +28,34 @@ public class Picture {
 	public String getPath() {
 		return path;
 	}
+	
+	public int getUploadUserId() {
+		return uploadUserId;
+	}
+
+	public void setUploadUserId(int uploadUserId) {
+		this.uploadUserId = uploadUserId;
+	}
 
 	/**
 	 * @param path the path to set
 	 */
 	public void setPath(String path) {
 		this.path = path;
+	}
+
+	/**
+	 * @return the suffix
+	 */
+	public String getSuffix() {
+		return suffix;
+	}
+
+	/**
+	 * @param suffix the suffix to set
+	 */
+	public void setSuffix(String suffix) {
+		this.suffix = suffix;
 	}
 
 	/**
@@ -65,6 +91,6 @@ public class Picture {
 	 */
 	@Override
 	public String toString() {
-		return String.format("Picture[id=%d, path=%s, uploadTime=%s]", id, path, uploadTime == null ? "null" : uploadTime.toString());
+		return String.format("Picture[id=%d, path=%s, suffix=%s, uploadTime=%s]", id, path, suffix, uploadTime == null ? "null" : uploadTime.toString());
 	}
 }

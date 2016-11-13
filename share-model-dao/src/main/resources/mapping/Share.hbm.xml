@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cc.lixiaohui.share.model.bean">
+	<class name="Share" table="share">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+		<one-to-one name="publisher" class="cc.lixiaohui.share.model.bean.User" fetch="join" foreign-key="user_id" />
+		<property name="content" type="java.lang.String" column="content" />
+		<property name="createTime" type="java.sql.Timestamp" column="create_time"/>
+		<property name="praiseCount" type="int" column="praises" />
+		<property name="commentCount" type="int" column="comments" />
+		
+		<bag name="praises" inverse="true">
+			<key column="share_id" />
+			<one-to-many class="cc.lixiaohui.share.model.bean.Praise" />
+		</bag>
+		<bag name="comments" inverse="true">
+			<key column="share_id" />
+			<one-to-many class="cc.lixiaohui.share.model.bean.Comment" />
+		</bag>
+		<property name="deleted" type="boolean" column="deleted" />
+	</class>
+
+</hibernate-mapping>

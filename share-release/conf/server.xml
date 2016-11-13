@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <server name="shareServer">
-
+	<!-- 业务线程池参数-->
+	<pool>
+		<corePoolsize>5</corePoolsize>
+		<maxPoolSize>5</maxPoolSize>
+		<keepAliveTime>30000</keepAliveTime>
+		<blockingQueue>java.util.concurrent.LinkedBlockingQueue</blockingQueue>
+	</pool>
+	
 	<!-- 网络相关配置 -->
-	<socketOptions>
+	<socket>
 		<port>8888</port>
 		<bindAddress>127.0.0.1</bindAddress>
+		
+		<!-- 默认为1 -->
+		<acceptorThreads>0</acceptorThreads>
+		
 		<!-- IO线程数,当值为0时实际线程数为(处理器线程数 + 1)-->
 		<ioEventThreads>0</ioEventThreads>
-	</socketOptions>
+		
+		<!-- 客户端心跳间隔, 客户端每隔heartbeatInterval毫秒就得发一个心跳包来服务端, 服务端若超过maxHeartbeatMissTimes次未收到心跳包, 则关闭该连接 -->
+		<heartbeatInterval>5000</heartbeatInterval>
+		<maxHeartbeatMissTimes>3</maxHeartbeatMissTimes>
+		
+		<!-- 序列化工厂 -->
+		<serializeFactoryClass>cc.lixiaohui.share.protocol.codec.serialize.factory.HessianSerializeFactory</serializeFactoryClass>
+	</socket>
+	
+	<session>
+		<!-- 会话超时时间ms, 设置0不启用会话超时 -->
+		<timeout>1000 * 60 * 60</timeout>
+	</session>
 	
 	<!-- 数据库相关配置 -->
 	<db>
-		<!-- 执行select时默认记录, 若不配置或者配置为非正数, 则硬编码为20 -->
+		<host></host>
+		<port></port>
+		<schema></schema>
+		执行select时默认记录, 若不配置或者配置为非正数, 则硬编码为20
 		<defaultPageSize>20</defaultPageSize>
-		
-		<mybatis>
-			<!-- MyBatis的主配置的路径(必须置于classpath下) -->
-			<configPath>aaa</configPath>
-		</mybatis>
 	</db>
 	
 </server>

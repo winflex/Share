@@ -8,6 +8,6 @@ package cc.lixiaohui.share.util.lifecycle;
 public interface LifeCycle {
 	void init() throws LifeCycleException;
 	void start() throws LifeCycleException;
-	void restart() throws LifeCycleException;
+	//void restart() throws LifeCycleException;
 	void destroy() throws LifeCycleException;
 }
