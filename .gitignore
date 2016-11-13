@@ -4,8 +4,5 @@
 # ignore maven target folder
 target/
 
-# ignore jars
-*.jar
-
 !.gitignore
 
