@@ -7,8 +7,8 @@ import org.hibernate.Transaction;
 
 import cc.lixiaohui.share.model.bean.FriendShip;
 import cc.lixiaohui.share.model.dao.AbstractDao;
-import cc.lixiaohui.share.model.dao.DaoException;
 import cc.lixiaohui.share.model.dao.FriendShipDao;
+import cc.lixiaohui.share.model.dao.util.DaoException;
 
 /**
  * @author lixiaohui

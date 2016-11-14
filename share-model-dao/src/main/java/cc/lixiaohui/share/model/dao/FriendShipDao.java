@@ -3,6 +3,7 @@ package cc.lixiaohui.share.model.dao;
 import java.util.List;
 
 import cc.lixiaohui.share.model.bean.FriendShip;
+import cc.lixiaohui.share.model.dao.util.DaoException;
 
 /**
  * @author lixiaohui

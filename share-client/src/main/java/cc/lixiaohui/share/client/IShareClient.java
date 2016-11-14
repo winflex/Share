@@ -114,13 +114,6 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	String getUser(int userId) throws ShareClientException;
 	
 	/**
-	 * 获取当前登陆的用户的信息
-	 * @return 和 {@link IShareClient#getUser(int)} 一样
-	 * @throws ShareClientException
-	 */
-	String getUser() throws ShareClientException;
-	
-	/**
 	 * 更新用户信息, 要上传
 	 * @param password 密码, 传null则不更新
 	 * @param sex 性别, 传null则不更新
@@ -133,16 +126,6 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * @throws ShareClientException
 	 */
 	String updateUser(String password, String sex, String signature, int headImageId) throws ShareClientException;
-	
-	/**
-	 * 隔离自己
-	 * @return json, result内容如下:
-	 * <pre>
-	 * {}
-	 * </pre>
-	 * @throws ShareClientException
-	 */
-	String shield() throws ShareClientException;
 	
 	/**
 	 * 隔离某用户, 主要是给管理员使用
@@ -203,7 +186,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * }
 	 * </pre>
 	 */
-	String getShares(String keyword, int order, int start, int limit) throws ShareClientException;
+	String getShares(String keyword, int orderColumn, int orderType, int start, int limit) throws ShareClientException;
 
 	/**
 	 * 获取某个分享的所有信息

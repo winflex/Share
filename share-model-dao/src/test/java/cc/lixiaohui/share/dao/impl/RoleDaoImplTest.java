@@ -55,9 +55,9 @@ public class RoleDaoImplTest {
 	@Test
 	public void testUpdate() throws Exception {
 		RoleDao dao = factory.getDao(RoleDao.class);
-		Role role = new Role();
-		role.setId(3);
-		role.setDescription("我我das");
+		Role role = dao.getById(3);
+		role.setDescription("傻逼");
+		dao.update(role);
 		System.out.println(dao.update(role));
 	}
 	

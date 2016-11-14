@@ -41,7 +41,7 @@
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<configuration>
-					<!-- <outputDirectory>../doc/client-lib</outputDirectory> -->
+					<outputDirectory>../doc/client-lib</outputDirectory>
 					<excludeTransitive>false</excludeTransitive>
 				</configuration>
 				<executions>
@@ -54,7 +54,6 @@
 						<configuration>
 							<includeScope>runtime</includeScope>
 							<overWriteIfNewer>true</overWriteIfNewer>
-							<outputDirectory>../doc/client-lib</outputDirectory>
 						</configuration>
 					</execution>
 					<execution>
@@ -72,7 +71,6 @@
 									<overWrite>true</overWrite>
 								</artifactItem>
 							</artifactItems>
-							<outputDirectory>../doc/client-lib</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>

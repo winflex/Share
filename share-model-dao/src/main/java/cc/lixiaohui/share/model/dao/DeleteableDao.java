@@ -2,6 +2,8 @@ package cc.lixiaohui.share.model.dao;
 
 import java.util.List;
 
+import cc.lixiaohui.share.model.dao.util.DaoException;
+
 /**
  * @author lixiaohui
  * @date 2016年11月12日 下午12:04:46

@@ -20,7 +20,7 @@ public class UserDaoTest {
 	@Test
 	public void testDelete() throws Exception{
 		UserDao dao = factory.getDao(UserDao.class);
-		System.out.println(dao.delete(6));
+		System.out.println(dao.delete(9));
 	}
 	
 	@Test
@@ -31,6 +31,17 @@ public class UserDaoTest {
 			System.out.println(user);
 		}
 	}
+	
+	@Test
+	public void testUpdate() throws Exception {
+		UserDao dao = factory.getDao(UserDao.class);
+		User user = dao.getById(10);
+		user.setSignature("哈哈哈哈");
+		int n = dao.update(user);
+		System.out.println(user);
+		System.out.println(n);
+	}
+	
 	@Test
 	public void testGetUser() throws Exception {
 		UserDao dao = factory.getDao(UserDao.class);

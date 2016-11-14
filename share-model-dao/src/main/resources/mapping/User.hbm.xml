@@ -4,46 +4,26 @@
 
 <hibernate-mapping package="cc.lixiaohui.share.model.bean">
 	<class name="User" table="user">
-		<id name="id" type="int">
-			<column name="id" />
+		<id name="id" type="int" column="id">
 			<generator class="native" />
 		</id>
-		<property name="username" type="java.lang.String">
-			<column name="username" />
-		</property>
-		<property name="password" type="java.lang.String">
-			<column name="password" />
-		</property>
-		<property name="sex" type="java.lang.String">
-			<column name="sex" />
-		</property>
-		<property name="signature" type="java.lang.String">
-			<column name="signature" />
-		</property>
-		<property name="registerTime" type="java.sql.Timestamp">
-			<column name="register_time" />
-		</property>
-		<property name="selfForbid" type="boolean">
-			<column name="self_forbid" />
-		</property>
-		<property name="adminForbid" type="boolean">
-			<column name="admin_forbid" />
-		</property>
-		<property name="deleted" type="boolean">
-			<column name="deleted" />
-		</property>
+		<property name="username" type="java.lang.String" column="username" />
+		<property name="password" type="java.lang.String" column="password" />
+		<property name="sex" type="java.lang.String" column="sex" />
+		<property name="signature" type="java.lang.String" column="signature" />
+		<property name="registerTime" type="java.sql.Timestamp" update="false" column="register_time" />
+		<property name="selfForbid" type="boolean" column="self_forbid" />
+		<property name="adminForbid" type="boolean" column="admin_forbid" />
+		<property name="deleted" type="boolean" column="deleted" />
 
 		<many-to-one name="role" class="Role" fetch="select" column="role_id" lazy="false"/> 
 		<many-to-one name="headImage" class="Picture" fetch="select" column="head_image_id" lazy="false"/>
 
-		<!-- <one-to-one name="role" class="Role" fetch="join" foreign-key="role_id" />
-		<one-to-one name="headImage" class="Picture" fetch="select" foreign-key="head_image_id" /> -->
-
-		<bag name="shares" inverse="true" fetch="select">
+		<bag name="shares" inverse="true" fetch="select" lazy="false">
 			<key column="user_id" />
 			<one-to-many class="Share" />
 		</bag>
-		<bag name="shareCollections" inverse="true" fetch="select">
+		<bag name="shareCollections" inverse="true">
 			<key column="user_id" />
 			<one-to-many class="ShareCollection" />
 		</bag>

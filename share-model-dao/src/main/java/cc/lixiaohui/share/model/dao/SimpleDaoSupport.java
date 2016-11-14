@@ -3,6 +3,7 @@ package cc.lixiaohui.share.model.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import cc.lixiaohui.share.model.dao.util.DaoSupport;
 import cc.lixiaohui.share.model.util.HibernateSessionFactory;
 
 /**

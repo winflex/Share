@@ -25,6 +25,7 @@ import cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle;
 import cc.lixiaohui.share.util.lifecycle.LifeCycleException;
 import cc.lixiaohui.share.util.lifecycle.LifeCycleState;
 
+
 /**
  * 抽象实现, 实现连接建立, 断开重连等
  * 

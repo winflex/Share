@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.model.dao;
+package cc.lixiaohui.share.model.dao.util;
 
 /**
  * @author lixiaohui

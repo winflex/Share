@@ -83,7 +83,7 @@ public abstract class AbstractService {
 	}
 	
 	protected String getStringParameter(String name, String defValue) {
-		Object o = getObjectParameter(name);
+		Object o = getObjectParameter(name, null);
 		return o == null ? defValue : String.valueOf(o);
 	}
 	

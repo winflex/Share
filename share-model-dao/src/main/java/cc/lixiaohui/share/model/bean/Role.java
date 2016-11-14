@@ -8,6 +8,14 @@ import java.sql.Timestamp;
  */
 public class Role {
 	
+	
+	public transient static final int ADMIN_THRESHOLD = 2;
+	
+	public static final boolean isAdmin(int roleId) {
+		return roleId >=0 && roleId < ADMIN_THRESHOLD;
+	}
+	
+	
 	private int id;
 	
 	private String description;

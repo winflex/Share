@@ -13,6 +13,22 @@ import java.util.List;
 
 public class User {
 	
+	public static User copy(User user) {
+		User newUser = new User();
+		newUser.setId(user.getId());
+		newUser.setPassword(user.getPassword());
+		newUser.setUsername(user.getUsername());
+		newUser.setSex(user.getSex());
+		newUser.setSignature(user.getSignature());
+		newUser.setRole(user.getRole());
+		newUser.setRegisterTime(user.getRegisterTime());
+		newUser.setHeadImage(user.getHeadImage());
+		newUser.setDeleted(user.isDeleted());
+		newUser.setSelfForbid(user.isSelfForbid());
+		newUser.setAdminForbid(user.isAdminForbid());
+		return user;
+	}
+	
 	private int id;
 	
 	private String username;
@@ -28,8 +44,6 @@ public class User {
 	private Timestamp registerTime;
 	
 	private Picture headImage;
-	
-	private int headImageId;//为update时用
 	
 	private boolean selfForbid;
 	
@@ -108,20 +122,6 @@ public class User {
 	 */
 	public void setCommentsForMe(List<Comment> commentsForMe) {
 		this.commentsForMe = commentsForMe;
-	}
-
-	/**
-	 * @return the headImageId
-	 */
-	public int getHeadImageId() {
-		return headImageId;
-	}
-
-	/**
-	 * @param headImageId the headImageId to set
-	 */
-	public void setHeadImageId(int headImageId) {
-		this.headImageId = headImageId;
 	}
 
 	/**
@@ -306,14 +306,6 @@ public class User {
 	 */
 	public void setFriends(List<User> friends) {
 		this.friends = friends;
-	}
-	
-	/**
-	 * 为解决mybatis插入时不能通过引用链取值
-	 * @return
-	 */
-	public int getRoleId() {
-		return role.getId();
 	}
 	
 	/**

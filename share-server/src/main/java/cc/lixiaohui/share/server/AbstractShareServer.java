@@ -1,7 +1,5 @@
 package cc.lixiaohui.share.server;
 
-import java.util.concurrent.TimeUnit;
-
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -13,6 +11,12 @@ import io.netty.channel.ServerChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.timeout.IdleStateHandler;
+
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +30,9 @@ import cc.lixiaohui.share.server.handler.AuthFilter;
 import cc.lixiaohui.share.server.handler.HeartbeatHandler;
 import cc.lixiaohui.share.server.handler.MessageHandler;
 import cc.lixiaohui.share.server.handler.SessionAttacher;
+import cc.lixiaohui.share.server.service.annotation.ShareProcedure;
+import cc.lixiaohui.share.server.service.annotation.ShareService;
+import cc.lixiaohui.share.server.util.AnnotationUtils;
 import cc.lixiaohui.share.util.NamedThreadFactory;
 import cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle;
 import cc.lixiaohui.share.util.lifecycle.LifeCycleException;
@@ -48,6 +55,12 @@ public abstract class AbstractShareServer extends AbstractLifeCycle {
 	protected ISerializeFactory serializeFactory;
 	protected DaoFactory daoFactory;
 	
+	/**
+	 * 过程Method, 自动扫描生成
+	 * servicename#procedure -> Method
+	 */
+	protected static final Map<String, Method> PROCEDURE_MAP = new HashMap<String, Method>();
+	
 	private static final String HN_HEARTBEAT = "Heartbeat";
 	private static final String HN_DECODER = "Decoder";
 	private static final String HN_ENCODER = "Encoder";
@@ -57,6 +70,8 @@ public abstract class AbstractShareServer extends AbstractLifeCycle {
 	private static final String HN_FILTER = "AuthFilter";
 	
 	protected static final Logger logger = LoggerFactory.getLogger(AbstractShareServer.class);
+	
+	protected static final String SERVICE_PACKAGE = "cc.lixiaohui.server.service";
 	
 	protected AbstractShareServer(ServerConfig config) {
 		this.config = config;
@@ -69,9 +84,24 @@ public abstract class AbstractShareServer extends AbstractLifeCycle {
 		
 		daoFactory = new DaoFactory();
 		
+		initProcedures();
 		initSerializeFactory();
 		initEventGroup(); 
 		initBootstrap();
+	}
+
+	/**
+	 * 扫描cc.lixiaohui.server.service下的所有类, 查找{@link ShareService} 标记的类下{@link ShareProcedure} 标记的所有方法
+	 */
+	private void initProcedures() {
+		try {
+			Set<Class<?>> classes = AnnotationUtils.findAnnotatedlasses(SERVICE_PACKAGE, ShareService.class);
+			for (Class<?> c : classes) {
+				System.out.println(c.getName());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	private void initSerializeFactory() throws LifeCycleException{

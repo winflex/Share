@@ -5,6 +5,8 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import cc.lixiaohui.share.model.dao.util.DaoException;
+
 /**
  * 带有deleted的字段的DAO可继承该类
  * @author lixiaohui
@@ -72,7 +74,8 @@ public abstract class AbstractDeleteableDao<T> extends AbstractDao<T> implements
 		Session session = getSession();
 		Transaction tran = session.beginTransaction();
 		try {
-			T entity = getById(id);
+			@SuppressWarnings("unchecked")
+			T entity = (T) session.get(entityClass, id);
 			invokeMethod(entity, "setDeleted", new Class<?>[]{boolean.class}, new Object[]{true});
 			session.update(entity);
 			tran.commit();
@@ -96,7 +99,8 @@ public abstract class AbstractDeleteableDao<T> extends AbstractDao<T> implements
 		Session session = getSession();
 		Transaction tran = session.beginTransaction();
 		try {
-			T entity = getById(id);
+			@SuppressWarnings("unchecked")
+			T entity = (T) session.get(entityClass, id);
 			invokeMethod(entity, "setDeleted", new Class<?>[]{boolean.class}, new Object[]{false});
 			session.update(entity);
 			tran.commit();

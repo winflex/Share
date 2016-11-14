@@ -3,6 +3,8 @@ package cc.lixiaohui.share.server.handler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +20,8 @@ import cc.lixiaohui.share.protocol.Message;
  * @date 2016年11月8日 下午9:58:29
  */
 public class MessageHandler extends SimpleChannelInboundHandler<Message> {
-
+	
+	
 	private ThreadPoolExecutor executor;
 	
 	private PoolConfig config;

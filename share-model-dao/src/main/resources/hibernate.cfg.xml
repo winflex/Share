@@ -27,6 +27,7 @@
 		<mapping resource="mapping/ForbidenWord.hbm.xml"/>        
 		<mapping resource="mapping/FriendShip.hbm.xml"/>        
 		<mapping resource="mapping/Sorting.hbm.xml"/>        
+		<mapping resource="mapping/ShareReadRecord.hbm.xml"/>        
     </session-factory>
     
 </hibernate-configuration>

@@ -10,6 +10,8 @@ import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import cc.lixiaohui.share.model.dao.util.DaoException;
+
 /**
  * DAO通用实现
  * 
@@ -56,6 +58,16 @@ public abstract class AbstractDao<T> extends SimpleDaoSupport implements BaseDao
 			session.close();
 		}
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<T> list(String hql) {
+		Session session = getSession();
+		try {
+			return getSession().createQuery(hql).list();
+		} finally {
+			session.close();
+		}
+	}
 
 	/* 
 	 * @see cc.lixiaohui.share.model.dao.BaseDao#listSome(int, int)
@@ -79,8 +91,9 @@ public abstract class AbstractDao<T> extends SimpleDaoSupport implements BaseDao
 	public T getById(int id) {
 		Session session = getSession();
 		try {
-			return (T) getSession().createQuery("from " + entityName() + " t where t.id = :id")
-					.setParameter("id", id).uniqueResult();
+			return (T) session.get(entityClass, id);
+			/*return (T) getSession().createQuery("from " + entityName() + " t where t.id = :id")
+					.setParameter("id", id).uniqueResult();*/
 		} finally {
 			session.close();
 		}
@@ -94,7 +107,7 @@ public abstract class AbstractDao<T> extends SimpleDaoSupport implements BaseDao
 		Session session = getSession();
 		Transaction transaction = session.beginTransaction();
 		try {
-			session.delete(newBeanWithId(id));
+			session.delete(session.get(entityClass, id));
 			transaction.commit();
 			return 1;
 		} catch (Exception e) {
@@ -154,7 +167,7 @@ public abstract class AbstractDao<T> extends SimpleDaoSupport implements BaseDao
 		Session session = getSession();
 		Transaction transaction = session.beginTransaction();
 		try {
-			session.update(bean);
+			session.saveOrUpdate(bean);
 			transaction.commit();
 			return 1;
 		} catch (Exception e) {
@@ -164,17 +177,6 @@ public abstract class AbstractDao<T> extends SimpleDaoSupport implements BaseDao
 		} finally {
 			session.close();
 		}
-	}
-	
-	protected T newBeanWithId(int id) {
-		try {
-			T obj = entityClass.newInstance();
-			invokeMethod(obj, "setId", new Class<?>[]{int.class}, new Object[]{id});
-			return obj;
-		} catch (Exception e) {
-			logger.error("{}", e);
-		}
-		return null;
 	}
 	
 	protected Object invokeMethod(Object obj, String methodName, Class<?>[] parameterTypes, Object[] parameters) throws Exception, NoSuchMethodException {

@@ -4,8 +4,8 @@ import org.hibernate.Session;
 
 import cc.lixiaohui.share.model.bean.User;
 import cc.lixiaohui.share.model.dao.AbstractDeleteableDao;
-import cc.lixiaohui.share.model.dao.DaoException;
 import cc.lixiaohui.share.model.dao.UserDao;
+import cc.lixiaohui.share.model.dao.util.DaoException;
 
 
 /**

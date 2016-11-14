@@ -7,7 +7,7 @@
 		<id name="id" type="int" column="id">
 			<generator class="native" />
 		</id>
-		<one-to-one name="publisher" class="cc.lixiaohui.share.model.bean.User" fetch="join" foreign-key="user_id" />
+		<one-to-one name="publisher" class="cc.lixiaohui.share.model.bean.User" fetch="select" foreign-key="user_id" lazy="false"/>
 		<property name="content" type="java.lang.String" column="content" />
 		<property name="createTime" type="java.sql.Timestamp" column="create_time"/>
 		<property name="praiseCount" type="int" column="praises" />

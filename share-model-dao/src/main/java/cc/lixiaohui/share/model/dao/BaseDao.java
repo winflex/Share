@@ -2,6 +2,8 @@ package cc.lixiaohui.share.model.dao;
 
 import java.util.List;
 
+import cc.lixiaohui.share.model.dao.util.DaoException;
+
 /**
  * 通用Dao基类
  * 
@@ -15,6 +17,12 @@ public interface BaseDao<T>{
 	 * @return
 	 */
 	List<T> list() throws DaoException;
+	
+	/**
+	 * 返回所有实体
+	 * @return
+	 */
+	List<T> list(String hql) throws DaoException;
 	
 	/**
 	 * 返回start ~ limit间的所有实体

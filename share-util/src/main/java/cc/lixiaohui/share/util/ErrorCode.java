@@ -45,6 +45,11 @@ public enum ErrorCode {
 		if (t instanceof IllegalArgumentException || t instanceof NumberFormatException) {
 			return PARAMETER;
 		}
+		
+		if (t instanceof NullPointerException) {
+			return RESOURCE_NOT_FOUND;
+		}
+		
 		return UNKOWN;
 	}
 }

@@ -1,6 +1,6 @@
 package cc.lixiaohui.share.protocol.util.builder;
 
-import cc.lixiaohui.share.protocol.ConnectionMessage;
+import cc.lixiaohui.share.protocol.HandShakeMessage;
 
 /**
  * @author lixiaohui
@@ -20,7 +20,7 @@ public class ConnectionMessageBuilder extends MessageBuilder {
 	}
 	
 	@Override
-	public ConnectionMessage build() {
-		return new ConnectionMessage(this);
+	public HandShakeMessage build() {
+		return new HandShakeMessage(this);
 	}
 }

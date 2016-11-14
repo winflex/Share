@@ -1,5 +1,8 @@
 package cc.lixiaohui.share.protocol;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import cc.lixiaohui.share.protocol.util.builder.ConnectionMessageBuilder;
 
 /**
@@ -8,13 +11,18 @@ import cc.lixiaohui.share.protocol.util.builder.ConnectionMessageBuilder;
  * @author lixiaohui
  * @date 2016年11月8日 下午10:34:03
  */
-public class ConnectionMessage extends Message {
+public class HandShakeMessage extends Message {
 
 	private static final long serialVersionUID = 6144729504636857321L;
 
+	/**
+	 * 服务映射: User -> cc.lixiaohui.share.server.service.UserService
+	 */
+	private Map<String, String> serviceMap = new HashMap<String, String>();
+	
 	private long heartbeatInterval;
 
-	public ConnectionMessage(ConnectionMessageBuilder builder) {
+	public HandShakeMessage(ConnectionMessageBuilder builder) {
 		super(builder);
 		this.heartbeatInterval = builder.heartbeatInterval();
 	}
@@ -43,5 +51,13 @@ public class ConnectionMessage extends Message {
 
 	public static ConnectionMessageBuilder builder() {
 		return new ConnectionMessageBuilder();
+	}
+
+	public Map<String, String> getServiceMap() {
+		return serviceMap;
+	}
+
+	public void setServiceMap(Map<String, String> serviceMap) {
+		this.serviceMap = serviceMap;
 	}
 }

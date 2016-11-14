@@ -3,12 +3,14 @@ package cc.lixiaohui.share.client;
 import java.io.InputStream;
 
 /**
+ * 客户端最终实现
+ * 
  * @author lixiaohui
- * @date 2016年11月5日 下午6:15:41
+ * @date 2016年10月31日 下午4:42:25
  */
 public class ShareClientImpl extends AbstractShareClient {
 
-	protected ShareClientImpl(IConfiguration config) {
+	ShareClientImpl(IConfiguration config) {
 		super(config);
 	}
 
@@ -45,14 +47,6 @@ public class ShareClientImpl extends AbstractShareClient {
 	}
 
 	/* 
-	 * @see cc.lixiaohui.share.client.IShareClient#getUser()
-	 */
-	@Override
-	public String getUser() throws ShareClientException {
-		return null;
-	}
-
-	/* 
 	 * @see cc.lixiaohui.share.client.IShareClient#updateUser(java.lang.String, java.lang.String, java.lang.String, int)
 	 */
 	@Override
@@ -61,26 +55,10 @@ public class ShareClientImpl extends AbstractShareClient {
 	}
 
 	/* 
-	 * @see cc.lixiaohui.share.client.IShareClient#shield()
-	 */
-	@Override
-	public String shield() throws ShareClientException {
-		return null;
-	}
-
-	/* 
 	 * @see cc.lixiaohui.share.client.IShareClient#shield(int)
 	 */
 	@Override
 	public String shield(int userId) throws ShareClientException {
-		return null;
-	}
-
-	/* 
-	 * @see cc.lixiaohui.share.client.IShareClient#getShares(java.lang.String, int, int, int)
-	 */
-	@Override
-	public String getShares(String keyword, int order, int start, int limit) throws ShareClientException {
 		return null;
 	}
 
@@ -281,4 +259,15 @@ public class ShareClientImpl extends AbstractShareClient {
 	@Override
 	public void send(int userId, String message, ISentMessageListener listener) throws ShareClientException {
 	}
+
+	/* 
+	 * @see cc.lixiaohui.share.client.IShareClient#getShares(java.lang.String, int, int, int, int)
+	 */
+	@Override
+	public String getShares(String keyword, int orderColumn, int orderType, int start, int limit) throws ShareClientException {
+		return null;
+	}
+	
+	
+	
 }

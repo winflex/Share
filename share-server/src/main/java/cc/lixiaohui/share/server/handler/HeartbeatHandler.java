@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import cc.lixiaohui.share.core.config.SocketConfig;
-import cc.lixiaohui.share.protocol.ConnectionMessage;
+import cc.lixiaohui.share.protocol.HandShakeMessage;
 import cc.lixiaohui.share.protocol.HeartbeatMessage;
 import cc.lixiaohui.share.protocol.Message;
 
@@ -37,7 +37,7 @@ public class HeartbeatHandler extends SimpleChannelInboundHandler<Message> {
 	
 	public HeartbeatHandler(SocketConfig config) {
 		this.config = config;
-		connMessage = ConnectionMessage.builder().heartbeatInterval(config.getHeartbeatInterval()).build();
+		connMessage = HandShakeMessage.builder().heartbeatInterval(config.getHeartbeatInterval()).build();
 		maxIdleSeconds = config.getHeartbeatInterval() * config.getMaxHeartbeatMissTimes();
 	}
 	

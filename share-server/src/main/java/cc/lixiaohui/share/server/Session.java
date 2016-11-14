@@ -1,10 +1,10 @@
 package cc.lixiaohui.share.server;
 
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandlerContext;
 import cc.lixiaohui.share.server.handler.SessionAttacher;
 import cc.lixiaohui.share.util.IBuilder;
 import cc.lixiaohui.share.util.TimeUtils;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
 
 /**
  * 代表会话, Sessoin都是被绑定到一个个的{@link Channel} 上的
@@ -42,7 +42,8 @@ public class Session {
 	/**
 	 * 管理员是否屏蔽了自己
 	 */
-	private volatile boolean adminSheid; 
+	private volatile boolean adminShield; 
+	
 	
 	/**
 	 * Channel 上下文
@@ -77,7 +78,7 @@ public class Session {
 		this.userId = userId;
 		this.username = username;
 		this.selfShield = selfShield;
-		this.adminSheid = adminShield;
+		this.adminShield = adminShield;
 		logined = true; 
 		return true;
 	}
@@ -127,12 +128,12 @@ public class Session {
 		this.selfShield = selfShield;
 	}
 
-	public boolean isAdminSheid() {
-		return adminSheid;
+	public boolean isAdminShield() {
+		return adminShield;
 	}
 
-	public void setAdminSheid(boolean adminSheid) {
-		this.adminSheid = adminSheid;
+	public void setAdminShield(boolean adminSheild) {
+		this.adminShield = adminSheild;
 	}
 
 	public long getSessionId() {
@@ -203,6 +204,21 @@ public class Session {
 		this.username = username;
 	}
 	
+	/* 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		
+		return new StringBuilder("Session[")
+				.append("id").append("=").append(sessionId)
+				.append("logined").append("=").append(logined)
+				.append("username").append("=").append(username)
+				.append("selfShield").append("=").append(selfShield)
+				.append("adminShield").append("=").append(adminShield)
+				.append("]").toString();
+	}
+	
 	
 	public static class SessionBuilder implements IBuilder<Session> {
 
@@ -219,6 +235,10 @@ public class Session {
 		private long createTime;
 		
 		private long lastAccessTime;
+		
+		private boolean selfShield;
+		
+		private boolean adminShield;
 		
 		@Override
 		public Session build() {
@@ -287,6 +307,23 @@ public class Session {
 			this.username = username;
 			return this;
 		}
-
+		
+		public SessionBuilder selfShield(boolean selfShield) {
+			this.selfShield = selfShield;
+			return this;
+		}
+		
+		public boolean selfShield() {
+			return selfShield;
+		}
+		
+		public boolean adminShield() {
+			return adminShield;
+		}
+		
+		public SessionBuilder adminShield(boolean adminShield) {
+			this.adminShield = adminShield;
+			return this;
+		}
 	}
 }

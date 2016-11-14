@@ -82,7 +82,7 @@ public interface IImmediateShareClient{
 		 * }
 		 * @param reason 失败原因描述
 		 */
-		void onResponsed(String json);
+		void onResponsed(String respJson);
 	}
 	
 }
