@@ -6,7 +6,7 @@ import cc.lixiaohui.share.protocol.HeartbeatMessage;
  * @author lixiaohui
  * @date 2016年11月10日 下午10:13:44
  */
-public class HeartbeatMessageBuilder extends MessageBuilder {
+public class HeartbeatBuilder extends MessageBuilder {
 
 	@Override
 	public HeartbeatMessage build() {

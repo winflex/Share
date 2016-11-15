@@ -1,6 +1,6 @@
 package cc.lixiaohui.share.protocol;
 
-import cc.lixiaohui.share.protocol.util.builder.HeartbeatMessageBuilder;
+import cc.lixiaohui.share.protocol.util.builder.HeartbeatBuilder;
 
 /**
  * 心跳, 无任何负载
@@ -11,11 +11,13 @@ public class HeartbeatMessage extends Message {
 
 	private static final long serialVersionUID = -6719463444605674904L;
 	
-	public HeartbeatMessage(HeartbeatMessageBuilder builder) {
+	public HeartbeatMessage() {}
+	
+	public HeartbeatMessage(HeartbeatBuilder builder) {
 		super(builder);
 	}
 	
-	public static HeartbeatMessageBuilder builder() {
-		return new HeartbeatMessageBuilder();
+	public static HeartbeatBuilder builder() {
+		return new HeartbeatBuilder();
 	}
 }

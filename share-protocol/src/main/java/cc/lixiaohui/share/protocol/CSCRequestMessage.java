@@ -1,6 +1,6 @@
 package cc.lixiaohui.share.protocol;
 
-import cc.lixiaohui.share.protocol.util.builder.CSCRequestMessageBuilder;
+import cc.lixiaohui.share.protocol.util.builder.CSCRequestBuilder;
 
 /**
  * 客户端 -> 服务器 -> 客户端转发消息请求
@@ -21,7 +21,9 @@ public class CSCRequestMessage extends RequestMessage {
 	private long requestTime;
 
 	
-	public CSCRequestMessage(CSCRequestMessageBuilder builder) {
+	public CSCRequestMessage(){}
+	
+	public CSCRequestMessage(CSCRequestBuilder builder) {
 		super(builder);
 		this.toUserId = builder.toUserId();
 		this.text = builder.text();
@@ -70,7 +72,7 @@ public class CSCRequestMessage extends RequestMessage {
 		this.requestTime = requestTime;
 	}
 	
-	public static CSCRequestMessageBuilder builder() {
-		return new CSCRequestMessageBuilder();
+	public static CSCRequestBuilder builder() {
+		return new CSCRequestBuilder();
 	}
 }

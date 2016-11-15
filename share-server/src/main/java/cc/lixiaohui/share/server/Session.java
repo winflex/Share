@@ -2,7 +2,6 @@ package cc.lixiaohui.share.server;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
-import cc.lixiaohui.share.server.handler.SessionAttacher;
 import cc.lixiaohui.share.util.IBuilder;
 import cc.lixiaohui.share.util.TimeUtils;
 
@@ -35,6 +34,11 @@ public class Session {
 	private volatile String username; 
 	
 	/**
+	 * 是否是管理员
+	 */
+	private volatile boolean admin;
+	
+	/**
 	 * 自己是否屏蔽了自己
 	 */
 	private volatile boolean selfShield; 
@@ -60,6 +64,13 @@ public class Session {
 	 */
 	private volatile long lastAccessTime;
 
+	/**
+	 * 管理该Session的SessionManager
+	 */
+	private SessionManager sessionManager;
+	
+	private volatile boolean handshaked;
+	
 	
 	public Session(SessionBuilder builder) {
 		this.sessionId = builder.sessionId();
@@ -69,6 +80,9 @@ public class Session {
 		this.logined = builder.isLogined();
 		this.userId = builder.userId();
 		this.username = builder.username();
+		this.admin = builder.admin();
+		this.sessionManager = builder.sessionManager();
+		this.handshaked = builder.handshaked();
 	}
 	
 	public boolean login(int userId, String username, boolean selfShield, boolean adminShield) {
@@ -103,7 +117,7 @@ public class Session {
 	 */
 	public void destroy() {
 		if (context != null) {
-			context.attr(SessionAttacher.ATTR_SESSION).set(null);
+			context.attr(SessionManager.ATTR_SESSION).set(null);
 		}
 	}
 	
@@ -136,6 +150,14 @@ public class Session {
 		this.adminShield = adminSheild;
 	}
 
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
 	public long getSessionId() {
 		return sessionId;
 	}
@@ -157,20 +179,6 @@ public class Session {
 	 */
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}
-
-	/**
-	 * @return the ctx
-	 */
-	public ChannelHandlerContext getCtx() {
-		return context;
-	}
-
-	/**
-	 * @param ctx the ctx to set
-	 */
-	public void setCtx(ChannelHandlerContext ctx) {
-		this.context = ctx;
 	}
 
 	/**
@@ -204,9 +212,22 @@ public class Session {
 		this.username = username;
 	}
 	
-	/* 
-	 * @see java.lang.Object#toString()
-	 */
+	public SessionManager getSessionManager() {
+		return sessionManager;
+	}
+
+	public void setSessionManager(SessionManager sessionManager) {
+		this.sessionManager = sessionManager;
+	}
+
+	public boolean isHandshaked() {
+		return handshaked;
+	}
+
+	public void setHandshaked(boolean handshaked) {
+		this.handshaked = handshaked;
+	}
+
 	@Override
 	public String toString() {
 		
@@ -240,9 +261,24 @@ public class Session {
 		
 		private boolean adminShield;
 		
+		private SessionManager sessionManager;
+		
+		private boolean handshaked;
+		
+		private boolean admin;
+		
 		@Override
 		public Session build() {
 			return new Session(this);
+		}
+
+		public boolean handshaked() {
+			return handshaked;
+		}
+
+		public SessionBuilder handshaked(boolean handshaked) {
+			this.handshaked = handshaked;
+			return this;
 		}
 
 		public long sessionId() {
@@ -323,6 +359,24 @@ public class Session {
 		
 		public SessionBuilder adminShield(boolean adminShield) {
 			this.adminShield = adminShield;
+			return this;
+		}
+		
+		public SessionBuilder sessionManager(SessionManager manager) {
+			this.sessionManager = manager;
+			return this;
+		}
+		
+		public SessionManager sessionManager() {
+			return sessionManager;
+		}
+		
+		public boolean admin() {
+			return admin;
+		}
+		
+		public SessionBuilder admin(boolean admin) {
+			this.admin = admin;
 			return this;
 		}
 	}

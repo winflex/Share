@@ -6,6 +6,9 @@ import java.util.Map;
 import cc.lixiaohui.share.model.bean.ForbidenWord;
 import cc.lixiaohui.share.model.dao.ForbidenWordDao;
 import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.service.util.ServiceException;
+import cc.lixiaohui.share.server.service.util.annotation.Procedure;
+import cc.lixiaohui.share.server.service.util.annotation.Service;
 import cc.lixiaohui.share.util.ErrorCode;
 import cc.lixiaohui.share.util.JSONUtils;
 
@@ -18,6 +21,7 @@ import com.alibaba.fastjson.JSONObject;
  * @author lixiaohui
  * @date 2016年11月12日 上午12:14:50
  */
+@Service(name = "ForbidenWordService")
 public class ForbidenWordService extends AbstractService {
 
 	public ForbidenWordService(Session session, Map<String, Object> parameters) {
@@ -48,6 +52,7 @@ public class ForbidenWordService extends AbstractService {
 	 * @return 
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "getForbidenWords")
 	public String getForbidenWords() {
 		int start;
 		int limit;
@@ -76,6 +81,7 @@ public class ForbidenWordService extends AbstractService {
 	 * @param limit
 	 * @return
 	 */
+	@Procedure(name = "getDeletedForbidenWords")
 	public String getDeletedForbidenWords() {
 		int start;
 		int limit;
@@ -104,6 +110,7 @@ public class ForbidenWordService extends AbstractService {
 	 * @param id
 	 * @return
 	 */
+	@Procedure(name = "deleteForbidenWord")
 	public String deleteForbidenWord() {
 		
 		int id;
@@ -136,6 +143,7 @@ public class ForbidenWordService extends AbstractService {
 	 * @param id
 	 * @return
 	 */
+	@Procedure(name = "recoverForbidenWord")
 	public String recoverForbidenWord() {
 		int id;
 		try {

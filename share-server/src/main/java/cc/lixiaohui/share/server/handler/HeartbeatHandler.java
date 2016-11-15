@@ -9,9 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import cc.lixiaohui.share.core.config.SocketConfig;
-import cc.lixiaohui.share.protocol.HandShakeMessage;
+import cc.lixiaohui.share.protocol.HandShakeRequestMessage;
+import cc.lixiaohui.share.protocol.HandshakeResponseMessage;
 import cc.lixiaohui.share.protocol.HeartbeatMessage;
 import cc.lixiaohui.share.protocol.Message;
+import cc.lixiaohui.share.server.SessionManager;
 
 /**
  * 心跳处理器
@@ -25,7 +27,7 @@ import cc.lixiaohui.share.protocol.Message;
  */
 public class HeartbeatHandler extends SimpleChannelInboundHandler<Message> {
 	
-	private final Message connMessage;
+	private final Message handShakeMessage;
 	
 	private SocketConfig config;
 	
@@ -37,7 +39,7 @@ public class HeartbeatHandler extends SimpleChannelInboundHandler<Message> {
 	
 	public HeartbeatHandler(SocketConfig config) {
 		this.config = config;
-		connMessage = HandShakeMessage.builder().heartbeatInterval(config.getHeartbeatInterval()).build();
+		handShakeMessage = HandShakeRequestMessage.builder().heartbeatInterval(config.getHeartbeatInterval()).build();
 		maxIdleSeconds = config.getHeartbeatInterval() * config.getMaxHeartbeatMissTimes();
 	}
 	
@@ -45,14 +47,22 @@ public class HeartbeatHandler extends SimpleChannelInboundHandler<Message> {
 	protected void channelRead0(ChannelHandlerContext ctx, Message msg) throws Exception {
 		clearCount(ctx);
 		// 过滤heartbeat
-		if (! (msg instanceof HeartbeatMessage)) {
-			ctx.fireChannelRead(msg);
+		if (msg instanceof HeartbeatMessage) { // 心跳
+			logger.debug("recieved heartbeat from {}", ctx.channel());
+			return;
 		}
+		if (msg instanceof HandshakeResponseMessage) { // 握手响应
+			ctx.attr(SessionManager.ATTR_SESSION).get().setHandshaked(true);
+			return;
+		}
+		ctx.fireChannelRead(msg);
 	}
 
-	
 	@Override
 	public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+		/*
+		 * TODO 此处只可能有read idle, 情况发生时应该判断之前发生的idle次数, 若到达阈值, 则关闭该连接
+		 */
 		if (evt instanceof IdleStateEvent) {
 			IdleStateEvent event = (IdleStateEvent) evt;
 			switch (event.state()) {
@@ -75,8 +85,11 @@ public class HeartbeatHandler extends SimpleChannelInboundHandler<Message> {
 	
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
+		/*
+		 * TODO channel刚连接时, 给其发个握手包
+		 */
 		ctx.channel().attr(ATTR_MISS_TIMES).set(0);
-		ctx.writeAndFlush(connMessage);
+		ctx.writeAndFlush(handShakeMessage);
 	}
 	
 	

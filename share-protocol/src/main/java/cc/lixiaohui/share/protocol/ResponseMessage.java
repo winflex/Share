@@ -1,6 +1,6 @@
 package cc.lixiaohui.share.protocol;
 
-import cc.lixiaohui.share.protocol.util.builder.ResponseMessageBuilder;
+import cc.lixiaohui.share.protocol.util.builder.ResponseBuilder;
 
 /**
  * 响应消息基类
@@ -9,19 +9,23 @@ import cc.lixiaohui.share.protocol.util.builder.ResponseMessageBuilder;
  */
 public class ResponseMessage extends Message {
 	
-	/**
-	 * @param builder
-	 */
-	public ResponseMessage(ResponseMessageBuilder builder) {
-		super(builder);
-	}
-
 	private static final long serialVersionUID = 672350874252410119L;
 
 	protected long correlationId;
 	
 	protected String respJson;
 
+	public ResponseMessage() {}
+	
+	/**
+	 * @param builder
+	 */
+	public ResponseMessage(ResponseBuilder builder) {
+		super(builder);
+		this.correlationId = builder.correlationId();
+		this.respJson = builder.responseJson();
+	}
+	
 	/**
 	 * @return the correlationId
 	 */
@@ -50,7 +54,7 @@ public class ResponseMessage extends Message {
 		this.respJson = respJson;
 	}
 	
-	public static ResponseMessageBuilder builder() {
-		return new ResponseMessageBuilder();
+	public static ResponseBuilder builder() {
+		return new ResponseBuilder();
 	}
 }

@@ -1,6 +1,6 @@
 package cc.lixiaohui.share.protocol;
 
-import cc.lixiaohui.share.protocol.util.builder.CSCResponseMessageBuilder;
+import cc.lixiaohui.share.protocol.util.builder.CSCResponseBuilder;
 
 /**
  * 客户端 -> 服务器 -> 客户端消息响应
@@ -14,8 +14,10 @@ public class CSCResponseMessage extends ResponseMessage {
 	/** 目标客户端发出该响应的时间 */
 	private long responseTime;
 
+	
+	public CSCResponseMessage() {}
 
-	public CSCResponseMessage(CSCResponseMessageBuilder builder) {
+	public CSCResponseMessage(CSCResponseBuilder builder) {
 		super(builder);
 		this.responseTime = builder.responseTime();
 	}
@@ -34,7 +36,7 @@ public class CSCResponseMessage extends ResponseMessage {
 		this.responseTime = responseTime;
 	}
 	
-	public static CSCResponseMessageBuilder builder() {
-		return new CSCResponseMessageBuilder();
+	public static CSCResponseBuilder builder() {
+		return new CSCResponseBuilder();
 	}
 }

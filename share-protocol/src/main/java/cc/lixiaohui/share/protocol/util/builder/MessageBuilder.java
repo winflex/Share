@@ -13,14 +13,8 @@ public class MessageBuilder implements IBuilder<Message>{
 	
 	protected Map<String, Serializable> properties = new HashMap<String, Serializable>();
 
-	
 	public long id() {
 		return id;
-	}
-
-	public MessageBuilder id(long id) {
-		this.id = id;
-		return this;
 	}
 
 	public MessageBuilder property(String key, Serializable value) {
@@ -41,9 +35,6 @@ public class MessageBuilder implements IBuilder<Message>{
 		return this;
 	}
 
-	/* 
-	 * @see cc.lixiaohui.share.util.IBuilder#build()
-	 */
 	@Override
 	public Message build() {
 		return new Message(this);

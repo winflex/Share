@@ -13,6 +13,7 @@ public class PushMessage extends Message {
 	
 	private String pushData;
 	
+	public PushMessage() {}
 	
 	public PushMessage(PushMessageBuilder builder) {
 		super(builder);

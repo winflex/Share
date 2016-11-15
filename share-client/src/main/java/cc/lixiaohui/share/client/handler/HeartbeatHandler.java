@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 
 import cc.lixiaohui.share.protocol.HeartbeatMessage;
 import cc.lixiaohui.share.protocol.Message;
-import cc.lixiaohui.share.protocol.util.IDGenerator;
 
 /**
  * @author lixiaohui
@@ -40,7 +39,7 @@ public class HeartbeatHandler extends ChannelInboundHandlerAdapter {
 	}
 
 	private void writeHeartbeat(ChannelHandlerContext ctx) {
-		Message heartbeat = HeartbeatMessage.builder().id(IDGenerator.generate()).build();
+		Message heartbeat = HeartbeatMessage.builder().build();
 		ctx.channel().writeAndFlush(heartbeat).addListener(new ChannelFutureListener() {
 			
 			@Override

@@ -1,65 +1,105 @@
 package cc.lixiaohui.share.server;
 
+import io.netty.util.AttributeKey;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import cc.lixiaohui.share.core.config.SessionConfig;
 import cc.lixiaohui.share.util.TimeUtils;
-import cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle;
-import cc.lixiaohui.share.util.lifecycle.LifeCycleException;
 
 /**
  * 会话管理者
  * @author lixiaohui
  * @date 2016年11月7日 下午11:36:13
  */
-public class SessionManager extends AbstractLifeCycle{
+public class SessionManager {
+	
+	public static final AttributeKey<Session> ATTR_SESSION = new AttributeKey<Session>("Session");
 	
 	private final AtomicLong SESSION_ID_GENERATOR = new AtomicLong(0);
 	
-	private SessionConfig config;
+	private SessionConfig sessionConfig;
 	
 	/**
-	 * 所有由该SessionManager管理的Session
+	 * 所有由该SessionManager管理的Session, key为sessionId而不是userId因为一个session不一定有userId, 因为未登录也能执行某些操作
 	 */
 	private Map<Long, Session> sessions = new ConcurrentHashMap<Long, Session>();
 	
-	/**
-	 * 超时守护者
-	 */
-	private TimeoutGuardian timeoutGuardian;
+	private static final Logger logger = LoggerFactory.getLogger(SessionManager.class);
 	
 	
 	public SessionManager(SessionConfig config) {
-		this.config = config;
+		this.sessionConfig = config;
 	}
 	
 	
-	@Override
-	protected void initInternal() throws LifeCycleException {
-		if (config.getTimeout() > 0) {
-			timeoutGuardian = new TimeoutGuardian();
+	/**
+	 * 根据用户Id获取Session, 若返回非null值的话就一定说明该session是已登陆的
+	 * @param userId yonghuID
+	 * @return 关联的Session或null, 如果没有任何关联的话
+	 */
+	public Session getSessionByUserId(int userId) {
+		for (Session session : sessions.values()) {
+			if (!session.isLogined()) {
+				continue;
+			}
+			if (session.getUserId() == userId) {
+				return session;
+			}
 		}
+		return null;
 	}
 	
-	@Override
-	protected void startInternal() throws LifeCycleException {
-		if (timeoutGuardian != null) {
-			timeoutGuardian.start();
+	/**
+	 * 根据session的id获取session
+	 * @param sessionId 
+	 * @return 关联的session
+	 */
+	public Session getSessionBySessionId(long sessionId) {
+		return sessions.get(sessionId);
+	}
+	
+	/**
+	 * 判断用户是否登陆
+	 * @param userId
+	 * @return
+	 */
+	public boolean isUserLogined(int userId) {
+		for (Session session : sessions.values()) {
+			if (session.isLogined() && session.getUserId() == userId) {
+				return true;
+			}
 		}
+		return false;
 	}
 	
-	@Override
-	protected void destroyInternal() throws LifeCycleException {
-		if (timeoutGuardian != null) {
-			timeoutGuardian.stop();
-		}
-		sessions.clear();
-	}
-	
+	/**
+	 * 新增Session
+	 * @param session
+	 */
 	public void addSession(Session session) {
 		sessions.put(session.getSessionId(), session);
+	}
+	
+	/**
+	 * 移除Session
+	 * @param sessionId
+	 */
+	public void removeSession(long sessionId) {
+		sessions.remove(sessionId);
+	}
+	
+	/**
+	 * 移除session
+	 * @param session
+	 */
+	public void removeSession(Session session) {
+		sessions.remove(session.getSessionId());
 	}
 	
 	public void addSessionIfAbsent(Session session) {
@@ -68,27 +108,18 @@ public class SessionManager extends AbstractLifeCycle{
 		}
 	}
 	
-	public Session getSession(int userId) {
-		return sessions.get(userId);
-	}
-	
-	public Session removeSession(int userId) {
-		return sessions.remove(userId);
-	}
-	
-	public boolean contains(int userId) {
-		return sessions.containsKey(userId);
-	}
-	
-	private boolean isTimeout(Session session) {
-		return session.getLastAccessTime() + config.getTimeout() > TimeUtils.currentTimeMillis();
-	}
-	
 	public long generateId() {
 		return SESSION_ID_GENERATOR.getAndIncrement();
 	}
 	
-	private class TimeoutGuardian implements Runnable{
+	public SessionConfig getSessionConfig() {
+		return sessionConfig;
+	}
+	
+	/**
+	 * 会话超时探测任务
+	 */
+	public class TimeoutGuardian implements Runnable{
 		
 		private Thread worker;
 		
@@ -107,7 +138,8 @@ public class SessionManager extends AbstractLifeCycle{
 		public void run() {
 			while (!stop) {
 				for (Session session : sessions.values()) {
-					if (isTimeout(session)) {
+					if (TimeUtils.isTimeout(session.getLastAccessTime(), sessionConfig.getTimeout())) {
+						logger.info("session timeout, removed {}", session);
 						removeSession(session.getUserId());
 					}
 				}

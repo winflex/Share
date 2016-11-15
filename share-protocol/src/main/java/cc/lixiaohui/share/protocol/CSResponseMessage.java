@@ -1,6 +1,6 @@
 package cc.lixiaohui.share.protocol;
 
-import cc.lixiaohui.share.protocol.util.builder.CSResponseMessageBuilder;
+import cc.lixiaohui.share.protocol.util.builder.CSResponseBuilder;
 
 /**
  * 
@@ -11,11 +11,13 @@ public class CSResponseMessage extends ResponseMessage {
 
 	private static final long serialVersionUID = -5387210902045864975L;
 
-	public CSResponseMessage(CSResponseMessageBuilder builder) {
+	public CSResponseMessage() {}
+	
+	public CSResponseMessage(CSResponseBuilder builder) {
 		super(builder);
 	}
 
-	public static CSResponseMessageBuilder builder() {
-		return new CSResponseMessageBuilder();
+	public static CSResponseBuilder builder() {
+		return new CSResponseBuilder();
 	}
 }

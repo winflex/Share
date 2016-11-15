@@ -9,10 +9,12 @@ import cc.lixiaohui.share.protocol.util.builder.MessageBuilder;
  */
 public class RequestMessage extends Message {
 
+	private static final long serialVersionUID = 3052323457401526369L;
+	
+	public RequestMessage() {}
+	
 	public RequestMessage(MessageBuilder builder) {
 		super(builder);
 	}
 
-	private static final long serialVersionUID = 3052323457401526369L;
-	
 }

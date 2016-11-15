@@ -8,6 +8,16 @@ package cc.lixiaohui.share.core.config;
 public class SessionConfig {
 	
 	private long timeout = 0;
+	
+	private long messageTimeout = 20 * 1000;
+
+	public long getMessageTimeout() {
+		return messageTimeout;
+	}
+
+	public void setMessageTimeout(long messageTimeout) {
+		this.messageTimeout = messageTimeout;
+	}
 
 	/**
 	 * @return the timeout

@@ -18,6 +18,11 @@ import cc.lixiaohui.share.server.Session;
 public abstract class AbstractService {
 	
 	/**
+	 * 所有服务类的构造参数
+	 */
+	public static final Class<?>[] CONSTRUCTOR_TYPES = new Class<?>[]{Session.class, Map.class};
+	
+	/**
 	 * 管理员权限ID最大值(0=super, 1=admin, any other are normal)
 	 */
 	protected static final int ADMIN_THRESHOLD = 1;

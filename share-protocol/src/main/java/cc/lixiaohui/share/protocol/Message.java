@@ -3,6 +3,7 @@ package cc.lixiaohui.share.protocol;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
 
 import cc.lixiaohui.share.protocol.util.builder.MessageBuilder;
 
@@ -16,6 +17,8 @@ public class Message implements Serializable{
 	
 	private static final long serialVersionUID = 4308692138692271553L;
 	
+	private static final AtomicLong ID_GENERATOR = new AtomicLong(0);
+	
 	/**
 	 * 消息唯一标识
 	 */
@@ -26,8 +29,13 @@ public class Message implements Serializable{
 	 */
 	protected Map<String, Serializable> properties = new HashMap<String, Serializable>();
 	
+	/**
+	 * 必须有无参构造方法
+	 */
+	public Message(){}
+	
 	public Message(MessageBuilder builder) {
-		this.id = builder.id();
+		this.id = ID_GENERATOR.getAndIncrement();
 		this.properties = builder.properties();
 	}
 
@@ -38,13 +46,6 @@ public class Message implements Serializable{
 		return id;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(long id) {
-		this.id = id;
-	}
-	
 	public static MessageBuilder builder() {
 		return new MessageBuilder();
 	}

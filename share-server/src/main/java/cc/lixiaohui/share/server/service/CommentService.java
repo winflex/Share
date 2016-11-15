@@ -3,11 +3,15 @@ package cc.lixiaohui.share.server.service;
 import java.util.Map;
 
 import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.service.util.ServiceException;
+import cc.lixiaohui.share.server.service.util.annotation.Procedure;
+import cc.lixiaohui.share.server.service.util.annotation.Service;
 
 /**
  * @author lixiaohui
  * @date 2016年11月11日 下午10:00:25
  */
+@Service(name = "CommentService")
 public class CommentService extends AbstractService {
 
 	public CommentService(Session session, Map<String, Object> parameters) {
@@ -48,6 +52,7 @@ public class CommentService extends AbstractService {
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "getCommentOfShare")
 	public String getCommentOfShare() throws ServiceException {
 		return null;
 	}
@@ -87,6 +92,7 @@ public class CommentService extends AbstractService {
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "getCommentOfUser")
 	public String getCommentOfUser() throws ServiceException {
 		return null;
 	}
@@ -97,6 +103,7 @@ public class CommentService extends AbstractService {
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "deleteCommentOfUser")
 	public String deleteCommentOfUser() throws ServiceException {
 		return null;
 	}
@@ -106,6 +113,7 @@ public class CommentService extends AbstractService {
 	 * {}
 	 * @return
 	 */
+	@Procedure(name = "commentUser")
 	public String commentUser() throws ServiceException{
 		return null;
 	}
@@ -115,6 +123,7 @@ public class CommentService extends AbstractService {
 	 * {}
 	 * @return 
 	 */
+	@Procedure(name = "commentShare")
 	public String commentShare() throws ServiceException{
 		return null;
 	}

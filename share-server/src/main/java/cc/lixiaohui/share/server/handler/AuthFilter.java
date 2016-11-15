@@ -3,7 +3,9 @@ package cc.lixiaohui.share.server.handler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
+import java.lang.reflect.Method;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import cc.lixiaohui.share.protocol.Message;
@@ -16,7 +18,12 @@ import cc.lixiaohui.share.protocol.Message;
  */
 public class AuthFilter extends SimpleChannelInboundHandler<Message> {
 
-	private static Set<Class<? extends Message>> strictMessageMap = new HashSet<Class<? extends Message>>();
+	
+	private final Map<String, Method> PROCEDURE_MAP;
+	
+	public AuthFilter(Map<String, Method> map) {
+		this.PROCEDURE_MAP = map;
+	}
 	
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, Message msg) throws Exception {

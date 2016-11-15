@@ -7,6 +7,9 @@ import cc.lixiaohui.share.model.dao.PictureDao;
 import cc.lixiaohui.share.model.dao.util.DaoException;
 import cc.lixiaohui.share.server.Session;
 import cc.lixiaohui.share.server.SystemRuntime;
+import cc.lixiaohui.share.server.service.util.ServiceException;
+import cc.lixiaohui.share.server.service.util.annotation.Procedure;
+import cc.lixiaohui.share.server.service.util.annotation.Service;
 import cc.lixiaohui.share.util.ErrorCode;
 import cc.lixiaohui.share.util.FileUtils;
 import cc.lixiaohui.share.util.JSONUtils;
@@ -20,6 +23,7 @@ import com.alibaba.fastjson.JSONObject;
  * @author lixiaohui
  * @date 2016年11月7日 下午9:50:47
  */
+@Service(name = "PictureService")
 public class PictureService extends AbstractService{
 	
 	public PictureService(Session session, Map<String, Object> parameters) {
@@ -36,6 +40,7 @@ public class PictureService extends AbstractService{
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "uploadPicture")
 	public String uploadPicture() throws ServiceException {
 		int userId;
 		String suffix = null;
@@ -116,6 +121,7 @@ public class PictureService extends AbstractService{
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "getPictures")
 	public String getPictures() throws ServiceException {
 		boolean ignoreIfNotExist;
 		int[] pictureIds = null;
@@ -167,6 +173,7 @@ public class PictureService extends AbstractService{
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "deletePicture")
 	public String deletePicture() throws ServiceException {
 		int pictureId;
 		try {

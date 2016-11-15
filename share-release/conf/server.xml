@@ -30,7 +30,10 @@
 	
 	<session>
 		<!-- 会话超时时间ms, 设置0不启用会话超时 -->
-		<timeout>1000 * 60 * 60</timeout>
+		<timeout>0</timeout>
+		
+		<!-- 消息发出后多久没收到响应就认为超时, 单位ms -->
+		<messageTimeout>10000</messageTimeout>
 	</session>
 	
 	<!-- 数据库相关配置 -->

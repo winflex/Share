@@ -4,18 +4,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.alibaba.fastjson.JSONObject;
-
 import cc.lixiaohui.share.model.bean.Share;
 import cc.lixiaohui.share.model.dao.ShareDao;
 import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.service.util.ServiceException;
+import cc.lixiaohui.share.server.service.util.annotation.Procedure;
+import cc.lixiaohui.share.server.service.util.annotation.Service;
 import cc.lixiaohui.share.util.ErrorCode;
 import cc.lixiaohui.share.util.JSONUtils;
+
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * @author lixiaohui
  * @date 2016年11月11日 下午10:09:41
  */
+@Service(name = "ShareService")
 public class ShareService extends AbstractService {
 	
 	public static final Map<Integer, String> ORDER_FIELD_MAP = new HashMap<Integer, String>();
@@ -72,6 +76,7 @@ public class ShareService extends AbstractService {
 	 * 
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "getShares")
 	public String getShares() throws ServiceException {
 		String keyword = null;
 		int orderColumn = -1;
@@ -163,6 +168,7 @@ public class ShareService extends AbstractService {
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "getShare")
 	public String getShare() throws ServiceException {
 		return null;
 	}
@@ -175,6 +181,7 @@ public class ShareService extends AbstractService {
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "deleteShare")
 	public String deleteShare() throws ServiceException {
 		return null;
 	}
@@ -189,6 +196,7 @@ public class ShareService extends AbstractService {
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "publishShare")
 	public String publishShare() throws ServiceException {
 		return null;
 	}

@@ -41,12 +41,19 @@ public class JSONUtils {
 	}
 	
 	public static String newFailureResult(String errorMessage, ErrorCode errorCode, String exceptionMessage) {
+		return newFailureResult(errorMessage, errorCode, exceptionMessage, null);
+	}
+	
+	public static String newFailureResult(String errMessage ,ErrorCode errorCode, String exceptionMessage, JSONObject result) {
 		JSONObject json = new JSONObject();
 		json.put(K_STATUS, V_STATUS_ERR);
 		json.put(K_TIMESTAMP, TimeUtils.currentTimeMillis());
-		json.put(K_ERRMSG, errorMessage);
+		json.put(K_ERRMSG, errMessage);
 		json.put(K_ERRCODE, errorCode == null ? ErrorCode.UNKOWN.getValue() : errorCode.getValue());
 		json.put(K_EXPMSG, exceptionMessage);
+		if (result != null) {
+			json.put(K_RESULT, result);
+		}
 		return json.toJSONString();
 	}
 	

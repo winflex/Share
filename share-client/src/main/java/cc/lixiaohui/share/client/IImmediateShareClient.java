@@ -61,11 +61,10 @@ public interface IImmediateShareClient{
 		 *   "status":0,
 		 *   "timestamp":1434232243,
 		 *   "msg":"成功发送",
-		 *   "origin":					# 原始发送的消息
-		 *   	{
-		 *   		"toUserId":2,
-		 *   		"content":"在吗?"
-		 *   	}
+		 *   "result":
+		 *     {
+		 *       "origin": {"toUserId":2, "content":"你好"}	# 原始消息
+		 *     }
 		 * }
 		 * 2.发送失败时:
 		 * {
@@ -74,11 +73,10 @@ public interface IImmediateShareClient{
 		 *   "errmsg":"发送消息出错啦"		# 出错信息
 		 *   "errcode":1,				# 错误码
 		 *   "expmsg":"异常信息"			# 异常信息, 该域不一定有值
-		 *   "origin":					# 原始发送的消息
-		 *   	{
-		 *   		"toUserId":2,
-		 *   		"content":"在吗?"
-		 *   	}
+		 *   "result":
+		 *     {
+		 *       "origin": {"toUserId":2, "content":"你好"}	# 原始消息
+		 *     }
 		 * }
 		 * @param reason 失败原因描述
 		 */

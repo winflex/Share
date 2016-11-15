@@ -6,6 +6,9 @@ import java.util.Map;
 import cc.lixiaohui.share.model.bean.Sorting;
 import cc.lixiaohui.share.model.dao.SortingDao;
 import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.service.util.ServiceException;
+import cc.lixiaohui.share.server.service.util.annotation.Procedure;
+import cc.lixiaohui.share.server.service.util.annotation.Service;
 import cc.lixiaohui.share.util.ErrorCode;
 import cc.lixiaohui.share.util.JSONUtils;
 
@@ -18,6 +21,7 @@ import com.alibaba.fastjson.JSONObject;
  * @author lixiaohui
  * @date 2016年11月11日 下午10:28:55
  */
+@Service(name = "SortingService")
 public class SortingService extends AbstractService {
 
 	public SortingService(Session session, Map<String, Object> parameters) {
@@ -46,6 +50,7 @@ public class SortingService extends AbstractService {
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "getSortings")
 	public String getSortings() {
 		try {
 			SortingDao dao = daofactory.getDao(SortingDao.class);
@@ -75,6 +80,7 @@ public class SortingService extends AbstractService {
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "deleteSorting")
 	public String deleteSorting() throws ServiceException {
 		int sortingId;
 		try {

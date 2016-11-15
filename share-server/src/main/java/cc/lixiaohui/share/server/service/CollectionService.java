@@ -3,11 +3,15 @@ package cc.lixiaohui.share.server.service;
 import java.util.Map;
 
 import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.service.util.ServiceException;
+import cc.lixiaohui.share.server.service.util.annotation.Procedure;
+import cc.lixiaohui.share.server.service.util.annotation.Service;
 
 /**
  * @author lixiaohui
  * @date 2016年11月11日 下午10:24:56
  */
+@Service(name = "CollectionService")
 public class CollectionService extends AbstractService {
 
 	public CollectionService(Session session, Map<String, Object> parameters) {
@@ -37,6 +41,7 @@ public class CollectionService extends AbstractService {
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "getUserCollection")
 	public String getUserCollection() throws ServiceException {
 		return null;
 	}
@@ -66,6 +71,7 @@ public class CollectionService extends AbstractService {
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "getShareCollection")
 	public String getShareCollection() throws ServiceException {
 		return null;
 	}
@@ -78,6 +84,7 @@ public class CollectionService extends AbstractService {
 	 * @return
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "unCollectUser")
 	public String unCollectUser() throws ServiceException {
 		return null;
 	}
@@ -88,6 +95,7 @@ public class CollectionService extends AbstractService {
 	 * {}
 	 * </pre>
 	 */
+	@Procedure(name = "unCollectionShare")
 	public String unCollectionShare() throws ServiceException {
 		return null;
 	}

@@ -16,4 +16,7 @@ public class TimeUtils {
 		return time.getTime();
 	}
 	
+	public static boolean isTimeout(long base, long timeout) {
+		return base + timeout < System.currentTimeMillis();
+	}
 }

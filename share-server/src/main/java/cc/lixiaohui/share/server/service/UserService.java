@@ -10,6 +10,9 @@ import cc.lixiaohui.share.model.bean.User;
 import cc.lixiaohui.share.model.dao.PictureDao;
 import cc.lixiaohui.share.model.dao.UserDao;
 import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.service.util.ServiceException;
+import cc.lixiaohui.share.server.service.util.annotation.Procedure;
+import cc.lixiaohui.share.server.service.util.annotation.Service;
 import cc.lixiaohui.share.util.EncryptUtils;
 import cc.lixiaohui.share.util.ErrorCode;
 import cc.lixiaohui.share.util.JSONUtils;
@@ -20,6 +23,7 @@ import cc.lixiaohui.share.util.TimeUtils;
  * @author lixiaohui
  * @date 2016年11月7日 下午9:46:23
  */
+@Service(name = "UserService")
 public class UserService extends AbstractService{
 	
 	public UserService(Session session, Map<String, Object> parameters) {
@@ -48,6 +52,7 @@ public class UserService extends AbstractService{
 	 * </pre>
 	 * @throws ServiceException
 	 */
+	@Procedure(name = "getUser")
 	public String getUser() throws ServiceException{
 		int userId = 0;
 		try {
@@ -80,6 +85,7 @@ public class UserService extends AbstractService{
 	 * @param headImageId, nullable
 	 * @return {}
 	 */
+	@Procedure(name = "updateUser")
 	public String updateUser() {
 		int userId = session.getUserId(); // 从session中取userId
 		
@@ -140,6 +146,7 @@ public class UserService extends AbstractService{
 	 * @param userId int, !nullable
 	 * @return {}
 	 */
+	@Procedure(name = "shield")
 	public String shield() {
 		int userId;
 		try {
@@ -186,6 +193,7 @@ public class UserService extends AbstractService{
 	 * @return {}
 	 * 
 	 */
+	@Procedure(name = "unshield")
 	public String unshield() {
 		int userId;
 		try {
@@ -262,6 +270,7 @@ public class UserService extends AbstractService{
 	 * </pre>
 	 * @return
 	 */
+	@Procedure(name = "getFriends")
 	public String getFriends() {
 		return null;
 	}
@@ -270,6 +279,7 @@ public class UserService extends AbstractService{
 	 * @param friendId int, !nullable
 	 * @return {}
 	 */
+	@Procedure(name = "deleteFriends")
 	public String deleteFriend() {
 		return null;
 	}

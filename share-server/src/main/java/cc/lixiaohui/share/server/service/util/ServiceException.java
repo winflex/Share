@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.server.service;
+package cc.lixiaohui.share.server.service.util;
 
 /**
  * @author lixiaohui

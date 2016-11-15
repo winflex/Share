@@ -21,7 +21,13 @@ public enum ErrorCode {
 	
 	PARAMETER(4),
 	
-	RESOURCE_NOT_FOUND(5);
+	RESOURCE_NOT_FOUND(5),
+	
+	SERVICE(6),
+	
+	SERVICE_NOT_FOUND(7),
+	
+	TIMEOUT(8);
 	
 	private int value;
 	

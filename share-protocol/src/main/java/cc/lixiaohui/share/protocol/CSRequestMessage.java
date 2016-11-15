@@ -1,6 +1,6 @@
 package cc.lixiaohui.share.protocol;
 
-import cc.lixiaohui.share.protocol.util.builder.CSRequestMessageBuilder;
+import cc.lixiaohui.share.protocol.util.builder.CSRequestBuilder;
 import cc.lixiaohui.share.util.PropertyMap;
 
 /**
@@ -12,64 +12,50 @@ public class CSRequestMessage extends RequestMessage {
 	
 	private static final long serialVersionUID = -3458168037521527779L;
 
-	public CSRequestMessage(CSRequestMessageBuilder builder) {
+	public CSRequestMessage() {}
+	
+	public CSRequestMessage(CSRequestBuilder builder) {
 		super(builder);
 	}
 	
 	/**
 	 * 调用的服务名
 	 */
-	private String serviceName;
+	private String service;
 	
 	/**
 	 * 调用的过程名
 	 */
-	private String procedureName;
+	private String procedure;
 	
 	/**
 	 * 参数
 	 */
-	private PropertyMap parameters = new PropertyMap();
-	
+	private PropertyMap parameterMap = new PropertyMap();
 
-	/**
-	 * @return the serviceName
-	 */
-	public String getServiceName() {
-		return serviceName;
+	
+	public String getService() {
+		return service;
 	}
-	/**
-	 * @param serviceName the serviceName to set
-	 */
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
+
+	public void setService(String service) {
+		this.service = service;
 	}
-	/**
-	 * @return the procedureName
-	 */
-	public String getProcedureName() {
-		return procedureName;
+
+	public String getProcedure() {
+		return procedure;
 	}
-	/**
-	 * @param procedureName the procedureName to set
-	 */
-	public void setProcedureName(String procedureName) {
-		this.procedureName = procedureName;
+
+	public void setProcedure(String procedure) {
+		this.procedure = procedure;
 	}
-	/**
-	 * @return the parameters
-	 */
-	public PropertyMap getParameters() {
-		return parameters;
+
+	public PropertyMap getParameterMap() {
+		return parameterMap;
 	}
-	/**
-	 * @param parameters the parameters to set
-	 */
-	public void setParameters(PropertyMap parameters) {
-		this.parameters = parameters;
+
+	public void setParameterMap(PropertyMap parameters) {
+		this.parameterMap = parameters;
 	}
 	
-	public static CSRequestMessageBuilder builder() {
-		return new CSRequestMessageBuilder();
-	}
 }
