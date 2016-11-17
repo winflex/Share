@@ -1,18 +1,16 @@
 package cc.lixiaohui.share.client;
 
-import java.io.InputStream;
+import java.util.Collection;
 
+import cc.lixiaohui.share.client.util.ClientException;
 import cc.lixiaohui.share.util.lifecycle.LifeCycle;
 
 /**
  * <pre>
  * 代表客户端
  * 用例:
- * <pre>
- * IShareClient client = new ShareClientBuilder("localohst", 9999).build();
- * </pre>
- * 
- * 更多参数配置可参考{@link IConfiguration}
+ * IShareClient client = ShareClientProxy.getInstance("127.0.0.1", 9999);
+ * client.send(1, "在吗?");
  * 
  * 返回json说明:
  * 成功时:json中都会包含status, timestamp, msg, result字段:
@@ -29,9 +27,8 @@ import cc.lixiaohui.share.util.lifecycle.LifeCycle;
  *   "status":0,
  *   "timestamp":14434243232,
  *   "msg":获取数据成功,
- *   "result":{}    # 内容取决于具体接口
+ *   "result":{}    # 内容取决于具体方法
  * }
- * 
  * 2.失败时:
  * {
  *   "status":1
@@ -40,12 +37,11 @@ import cc.lixiaohui.share.util.lifecycle.LifeCycle;
  *   "errcode":1          							# 错误码
  *   "expmsg":"java.lang.NullPointerException..."	# 异常信息, 该域不一定有值
  * }
- * 
  * </pre>
  * @date 2016年10月31日 下午3:53:34
  * @author lixiaohui
  */
-public interface IShareClient extends LifeCycle, IImmediateShareClient{ 
+public interface IShareClient extends LifeCycle, IImmediateShareClient { 
 	
 	// *****************************************************************
 	// *********************** Log Operations *************************
@@ -62,7 +58,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 *  }
 	 * </pre>
 	 */
-	String register(String username, String password) throws ShareClientException;
+	String register(String username, String password) throws ClientException;
 	
 	/**
 	 * 登陆
@@ -75,7 +71,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * }
 	 * </pre>
 	 */
-	String login(String username, String password) throws ShareClientException;
+	String login(String username, String password) throws ClientException;
 	
 	/**
 	 * 注销
@@ -83,9 +79,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * {
 	 * 
 	 * }
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String logout() throws ShareClientException;
+	String logout() throws ClientException;
 	
 	
 	// *****************************************************************
@@ -111,7 +107,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * }
 	 * </pre>
 	 */
-	String getUser(int userId) throws ShareClientException;
+	String getUser(int userId) throws ClientException;
 	
 	/**
 	 * 更新用户信息, 要上传
@@ -123,9 +119,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * <pre>
 	 * {}
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String updateUser(String password, String sex, String signature, int headImageId) throws ShareClientException;
+	String updateUser(String password, String sex, String signature, int headImageId) throws ClientException;
 	
 	/**
 	 * 隔离某用户, 主要是给管理员使用
@@ -134,9 +130,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * <pre>
 	 * {}
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String shield(int userId) throws ShareClientException;
+	String shield(int userId) throws ClientException;
 	
 	
 	// *****************************************************************
@@ -186,7 +182,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * }
 	 * </pre>
 	 */
-	String getShares(String keyword, int orderColumn, int orderType, int start, int limit) throws ShareClientException;
+	String getShares(String keyword, int orderColumn, int orderType, int start, int limit) throws ClientException;
 
 	/**
 	 * 获取某个分享的所有信息
@@ -230,9 +226,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 *     }
 	 * }
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String getShare(int shareId) throws ShareClientException;
+	String getShare(int shareId) throws ClientException;
 	
 	/**
 	 * 删除分享
@@ -241,9 +237,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * <pre>
 	 * {}
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String deleteShare(int shareId) throws ShareClientException;
+	String deleteShare(int shareId) throws ClientException;
 	
 	/**
 	 * 发布分享
@@ -255,9 +251,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 *     "id":321                  # 发布的分享的ID
 	 * }
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String publishShare(String content, int[] picturesIds) throws ShareClientException;
+	String publishShare(String content, int[] picturesIds) throws ClientException;
 	
 	
 	// *****************************************************************
@@ -295,13 +291,13 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 *     "fromUserId":1             # 评论者ID
 	 *     "fromUsername":"lixiaohui" # 评论者用户名
 	 *     "toUserId":2               # 被评论的用户ID
-	 *     "toUsername":"zhangsan"    # 被评论的用户ID
+	 *     "toUsername":"zhangsan"    # 被评论的用户名
 	 *    }
 	 *   ]
 	 * }
 	 * </pre>
 	 */
-	String getCommentOfShare(int shareId, int start, int limit) throws ShareClientException;
+	String getCommentOfShare(int shareId, int start, int limit) throws ClientException;
 	
 	/**
 	 * 获取用户的评论
@@ -340,7 +336,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 *     }
 	 * </pre> 
 	 */
-	String getCommentOfUser(int start, int limit) throws ShareClientException;
+	String getCommentOfUser(int start, int limit) throws ClientException;
 	
 	/**
 	 * 
@@ -349,9 +345,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * <pre>
 	 * {}
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String deleteCommentOfUser(int commentId) throws ShareClientException;
+	String deleteCommentOfUser(int commentId) throws ClientException;
 	
 	/**
 	 * 评论某用户(回复某用户)
@@ -362,9 +358,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * <pre>
 	 * {}
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String commentUser(int shareId, String content, int toUserId) throws ShareClientException;
+	String commentUser(int shareId, String content, int toUserId) throws ClientException;
 	
 	/**
 	 * 评论某分享
@@ -374,9 +370,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * <pre>
 	 * {}
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String commentShare(int shareId, String content) throws ShareClientException;
+	String commentShare(int shareId, String content) throws ClientException;
 	
 	
 	// *****************************************************************
@@ -418,16 +414,16 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 *     }
 	 * </pre>
 	 */
-	String getFriends(int userId, int start, int limit) throws ShareClientException;
+	String getFriends(int userId, int start, int limit) throws ClientException;
 	
 	/**
 	 * 删除好友
 	 * @param friendId 好友ID
 	 * @return json, result内容如下:
 	 * {}
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String deleteFriend(int friendId) throws ShareClientException;
+	String deleteFriend(int friendId) throws ClientException;
 	
 	
 	// *****************************************************************
@@ -443,22 +439,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 *     "id":2
 	 * }
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String uploadPicture(String suffix, byte[] bytes) throws ShareClientException;
-	
-	/**
-	 * 上传单张图片
-	 * @param in 图片输入流
-	 * @return json, result内容如下:
-	 * <pre>
-	 * {
-	 *     "id":2                        # 图片ID
-	 * }
-	 * </pre>
-	 * @throws ShareClientException
-	 */
-	String uploadPicture(InputStream in) throws ShareClientException;
+	String uploadPicture(String suffix, byte[] bytes) throws ClientException;
 	
 	/**
 	 * 根据ID获取图片
@@ -486,7 +469,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 *     }
 	 * </pre>
 	 */
-	String getPictures(boolean ignoreIfNotExist, int[] pictureIds) throws ShareClientException;
+	String getPictures(boolean ignoreIfNotExist, int[] pictureIds) throws ClientException;
 	
 	/**
 	 * 删除图片
@@ -495,9 +478,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * <pre>
 	 * {}
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String deletePicture(int pictureId) throws ShareClientException;
+	String deletePicture(int pictureId) throws ClientException;
 	
 	
 	// *****************************************************************
@@ -527,9 +510,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 *         ]
 	 *     }
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String getUserCollection(int start, int limit) throws ShareClientException;
+	String getUserCollection(int start, int limit) throws ClientException;
 	
 	/**
 	 * 获取用户收藏的分享
@@ -556,9 +539,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 *         ]
 	 *     }
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String getShareCollection(int start, int limit) throws ShareClientException;
+	String getShareCollection(int start, int limit) throws ClientException;
 	
 	/**
 	 * 取消对用户的收藏
@@ -567,9 +550,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * <pre>
 	 * {}
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String unCollectUser(int userId) throws ShareClientException;
+	String unCollectUser(int userId) throws ClientException;
 	
 	/**
 	 * 取消对分享的收藏
@@ -578,9 +561,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * <pre>
 	 * {}
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String unCollectionShare(int shareId) throws ShareClientException;
+	String unCollectShare(int shareId) throws ClientException;
 	
 	
 	// *****************************************************************
@@ -608,9 +591,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 *         ]
 	 *     }
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String getSortings() throws ShareClientException;
+	String getSortings() throws ClientException;
 	
 	
 	// *****************************************************************
@@ -635,9 +618,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 *  ]
 	 * }
 	 * </pre>
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String getForbidenWords(int start, int limit) throws ShareClientException;
+	String getForbidenWords(int start, int limit) throws ClientException;
 	
 	/**
 	 * 获取已删除的敏感词
@@ -645,25 +628,31 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient{
 	 * @param limit
 	 * @return 和 {@link #getForbidenWords(int, int)} 一样
 	 * 
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String getDeletedForbidenWords(int start, int limit) throws ShareClientException;
+	String getDeletedForbidenWords(int start, int limit) throws ClientException;
 	
 	/**
 	 * 删除敏感词
 	 * @param wordId 敏感词ID
 	 * @return 
 	 * {}
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String deleteForbidendWord(int wordId) throws ShareClientException;
+	String deleteForbidendWord(int wordId) throws ClientException;
 	
 	/**
 	 * 恢复删除的敏感词
 	 * @param wordId 敏感词ID
 	 * @return 
 	 * {}
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	String recoverForbidendWord(int wordId) throws ShareClientException;
+	String recoverForbidendWord(int wordId) throws ClientException;
+	
+	void addConnectionListener(IConnectionListener l);
+	
+	void addConnectionListeners(Collection<IConnectionListener> listeners);
+	
+	void removeConnectionListener(IConnectionListener l);
 }

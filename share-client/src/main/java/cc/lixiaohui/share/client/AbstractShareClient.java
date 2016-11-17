@@ -4,6 +4,7 @@ import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
+import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -12,15 +13,30 @@ import io.netty.handler.timeout.IdleStateHandler;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cc.lixiaohui.share.client.handler.ShareMessageHandler;
+import cc.lixiaohui.share.client.handler.HeartbeatHandler;
+import cc.lixiaohui.share.client.handler.IMessageHandler;
+import cc.lixiaohui.share.client.handler.MessageDispatcher;
+import cc.lixiaohui.share.client.util.ClientException;
+import cc.lixiaohui.share.client.util.ResponseFuture;
+import cc.lixiaohui.share.protocol.CSCRequestMessage;
+import cc.lixiaohui.share.protocol.CSCResponseMessage;
+import cc.lixiaohui.share.protocol.CSResponseMessage;
+import cc.lixiaohui.share.protocol.HandShakeRequestMessage;
+import cc.lixiaohui.share.protocol.HandshakeResponseMessage;
+import cc.lixiaohui.share.protocol.Message;
+import cc.lixiaohui.share.protocol.PushMessage;
 import cc.lixiaohui.share.protocol.codec.MessageDecoder;
 import cc.lixiaohui.share.protocol.codec.MessageEncoder;
 import cc.lixiaohui.share.protocol.codec.serialize.factory.ISerializeFactory;
+import cc.lixiaohui.share.util.JSONUtils;
+import cc.lixiaohui.share.util.TimeUtils;
 import cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle;
 import cc.lixiaohui.share.util.lifecycle.LifeCycleException;
 import cc.lixiaohui.share.util.lifecycle.LifeCycleState;
@@ -32,9 +48,11 @@ import cc.lixiaohui.share.util.lifecycle.LifeCycleState;
  * @author lixiaohui
  * @date 2016年10月31日 下午3:59:56
  */
-public abstract class AbstractShareClient extends AbstractLifeCycle implements IShareClient {
+public abstract class AbstractShareClient extends AbstractLifeCycle implements IShareClient, IMessageHandler {
 
-	protected IConfiguration config;
+	protected String host;
+	
+	protected int port;
 	
 	/**
 	 * 是否连接到服务端
@@ -51,7 +69,21 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	protected Bootstrap bootstrap;
 	protected NioEventLoopGroup workerGroup;
 	
+	protected volatile boolean handshaked;
+	protected HandShakeRequestMessage handshakeMessage;
+	
+	/**
+	 * 消息监听器集
+	 */
 	protected Collection<IMessageListener> messageListeners = new ArrayList<IMessageListener>();
+	
+	/**
+	 * 已发送但还未接收到响应的消息
+	 * messageId -> MessageCache
+	 */
+	private final Map<Long, ResponseFuture> futures = new ConcurrentHashMap<Long, ResponseFuture>();
+	
+	private Collection<IConnectionListener> connectionListeners = new ArrayList<IConnectionListener>();
 	
 	protected ISerializeFactory serializeFactory;
 	
@@ -59,11 +91,14 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	protected static final String HN_DECODER = "ShareMessageDecoder";
 	protected static final String HN_ENCODER = "ShareMessageEncoder";
 	protected static final String HN_REQUEST = "RequestHandler";
+	protected static final String HN_HEARTBEAT = "Heartbeat";
 	
+	private static final String DEFAULT_SERIALIZE_FACTORY = "cc.lixiaohui.share.protocol.codec.serialize.factory.HessianSerializeFactory";
 	protected static final Logger logger = LoggerFactory.getLogger(AbstractShareClient.class);
 	
-	protected AbstractShareClient(IConfiguration config) {
-		this.config = config;
+	protected AbstractShareClient(String host, int port) {
+		this.host = host;
+		this.port = port;
 	}
 	
 	@Override
@@ -77,22 +112,23 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	@SuppressWarnings("unchecked")
 	private ISerializeFactory createSerializeFactory() throws LifeCycleException {
 		try {
-			Class<ISerializeFactory> clazz = (Class<ISerializeFactory>) Class.forName(config.serializeFactoryClass());
+			Class<ISerializeFactory> clazz = (Class<ISerializeFactory>) Class.forName(DEFAULT_SERIALIZE_FACTORY);
 			return clazz.newInstance();
 		} catch (Exception e) {
-			logger.error("unable to instantiate SerializeFactory by class name {}, cause: {}", config.serializeFactoryClass(), e.getMessage());
+			logger.error("unable to instantiate SerializeFactory by class name {}, cause: {}", DEFAULT_SERIALIZE_FACTORY, e.getMessage());
 			throw new LifeCycleException(e);
 		}
 	}
 
 	private void initGroup() {
 		logger.debug("Initializing Group");
-		workerGroup = new NioEventLoopGroup(config.ioThreads());
+		workerGroup = new NioEventLoopGroup(1);
 		logger.debug("Group Initialized");
 	}
 
 	private void initBootstrap() {
 		logger.debug("Initializing Bootstrap");
+		bootstrap = new Bootstrap();
 		bootstrap.group(workerGroup);
 		bootstrap.channel(NioSocketChannel.class);
 		bootstrap.handler(new ChannelInitializer<Channel>() {
@@ -101,12 +137,12 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 			protected void initChannel(Channel ch) throws Exception {
 				ChannelPipeline pl = ch.pipeline();
 				// 心跳
-				pl.addLast(HN_IDLE_STATE, new IdleStateHandler(config.heartbeatInterval(), config.heartbeatInterval(), 0, TimeUnit.MILLISECONDS));
+				//pl.addLast(HN_IDLE_STATE, new IdleStateHandler(config.heartbeatInterval(), config.heartbeatInterval(), 0, TimeUnit.MILLISECONDS));
 				
 				pl.addLast(HN_DECODER, new MessageDecoder(serializeFactory));
 				pl.addLast(HN_ENCODER, new MessageEncoder(serializeFactory));
 				
-				pl.addLast(HN_REQUEST, new ShareMessageHandler(AbstractShareClient.this));
+				pl.addLast(HN_REQUEST, new MessageDispatcher(AbstractShareClient.this));
 			}
 			
 		});
@@ -117,10 +153,12 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	protected void startInternal() throws LifeCycleException {
 		try {
 			doConnect();
-			logger.info("Successfully connected to {}:{}", config.host(), config.port());
+			logger.info("Successfully connected to {}:{}", host, port);
+			fireConnectionConnected();
+			
 		} catch (Exception e) {
 			logger.error("{}", e);
-			throw new LifeCycleException(e);
+			throw new LifeCycleException("无法连接服务器", e);
 		}
 		// 连接已建立
 		channel.closeFuture().addListener(new ChannelFutureListener() {
@@ -142,7 +180,7 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 			return;
 		}
 		
-		channel = bootstrap.connect(config.host(), config.port()).sync().channel();
+		channel = bootstrap.connect(host, port).sync().channel();
 		connected = true;
 	}
 	
@@ -161,20 +199,20 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 			return;
 		}
 		
-		logger.info("trying to reconnect to {}:{}", config.host(), config.port());
+		logger.info("trying to reconnect to {}:{}", host, port);
 		
-		if (config.reconnectTimes() > 0) { // 有限重连
-			for (int i = 0; i < config.reconnectTimes(); i++) {
+		if (handshakeMessage.getReconnectTimes() > 0) { // 有限重连
+			for (int i = 0; i < handshakeMessage.getReconnectTimes(); i++) {
 				try {
 					logger.info("reconnecting...");
 					doReconnect0();
-					logger.info("Successfully reconnected to {}:{} at {}th times trying", config.host(), config.port(), i + 1);
+					logger.info("Successfully reconnected to {}:{} at {}th times trying", host, port, i + 1);
 					return;
 				} catch (Exception e) {
-					logger.info("Unable to reconnect to {}:{} at {}th times trying, cause:{}", config.host(), config.port(), i + 1, e.getMessage());
+					logger.info("Unable to reconnect to {}:{} at {}th times trying, cause:{}", host, port, i + 1, e.getMessage());
 				}
 				// 间隔
-				Thread.sleep(config.reconnectInterval());
+				Thread.sleep(handshakeMessage.getReconnectInterval());
 			}
 		} else { // 无限重连
 			long times = 0;
@@ -183,13 +221,13 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 				try {
 					logger.info("reconnecting...");
 					doReconnect0();
-					logger.info("Successfully reconnected to {}:{} at {}th times trying", config.host(), config.port(), times);
+					logger.info("Successfully reconnected to {}:{} at {}th times trying", host, port, times);
 					return;
 				} catch (Exception e) {
-					logger.info("Unable to reconnect to {}:{} at {}th times trying, cause:{}", config.host(), config.port(), times, e.getMessage());
+					logger.info("Unable to reconnect to {}:{} at {}th times trying, cause:{}", host, port, times, e.getMessage());
 				}
 				// 间隔
-				Thread.sleep(config.reconnectInterval());
+				Thread.sleep(handshakeMessage.getReconnectInterval());
 			}
 		}
 	}
@@ -210,7 +248,77 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 			logger.error("{}", e);
 			throw new LifeCycleException(e);
 		}
+		logger.info("client destroyed");
 	}
+	
+	@Override
+	public void handleCSCRequest(ChannelHandlerContext ctx, CSCRequestMessage message) {
+		// TODO 构造响应
+		CSCResponseMessage resp = CSCResponseMessage.builder().correlationId(message.getId())
+			.responseTime(TimeUtils.currentTimeMillis())
+			.responseJson(JSONUtils.newSuccessfulResult("发送成功")).build();
+		// write response
+		writeMessage(ctx, resp);
+		// notify listeners
+		for (IMessageListener l : messageListeners) {
+			l.onChat(message.getFromUserId(), message.getText(), message.getRequestTime());
+		}
+	}
+	
+	@Override
+	public void handleCSCResponse(ChannelHandlerContext ctx, CSCResponseMessage message) {
+		ResponseFuture future = futures.get(message.getCorrelationId());
+		if (future == null) { 
+			// 没有future关联:1.响应超时了; 2.重复响应; 3.根本就没有请求与该响应对应
+			logger.info("no future correlate to message {}", message);
+			return;
+		}
+		future.responsed(message);
+		logger.debug("future responsed with message {}", message);
+	}
+	
+	@Override
+	public void handleCSResponse(ChannelHandlerContext ctx, CSResponseMessage message) {
+		// TODO
+		ResponseFuture future = futures.get(message.getCorrelationId());
+		if (future == null) { 
+			// 没有future关联:1.响应超时了; 2.重复响应; 3.根本就没有请求与该响应对应
+			logger.info("no future correlate to message {}", message);
+			return;
+		}
+		future.responsed(message);
+		logger.debug("future responsed with message {}", message);
+	}
+	
+	@Override
+	public void handleHandshake(ChannelHandlerContext ctx, HandShakeRequestMessage message) {
+		this.handshakeMessage = message;
+		this.handshaked = true;
+		// 回复响应
+		Message resp = HandshakeResponseMessage.builder().build();
+		writeMessage(ctx.channel(), resp, new ChannelFutureListener() {
+			
+			@Override
+			public void operationComplete(ChannelFuture future) throws Exception {
+				long n = handshakeMessage.getHeartbeatInterval();
+				if (n > 0) { // 是否开启心跳机制
+					future.channel().pipeline().addFirst(HN_IDLE_STATE, new IdleStateHandler(n, 0, 0, TimeUnit.MILLISECONDS));
+					future.channel().pipeline().addLast(HN_HEARTBEAT, new HeartbeatHandler());
+				}
+				logger.info("write handshake response, started to send heartbeat packet");
+				logger.info("connection established {}", future.channel());
+			}
+			
+		});
+		
+	}
+	
+	@Override
+	public void handlePushMessage(ChannelHandlerContext ctx, PushMessage message) {
+		fireOnMessagePushed(message);
+		// TODO 推送消息需要响应???
+	}
+	
 	
 	@Override
 	public void addMessageListener(IMessageListener listener) {
@@ -225,6 +333,94 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	@Override
 	public void removeMessageListener(IMessageListener listener) {
 		messageListeners.remove(listener);
+	}
+	
+	@Override
+	public void addConnectionListener(IConnectionListener l) {
+		this.connectionListeners.add(l);
+	}
+	
+	@Override
+	public void addConnectionListeners(Collection<IConnectionListener> listeners) {
+		this.connectionListeners.addAll(listeners);
+	}
+	
+	@Override
+	public void removeConnectionListener(IConnectionListener l) {
+		this.connectionListeners.remove(l);
+	}
+	
+	protected void putFuture(long id, ResponseFuture future) {
+		futures.put(id, future);
+	}
+	
+	protected ResponseFuture removeFuture(long id) {
+		return futures.remove(id);
+	}
+	
+	protected void checkHandshake() throws ClientException{
+		if (!handshaked) {
+			throw new ClientException("握手未能完成");
+		}
+	}
+	
+	/**
+	 * 往Channel中写Message
+	 */
+	protected void writeMessage(Channel ch, final Message message) {
+		ch.writeAndFlush(message).addListener(new ChannelFutureListener() {
+			
+			@Override
+			public void operationComplete(ChannelFuture future) throws Exception {
+				logger.info("write message {}", message);
+			}
+			
+		});
+	}
+	
+	protected void writeMessage(Channel ch, Message message, ChannelFutureListener l) {
+		ch.writeAndFlush(message).addListener(l);
+	}
+	
+	protected void writeMessage(ChannelHandlerContext ctx, final Message message) {
+		writeMessage(ctx.channel(), message);
+	}
+	
+	protected void fireConnontionClosed(Throwable cause) {
+		for (IConnectionListener l : connectionListeners) {
+			l.onClosed(cause);
+		}
+	}
+	
+	protected void fireConnectionConnected() {
+		for (IConnectionListener l : connectionListeners) {
+			l.onConnected();
+		}
+	}
+	
+	
+	protected void fireOnMessagePushed(PushMessage message) {
+		for (IMessageListener l : messageListeners) {
+			switch (message.getType()) {
+			case COMMENT:
+				l.onComment(message.getPushData());
+				break;
+			case FRI_ADD:
+				l.onFriendRequest(message.getPushData());
+				break;
+			case FRI_DEL:
+				l.onFriendDeleted(message.getPushData());
+				break;
+			case PRAISE:
+				l.onPraise(message.getPushData());
+				break;
+			case SHARE:
+				l.onShare(message.getPushData());
+				break;
+			default:
+				break;
+			}
+		}
 	}
 	
 }

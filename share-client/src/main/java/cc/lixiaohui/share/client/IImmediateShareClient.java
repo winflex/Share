@@ -2,6 +2,8 @@ package cc.lixiaohui.share.client;
 
 import java.util.Collection;
 
+import cc.lixiaohui.share.client.util.ClientException;
+
 /**
  * 即时通信客户端接口定义
  * 
@@ -14,18 +16,18 @@ public interface IImmediateShareClient{
 	 * 发送聊天消息给好友
 	 * @param userId 用户ID 
 	 * @param message 消息
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	void send(int userId, String message) throws ShareClientException;
+	void send(int userId, String message) throws ClientException;
 	
 	/**
 	 * 发送聊天消息给好友
 	 * @param userId 用户ID
 	 * @param message 消息
 	 * @param listener 消息监听器
-	 * @throws ShareClientException
+	 * @throws ClientException
 	 */
-	void send(int userId, String message, ISentMessageListener listener) throws ShareClientException;
+	void send(int userId, String message, ISentMessageListener listener) throws ClientException;
 	
 	/**
 	 * 添加消息监听器
@@ -61,10 +63,7 @@ public interface IImmediateShareClient{
 		 *   "status":0,
 		 *   "timestamp":1434232243,
 		 *   "msg":"成功发送",
-		 *   "result":
-		 *     {
-		 *       "origin": {"toUserId":2, "content":"你好"}	# 原始消息
-		 *     }
+		 *   "result":{}
 		 * }
 		 * 2.发送失败时:
 		 * {
