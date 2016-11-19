@@ -1,18 +1,12 @@
 package cc.lixiaohui.share.client.util;
 
-import java.lang.reflect.Method;
-
-import net.sf.cglib.proxy.MethodInterceptor;
-import net.sf.cglib.proxy.MethodProxy;
-import cc.lixiaohui.share.protocol.CSRequestMessage;
-import cc.lixiaohui.share.protocol.Message;
 
 /**
  * 拦截客户端方法, 
  * @author lixiaohui
  * @date 2016年11月16日 下午4:11:51
  */
-public class ShareClientInterceptor implements MethodInterceptor {
+/*public class ShareClientInterceptor implements MethodInterceptor {
 
 	private Method implMethod;
 	
@@ -45,4 +39,4 @@ public class ShareClientInterceptor implements MethodInterceptor {
 		return null;
 	}
 
-}
+}*/
