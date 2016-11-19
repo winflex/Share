@@ -1,12 +1,9 @@
 package cc.lixiaohui.share.protocol.handler.codec;
 
-import java.io.IOException;
-
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelInitializer;
 import io.netty.channel.embedded.EmbeddedChannel;
+
+import java.io.IOException;
 
 import org.junit.Test;
 
@@ -22,6 +19,7 @@ import cc.lixiaohui.share.protocol.codec.serialize.factory.ISerializeFactory;
  */
 public class PipelineTest {
 	
+	@SuppressWarnings("unused")
 	@Test
 	public void test() throws IOException {
 		final ISerializeFactory factory = new HessianSerializeFactory();

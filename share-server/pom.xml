@@ -20,6 +20,11 @@
 			<artifactId>netty-all</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-digester3</artifactId>
+			<version>${digester.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>cc.lixiaohui.share</groupId>
 			<artifactId>share-core</artifactId>
 			<version>${project.version}</version>

@@ -3,8 +3,6 @@ package cc.lixiaohui.share.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import com.alibaba.fastjson.util.Base64;
-
 /**
  * @author lixiaohui
  * @date 2016年11月13日 下午4:54:01

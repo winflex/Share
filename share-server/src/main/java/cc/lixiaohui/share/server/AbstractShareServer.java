@@ -27,7 +27,6 @@ import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cc.lixiaohui.share.core.config.ServerConfig;
 import cc.lixiaohui.share.protocol.CSCRequestMessage;
 import cc.lixiaohui.share.protocol.CSCResponseMessage;
 import cc.lixiaohui.share.protocol.CSRequestMessage;
@@ -36,6 +35,7 @@ import cc.lixiaohui.share.protocol.Message;
 import cc.lixiaohui.share.protocol.codec.MessageDecoder;
 import cc.lixiaohui.share.protocol.codec.MessageEncoder;
 import cc.lixiaohui.share.protocol.codec.serialize.factory.ISerializeFactory;
+import cc.lixiaohui.share.server.config.ServerConfig;
 import cc.lixiaohui.share.server.handler.AuthFilter;
 import cc.lixiaohui.share.server.handler.HandshakeHandler;
 import cc.lixiaohui.share.server.handler.HeartbeatHandler;

@@ -1,8 +1,10 @@
-package cc.lixiaohui.share.core.config.loader.rule;
+package cc.lixiaohui.share.server.config.loader.rule;
 
 import org.apache.commons.digester3.Digester;
 
-import cc.lixiaohui.share.core.config.SocketConfig;
+import cc.lixiaohui.share.server.config.SocketConfig;
+
+
 
 /**
  * SocketConfig配置规则集

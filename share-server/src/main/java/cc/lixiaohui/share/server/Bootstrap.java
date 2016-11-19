@@ -3,9 +3,9 @@ package cc.lixiaohui.share.server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cc.lixiaohui.share.core.config.ConfigException;
-import cc.lixiaohui.share.core.config.ServerConfig;
-import cc.lixiaohui.share.core.config.loader.ServerConfigLoader;
+import cc.lixiaohui.share.server.config.ConfigException;
+import cc.lixiaohui.share.server.config.ServerConfig;
+import cc.lixiaohui.share.server.config.loader.ServerConfigLoader;
 import cc.lixiaohui.share.util.FileUtils;
 import cc.lixiaohui.share.util.lifecycle.LifeCycleException;
 

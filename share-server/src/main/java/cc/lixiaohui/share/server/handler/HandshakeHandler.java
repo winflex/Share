@@ -12,12 +12,12 @@ import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cc.lixiaohui.share.core.config.SocketConfig;
 import cc.lixiaohui.share.protocol.HandShakeRequestMessage;
 import cc.lixiaohui.share.protocol.HandshakeResponseMessage;
 import cc.lixiaohui.share.protocol.Message;
 import cc.lixiaohui.share.server.AbstractShareServer;
 import cc.lixiaohui.share.server.SessionManager;
+import cc.lixiaohui.share.server.config.SocketConfig;
 
 /**
  * 握手处理

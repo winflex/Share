@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.core.config.loader;
+package cc.lixiaohui.share.server.config.loader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,9 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
-import cc.lixiaohui.share.core.config.ConfigException;
-import cc.lixiaohui.share.core.config.ServerConfig;
-import cc.lixiaohui.share.core.config.loader.rule.ServerConfigRuleSet;
+import cc.lixiaohui.share.server.config.ConfigException;
+import cc.lixiaohui.share.server.config.ServerConfig;
+import cc.lixiaohui.share.server.config.loader.rule.ServerConfigRuleSet;
 import cc.lixiaohui.share.util.FileUtils;
 
 /**

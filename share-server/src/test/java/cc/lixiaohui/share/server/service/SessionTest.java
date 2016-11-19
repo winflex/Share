@@ -1,13 +1,10 @@
 package cc.lixiaohui.share.server.service;
 
-import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.junit.Test;
 
-import cc.lixiaohui.share.model.bean.Share;
 import cc.lixiaohui.share.model.bean.User;
 import cc.lixiaohui.share.model.util.HibernateSessionFactory;
 

@@ -7,10 +7,10 @@ import io.netty.handler.timeout.IdleStateEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cc.lixiaohui.share.core.config.SocketConfig;
 import cc.lixiaohui.share.protocol.HeartbeatMessage;
 import cc.lixiaohui.share.protocol.Message;
 import cc.lixiaohui.share.server.SessionManager;
+import cc.lixiaohui.share.server.config.SocketConfig;
 
 /**
  * 心跳处理器

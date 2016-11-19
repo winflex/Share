@@ -20,7 +20,6 @@
 	</properties>
 
 	<modules>
-		<module>../share-core</module>
 		<module>../share-client</module>
 		<module>../share-protocol</module>
 		<module>../share-server</module>

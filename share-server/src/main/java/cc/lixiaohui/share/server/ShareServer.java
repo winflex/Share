@@ -8,12 +8,12 @@ import io.netty.channel.ChannelHandlerContext;
 
 import com.alibaba.fastjson.JSONObject;
 
-import cc.lixiaohui.share.core.config.ServerConfig;
 import cc.lixiaohui.share.protocol.CSCRequestMessage;
 import cc.lixiaohui.share.protocol.CSCResponseMessage;
 import cc.lixiaohui.share.protocol.CSRequestMessage;
 import cc.lixiaohui.share.protocol.CSResponseMessage;
 import cc.lixiaohui.share.protocol.Message;
+import cc.lixiaohui.share.server.config.ServerConfig;
 import cc.lixiaohui.share.server.util.ResponseFuture;
 import cc.lixiaohui.share.util.ErrorCode;
 import cc.lixiaohui.share.util.JSONUtils;

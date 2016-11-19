@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.core.config;
+package cc.lixiaohui.share.server.config;
 
 /**
  * @author lixiaohui
