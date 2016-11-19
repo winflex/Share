@@ -173,6 +173,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	/**
 	 * 获取share列表
 	 * @param keyword 搜索关键字
+	 * @param baseTime 时间戳, 获取发布时间超过该时间的分享
 	 * @param order 排序方式的ID
 	 * @param start 起始条数
 	 * @param limit 返回条数
@@ -213,7 +214,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 * }
 	 * </pre>
 	 */
-	String getShares(String keyword, int orderColumn, int orderType, int start, int limit, boolean deleted) throws ClientException;
+	String getShares(String keyword, long baseTime, int orderColumn, int orderType, int start, int limit, boolean deleted) throws ClientException;
 
 	/**
 	 * 获取某个分享的所有信息

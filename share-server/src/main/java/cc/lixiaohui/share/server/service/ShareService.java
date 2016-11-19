@@ -79,6 +79,7 @@ public class ShareService extends AbstractService {
 	 * </pre>
 	 * String keyword, int orderColumn, int orderType, int start, int limit
 	 * @param keyword String, nullable
+	 * @param baseTime long, nullable
 	 * @param orderColumn int, nullable,
 	 * @param start int, nullable default 0
 	 * @param limit int, nullable default 20
@@ -91,6 +92,7 @@ public class ShareService extends AbstractService {
 	public String getShares() throws ServiceException {
 		try {
 			String keyword = SQLUtils.toLike(getStringParameter("keyword", ""));
+			long baseTime = getLongParameter("baseTime", -1);
 			int orderColumn = getIntParameter("orderColumn", DEFAULT_ORDER_COLUMN_INDEX);
 			int orderType = getIntParameter("orderType", DEFAULT_ORDER_TYPE_INDEX);
 			int start = getIntParameter("start", DEFAULT_START);
@@ -98,7 +100,7 @@ public class ShareService extends AbstractService {
 			boolean deleted = getBooleanParameter("deleted", false);
 			
 			ShareDao dao = daofactory.getDao(ShareDao.class);
-			List<Share> shares = dao.list(keyword, deleted, getOrderFieldName(orderColumn), getOrderType(orderType), start, limit);
+			List<Share> shares = dao.list(keyword, baseTime, deleted, getOrderColumn(orderColumn), getOrderType(orderType), start, limit);
 			return JSONUtils.newSuccessfulResult("获取分享成功", packMultiShare(shares));
 		} catch (Exception e) {
 			logger.error("{}", e);
@@ -130,7 +132,7 @@ public class ShareService extends AbstractService {
 		return result;
 	}
 
-	private String getOrderFieldName(int order) {
+	private String getOrderColumn(int order) {
 		String name = ORDER_FIELD_MAP.get(order);
 		return name == null ? ORDER_FIELD_MAP.get(0) : name;
 	}

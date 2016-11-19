@@ -55,9 +55,9 @@ public class PictureService extends AbstractService{
 			return JSONUtils.newFailureResult(t.getMessage(), ErrorCode.PARAMETER, t);
 		}
 		
-		/*if (!session.isLogined()) {
-			return JSONUtils.newFailureResult("未登录", ErrorCode.AUTH, "");
-		}*/
+		if (!session.isLogined()) {
+			return JSONUtils.newFailureResult("您未登录", ErrorCode.AUTH, "");
+		}
 		String fullPath = null;
 		boolean fileSaved = false;
 		boolean success = false;
@@ -67,11 +67,7 @@ public class PictureService extends AbstractService{
 			fullPath = FileUtils.saveFile(SystemRuntime.picturePath(), generatePictureName(dao, suffix), bytes);
 			fileSaved = true;
 			// 2.保存记录到库
-			Picture picture = new Picture();
-			picture.setPath(fullPath);
-			picture.setSuffix(suffix == null ? "" : suffix);
-			picture.setUploadUserId(userId);
-			
+			Picture picture = newPicture(userId, suffix, fullPath);
 			
 			if (dao.add(picture) > 0) { // 保存成功
 				JSONObject result = new JSONObject();
@@ -94,6 +90,14 @@ public class PictureService extends AbstractService{
 				}
 			}
 		}
+	}
+
+	private Picture newPicture(int userId, String suffix, String fullPath) {
+		Picture picture = new Picture();
+		picture.setPath(fullPath);
+		picture.setSuffix(suffix == null ? "" : suffix);
+		picture.setUploadUserId(userId);
+		return picture;
 	}
 	
 	/**

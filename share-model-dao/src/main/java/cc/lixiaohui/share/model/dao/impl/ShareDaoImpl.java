@@ -40,7 +40,7 @@ public class ShareDaoImpl extends AbstractDeleteableDao<Share> implements ShareD
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Share> list(String keyword, boolean deleted, String orderColumn, String orderType, int start, int limit) throws DaoException {
+	public List<Share> list(String keyword, long baseTime, boolean deleted, String orderColumn, String orderType, int start, int limit) throws DaoException {
 		Session session = getSession();
 		return session.createQuery("from Share where content like :keyword and deleted = :deleted order by " + orderColumn + " " + orderType)
 			.setParameter("keyword", keyword).setParameter("deleted", deleted)

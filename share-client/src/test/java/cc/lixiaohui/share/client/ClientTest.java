@@ -21,7 +21,7 @@ public class ClientTest {
 		String json1 = client.login("李小辉", "lixiaohui");
 		System.out.println(json1);
 		
-		String json2 = client.getShares(null, 0, 0, 0, 20, false);
+		String json2 = client.getShares(null, 0, 0, 0, 0, 20, false);
 		System.out.println(json2);
 		System.in.read();
 	}
