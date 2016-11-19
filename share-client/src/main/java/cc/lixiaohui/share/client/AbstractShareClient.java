@@ -40,6 +40,7 @@ import cc.lixiaohui.share.protocol.codec.serialize.factory.ISerializeFactory;
 import cc.lixiaohui.share.util.JSONUtils;
 import cc.lixiaohui.share.util.NamedThreadFactory;
 import cc.lixiaohui.share.util.TimeUtils;
+import cc.lixiaohui.share.util.future.AbstractFuture;
 import cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle;
 import cc.lixiaohui.share.util.lifecycle.LifeCycleException;
 import cc.lixiaohui.share.util.lifecycle.LifeCycleState;
@@ -97,6 +98,8 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	protected static final String HN_ENCODER = "ShareMessageEncoder";
 	protected static final String HN_REQUEST = "RequestHandler";
 	protected static final String HN_HEARTBEAT = "Heartbeat";
+
+	private final HandShakeFuture handShakeFuture = new HandShakeFuture();
 	
 	private static final String DEFAULT_SERIALIZE_FACTORY = "cc.lixiaohui.share.protocol.codec.serialize.factory.HessianSerializeFactory";
 	protected static final Logger logger = LoggerFactory.getLogger(AbstractShareClient.class);
@@ -168,6 +171,7 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 			logger.error("{}", e);
 			throw new LifeCycleException("无法连接服务器", e);
 		}
+		
 		// 连接已建立
 		channel.closeFuture().addListener(new ChannelFutureListener() {
 			
@@ -181,6 +185,15 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 			}
 			
 		});
+		
+		// wait for handshake to complete for 10 seconds
+		try {
+			handShakeFuture.await(10 * 1000);
+		} catch (InterruptedException e) {
+			logger.error("{}", e);
+			throw new LifeCycleException(e);
+		}
+		// 到这里说明握手已完成
 	}
 
 	protected synchronized void doConnect() throws Exception{
@@ -300,7 +313,7 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	}
 	
 	@Override
-	public void handleHandshake(ChannelHandlerContext ctx, HandShakeRequestMessage message) {
+	public void handleHandshake(final ChannelHandlerContext ctx, HandShakeRequestMessage message) {
 		this.handshakeMessage = message;
 		this.handshaked = true;
 		// 回复响应
@@ -317,6 +330,9 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 				logger.info("write handshake response, started to send heartbeat packet");
 				logger.info("connection established {}", future.channel());
 				// TODO 连接真正建立
+				
+				handShakeFuture.setHandShaked(true);
+				
 				fireConnectionConnected();
 			}
 			
@@ -455,4 +471,16 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 		
 	}
 	
+	
+	private class HandShakeFuture extends AbstractFuture<Boolean> {
+		
+		public void setHandShaked(boolean handshaked) {
+			setSuccess(handshaked);
+		}
+		
+		@SuppressWarnings("unused")
+		public void failed(Throwable t) {
+			setFailure(t);
+		}
+	}
 }
