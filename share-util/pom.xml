@@ -31,10 +31,6 @@
 			<plugin>
 				<artifactId>maven-source-plugin</artifactId>
 			</plugin>
-			<!-- generate javadoc -->
-			<plugin>
-				<artifactId>maven-javadoc-plugin</artifactId>
-			</plugin>
 		</plugins>
 	</build>
 </project>

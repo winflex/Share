@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import org.slf4j.Logger;
@@ -36,6 +38,7 @@ import cc.lixiaohui.share.protocol.codec.MessageDecoder;
 import cc.lixiaohui.share.protocol.codec.MessageEncoder;
 import cc.lixiaohui.share.protocol.codec.serialize.factory.ISerializeFactory;
 import cc.lixiaohui.share.util.JSONUtils;
+import cc.lixiaohui.share.util.NamedThreadFactory;
 import cc.lixiaohui.share.util.TimeUtils;
 import cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle;
 import cc.lixiaohui.share.util.lifecycle.LifeCycleException;
@@ -87,6 +90,8 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	
 	protected ISerializeFactory serializeFactory;
 	
+	protected ExecutorService executor;
+	
 	protected static final String HN_IDLE_STATE = "IdleStateHandler";
 	protected static final String HN_DECODER = "ShareMessageDecoder";
 	protected static final String HN_ENCODER = "ShareMessageEncoder";
@@ -104,6 +109,9 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	@Override
 	protected void initInternal() throws LifeCycleException {
 		super.initInternal();
+		
+		executor = Executors.newSingleThreadExecutor(new NamedThreadFactory("Client-Worker"));
+		
 		serializeFactory = createSerializeFactory();
 		initGroup();
 		initBootstrap();
@@ -142,7 +150,7 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 				pl.addLast(HN_DECODER, new MessageDecoder(serializeFactory));
 				pl.addLast(HN_ENCODER, new MessageEncoder(serializeFactory));
 				
-				pl.addLast(HN_REQUEST, new MessageDispatcher(AbstractShareClient.this));
+				pl.addLast(HN_REQUEST, new MessageDispatcher(AbstractShareClient.this, executor));
 			}
 			
 		});
@@ -182,6 +190,7 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 		
 		channel = bootstrap.connect(host, port).sync().channel();
 		connected = true;
+		
 	}
 	
 	/**
@@ -307,6 +316,8 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 				}
 				logger.info("write handshake response, started to send heartbeat packet");
 				logger.info("connection established {}", future.channel());
+				// TODO 连接真正建立
+				fireConnectionConnected();
 			}
 			
 		});
@@ -386,41 +397,62 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 		writeMessage(ctx.channel(), message);
 	}
 	
-	protected void fireConnontionClosed(Throwable cause) {
-		for (IConnectionListener l : connectionListeners) {
-			l.onClosed(cause);
-		}
+	protected void fireConnontionClosed(final Throwable cause) {
+		executor.execute(new Runnable() {
+			 
+			@Override
+			public void run() {
+				for (IConnectionListener l : connectionListeners) {
+					l.onClosed(cause);
+				}
+			}
+		});
+		
 	}
 	
 	protected void fireConnectionConnected() {
-		for (IConnectionListener l : connectionListeners) {
-			l.onConnected();
-		}
+		executor.execute(new Runnable() {
+			
+			@Override
+			public void run() {
+				for (IConnectionListener l : connectionListeners) {
+					l.onConnected();
+				}
+			}
+		});
+	
 	}
 	
 	
-	protected void fireOnMessagePushed(PushMessage message) {
-		for (IMessageListener l : messageListeners) {
-			switch (message.getType()) {
-			case COMMENT:
-				l.onComment(message.getPushData());
-				break;
-			case FRI_ADD:
-				l.onFriendRequest(message.getPushData());
-				break;
-			case FRI_DEL:
-				l.onFriendDeleted(message.getPushData());
-				break;
-			case PRAISE:
-				l.onPraise(message.getPushData());
-				break;
-			case SHARE:
-				l.onShare(message.getPushData());
-				break;
-			default:
-				break;
+	protected void fireOnMessagePushed(final PushMessage message) {
+		executor.execute(new Runnable() {
+			
+			@Override
+			public void run() {
+				for (IMessageListener l : messageListeners) {
+					switch (message.getType()) {
+					case COMMENT:
+						l.onComment(message.getPushData());
+						break;
+					case FRI_REQ:
+						l.onFriendRequest(message.getPushData());
+						break;
+					case FRI_DEL:
+						l.onFriendDeleted(message.getPushData());
+						break;
+					case PRAISE:
+						l.onPraise(message.getPushData());
+						break;
+					case SHARE:
+						l.onShare(message.getPushData());
+						break;
+					default:
+						break;
+					}
+				}
 			}
-		}
+		});
+		
 	}
 	
 }

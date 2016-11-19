@@ -25,6 +25,7 @@ echo using server home %SERVER_HOME%
 
 rem find classpaths
 set "CLASSPATH=.;%SERVER_HOME%\conf;%SERVER_HOME%\bin"
+
 cd %SERVER_HOME%\lib
 for /f %%i in ('dir /b /s "*.jar"') do (
   set "CLASSPATH=!CLASSPATH!;%%i"

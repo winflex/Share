@@ -7,20 +7,26 @@
 		<id name="id" type="int" column="id">
 			<generator class="native" />
 		</id>
-		<one-to-one name="publisher" class="cc.lixiaohui.share.model.bean.User" fetch="select" foreign-key="user_id" lazy="false"/>
-		<property name="content" type="java.lang.String" column="content" />
-		<property name="createTime" type="java.sql.Timestamp" column="create_time"/>
-		<property name="praiseCount" type="int" column="praises" />
-		<property name="commentCount" type="int" column="comments" />
+		<many-to-one name="publisher" class="User" fetch="select" column="user_id" lazy="false" />
 		
-		<bag name="praises" inverse="true">
-			<key column="share_id" />
-			<one-to-many class="cc.lixiaohui.share.model.bean.Praise" />
+		<property name="content" type="java.lang.String" column="content" />
+		<property name="createTime" type="java.sql.Timestamp" column="create_time" insert="false" update="false"/>
+		<property name="praiseCount" type="int" column="praises" insert="false"/>
+		<property name="commentCount" type="int" column="comments" insert="false"/>
+		
+		<bag name="pictures" inverse="true" table="share_picture_relation" lazy="false" fetch="join" cascade="delete">
+			<key column="share_id"/>
+			<many-to-many class="Picture" column="picture_id" />
 		</bag>
-		<bag name="comments" inverse="true">
+		<bag name="praises" inverse="true" cascade="delete" fetch="select">
 			<key column="share_id" />
-			<one-to-many class="cc.lixiaohui.share.model.bean.Comment" />
+			<one-to-many class="Praise" />
 		</bag>
+		<bag name="comments" inverse="true" cascade="delete" fetch="select">
+			<key column="share_id" />
+			<one-to-many class="Comment" />
+		</bag>
+		
 		<property name="deleted" type="boolean" column="deleted" />
 	</class>
 

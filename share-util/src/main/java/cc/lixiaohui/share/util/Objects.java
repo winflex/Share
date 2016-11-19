@@ -2,6 +2,8 @@ package cc.lixiaohui.share.util;
 
 public class Objects {
 
+	public static final int[] EMPTY_INT_ARRAY = new int[0];
+	
 	public static void requiredNonNull(Object... objs) {
 		if (objs.length % 2 != 0) {
 			throw new IllegalArgumentException("objs");

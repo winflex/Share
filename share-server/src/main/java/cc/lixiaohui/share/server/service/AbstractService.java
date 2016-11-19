@@ -33,6 +33,10 @@ public abstract class AbstractService {
 	
 	protected DaoFactory daofactory;
 	
+	protected static final int DEFAULT_START = 0;
+	protected static final int DEFAULT_LIMIT = 20;
+	
+	
 	protected static final Logger logger = LoggerFactory.getLogger(AbstractService.class);
 	
 	public AbstractService(Session session, Map<String, Object> parameters) {

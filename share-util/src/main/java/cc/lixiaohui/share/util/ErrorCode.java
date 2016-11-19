@@ -27,7 +27,13 @@ public enum ErrorCode {
 	
 	SERVICE_NOT_FOUND(7),
 	
-	TIMEOUT(8);
+	TIMEOUT(8),
+	
+	USER_NOT_FOUND(9),
+	
+	NAME_EXIST(10),
+	
+	WRONG_NAME_OR_PASSWD(11);
 	
 	private int value;
 	

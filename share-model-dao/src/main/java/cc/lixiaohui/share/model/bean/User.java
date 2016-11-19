@@ -69,7 +69,12 @@ public class User {
 	/**
 	 * 好友
 	 */
-	private List<User> friends;
+	//private List<User> friends;
+	
+	/**
+	 * 好友关系
+	 */
+	//private List<FriendShip> friendShips;
 	 
 	/**
 	 * 我对别人的评论
@@ -81,6 +86,13 @@ public class User {
 	 */
 	private List<Comment> commentsForMe;
 	
+	
+	public User(){}
+	
+	public User(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
 	
 	/**
 	 * @return the id
@@ -296,17 +308,17 @@ public class User {
 
 	/**
 	 * @return the friends
-	 */
+	 *//*
 	public List<User> getFriends() {
 		return friends;
 	}
 
-	/**
+	*//**
 	 * @param friends the friends to set
-	 */
+	 *//*
 	public void setFriends(List<User> friends) {
 		this.friends = friends;
-	}
+	}*/
 	
 	/**
 	 * @return the shares

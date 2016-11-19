@@ -55,6 +55,8 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 * <pre>
 	 *  {
 	 *  	"userId":123     # 注册成功的用户ID
+	 *  	"selfShield":false,		# 自己是否屏蔽了自己
+	 *  	"adminShield":false		# 管理员是否屏蔽了自己
 	 *  }
 	 * </pre>
 	 */
@@ -67,7 +69,9 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 * @return json, 其result如下:
 	 * <pre>
 	 * {
-	 *  "userId":123     # 注册成功的用户ID
+	 * 		"userId":123     # 注册成功的用户ID
+	 *  	"selfShield":false,
+	 *  	"adminShield":false
 	 * }
 	 * </pre>
 	 */
@@ -77,7 +81,6 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 * 注销
 	 * @return json, 其result如下:
 	 * {
-	 * 
 	 * }
 	 * @throws ClientException
 	 */
@@ -104,6 +107,8 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 *  },
 	 *  "registerTime":1478666778,        # 注册时间
 	 *  "headImageId":12                  # 头像ID
+	 *  "selfShield":false,					# 自己是否屏蔽了自己
+	 *  "adminShield":false					# 管理员是否屏蔽了自己
 	 * }
 	 * </pre>
 	 */
@@ -133,6 +138,32 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 * @throws ClientException
 	 */
 	String shield(int userId) throws ClientException;
+	
+	/**
+	 * 根据关键字搜索用户(添加朋友时会用到)
+	 * @param keyword 用户名搜索关键字
+	 * @return 
+	 * <pre>
+	 * {
+	 *   "count":1,				# 检索到的用户个数
+	 *   "users":[
+	 *   	{
+	 *   		"userId":1,
+	 *   		"username":"猪八戒",
+	 *   		"sex":"男",
+	 *   		"signature":"呵呵",
+	 *   		"role":{"roleId":1, "description":"普通用户"}
+	 *   		"registerTime":144324324323,
+	 *   		"headImageId":1
+	 *   		"selfShield":false,
+	 *   		"adminShield":false		
+	 *   	}
+	 *   ]
+	 * }
+	 * </pre>
+	 * @throws ClientException
+	 */
+	String searchUser(String keyword, int start, int limit) throws ClientException;
 	
 	
 	// *****************************************************************
@@ -182,7 +213,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 * }
 	 * </pre>
 	 */
-	String getShares(String keyword, int orderColumn, int orderType, int start, int limit) throws ClientException;
+	String getShares(String keyword, int orderColumn, int orderType, int start, int limit, boolean deleted) throws ClientException;
 
 	/**
 	 * 获取某个分享的所有信息
@@ -233,13 +264,14 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	/**
 	 * 删除分享
 	 * @param shareId 分享ID
+	 * @param physically false = 逻辑删除, true = 物理删除
 	 * @return json, result内容如下:
 	 * <pre>
 	 * {}
 	 * </pre>
 	 * @throws ClientException
 	 */
-	String deleteShare(int shareId) throws ClientException;
+	String deleteShare(int shareId, boolean physically) throws ClientException;
 	
 	/**
 	 * 发布分享
@@ -297,46 +329,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 * }
 	 * </pre>
 	 */
-	String getCommentOfShare(int shareId, int start, int limit) throws ClientException;
-	
-	/**
-	 * 获取用户的评论
-	 * 
-	 * @param start 起始条数, 若要获取全部则给start或者limit传负值即可
-	 * @param limit 总条数, 若要获取全部则给start或者limit传负值即可
-	 * @return json, result内容如下:
-	 * <pre>
-	 *     {
-	 *       "count":2
-	 *       "list":
-	 *         [
-	 *           {
-	 *             "id":11,                   # 评论ID
-	 *             "shareId":32               # 所属分享的ID
-	 *             "content":"good!!",        # 评论的内容
-	 *             "kind":0                   # 评论的类型, 0 = 直接评论的分享, 1 = 回复别人的评论
-	 *             "commentTime":1465565576,  # 评论时间
-	 *             "fromUserId":1             # 评论者ID
-	 *             "fromUsername":"lixiaohui" # 评论者用户名
-	 *             "toUserId":2               # 被评论的用户ID
-	 *             "toUsername":"zhangsan"    # 被评论的用户ID
-	 *           },
-	 *           {
-	 *             "id":11,                   # 评论ID
-	 *             "shareId":32               # 所属分享的ID
-	 *             "content":"good!!",        # 评论的内容
-	 *             "kind":0                   # 评论的类型, 0 = 直接评论的分享, 1 = 回复别人的评论
-	 *             "commentTime":1465565576,  # 评论时间
-	 *             "fromUserId":1             # 评论者ID
-	 *             "fromUsername":"lixiaohui" # 评论者用户名
-	 *             "toUserId":2               # 被评论的用户ID
-	 *             "toUsername":"zhangsan"    # 被评论的用户ID
-	 *           }
-	 *         ]
-	 *     }
-	 * </pre> 
-	 */
-	String getCommentOfUser(int start, int limit) throws ClientException;
+	String getComments(int shareId, int start, int limit) throws ClientException;
 	
 	/**
 	 * 
@@ -347,32 +340,22 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 * </pre>
 	 * @throws ClientException
 	 */
-	String deleteCommentOfUser(int commentId) throws ClientException;
-	
-	/**
-	 * 评论某用户(回复某用户)
-	 * @param shareId 所评论的分享的ID
-	 * @param content 评论内容
-	 * @param toUserId 
-	 * @return json, result内容如下:
-	 * <pre>
-	 * {}
-	 * </pre>
-	 * @throws ClientException
-	 */
-	String commentUser(int shareId, String content, int toUserId) throws ClientException;
+	String deleteComment(int commentId) throws ClientException;
 	
 	/**
 	 * 评论某分享
 	 * @param shareId 所评论的分享的ID
 	 * @param content 评论内容
+	 * @param toUserId 回复的目标用户的ID
 	 * @return json, result内容如下:
 	 * <pre>
-	 * {}
+	 * {
+	 *   "commentId":1
+	 * }
 	 * </pre>
 	 * @throws ClientException
 	 */
-	String commentShare(int shareId, String content) throws ClientException;
+	String publishComment(int shareId, int toUserId, String content) throws ClientException;
 	
 	
 	// *****************************************************************
@@ -424,6 +407,18 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 * @throws ClientException
 	 */
 	String deleteFriend(int friendId) throws ClientException;
+	
+	/**
+	 * 添加好友请求
+	 * @param targetUserId 目标用户ID
+	 * @return
+	 * <pre>
+	 * {
+	 * }
+	 * </pre>
+	 * @throws ClientException
+	 */
+	String addFriend(int targetUserId) throws ClientException;
 	
 	
 	// *****************************************************************

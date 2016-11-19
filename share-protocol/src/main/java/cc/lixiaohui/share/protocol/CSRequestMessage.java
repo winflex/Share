@@ -12,12 +12,6 @@ public class CSRequestMessage extends RequestMessage {
 	
 	private static final long serialVersionUID = -3458168037521527779L;
 
-	public CSRequestMessage() {}
-	
-	public CSRequestMessage(CSRequestBuilder builder) {
-		super(builder);
-	}
-	
 	/**
 	 * 调用的服务名
 	 */
@@ -32,7 +26,15 @@ public class CSRequestMessage extends RequestMessage {
 	 * 参数
 	 */
 	private PropertyMap parameterMap = new PropertyMap();
-
+	
+	public CSRequestMessage() {}
+	
+	public CSRequestMessage(CSRequestBuilder builder) {
+		super(builder);
+		this.service = builder.service();
+		this.procedure = builder.procedure();
+		this.parameterMap = builder.parameters();
+	}
 	
 	public String getService() {
 		return service;
@@ -58,4 +60,7 @@ public class CSRequestMessage extends RequestMessage {
 		this.parameterMap = parameters;
 	}
 	
+	public static CSRequestBuilder builder() {
+		return new CSRequestBuilder();
+	}
 }

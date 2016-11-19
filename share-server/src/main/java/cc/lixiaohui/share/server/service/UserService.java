@@ -1,22 +1,26 @@
 package cc.lixiaohui.share.server.service;
 
+import java.util.List;
 import java.util.Map;
 
-import com.alibaba.fastjson.JSONObject;
-
+import cc.lixiaohui.share.model.bean.FriendShip;
 import cc.lixiaohui.share.model.bean.Picture;
 import cc.lixiaohui.share.model.bean.Role;
 import cc.lixiaohui.share.model.bean.User;
+import cc.lixiaohui.share.model.dao.FriendShipDao;
 import cc.lixiaohui.share.model.dao.PictureDao;
 import cc.lixiaohui.share.model.dao.UserDao;
 import cc.lixiaohui.share.server.Session;
 import cc.lixiaohui.share.server.service.util.ServiceException;
 import cc.lixiaohui.share.server.service.util.annotation.Procedure;
 import cc.lixiaohui.share.server.service.util.annotation.Service;
-import cc.lixiaohui.share.util.EncryptUtils;
 import cc.lixiaohui.share.util.ErrorCode;
 import cc.lixiaohui.share.util.JSONUtils;
+import cc.lixiaohui.share.util.SQLUtils;
 import cc.lixiaohui.share.util.TimeUtils;
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * TODO getFriends, deleteFriend
@@ -77,6 +81,30 @@ public class UserService extends AbstractService{
 	}
 
 	/**
+	 * 搜索用户
+	 * 
+	 * @param keyword string, !nullable
+	 * @param start int
+	 * @param limit int 
+	 * @return
+	 */
+	@Procedure(name = "searchUser")
+	public String searchUser() {
+		try {
+			String keyword = SQLUtils.toLike(getStringParameter("keyword"));
+			int start = getIntParameter("start", DEFAULT_START);
+			int limit = getIntParameter("limit", DEFAULT_LIMIT);
+			
+			UserDao userDao = daofactory.getDao(UserDao.class);
+			List<User> users = userDao.search(SQLUtils.toLike(keyword), start, limit);
+			return JSONUtils.newSuccessfulResult("搜索到" + users.size() + "个用户", packSearchResult(users));
+		} catch (Throwable t) {
+			logger.error("{}", t);
+			return JSONUtils.newFailureResult(t.getMessage(), ErrorCode.wrap(t), t);
+		}
+	}
+	
+	/**
 	 * <b><em>Node: need to be logged to perform this operation</em><b>
 	 * 
 	 * @param password String, nullable
@@ -113,14 +141,13 @@ public class UserService extends AbstractService{
 			if (newHeadImage == null) {
 				return JSONUtils.newFailureResult("图片 " + headImageId + " 不存在", ErrorCode.UNKOWN, "");
 			}
-			// 获取当前用户
 			UserDao dao = daofactory.getDao(UserDao.class);
 			User newUser = User.copy(dao.getById(userId));
 			
-			// 设新属性
 			newUser.setHeadImage(newHeadImage);
 			if (password != null) {
-				newUser.setPassword(EncryptUtils.md5(password));
+				//newUser.setPassword(EncryptUtils.md5(password));
+				newUser.setPassword(password);
 			}
 			if (sex != null) {
 				newUser.setSex(sex);
@@ -231,6 +258,44 @@ public class UserService extends AbstractService{
 	}
 	
 	/**
+	 * 添加好友请求
+	 * @param targetUserId int, !nullable
+	 * @return
+	 */
+	@Procedure(name = "addFriend")
+	public String addFriend() {
+		if (!session.isLogined()) {
+			return JSONUtils.newFailureResult("您未登陆", ErrorCode.AUTH, "");
+		}
+		try {
+			int targetUserId = getIntParameter("targetUserId");
+			
+			UserDao dao = daofactory.getDao(UserDao.class);
+			FriendShipDao fsDao = daofactory.getDao(FriendShipDao.class);
+			User fromUser = dao.getById(session.getUserId());
+			User toUser = dao.getById(targetUserId);
+			
+			if (toUser == null) {
+				return JSONUtils.newFailureResult("目标用户不存在", ErrorCode.RESOURCE_NOT_FOUND, "");
+			}
+			
+			FriendShip fs = new FriendShip();
+			fs.setAskUser(fromUser);
+			fs.setAskedUser(toUser);
+			if (fsDao.add(fs) > 0) {
+				// TODO 推送
+				
+				return JSONUtils.newSuccessfulResult("请求已发送");
+			} else {
+				return JSONUtils.newFailureResult("请求发送失败", ErrorCode.UNKOWN, "");
+			}
+		} catch (Throwable t) {
+			logger.error("{}", t);
+			return JSONUtils.newFailureResult(t.getMessage(), ErrorCode.wrap(t), t);
+		}
+	}
+	
+	/**
 	 * <pre>
 	 * int userId, int start, int limit
 	 * {
@@ -285,6 +350,18 @@ public class UserService extends AbstractService{
 	}
 	
 	// -------------------- util methods ------------------
+	
+	private JSONObject packSearchResult(List<User> users) {
+		JSONArray userArray = new JSONArray();
+		for (User user : users) {
+			userArray.add(packSingleUser(user));
+		}
+		
+		JSONObject result = new JSONObject();
+		result.put("count", users.size());
+		result.put("users", userArray);
+ 		return result;
+	}
 	
 	private JSONObject packSingleUser(User user) {
 		JSONObject result = new JSONObject();

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Map;
 
 import cc.lixiaohui.share.protocol.CSCRequestMessage;
+import cc.lixiaohui.share.util.TimeUtils;
 
 /**
  * @author lixiaohui
@@ -13,15 +14,26 @@ public class CSCRequestBuilder extends RequestBuilder {
 	
 	protected int toUserId;
 	
+	protected int fromUserId;
+	
 	protected String text;
 	
-	protected long requestTime;
+	protected long requestTime = TimeUtils.currentTimeMillis();
 
 	@Override
 	public CSCRequestMessage build() {
 		return new CSCRequestMessage(this);
 	}
 	
+	public int fromUserId() {
+		return fromUserId;
+	}
+
+	public CSCRequestBuilder fromUserId(int fromUserId) {
+		this.fromUserId = fromUserId;
+		return this;
+	}
+
 	public int toUserId() {
 		return toUserId;
 	}

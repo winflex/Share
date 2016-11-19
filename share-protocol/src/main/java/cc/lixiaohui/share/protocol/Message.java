@@ -36,12 +36,9 @@ public class Message implements Serializable{
 	
 	public Message(MessageBuilder builder) {
 		this.id = ID_GENERATOR.getAndIncrement();
-		this.properties = builder.properties();
+		this.properties.putAll(builder.properties());
 	}
 
-	/**
-	 * @return the id
-	 */
 	public long getId() {
 		return id;
 	}

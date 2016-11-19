@@ -16,8 +16,6 @@ public class ShareClientInterceptor implements MethodInterceptor {
 
 	private Method implMethod;
 	
-	public ShareClientInterceptor(){
-	}
 	
 	@Override
 	public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {

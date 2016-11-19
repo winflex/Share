@@ -67,7 +67,7 @@ public interface IImmediateShareClient{
 		 * }
 		 * 2.发送失败时:
 		 * {
-		 *   "status":0,
+		 *   "status":1,
 		 *   "timestamp":1443242432,
 		 *   "errmsg":"发送消息出错啦"		# 出错信息
 		 *   "errcode":1,				# 错误码

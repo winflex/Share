@@ -119,6 +119,20 @@
 										<version>${project.version}</version>
 										<overWrite>true</overWrite>
 									</artifactItem>
+									<artifactItem>
+										<groupId>${project.groupId}</groupId>
+										<artifactId>share-protocol</artifactId>
+										<version>${project.version}</version>
+										<overWrite>true</overWrite>
+										<outputDirectory>../doc/client-lib</outputDirectory>
+									</artifactItem>
+									<artifactItem>
+										<groupId>${project.groupId}</groupId>
+										<artifactId>share-util</artifactId>
+										<version>${project.version}</version>
+										<overWrite>true</overWrite>
+										<outputDirectory>../doc/client-lib</outputDirectory>
+									</artifactItem>
 								</artifactItems>
 								<outputDirectory>../share-release/lib</outputDirectory>
 							</configuration>

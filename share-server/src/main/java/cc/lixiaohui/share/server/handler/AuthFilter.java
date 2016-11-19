@@ -27,7 +27,7 @@ public class AuthFilter extends SimpleChannelInboundHandler<Message> {
 	
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, Message msg) throws Exception {
-		
+		ctx.fireChannelRead(msg);
 	}
 
 }

@@ -20,10 +20,12 @@ public class CollectionService extends AbstractService {
 
 	/**
 	 * int start, int limit
+	 * @param start int, nullable default 0
+	 * @param limit int, nullable default 20
 	 * <pre>
 	 * {
 	 *       "count":1,                          # 获取的用户总数
-	 *       "collections":                      # 用户列表
+	 *       "users":                      		 # 用户列表
 	 *         [
 	 *           {
 	 *             "collectionId":12,            # 该收藏ID
@@ -43,6 +45,7 @@ public class CollectionService extends AbstractService {
 	 */
 	@Procedure(name = "getUserCollection")
 	public String getUserCollection() throws ServiceException {
+		
 		return null;
 	}
 	

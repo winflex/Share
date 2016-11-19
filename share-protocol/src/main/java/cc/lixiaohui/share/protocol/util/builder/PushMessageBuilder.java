@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Map;
 
 import cc.lixiaohui.share.protocol.PushMessage;
+import cc.lixiaohui.share.protocol.PushMessage.Type;
 
 /**
  * @author lixiaohui
@@ -11,9 +12,9 @@ import cc.lixiaohui.share.protocol.PushMessage;
  */
 public class PushMessageBuilder extends MessageBuilder {
 	
-	protected String pushData;
+	protected Type type;
 	
-	protected long pushTime;
+	protected String pushData;
 	
 	public String pushData() {
 		return pushData;
@@ -24,12 +25,12 @@ public class PushMessageBuilder extends MessageBuilder {
 		return this;
 	}
 	
-	public long pushTime() {
-		return pushTime;
+	public Type type() {
+		return type;
 	}
-	
-	public PushMessageBuilder pushTime(long pushTime) {
-		this.pushTime = pushTime;
+
+	public PushMessageBuilder type(Type type) {
+		this.type = type;
 		return this;
 	}
 	

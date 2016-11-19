@@ -51,7 +51,7 @@ public class CSRequestBuilder extends RequestBuilder {
 	}
 	
 	public String parameter(String key) {
-		return null;
+		return String.valueOf(parameters.get(key));
 	}
 	
 	public CSRequestBuilder parameter(String key, String value) {

@@ -11,8 +11,11 @@ public class CSCRequestMessage extends RequestMessage {
 	
 	private static final long serialVersionUID = 7284996519467938957L;
 
-	/** 对方的id */
+	/** 目标用户ID */
 	private int toUserId;
+	
+	/** 源用户ID, 由服务器中转时设置 */
+	private int fromUserId;
 	
 	/** 文本消息  */
 	private String text;
@@ -28,6 +31,7 @@ public class CSCRequestMessage extends RequestMessage {
 		this.toUserId = builder.toUserId();
 		this.text = builder.text();
 		this.requestTime = builder.requestTime();
+		this.fromUserId = builder.fromUserId();
 	}
 	
 	/**
@@ -42,6 +46,14 @@ public class CSCRequestMessage extends RequestMessage {
 	 */
 	public void setToUserId(int toUserId) {
 		this.toUserId = toUserId;
+	}
+
+	public int getFromUserId() {
+		return fromUserId;
+	}
+
+	public void setFromUserId(int fromUserId) {
+		this.fromUserId = fromUserId;
 	}
 
 	/**

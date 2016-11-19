@@ -8,7 +8,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 /**
- * <pre>
+ * 异步执行结果的实现, 子类应该覆盖或间接调用{@link #setSuccess(Object)}, {@link #setFailure(Throwable)}这两个方法
+ * 
  * 正常结束时, 若执行的结果不为null, 则result为执行结果; 若执行结果为null, 则result = {@link AbstractFuture#SUCCESS_SIGNAL}
  * 异常结束时, result为 {@link CauseHolder} 的实例;若是被取消而导致的异常结束, 则result为 {@link CancellationException} 的实例, 否则为其它异常的实例
  * 以下情况会使异步操作由未完成状态转至已完成状态, 也就是在以下情况发生时调用notifyAll()方法:
@@ -17,7 +18,6 @@ import java.util.concurrent.TimeoutException;
  * <li>异步操作正常结束时(setSuccess方法)</li>
  * <li>异步操作异常结束时(setFailure方法)</li>
  * </ul>
- * </pre>
  * 
  * @author lixiaohui
  *
@@ -224,6 +224,7 @@ public class AbstractFuture<V> implements IFuture<V> {
 
 				for (;;) {
 					try {
+						// wake up every one ms to see if is done
 						wait(waitTime / 1000000, (int) (waitTime % 1000000));
 					} catch (InterruptedException e) {
 						if (interruptable) {

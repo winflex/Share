@@ -27,11 +27,10 @@ public class MessageDecoder extends ByteToMessageDecoder {
 	@Override
 	protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
 		if (in.readableBytes() > LENGTH_FIELD_LEGNTH) {
-			if (in.readableBytes() > in.getInt(0)) {
-				// consume packet length
-				in.readInt();
-				
-				byte[] bodyBytes = new byte[in.readableBytes()];
+			if (in.readableBytes() >= in.getInt(0) + LENGTH_FIELD_LEGNTH) {
+				int len = in.readInt();
+				byte[] bodyBytes = new byte[len];
+				in.readBytes(bodyBytes, 0, len); // 只读一个整包, 多余字节不处理
 				Object message = factory.get().deserialize(bodyBytes);
 				out.add(message);
 			}

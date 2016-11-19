@@ -71,6 +71,7 @@ public class Session {
 	
 	private volatile boolean handshaked;
 	
+	private int heartbeatMissTimes = 0;
 	
 	public Session(SessionBuilder builder) {
 		this.sessionId = builder.sessionId();
@@ -101,8 +102,6 @@ public class Session {
 		if (!logined) { // 未登陆
 			return false;
 		}
-		this.userId = -1;
-		this.username = null;
 		this.logined = false; 
 		return true;
 	}
@@ -228,15 +227,29 @@ public class Session {
 		this.handshaked = handshaked;
 	}
 
+	public int getHeartbeatMissTimes() {
+		return heartbeatMissTimes;
+	}
+
+	public void clearHeartbeatMissTimes() {
+		this.heartbeatMissTimes = 0;
+	}
+	
+	public void incHeartbeatMissTimes() {
+		++heartbeatMissTimes;
+	}
+	
+	
 	@Override
 	public String toString() {
 		
 		return new StringBuilder("Session[")
 				.append("id").append("=").append(sessionId)
-				.append("logined").append("=").append(logined)
-				.append("username").append("=").append(username)
-				.append("selfShield").append("=").append(selfShield)
-				.append("adminShield").append("=").append(adminShield)
+				.append(", logined").append("=").append(logined)
+				.append(", username").append("=").append(username)
+				.append(", selfShield").append("=").append(selfShield)
+				.append(", adminShield").append("=").append(adminShield)
+				.append(", handshaked").append("=").append(handshaked)
 				.append("]").toString();
 	}
 	

@@ -21,8 +21,8 @@
 		<ioEventThreads>0</ioEventThreads>
 		
 		<!-- 客户端心跳间隔, 客户端每隔heartbeatInterval毫秒就得发一个心跳包来服务端, 服务端若超过maxHeartbeatMissTimes次未收到心跳包, 则关闭该连接 -->
-		<heartbeatInterval>5000</heartbeatInterval>
-		<maxHeartbeatMissTimes>3</maxHeartbeatMissTimes>
+		<heartbeatInterval>100000</heartbeatInterval>
+		<maxHeartbeatMissTimes>10</maxHeartbeatMissTimes>
 		
 		<!-- 序列化工厂 -->
 		<serializeFactoryClass>cc.lixiaohui.share.protocol.codec.serialize.factory.HessianSerializeFactory</serializeFactoryClass>
@@ -33,7 +33,7 @@
 		<timeout>0</timeout>
 		
 		<!-- 消息发出后多久没收到响应就认为超时, 单位ms -->
-		<messageTimeout>10000</messageTimeout>
+		<messageTimeout>30000000</messageTimeout>
 	</session>
 	
 	<!-- 数据库相关配置 -->

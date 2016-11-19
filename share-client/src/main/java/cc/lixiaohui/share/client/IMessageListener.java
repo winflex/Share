@@ -54,6 +54,21 @@ public interface IMessageListener {
 	void onFriendRequest(String json);
 	
 	/**
+	 * 收到之前发的好友请求的答复
+	 * @param json
+	 * json格式:
+	 * <pre>
+	 * 	{
+	 * 		"targetUserId":1,			# 对方用户的ID
+	 * 		"targetUsername":"猪八戒"		# 对方用户名
+	 * 		"accept":false,				# true说明朋友关系确立, false 说明对方拒绝添加, 此时可以通过拿msg字段获取拒绝理由
+	 * 		"msg":"丑拒"					# 说明			
+	 * 	}
+	 * </pre>
+	 */
+	void onFriendResponse(String json);
+	
+	/**
 	 * 收到好友删除通知
 	 * @param json
 	 * <pre>
@@ -74,7 +89,6 @@ public interface IMessageListener {
 	 *     "id":11,                   # 评论ID
 	 *     "shareId":32               # 所属分享的ID
 	 *     "content":"good!!",        # 评论的内容
-	 *     "kind":0                   # 评论的类型, 0 = 直接评论的分享, 1 = 回复别人的评论
 	 *     "commentTime":1465565576,  # 评论时间
 	 *     "fromUserId":1             # 评论者ID
 	 *     "fromUsername":"lixiaohui" # 评论者用户名

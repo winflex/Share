@@ -1,8 +1,5 @@
 package cc.lixiaohui.share.protocol;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import cc.lixiaohui.share.protocol.util.builder.HandShakeRequestBuilder;
 
 /**
@@ -15,21 +12,35 @@ public class HandShakeRequestMessage extends Message {
 
 	private static final long serialVersionUID = 6144729504636857321L;
 
+	private long requestTimeout;
+	
 	private long heartbeatInterval;
 	
 	private int reconnectTimes;
 	
 	private long reconnectInterval;
+	
 
 	public HandShakeRequestMessage(){}
 	
 	public HandShakeRequestMessage(HandShakeRequestBuilder builder) {
 		super(builder);
-		this.heartbeatInterval = builder.heartbeatInterval();
+		heartbeatInterval = builder.heartbeatInterval();
+		requestTimeout = builder.requestTimeout();
+		reconnectInterval = builder.reconnectInterval();
+		reconnectTimes = builder.reconnectTimes();
 	}
 
 	public long getHeartbeatInterval() {
 		return heartbeatInterval;
+	}
+
+	public long getRequestTimeout() {
+		return requestTimeout;
+	}
+
+	public void setRequestTimeout(long requestTimeout) {
+		this.requestTimeout = requestTimeout;
 	}
 
 	public void setHeartbeatInterval(long heartbeatInterval) {

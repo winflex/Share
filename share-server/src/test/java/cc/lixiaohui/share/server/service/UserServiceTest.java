@@ -82,4 +82,27 @@ public class UserServiceTest {
 		System.out.println(session.isSelfShield());
 	}
 	
+	
+	@Test
+	public void search() {
+		Session session = Session.builder().userId(4).build();
+		
+		params.put("keyword", "辉");
+		UserService svc = new UserService(session, params);
+		String json = svc.searchUser();
+		System.out.println(json);
+	}
+	
+	@Test
+	public void addFriend() {
+		Session session = Session.builder().build();
+		session.login(6, "老王", false, false);
+		
+		params.put("targetUserId", 7);
+		
+		UserService svc = new UserService(session, params);
+		String json = svc.addFriend();
+		
+		System.out.println(json);
+	}
 }

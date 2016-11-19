@@ -11,6 +11,8 @@ import cc.lixiaohui.share.protocol.HandShakeRequestMessage;
  */
 public class HandShakeRequestBuilder extends MessageBuilder {
 	
+	private long requestTimeout;
+	
 	private long heartbeatInterval;
 	
 	private int reconnectTimes;
@@ -39,6 +41,15 @@ public class HandShakeRequestBuilder extends MessageBuilder {
 		return reconnectTimes;
 	}
 	
+	public long requestTimeout() {
+		return requestTimeout;
+	}
+
+	public HandShakeRequestBuilder requestTimeout(long requestTimeout) {
+		this.requestTimeout = requestTimeout;
+		return this;
+	}
+
 	public HandShakeRequestBuilder reconnectTimes(int reconnectTimes) {
 		this.reconnectTimes = reconnectTimes;
 		return this;

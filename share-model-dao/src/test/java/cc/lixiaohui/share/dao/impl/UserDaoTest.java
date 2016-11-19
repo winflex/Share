@@ -52,14 +52,6 @@ public class UserDaoTest {
 	
 	@Test
 	public void testFriends() throws Exception {
-		UserDao dao = factory.getDao(UserDao.class);
-		User xiaoming = dao.getById(5);
-		System.out.println(xiaoming);
-		List<User> friends = xiaoming.getFriends();
-		System.out.println(friends);
-		for (User fri : friends) {
-			System.out.println(fri);
-		}
 	}
 
 	private User simpleUser() {

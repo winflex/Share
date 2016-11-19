@@ -50,7 +50,9 @@ public class SessionHandler extends ChannelDuplexHandler{
 	
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
-		newSession(ctx);
+		Session session = newSession(ctx);
+		ctx.channel().attr(SessionManager.ATTR_SESSION).set(session); // attach session
+		sessionManager.addSession(session); // hand it over to manager
 		logger.info("attached session for channel {}", ctx.channel());
 		super.channelActive(ctx);
 	}
@@ -58,8 +60,8 @@ public class SessionHandler extends ChannelDuplexHandler{
 	@Override
 	public void channelInactive(ChannelHandlerContext ctx) throws Exception {
 		// TODO 从SessionManager中删除对应Session
-		Session session = (Session) ctx.attr(SessionManager.ATTR_SESSION);
-		sessionManager.removeSession(session);
+		Session session = ctx.channel().attr(SessionManager.ATTR_SESSION).get(); // detach session
+		sessionManager.removeSession(session); // 
 		logger.info("dettached session from channel {}", ctx.channel());
 		super.channelInactive(ctx);
 	}

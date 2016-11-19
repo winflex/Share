@@ -9,13 +9,7 @@ import cc.lixiaohui.share.util.IBuilder;
 
 public class MessageBuilder implements IBuilder<Message>{
 	
-	protected long id;
-	
 	protected Map<String, Serializable> properties = new HashMap<String, Serializable>();
-
-	public long id() {
-		return id;
-	}
 
 	public MessageBuilder property(String key, Serializable value) {
 		properties.put(key, value);

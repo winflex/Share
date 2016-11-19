@@ -21,11 +21,11 @@ public class Comment {
 	
 	private User toUser;
 	
-	private short kind;
+	//private short kind;
 	
 	private Timestamp commentTime;
 	
-	private boolean deleted;
+	//private boolean deleted;
 
 	/**
 	 * @return the id
@@ -98,20 +98,6 @@ public class Comment {
 	}
 
 	/**
-	 * @return the kind
-	 */
-	public short getKind() {
-		return kind;
-	}
-
-	/**
-	 * @param kind the kind to set
-	 */
-	public void setKind(short kind) {
-		this.kind = kind;
-	}
-
-	/**
 	 * @return the commentTime
 	 */
 	public Timestamp getCommentTime() {
@@ -123,20 +109,6 @@ public class Comment {
 	 */
 	public void setCommentTime(Timestamp commentTime) {
 		this.commentTime = commentTime;
-	}
-
-	/**
-	 * @return the deleted
-	 */
-	public boolean isDeleted() {
-		return deleted;
-	}
-
-	/**
-	 * @param deleted the deleted to set
-	 */
-	public void setDeleted(boolean deleted) {
-		this.deleted = deleted;
 	}
 
 }

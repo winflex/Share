@@ -4,13 +4,18 @@ import io.netty.util.AttributeKey;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import cc.lixiaohui.share.core.config.SessionConfig;
+import cc.lixiaohui.share.protocol.PushMessage;
 import cc.lixiaohui.share.util.TimeUtils;
+import cc.lixiaohui.share.util.future.AbstractFuture;
+import cc.lixiaohui.share.util.future.IFuture;
+import cc.lixiaohui.share.util.future.IFutureListener;
 
 /**
  * 会话管理者
@@ -32,11 +37,44 @@ public class SessionManager {
 	
 	private static final Logger logger = LoggerFactory.getLogger(SessionManager.class);
 	
+	private ScheduledExecutorService executor;
 	
-	public SessionManager(SessionConfig config) {
+	public SessionManager(SessionConfig config, ScheduledExecutorService executor) {
 		this.sessionConfig = config;
+		this.executor = executor;
 	}
 	
+	/**
+	 * 推送消息
+	 * @param originSession
+	 * @return 异步推送结果
+	 */
+	public IFuture<Integer> publishPushMessage(final Session originSession, final PushMessage message) {
+		final CountFuture countFuture = new CountFuture();
+		executor.submit(new Runnable() {
+			
+			@Override
+			public void run() {
+				int count = 0;
+				for (Session session : sessions.values()) {
+					if (session.getSessionId() == originSession.getSessionId()) { // skip source
+						continue;
+					}
+					session.getContext().writeAndFlush(message);
+					++count;
+				}
+				countFuture.success(count);
+			}
+		});
+		countFuture.addListener(new IFutureListener<Integer>() {
+			
+			@Override
+			public void operationCompleted(IFuture<Integer> future) throws Exception {
+				logger.info("publish message {} to total {} client", message, countFuture.get());
+			}
+		});
+		return countFuture;
+	}
 	
 	/**
 	 * 根据用户Id获取Session, 若返回非null值的话就一定说明该session是已登陆的
@@ -144,6 +182,13 @@ public class SessionManager {
 					}
 				}
 			}
+		}
+	}
+	
+	private class CountFuture extends AbstractFuture<Integer> {
+		
+		public void success(int count) {
+			setSuccess(count);
 		}
 	}
 }

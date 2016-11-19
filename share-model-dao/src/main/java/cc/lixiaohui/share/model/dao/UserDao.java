@@ -1,5 +1,7 @@
 package cc.lixiaohui.share.model.dao;
 
+import java.util.List;
+
 import cc.lixiaohui.share.model.bean.User;
 import cc.lixiaohui.share.model.dao.util.DaoException;
 
@@ -20,4 +22,8 @@ public interface UserDao extends DeleteableDao<User>{
 	 * @throws DaoException 
 	 */
 	User get(String username, String password) throws DaoException;
+	
+	boolean nameExist(String username) throws DaoException;
+	
+	List<User> search(String keyword, int start, int limit) throws DaoException;
 }
