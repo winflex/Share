@@ -6,6 +6,7 @@ import java.util.Map;
 import cc.lixiaohui.share.model.bean.Sorting;
 import cc.lixiaohui.share.model.dao.SortingDao;
 import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.service.util.PrivilegeLevel;
 import cc.lixiaohui.share.server.service.util.ServiceException;
 import cc.lixiaohui.share.server.service.util.annotation.Procedure;
 import cc.lixiaohui.share.server.service.util.annotation.Service;
@@ -80,7 +81,7 @@ public class SortingService extends AbstractService {
 	 * @return
 	 * @throws ServiceException
 	 */
-	@Procedure(name = "deleteSorting")
+	@Procedure(name = "deleteSorting", level=PrivilegeLevel.ADMIN)
 	public String deleteSorting() throws ServiceException {
 		int sortingId;
 		try {

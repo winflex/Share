@@ -26,4 +26,5 @@ public interface UserDao extends DeleteableDao<User>{
 	boolean nameExist(String username) throws DaoException;
 	
 	List<User> search(String keyword, int start, int limit) throws DaoException;
+	
 }

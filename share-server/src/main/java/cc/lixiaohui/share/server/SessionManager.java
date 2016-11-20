@@ -1,5 +1,7 @@
 package cc.lixiaohui.share.server;
 
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.util.AttributeKey;
 
 import java.util.Map;
@@ -45,12 +47,10 @@ public class SessionManager {
 	}
 	
 	/**
-	 * 推送消息
-	 * @param originSession
-	 * @return 异步推送结果
+	 * 推送消息给除了originSession外的所有session
 	 */
-	public IFuture<Integer> publishPushMessage(final Session originSession, final PushMessage message) {
-		final CountFuture countFuture = new CountFuture();
+	public IFuture<Integer> pushToAllExcept(final Session originSession, final PushMessage message) {
+		final PushFuture countFuture = new PushFuture();
 		executor.submit(new Runnable() {
 			
 			@Override
@@ -65,15 +65,55 @@ public class SessionManager {
 				}
 				countFuture.success(count);
 			}
+			
 		});
+		
 		countFuture.addListener(new IFutureListener<Integer>() {
 			
 			@Override
 			public void operationCompleted(IFuture<Integer> future) throws Exception {
-				logger.info("publish message {} to total {} client", message, countFuture.get());
+				logger.info("publish message {} to total {} session", message, countFuture.get());
 			}
+			
 		});
 		return countFuture;
+	}
+	
+	/**
+	 * 推送消息给指定的用户, 若该用户不在线则消息会被忽略
+	 */
+	public IFuture<Integer> pushTo(int userId, final PushMessage message) {
+		final Session session = getSessionByUserId(userId);
+		final PushFuture pushFuture = new PushFuture();
+		if (session == null) { // 指定用户不在线
+			pushFuture.success(0);
+			return pushFuture;
+		}
+		
+		executor.submit(new Runnable() {
+			
+			@Override
+			public void run() {
+				session.getContext().writeAndFlush(message).addListener(new ChannelFutureListener() {
+					
+					@Override
+					public void operationComplete(ChannelFuture future) throws Exception {
+						pushFuture.success(1);
+					}
+				});
+			}
+			
+		});
+		
+		pushFuture.addListener(new IFutureListener<Integer>() {
+
+			@Override
+			public void operationCompleted(IFuture<Integer> future) throws Exception {
+				logger.info("push message {} to session {}", message, session);
+			}
+			
+		});
+		return pushFuture;
 	}
 	
 	/**
@@ -86,7 +126,7 @@ public class SessionManager {
 			if (!session.isLogined()) {
 				continue;
 			}
-			if (session.getUserId() == userId) {
+			if (session.getUser().getId() == userId) {
 				return session;
 			}
 		}
@@ -109,7 +149,7 @@ public class SessionManager {
 	 */
 	public boolean isUserLogined(int userId) {
 		for (Session session : sessions.values()) {
-			if (session.isLogined() && session.getUserId() == userId) {
+			if (session.isLogined() && session.getUser().getId() == userId) {
 				return true;
 			}
 		}
@@ -178,14 +218,14 @@ public class SessionManager {
 				for (Session session : sessions.values()) {
 					if (TimeUtils.isTimeout(session.getLastAccessTime(), sessionConfig.getTimeout())) {
 						logger.info("session timeout, removed {}", session);
-						removeSession(session.getUserId());
+						removeSession(session.getUser().getId());
 					}
 				}
 			}
 		}
 	}
 	
-	private class CountFuture extends AbstractFuture<Integer> {
+	private class PushFuture extends AbstractFuture<Integer> {
 		
 		public void success(int count) {
 			setSuccess(count);

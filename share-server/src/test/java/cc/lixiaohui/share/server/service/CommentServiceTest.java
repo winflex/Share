@@ -34,8 +34,8 @@ public class CommentServiceTest {
 	public void deleteComment() throws ServiceException {
 		params.put("commentId", 1);
 		
-		Session session = Session.builder().build();
-		session.login(5, "小明", false, false);
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 4));
+		
 		
 		CommentService svc = new CommentService(session, params);
 		String json = svc.deleteComment();
@@ -48,8 +48,8 @@ public class CommentServiceTest {
 		params.put("content", "的开始垃圾的咯");
 		params.put("toUserId", 10);
 		
-		Session session = Session.builder().build();
-		session.login(5, "小明", true, false);
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 4));
+		
 		
 		CommentService svc = new CommentService(session, params);
 		String json = svc.publishComment();

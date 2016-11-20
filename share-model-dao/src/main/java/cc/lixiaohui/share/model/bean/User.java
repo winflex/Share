@@ -67,15 +67,15 @@ public class User {
 	private List<UserCollection> userCollections;
 	
 	/**
-	 * 好友
-	 */
-	//private List<User> friends;
+	 * 我主动添加的好友
+	 *//*
+	private List<FriendShip> myFriendShips;
 	
-	/**
-	 * 好友关系
-	 */
-	//private List<FriendShip> friendShips;
-	 
+	*//**
+	 * 主动添加我为好友的好友
+	 *//*
+	private List<FriendShip> friendShipOfMine;*/
+	
 	/**
 	 * 我对别人的评论
 	 */
@@ -92,6 +92,12 @@ public class User {
 	public User(String username, String password) {
 		this.username = username;
 		this.password = password;
+	}
+	
+	public User(String username, String password, Role role) {
+		this.username = username;
+		this.password = password;
+		this.role = role;
 	}
 	
 	/**
@@ -334,9 +340,22 @@ public class User {
 		this.shares = shares;
 	}
 
-	/* 
-	 * @see java.lang.Object#toString()
-	 */
+/*	public List<FriendShip> getMyFriendShips() {
+		return myFriendShips;
+	}
+
+	public void setMyFriendShips(List<FriendShip> myFriendShips) {
+		this.myFriendShips = myFriendShips;
+	}
+
+	public List<FriendShip> getFriendShipOfMine() {
+		return friendShipOfMine;
+	}
+
+	public void setFriendShipOfMine(List<FriendShip> friendShipOfMine) {
+		this.friendShipOfMine = friendShipOfMine;
+	}*/
+
 	@Override
 	public String toString() {
 		return new StringBuilder("User[id=").append(id)

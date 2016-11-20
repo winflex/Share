@@ -6,6 +6,7 @@ import java.util.Map;
 import cc.lixiaohui.share.model.bean.ForbidenWord;
 import cc.lixiaohui.share.model.dao.ForbidenWordDao;
 import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.service.util.PrivilegeLevel;
 import cc.lixiaohui.share.server.service.util.ServiceException;
 import cc.lixiaohui.share.server.service.util.annotation.Procedure;
 import cc.lixiaohui.share.server.service.util.annotation.Service;
@@ -52,7 +53,7 @@ public class ForbidenWordService extends AbstractService {
 	 * @return 
 	 * @throws ServiceException
 	 */
-	@Procedure(name = "getForbidenWords")
+	@Procedure(name = "getForbidenWords", level=PrivilegeLevel.ADMIN)
 	public String getForbidenWords() {
 		int start;
 		int limit;
@@ -81,7 +82,7 @@ public class ForbidenWordService extends AbstractService {
 	 * @param limit
 	 * @return
 	 */
-	@Procedure(name = "getDeletedForbidenWords")
+	@Procedure(name = "getDeletedForbidenWords", level=PrivilegeLevel.ADMIN)
 	public String getDeletedForbidenWords() {
 		int start;
 		int limit;
@@ -110,7 +111,7 @@ public class ForbidenWordService extends AbstractService {
 	 * @param id
 	 * @return
 	 */
-	@Procedure(name = "deleteForbidenWord")
+	@Procedure(name = "deleteForbidenWord", level=PrivilegeLevel.ADMIN)
 	public String deleteForbidenWord() {
 		
 		int id;
@@ -143,7 +144,7 @@ public class ForbidenWordService extends AbstractService {
 	 * @param id
 	 * @return
 	 */
-	@Procedure(name = "recoverForbidenWord")
+	@Procedure(name = "recoverForbidenWord", level=PrivilegeLevel.ADMIN)
 	public String recoverForbidenWord() {
 		int id;
 		try {

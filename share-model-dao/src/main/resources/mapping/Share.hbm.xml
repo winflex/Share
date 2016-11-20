@@ -7,7 +7,7 @@
 		<id name="id" type="int" column="id">
 			<generator class="native" />
 		</id>
-		<many-to-one name="publisher" class="User" fetch="select" column="user_id" lazy="false" />
+		<many-to-one name="publisher" class="User" fetch="join" column="user_id" lazy="false" />
 		
 		<property name="content" type="java.lang.String" column="content" />
 		<property name="createTime" type="java.sql.Timestamp" column="create_time" insert="false" update="false"/>

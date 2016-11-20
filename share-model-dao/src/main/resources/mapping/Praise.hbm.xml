@@ -7,8 +7,8 @@
 		<id name="id" type="int" column="id">
 			<generator class="native" />
 		</id>
-		<property name="praiseTime" type="java.sql.Timestamp" column="praise_time" update="false"/>
-		<many-to-one name="user" class="User" fetch="select" column="user_id" lazy="false"/>
-		<many-to-one name="share" class="Share" fetch="select" column="share_id" />
+		<property name="praiseTime" type="java.sql.Timestamp" column="praise_time" update="false" insert="false"/>
+		<many-to-one name="user" class="User" fetch="join" column="user_id" lazy="false"/>
+		<many-to-one name="share" class="Share" fetch="join" column="share_id" lazy="false" />
 	</class>
 </hibernate-mapping>

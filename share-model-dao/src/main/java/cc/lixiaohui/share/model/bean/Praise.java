@@ -18,6 +18,13 @@ public class Praise {
 	
 	private Timestamp praiseTime;
 
+	public Praise(){}
+	
+	public Praise(User user, Share share){
+		this.user = user;
+		this.share = share;
+	}
+	
 	/**
 	 * @return the id
 	 */

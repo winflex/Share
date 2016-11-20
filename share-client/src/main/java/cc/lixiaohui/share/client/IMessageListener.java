@@ -104,11 +104,28 @@ public interface IMessageListener {
 	 * @param json
 	 * <pre>
 	 * {
+	 *   "id":1,						# 赞的ID
 	 *   "shareId":1,					# 点赞的分享ID
 	 *   "praiseUserId":2,				# 点赞的用户ID	
 	 *   "praiseUsername":"猪八戒"		# 点赞的用户的用户名
+	 *   "time":14432432432				#  点赞时间
 	 * }
 	 * </pre>
 	 */
-	void onPraise(String json);
+	void onLike(String json);
+	
+	/**
+	 * 收到取消点赞的通知
+	 * @param json
+	 * <pre>
+	 * {
+	 * 		"id":1,						# 赞的ID
+	 * 		"shareId":1,				# 分享ID
+	 * 		"praiseUserId":2,			# 用户ID
+	 * 		"praiseUsername":"猪八戒"		# 用户名
+	 * 		"time":1443242342,			# 取消点赞时间
+	 * }
+	 * </pre>
+	 */
+	void onUnlike(String json);
 }

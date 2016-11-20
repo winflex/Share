@@ -66,7 +66,7 @@ public class ShareServer extends AbstractShareServer {
 		final ResponseFuture future = new ResponseFuture(message, ctx.channel());
 		putFuture(message.getId(), future);
 		// 转发给目标客户端
-		message.setFromUserId(session.getUserId()); // 设置源ID
+		message.setFromUserId(session.getUser().getId()); // 设置源ID
 		writeMessage(message, targetSession.getContext());
 		
 		newDetectTaskFor(future);

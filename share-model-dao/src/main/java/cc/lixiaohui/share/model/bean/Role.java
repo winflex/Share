@@ -3,18 +3,23 @@ package cc.lixiaohui.share.model.bean;
 import java.sql.Timestamp;
 
 /**
+ * 固定三个等级:super, admin, normal
  * @author lixiaohui
  * @date 2016年10月29日 下午5:39:43
  */
 public class Role {
 	
+	public static final int SUPER = 0;
+	public static final int ADMIN = 1;
+	public static final int NORMAL = 2;
 	
-	public transient static final int ADMIN_THRESHOLD = 2;
-	
-	public static final boolean isAdmin(int roleId) {
-		return roleId >=0 && roleId < ADMIN_THRESHOLD;
+	public static boolean isSuper(int roleId) {
+		return roleId == SUPER;
 	}
 	
+	public static boolean isAdmin(int userId) {
+		return userId == SUPER || userId == ADMIN;
+	}
 	
 	private int id;
 	

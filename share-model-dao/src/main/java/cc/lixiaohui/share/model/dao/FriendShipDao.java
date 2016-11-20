@@ -11,9 +11,9 @@ import cc.lixiaohui.share.model.dao.util.DaoException;
  */
 public interface FriendShipDao extends BaseDao<FriendShip> {
 	
-	public List<?> getFriends(int userId, int start, int limit) throws DaoException;
+	public List<Object[]> getFriends(int userId, int start, int limit) throws DaoException;
 	
 	
-	public int deleteFriend(int userId, int friendId) throws DaoException;
+	public int deleteFriend(int userId, int friendShipId) throws DaoException;
 	
 }

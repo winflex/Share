@@ -15,7 +15,9 @@ public enum PrivilegeLevel {
 	
 	LOGGED(20),
 	
-	ADMIN(30);
+	ADMIN(30),
+	
+	SUPER(40);
 	
 	private int value;
 	
@@ -23,11 +25,14 @@ public enum PrivilegeLevel {
 		this.value = value;
 	}
 	
-	public static boolean isQulified(PrivilegeLevel targetLevel, Session session) {
-		return levelForSession(session).value >= targetLevel.value;
+	public boolean isQulified(Session session) {
+		return levelForSession(session).value >= this.value;
 	}
 	
 	public static PrivilegeLevel levelForSession(Session session) {
+		if (session.isHandshaked() && session.isLogined() && session.isSuper()) {
+			return SUPER;
+		}
 		if (session.isHandshaked() && session.isLogined() && session.isAdmin()) {
 			return ADMIN;
 		}

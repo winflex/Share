@@ -44,6 +44,10 @@ public class JSONUtils {
 		return newFailureResult(errorMessage, errorCode, exceptionMessage, null);
 	}
 	
+	public static String newFailureResult(Throwable cause) {
+		return newFailureResult(cause.getMessage(), ErrorCode.wrap(cause), cause);
+	}
+	
 	public static String newFailureResult(String errMessage ,ErrorCode errorCode, String exceptionMessage, JSONObject result) {
 		JSONObject json = new JSONObject();
 		json.put(K_STATUS, V_STATUS_ERR);

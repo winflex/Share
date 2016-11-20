@@ -20,8 +20,6 @@ public class UserServiceTest {
 	
 	Map<String, Object> params = new HashMap<String, Object>();
 	
-	Session session = Session.builder().userId(7).build();
-	
 	@Test
 	public void getUser() throws ServiceException {
 		params.put("userId", 7);
@@ -32,7 +30,8 @@ public class UserServiceTest {
 	
 	@Test
 	public void update() {
-		Session session = Session.builder().userId(7).build();
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 7));
+		
 		params.put("signature", "7777777777");
 		params.put("sex", "男");
 		params.put("headImageId", 4);
@@ -44,7 +43,8 @@ public class UserServiceTest {
 	
 	@Test
 	public void selfShield() {
-		Session session = Session.builder().userId(7).build();
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 7));
+		
 		params.put("userId", 7);
 		UserService svc = new UserService(session, params);
 		String json = svc.shield();
@@ -53,7 +53,8 @@ public class UserServiceTest {
 	
 	@Test
 	public void adminShield() {
-		Session session = Session.builder().userId(4).build();
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 7));
+		
 		params.put("userId", 7);
 		UserService svc = new UserService(session, params);
 		String json = svc.shield();
@@ -63,7 +64,8 @@ public class UserServiceTest {
 	}
 	@Test
 	public void selfUnshield() {
-		Session session = Session.builder().userId(7).build();
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 7));
+		
 		params.put("userId", 7);
 		UserService svc = new UserService(session, params);
 		String json = svc.unshield();
@@ -73,7 +75,8 @@ public class UserServiceTest {
 	}
 	@Test
 	public void adminUnshield() {
-		Session session = Session.builder().userId(4).build();
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 7));
+		
 		params.put("userId", 7);
 		UserService svc = new UserService(session, params);
 		String json = svc.unshield();
@@ -85,7 +88,8 @@ public class UserServiceTest {
 	
 	@Test
 	public void search() {
-		Session session = Session.builder().userId(4).build();
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 7));
+		
 		
 		params.put("keyword", "辉");
 		UserService svc = new UserService(session, params);
@@ -95,8 +99,7 @@ public class UserServiceTest {
 	
 	@Test
 	public void addFriend() {
-		Session session = Session.builder().build();
-		session.login(6, "老王", false, false);
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 7));
 		
 		params.put("targetUserId", 7);
 		
@@ -105,4 +108,24 @@ public class UserServiceTest {
 		
 		System.out.println(json);
 	}
+	
+	@Test
+	public void getFriends() {
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 5));
+		
+		UserService svc = new UserService(session, params);
+		String json = svc.getFriends();
+		System.out.println(json);
+	}
+	@Test
+	public void deleteFriend() {
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 5));
+		
+		params.put("friendShipId", 1);
+		
+		UserService svc = new UserService(session, params);
+		String json = svc.deleteFriend();
+		System.out.println(json);
+	}
+	
 }

@@ -15,5 +15,5 @@ public interface ShareDao extends DeleteableDao<Share> {
 	
 	public Share getByIdForComment(int shareId);
 	
-	public List<Share> list(String keyword, long baseTime, boolean deleted, String orderColumnName, String orderTypeName, int start, int limit) throws DaoException;
+	public List<Share> list(int currentUserId, String keyword, long baseTime, boolean deleted, String orderColumnName, String orderTypeName, int start, int limit) throws DaoException;
 }

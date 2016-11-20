@@ -12,7 +12,7 @@
 	<!-- 网络相关配置 -->
 	<socket>
 		<port>8888</port>
-		<bindAddress>127.0.0.1</bindAddress>
+		<bindAddress>0.0.0.0</bindAddress>
 		
 		<!-- 默认为1 -->
 		<acceptorThreads>0</acceptorThreads>

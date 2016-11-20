@@ -24,6 +24,7 @@ public class MessageDispatcher extends SimpleChannelInboundHandler<Message> {
 
 	private IMessageHandler handler;
 
+	@SuppressWarnings("unused")
 	private ExecutorService executor;
 
 	private static final Logger logger = LoggerFactory.getLogger(MessageDispatcher.class);

@@ -1,18 +1,19 @@
 package cc.lixiaohui.share.server.service;
 
-import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
 
+import cc.lixiaohui.share.model.bean.Share;
+import cc.lixiaohui.share.model.bean.User;
+import cc.lixiaohui.share.model.util.HibernateSessionFactory;
 import cc.lixiaohui.share.server.Session;
 import cc.lixiaohui.share.server.SystemRuntime;
 import cc.lixiaohui.share.server.service.util.ServiceException;
-import cc.lixiaohui.share.util.TimeUtils;
-
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 
 /**
  * @author lixiaohui
@@ -29,8 +30,8 @@ public class ShareServiceTest {
 	
 	@Test
 	public void publishShare() throws ServiceException {
-		Session session = Session.builder().build();
-		session.login(11, "李酷酷", false, false);
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 11));
+		
 		
 		params.put("content", "不好");
 		params.put("pictureIds", new int[]{1, 2});
@@ -58,19 +59,40 @@ public class ShareServiceTest {
 		System.out.println(json);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void getShares() throws ServiceException {
-		params.put("keyword", "大家");
+		//params.put("keyword", "大家");
+		Calendar cal = Calendar.getInstance();
+		cal.set(2016, 11, 18, 1, 1, 1);
+		long millis = cal.getTimeInMillis();
 		
-		ShareService svc = new ShareService(null, params);
+		params.put("baseTime", millis);
+		
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 10));
+		//Session session = TestUtils.unloginSession();
+		
+		ShareService svc = new ShareService(session, params);
 		
 		String json = svc.getShares();
+		
 		System.out.println(json);
+		System.out.println(cal.getTime().toLocaleString());
 	}
 	
-	public static void main(String[] args) {
-		JSONObject result = new JSONObject();
-		result.put("a", new Timestamp(TimeUtils.currentTimeMillis()));
-		System.out.println(JSON.toJSONString(result));
+	
+	@SuppressWarnings({ "unchecked", "unused", "deprecation" })
+	@Test
+	public void tt() throws ServiceException {
+		Calendar cal = Calendar.getInstance();
+		cal.set(2016, 11, 15, 1, 1, 1);
+		long millis = cal.getTimeInMillis();
+		
+		org.hibernate.classic.Session session = HibernateSessionFactory.getSessionFactory().openSession();
+		List<Share> shares = session.createSQLQuery("select s.* from share s where s.create_time > ':time'").addEntity("s", Share.class)
+				.setParameter("time", "2016-11-15 00:00:00").list();
+	
+		System.out.println(cal.getTime().toLocaleString());
 	}
+	
 }

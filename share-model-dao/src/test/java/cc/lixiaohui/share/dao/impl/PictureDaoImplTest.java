@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.dao;
+package cc.lixiaohui.share.dao.impl;
 
 import org.junit.Test;
 

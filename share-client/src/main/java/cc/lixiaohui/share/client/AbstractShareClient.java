@@ -456,8 +456,8 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 					case FRI_DEL:
 						l.onFriendDeleted(message.getPushData());
 						break;
-					case PRAISE:
-						l.onPraise(message.getPushData());
+					case LIKE:
+						l.onLike(message.getPushData());
 						break;
 					case SHARE:
 						l.onShare(message.getPushData());

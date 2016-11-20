@@ -22,12 +22,15 @@ public class PushMessage extends Message {
 		
 		/** 新的分享 */
 		SHARE,
-		
+			
 		/** 新的评论 */
 		COMMENT,
 		
-		/** 新的分享点赞*/
-		PRAISE,
+		/** 新的点赞*/
+		LIKE,
+		
+		/** 取消点赞 */
+		UNLIKE,
 	}
 	
 	private static final long serialVersionUID = 6813095621122249172L;

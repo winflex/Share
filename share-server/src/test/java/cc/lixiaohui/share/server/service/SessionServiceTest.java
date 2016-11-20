@@ -23,10 +23,10 @@ public class SessionServiceTest {
 	
 	@Test
 	public void register() throws ServiceException {
-		params.put("username", "李酷酷");
-		params.put("password", "lllldadsa");
+		params.put("username", "管理员");
+		params.put("password", "root");
 		SessionService svc = new SessionService(null, params);
-		String json = svc.register();
+		String json = svc.registerAdmin();
 		System.out.println(json);
 	}
 	

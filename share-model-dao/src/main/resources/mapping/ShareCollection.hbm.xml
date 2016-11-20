@@ -12,12 +12,10 @@
 			<column name="collect_time" />
 		</property>
 		<!-- many to one -->
-		<many-to-one name="user" class="cc.lixiaohui.share.model.bean.User"
-			fetch="join">
+		<many-to-one name="user" class="cc.lixiaohui.share.model.bean.User" fetch="join" lazy="false">
 			<column name="user_id" />
 		</many-to-one>
-		<many-to-one name="share" class="cc.lixiaohui.share.model.bean.Share"
-			fetch="join">
+		<many-to-one name="share" class="cc.lixiaohui.share.model.bean.Share" fetch="join" lazy="false">
 			<column name="share_id" />
 		</many-to-one>
 	</class>

@@ -2,7 +2,6 @@ package cc.lixiaohui.share.model.util;
 
 import java.io.File;
 
-import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
@@ -18,11 +17,22 @@ import org.slf4j.LoggerFactory;
  */
 public class HibernateSessionFactory {
 	
+	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(HibernateSessionFactory.class);
 	
-	private static SessionFactory factory;
+	private static volatile SessionFactory factory;
 
-	private static String hibernateConfigFilePath;
+	private static volatile String hibernateConfigFilePath;
+	
+	public static void init() {
+		if (factory == null) {
+			synchronized (HibernateSessionFactory.class){
+				if (factory == null) {
+					newSessionFactory();
+				}
+			}
+		}
+	}
 	
 	public static SessionFactory getSessionFactory() {
 		if (factory == null) {
@@ -46,16 +56,12 @@ public class HibernateSessionFactory {
 	}
 
 	private static void newSessionFactory() {
-		try {
-			// 优先从classpath中加载
-			factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-			// classpath下没有从指定的文件加载
-			if (factory == null) {
-				File configFile = new File(hibernateConfigFilePath);
-				factory = new Configuration().configure(configFile).buildSessionFactory();
-			}
-		} catch (HibernateException e) {
-			logger.error("{}", e);
+		// 优先从classpath中加载
+		factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+		// classpath下没有从指定的文件加载
+		if (factory == null) {
+			File configFile = new File(hibernateConfigFilePath);
+			factory = new Configuration().configure(configFile).buildSessionFactory();
 		}
 	}
 

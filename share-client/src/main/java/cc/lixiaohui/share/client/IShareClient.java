@@ -48,19 +48,37 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	// *****************************************************************
 	
 	/**
-	 * 注册
+	 * 注册普通用户
 	 * @param username 用户名
 	 * @param password 密码
 	 * @return json, 其result如下:
 	 * <pre>
-	 *  {
-	 *  	"userId":123     # 注册成功的用户ID
-	 *  	"selfShield":false,		# 自己是否屏蔽了自己
-	 *  	"adminShield":false		# 管理员是否屏蔽了自己
-	 *  }
+	 * {
+	 * 		"userId":1,
+	 * 		"role": {"roleId":1, "description":"管理员"},
+	 * 		"selfShield":false,
+	 * 		"adminShield":false
+	 * }
 	 * </pre>
 	 */
 	String register(String username, String password) throws ClientException;
+	
+	/**
+	 * 注册管理员账号(只能由Root执行)
+	 * @param username
+	 * @param password
+	 * @return
+	 * <pre>
+	 * {
+	 * 		"userId":1,
+	 * 		"role": {"roleId":1, "description":"管理员"},
+	 * 		"selfShield":false,
+	 * 		"adminShield":false
+	 * }
+	 * </pre>
+	 * @throws ClientException
+	 */
+	String registerAdmin(String username, String password) throws ClientException;
 	
 	/**
 	 * 登陆
@@ -69,9 +87,10 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 * @return json, 其result如下:
 	 * <pre>
 	 * {
-	 * 		"userId":123     # 注册成功的用户ID
-	 *  	"selfShield":false,
-	 *  	"adminShield":false
+	 * 		"userId":1,
+	 * 		"role": {"roleId":1, "description":"管理员"},
+	 * 		"selfShield":false,
+	 * 		"adminShield":false
 	 * }
 	 * </pre>
 	 */
@@ -359,6 +378,34 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	String publishComment(int shareId, int toUserId, String content) throws ClientException;
 	
 	
+	
+	// *****************************************************************
+	// *********************** Praise Operations **********************
+	// *****************************************************************
+	
+	/**
+	 * 点赞
+	 * @param shareId 分享ID
+	 * @return
+	 * <pre>
+	 * {}
+	 * </pre>
+	 * @throws ClientException
+	 */
+	String like(int shareId) throws ClientException;
+	
+	/**
+	 * 取消点赞
+	 * @param praiseId 赞的ID
+	 * @return 
+	 * <pre>
+	 * {}
+	 * </pre>
+	 * @throws ClientException
+	 */
+	String unlike(int praiseId) throws ClientException;
+	
+	
 	// *****************************************************************
 	// *********************** Friends Operations **********************
 	// *****************************************************************
@@ -398,16 +445,16 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 *     }
 	 * </pre>
 	 */
-	String getFriends(int userId, int start, int limit) throws ClientException;
+	String getFriends(int start, int limit) throws ClientException;
 	
 	/**
 	 * 删除好友
-	 * @param friendId 好友ID
+	 * @param friendId 好友关系的ID(不是好友的ID)
 	 * @return json, result内容如下:
 	 * {}
 	 * @throws ClientException
 	 */
-	String deleteFriend(int friendId) throws ClientException;
+	String deleteFriend(int friendShipId) throws ClientException;
 	
 	/**
 	 * 添加好友请求
@@ -541,25 +588,25 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	
 	/**
 	 * 取消对用户的收藏
-	 * @param userId 用户ID
+	 * @param collectionId 收藏项的ID
 	 * @return json, result内容如下:
 	 * <pre>
 	 * {}
 	 * </pre>
 	 * @throws ClientException
 	 */
-	String unCollectUser(int userId) throws ClientException;
+	String unCollectUser(int collectionId) throws ClientException;
 	
 	/**
 	 * 取消对分享的收藏
-	 * @param shareId 分享ID
+	 * @param collectionId 收藏项的ID
 	 * @return json, result内容如下:
 	 * <pre>
 	 * {}
 	 * </pre>
 	 * @throws ClientException
 	 */
-	String unCollectShare(int shareId) throws ClientException;
+	String unCollectShare(int collectionId) throws ClientException;
 	
 	
 	// *****************************************************************

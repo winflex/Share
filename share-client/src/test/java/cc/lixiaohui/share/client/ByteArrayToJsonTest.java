@@ -1,16 +1,11 @@
 package cc.lixiaohui.share.client;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.nio.charset.Charset;
 
 import org.junit.Test;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.util.Base64;
 
 /**
  * @author lixiaohui
@@ -36,9 +31,5 @@ public class ByteArrayToJsonTest {
 	}
 	
 	public static void main(String[] args) {
-		String json = null;
-		JSONObject obj = JSON.parseObject(json);
-		String status = (String) obj.get("status");
-		JSONArray array = obj.getJSONArray("aa");
 	}
 }

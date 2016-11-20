@@ -7,6 +7,7 @@ import cc.lixiaohui.share.model.dao.PictureDao;
 import cc.lixiaohui.share.model.dao.util.DaoException;
 import cc.lixiaohui.share.server.Session;
 import cc.lixiaohui.share.server.SystemRuntime;
+import cc.lixiaohui.share.server.service.util.PrivilegeLevel;
 import cc.lixiaohui.share.server.service.util.ServiceException;
 import cc.lixiaohui.share.server.service.util.annotation.Procedure;
 import cc.lixiaohui.share.server.service.util.annotation.Service;
@@ -40,8 +41,13 @@ public class PictureService extends AbstractService{
 	 * @return
 	 * @throws ServiceException
 	 */
-	@Procedure(name = "uploadPicture")
+	@Procedure(name = "uploadPicture", level=PrivilegeLevel.LOGGED)
 	public String uploadPicture() throws ServiceException {
+		
+		if (!session.isLogined()) {
+			return JSONUtils.newFailureResult("您未登录", ErrorCode.AUTH, "");
+		}
+		
 		int userId;
 		String suffix = null;
 		byte[] bytes = null;
@@ -55,9 +61,6 @@ public class PictureService extends AbstractService{
 			return JSONUtils.newFailureResult(t.getMessage(), ErrorCode.PARAMETER, t);
 		}
 		
-		if (!session.isLogined()) {
-			return JSONUtils.newFailureResult("您未登录", ErrorCode.AUTH, "");
-		}
 		String fullPath = null;
 		boolean fileSaved = false;
 		boolean success = false;
@@ -92,14 +95,6 @@ public class PictureService extends AbstractService{
 		}
 	}
 
-	private Picture newPicture(int userId, String suffix, String fullPath) {
-		Picture picture = new Picture();
-		picture.setPath(fullPath);
-		picture.setSuffix(suffix == null ? "" : suffix);
-		picture.setUploadUserId(userId);
-		return picture;
-	}
-	
 	/**
 	 * <pre>
 	 * boolean ignoreIfNotExist, int[] pictureIds
@@ -177,7 +172,7 @@ public class PictureService extends AbstractService{
 	 * @return
 	 * @throws ServiceException
 	 */
-	@Procedure(name = "deletePicture")
+	@Procedure(name = "deletePicture", level=PrivilegeLevel.LOGGED)
 	public String deletePicture() throws ServiceException {
 		int pictureId;
 		try {
@@ -206,6 +201,14 @@ public class PictureService extends AbstractService{
 			logger.error("{}", e);
 			return JSONUtils.newFailureResult("删除错误", ErrorCode.wrap(e), e);
 		}
+	}
+	
+	private Picture newPicture(int userId, String suffix, String fullPath) {
+		Picture picture = new Picture();
+		picture.setPath(fullPath);
+		picture.setSuffix(suffix == null ? "" : suffix);
+		picture.setUploadUserId(userId);
+		return picture;
 	}
 	
 	private synchronized String generatePictureName(PictureDao dao, String suffix) throws DaoException {

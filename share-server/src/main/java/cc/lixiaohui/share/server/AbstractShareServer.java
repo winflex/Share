@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import cc.lixiaohui.share.model.util.HibernateSessionFactory;
 import cc.lixiaohui.share.protocol.CSCRequestMessage;
 import cc.lixiaohui.share.protocol.CSCResponseMessage;
 import cc.lixiaohui.share.protocol.CSRequestMessage;
@@ -124,6 +125,12 @@ public abstract class AbstractShareServer extends AbstractLifeCycle implements I
 	protected void initInternal() throws LifeCycleException {
 		logger.info("server initializing...");
 		executor = new ScheduledThreadPoolExecutor(config.getPoolConfig().getCorePoolsize(), new NamedThreadFactory("Core-Worker"));
+		try {
+			HibernateSessionFactory.init();
+		} catch (Exception e) {
+			logger.error("{}", e);
+			throw new LifeCycleException(e);
+		}
 		initSessionManager();
 		initProcedures();
 		initSerializeFactory();

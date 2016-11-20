@@ -11,12 +11,12 @@
 		<property name="password" type="java.lang.String" column="password" />
 		<property name="sex" type="java.lang.String" column="sex" insert="false"/>
 		<property name="signature" type="java.lang.String" column="signature"  insert="false"/>
-		<property name="registerTime" type="java.sql.Timestamp" update="false" column="register_time"  insert="false"/>
+		<property name="registerTime" type="java.sql.Timestamp" column="register_time" update="false" insert="false"/>
 		<property name="selfForbid" type="boolean" column="self_forbid"  insert="false"/>
 		<property name="adminForbid" type="boolean" column="admin_forbid"  insert="false"/>
 		<property name="deleted" type="boolean" column="deleted"  insert="false"/>
 		
-		<many-to-one name="role" class="Role" fetch="select" column="role_id" lazy="false" insert="false"/> 
+		<many-to-one name="role" class="Role" fetch="select" column="role_id" lazy="false" update="false"/> 
 		<many-to-one name="headImage" class="Picture" fetch="select" column="head_image_id" lazy="false" insert="false"/>
 		
 		
@@ -40,6 +40,16 @@
 			<key column="user_id" />
 			<one-to-many class="Comment" />
 		</bag>
+		
+		<!-- <bag name="myFriendShips" inverse="true" fetch="select">
+			<key column="ask_user_id" />
+			<one-to-many class="FriendShip"/>
+		</bag>
+		
+		<bag name="friendShipOfMine" inverse="true" fetch="select">
+			<key column="asked_user_id" />
+			<one-to-many class="FriendShip"/>
+		</bag> -->
 		
 	</class>
 </hibernate-mapping>

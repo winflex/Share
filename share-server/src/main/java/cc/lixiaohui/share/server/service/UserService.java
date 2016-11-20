@@ -11,6 +11,7 @@ import cc.lixiaohui.share.model.dao.FriendShipDao;
 import cc.lixiaohui.share.model.dao.PictureDao;
 import cc.lixiaohui.share.model.dao.UserDao;
 import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.service.util.PrivilegeLevel;
 import cc.lixiaohui.share.server.service.util.ServiceException;
 import cc.lixiaohui.share.server.service.util.annotation.Procedure;
 import cc.lixiaohui.share.server.service.util.annotation.Service;
@@ -113,10 +114,9 @@ public class UserService extends AbstractService{
 	 * @param headImageId, nullable
 	 * @return {}
 	 */
-	@Procedure(name = "updateUser")
+	@Procedure(name = "updateUser", level=PrivilegeLevel.LOGGED)
 	public String updateUser() {
-		int userId = session.getUserId(); // 从session中取userId
-		
+		int userId = session.getUser().getId();
 		String password = null;
 		String sex = null;
 		String signature = null;
@@ -173,7 +173,7 @@ public class UserService extends AbstractService{
 	 * @param userId int, !nullable
 	 * @return {}
 	 */
-	@Procedure(name = "shield")
+	@Procedure(name = "shield", level=PrivilegeLevel.LOGGED)
 	public String shield() {
 		int userId;
 		try {
@@ -186,12 +186,12 @@ public class UserService extends AbstractService{
 			UserDao dao = daofactory.getDao(UserDao.class);
 			User user = null;
 			// selfShield
-			if (userId == session.getUserId()) {
+			if (userId == session.getUser().getId()) {
 				user = dao.getById(userId);
 				user.setSelfForbid(true);
 			} else { // adminSheild
 				// TODO see if is administrator
-				if (!Role.isAdmin(dao.getById(session.getUserId()).getRole().getId())) { // no 
+				if (!Role.isAdmin(dao.getById(session.getUser().getId()).getRole().getId())) { // no 
 					return JSONUtils.newFailureResult("非管理员无法屏蔽他人", ErrorCode.AUTH, "");
 				}
 				// TODO 执行管理员屏蔽
@@ -220,7 +220,7 @@ public class UserService extends AbstractService{
 	 * @return {}
 	 * 
 	 */
-	@Procedure(name = "unshield")
+	@Procedure(name = "unshield", level=PrivilegeLevel.LOGGED)
 	public String unshield() {
 		int userId;
 		try {
@@ -232,12 +232,12 @@ public class UserService extends AbstractService{
 		try {
 			UserDao dao = daofactory.getDao(UserDao.class);
 			User user = null;
-			if (userId == session.getUserId()) { // self
+			if (userId == session.getUser().getId()) { // self
 				user = dao.getById(userId);
 				user.setSelfForbid(false);
 			} else {
 				// TODO is admin
-				if (!Role.isAdmin(dao.getById(session.getUserId()).getRole().getId())) { // no 
+				if (!Role.isAdmin(dao.getById(session.getUser().getId()).getRole().getId())) { // no 
 					return JSONUtils.newFailureResult("非管理员无法取消屏蔽他人", ErrorCode.AUTH, "");
 				}
 				user = dao.getById(userId);
@@ -262,7 +262,7 @@ public class UserService extends AbstractService{
 	 * @param targetUserId int, !nullable
 	 * @return
 	 */
-	@Procedure(name = "addFriend")
+	@Procedure(name = "addFriend", level=PrivilegeLevel.LOGGED)
 	public String addFriend() {
 		if (!session.isLogined()) {
 			return JSONUtils.newFailureResult("您未登陆", ErrorCode.AUTH, "");
@@ -272,7 +272,7 @@ public class UserService extends AbstractService{
 			
 			UserDao dao = daofactory.getDao(UserDao.class);
 			FriendShipDao fsDao = daofactory.getDao(FriendShipDao.class);
-			User fromUser = dao.getById(session.getUserId());
+			User fromUser = dao.getById(session.getUser().getId());
 			User toUser = dao.getById(targetUserId);
 			
 			if (toUser == null) {
@@ -296,14 +296,17 @@ public class UserService extends AbstractService{
 	}
 	
 	/**
+	 * @param start int, nullable
+	 * @param limit int, nullable
 	 * <pre>
-	 * int userId, int start, int limit
+	 * int start, int limit
 	 * {
 	 *       "count":2,
 	 *       "list":
 	 *         [
 	 *           {
-	 *             "id":21,                    # 好友的用户ID
+	 *             "id":1						# 好友关系ID
+	 *              "userIdd":1						# 好友关系ID
 	 *             "time":1466757677,          # 成为好友的时间
 	 *             "username":"lisi",          # 好友用户名
 	 *             "sex":"男",
@@ -318,6 +321,7 @@ public class UserService extends AbstractService{
 	 *           },
 	 *           {
 	 *             "id":32,                    # 好友的用户ID
+	 *              "id":1						# 好友关系ID
 	 *             "time":1466757677,          # 成为好友的时间
 	 *             "username":"lisi",          # 好友用户名
 	 *             "sex":"男",
@@ -335,18 +339,41 @@ public class UserService extends AbstractService{
 	 * </pre>
 	 * @return
 	 */
-	@Procedure(name = "getFriends")
+	@Procedure(name = "getFriends", level=PrivilegeLevel.LOGGED)
 	public String getFriends() {
-		return null;
+		try {
+			int start = getIntParameter("start", DEFAULT_START);
+			int limit = getIntParameter("limit", DEFAULT_LIMIT);
+			
+			FriendShipDao dao = daofactory.getDao(FriendShipDao.class);
+			List<Object[]> friendships = dao.getFriends(session.getUser().getId(), start, limit);
+			return JSONUtils.newSuccessfulResult("获取好友成功", packFriends(session.getUser().getId(), friendships));
+			
+		} catch (Throwable cause) {
+			logger.error("{}", cause);
+			return JSONUtils.newFailureResult(cause.getMessage(), ErrorCode.wrap(cause), cause);
+		}
 	}
 	
 	/**
-	 * @param friendId int, !nullable
+	 * @param friendShipId int, !nullable
 	 * @return {}
 	 */
-	@Procedure(name = "deleteFriends")
+	@Procedure(name = "deleteFriend", level=PrivilegeLevel.LOGGED)
 	public String deleteFriend() {
-		return null;
+		try {
+			int friendShipId = getIntParameter("friendShipId");
+			FriendShipDao dao = daofactory.getDao(FriendShipDao.class);
+			int result = dao.deleteFriend(session.getUser().getId(), friendShipId);
+			if (result > 0) {
+				return JSONUtils.newSuccessfulResult("删除好友成功");
+			} else {
+				return JSONUtils.newFailureResult("删除好友失败", ErrorCode.UNKOWN, "");
+			}
+		} catch (Throwable cause) {
+			logger.error("{}", cause);
+			return JSONUtils.newFailureResult(cause.getMessage(), ErrorCode.wrap(cause), cause);
+		}
 	}
 	
 	// -------------------- util methods ------------------
@@ -381,4 +408,26 @@ public class UserService extends AbstractService{
 		result.put("adminShield", user.isAdminForbid());
 		return result;
 	}
+	
+	private JSONObject packFriends(int userId, List<Object[]> friendships) {
+		JSONArray array = new JSONArray();
+		for (Object[] arr : friendships) {
+			FriendShip fs = (FriendShip) arr[0];
+			
+			JSONObject friendShip = new JSONObject();
+			friendShip.put("id", fs.getId());
+			friendShip.put("time", fs.getAnswerTime());
+			if (fs.getAskUser().getId() == userId) {
+				friendShip.put("user", packSingleUser(fs.getAskedUser()));
+			} else {
+				friendShip.put("user", packSingleUser(fs.getAskUser()));
+			}
+			array.add(friendShip);
+		}
+		
+		JSONObject result = new JSONObject();
+		result.put("friends", array);
+		return result;
+	}
+
 }

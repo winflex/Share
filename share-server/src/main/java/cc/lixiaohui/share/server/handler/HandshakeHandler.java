@@ -17,7 +17,6 @@ import cc.lixiaohui.share.protocol.HandshakeResponseMessage;
 import cc.lixiaohui.share.protocol.Message;
 import cc.lixiaohui.share.server.AbstractShareServer;
 import cc.lixiaohui.share.server.SessionManager;
-import cc.lixiaohui.share.server.config.SocketConfig;
 
 /**
  * 握手处理
@@ -38,7 +37,7 @@ public class HandshakeHandler extends SimpleChannelInboundHandler<Message> {
 	
 	private AbstractShareServer server;
 	
-	private SocketConfig config;
+	//private SocketConfig config;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HandshakeHandler.class);
 	

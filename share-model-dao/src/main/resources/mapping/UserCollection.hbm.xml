@@ -4,18 +4,11 @@
 
 <hibernate-mapping package="cc.lixiaohui.share.model.bean">
 	<class name="UserCollection" table="user_collection">
-		<id name="id" type="int">
-			<column name="id" />
+		<id name="id" type="int" column="id">
 			<generator class="native" />
 		</id>
 		<!-- many to one -->
-		<many-to-one name="user" class="cc.lixiaohui.share.model.bean.User"
-			fetch="join">
-			<column name="user_id" />
-		</many-to-one>
-		<many-to-one name="collectedUser" class="cc.lixiaohui.share.model.bean.User"
-			fetch="join">
-			<column name="collected_user_id" />
-		</many-to-one>
+		<many-to-one name="user" class="User" fetch="join" lazy="false" column="user_id" />
+		<many-to-one name="collectedUser" class="User" fetch="join" lazy="false" column="collected_user_id" />
 	</class>
 </hibernate-mapping>

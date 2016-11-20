@@ -107,8 +107,16 @@ public class ShareClientImpl extends AbstractShareClient {
 	@Override
 	public String register(String username, String password) throws ClientException {
 		CSRequestMessage m = CSRequestMessage.builder().service("SessionService").procedure("register")
-			.parameter("password", password)
-			.parameter("username", username).build();
+			.parameter("username", username)
+			.parameter("password", password).build();
+		return syncSend(m);
+	}
+	
+	@Override
+	public String registerAdmin(String username, String password) throws ClientException {
+		CSRequestMessage m = CSRequestMessage.builder().service("SessionService").procedure("registerAdmin")
+				.parameter("username", username)
+				.parameter("password", password).build();
 		return syncSend(m);
 	}
 
@@ -206,18 +214,18 @@ public class ShareClientImpl extends AbstractShareClient {
 			@Param(index = 1, name = "start"),
 			@Param(index = 2, name = "limit")})
 	@Override
-	public String getFriends(int userId, int start, int limit) throws ClientException {
+	public String getFriends(int start, int limit) throws ClientException {
 		CSRequestMessage m = CSRequestMessage.builder().service("UserService").procedure("getFriends")
-				.parameter("userId", userId).parameter("start", start).parameter("limit", limit).build();
+				.parameter("start", start).parameter("limit", limit).build();
 		return syncSend(m);
 	}
 
 	@Proxy(service="UserService", procedure="deleteFriend", params={
-			@Param(index = 0, name = "friendId")})
+			@Param(index = 0, name = "friendShipId")})
 	@Override
-	public String deleteFriend(int friendId) throws ClientException {
+	public String deleteFriend(int friendShipId) throws ClientException {
 		CSRequestMessage m = CSRequestMessage.builder().service("UserService").procedure("deleteFriend")
-				.parameter("friendId", friendId).build();
+				.parameter("friendShipId", friendShipId).build();
 		return syncSend(m);
 	}
 
@@ -271,20 +279,20 @@ public class ShareClientImpl extends AbstractShareClient {
 	}
 
 	@Proxy(service="CollectionService", procedure="unCollectUser", params={
-			@Param(index = 0, name = "userId")})
+			@Param(index = 0, name = "collectionId")})
 	@Override
-	public String unCollectUser(int userId) throws ClientException {
+	public String unCollectUser(int collectionId) throws ClientException {
 		CSRequestMessage m = CSRequestMessage.builder().service("CollectionService").procedure("unCollectUser")
-				.parameter("userId", userId).build();
+				.parameter("collectionId", collectionId).build();
 		return syncSend(m);
 	}
 
 	@Proxy(service="CollectionService", procedure="unCollectShare", params={
-			@Param(index = 0, name = "shareId")})
+			@Param(index = 0, name = "collectionId")})
 	@Override
-	public String unCollectShare(int shareId) throws ClientException {
+	public String unCollectShare(int collectionId) throws ClientException {
 		CSRequestMessage m = CSRequestMessage.builder().service("CollectionService").procedure("unCollectShare")
-				.parameter("shareId", shareId).build();
+				.parameter("collectionId", collectionId).build();
 		return syncSend(m);
 	}
 
@@ -404,4 +412,17 @@ public class ShareClientImpl extends AbstractShareClient {
 		return syncSend(m);
 	}
 
+	
+	public String like(int shareId) throws ClientException {
+		CSRequestMessage m = CSRequestMessage.builder().service("PraiseService").procedure("like")
+				.parameter("shareId", shareId).build();
+		return syncSend(m);
+	};
+	
+	@Override
+	public String unlike(int praiseId) throws ClientException {
+		CSRequestMessage m = CSRequestMessage.builder().service("PraiseService").procedure("unlike")
+				.parameter("praiseId", praiseId).build();
+		return syncSend(m);
+	}
 }

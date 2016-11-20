@@ -55,7 +55,9 @@ public class ShareService extends AbstractService {
 	}
 
 	/**
-	 * 
+	 * 获取分享
+	 * 1.若当前session未登陆, 则要考虑屏蔽情况
+	 * 2.否则, 自己的selfForbid和adminForbid忽略, 但是他人的selfForbid和adminForbid要考虑
 	 * <pre>
 	  { 
 	 *   "count":1,    # 所返回的结果条数
@@ -92,7 +94,7 @@ public class ShareService extends AbstractService {
 	public String getShares() throws ServiceException {
 		try {
 			String keyword = SQLUtils.toLike(getStringParameter("keyword", ""));
-			long baseTime = getLongParameter("baseTime", -1);
+			long baseTime = getLongParameter("baseTime", 0);
 			int orderColumn = getIntParameter("orderColumn", DEFAULT_ORDER_COLUMN_INDEX);
 			int orderType = getIntParameter("orderType", DEFAULT_ORDER_TYPE_INDEX);
 			int start = getIntParameter("start", DEFAULT_START);
@@ -100,46 +102,13 @@ public class ShareService extends AbstractService {
 			boolean deleted = getBooleanParameter("deleted", false);
 			
 			ShareDao dao = daofactory.getDao(ShareDao.class);
-			List<Share> shares = dao.list(keyword, baseTime, deleted, getOrderColumn(orderColumn), getOrderType(orderType), start, limit);
+			int userId = session.isLogined() ? session.getUser().getId() : -1;
+			List<Share> shares = dao.list(userId, keyword, baseTime, deleted, getOrderColumn(orderColumn), getOrderType(orderType), start, limit);
 			return JSONUtils.newSuccessfulResult("获取分享成功", packMultiShare(shares));
 		} catch (Exception e) {
 			logger.error("{}", e);
 			return JSONUtils.newFailureResult(e.getMessage(), ErrorCode.wrap(e), e);
 		}
-	}
-	
-	private JSONObject packMultiShare(List<Share> shares) {
-		JSONArray shareArray = new JSONArray();
-		for (Share share : shares) {
-			JSONObject item = new JSONObject();
-			item.put("id", share.getId());
-			item.put("userId", share.getPublisher().getId());
-			item.put("username", share.getPublisher().getUsername());
-			item.put("content", share.getContent());
-			item.put("createTime", share.getCreateTime());
-			item.put("praiseCount", share.getPraiseCount());
-			item.put("commentCount", share.getCommentCount());
-			JSONArray pictureArray = new JSONArray();
-			for (Picture p : share.getPictures()) {
-				pictureArray.add(p.getId());
-			}
-			item.put("pictureIds", pictureArray);
-			shareArray.add(item);
-		}
-		JSONObject result = new JSONObject();
-		result.put("count", shares.size());
-		result.put("shares", shareArray);
-		return result;
-	}
-
-	private String getOrderColumn(int order) {
-		String name = ORDER_FIELD_MAP.get(order);
-		return name == null ? ORDER_FIELD_MAP.get(0) : name;
-	}
-
-	private String getOrderType(int orderType) {
-		String name = ORDER_TYPE_MAP.get(orderType);
-		return name == null ? ORDER_FIELD_MAP.get(0) : name;
 	}
 	
 	/**
@@ -206,47 +175,6 @@ public class ShareService extends AbstractService {
 		}
 	}
 	
-	private JSONObject packSingleShare(Share share, List<Picture> pictures, List<Praise> praises, List<Comment> comments) {
-		// praises
-		JSONArray praiseArray = new JSONArray();
-		for (Praise p : praises) {
-			JSONObject item = new JSONObject();
-			item.put("userId", p.getUser().getId());
-			item.put("useranme", p.getUser().getUsername());
-			praiseArray.add(item);
-		}
-		JSONObject praiseInfo = new JSONObject();
-		praiseInfo.put("praiseCount", praises.size());
-		praiseInfo.put("praiseUsers", praiseArray);
-		
-		// comments
-		JSONArray commentArray = new JSONArray();
-		for (Comment c : comments) {
-			JSONObject item = new JSONObject();
-			item.put("commentId", c.getId());
-			item.put("content", c.getContent());
-			item.put("commentTime", c.getCommentTime());
-			item.put("fromUserId", c.getFromUser().getId());
-			item.put("fromUsername", c.getFromUser().getUsername());
-			item.put("toUserId", c.getToUser().getId());
-			item.put("toUsername", c.getToUser().getUsername());
-			commentArray.add(item);
-		}
-		JSONObject commentInfo = new JSONObject();
-		commentInfo.put("commentCount", comments.size());
-		commentInfo.put("commentList", commentArray);
-		
-		JSONObject result = new JSONObject();
-		result.put("id", share.getId());
-		result.put("userId", share.getPublisher().getId());
-		result.put("username", share.getPublisher().getUsername());
-		result.put("content", share.getContent());
-		result.put("createTime", share.getCreateTime());
-		result.put("praiseInfo", praiseInfo);
-		result.put("commentInfo", commentInfo);
-		return result;
-	}
-
 	/**
 	 * @param shareId int !nullable
 	 * @param physically boolean nullable default false 是否物理删除
@@ -312,20 +240,24 @@ public class ShareService extends AbstractService {
 			UserDao userDao = daofactory.getDao(UserDao.class);
 			ShareDao shareDao = daofactory.getDao(ShareDao.class);
 			PictureDao pictureDao = daofactory.getDao(PictureDao.class);
-			User user = userDao.getById(session.getUserId());
+			User user = userDao.getById(session.getUser().getId());
 			Share share = newShare(content, pictureIds, pictureDao.getPictures(pictureIds), user);
 			
 			if (shareDao.add(share) > 0) {
 				JSONObject result = new JSONObject();
 				result.put("shareId", share.getId());
-				// TODO 推送, 注意:不要推送给源客户端
+				// TODO 推送给除了发布者外的所有在线客户端
 				if (session.isSelfShield() || session.isAdminShield()) {
 					logger.warn("ignoring shield session {}", session);
 				} else {
-					PushMessage message = PushMessage.builder().type(PushMessage.Type.SHARE)
-							.pushData(packSharePushResult(share).toJSONString()).build();
-					//推送是异步的
-					session.getSessionManager().publishPushMessage(session, message);
+					try {
+						PushMessage message = PushMessage.builder().type(PushMessage.Type.SHARE)
+								.pushData(packSharePushResult(share).toJSONString()).build();
+						//推送是异步的
+						session.getSessionManager().pushToAllExcept(session, message);
+					} catch (Throwable t) {
+						logger.error("{}", t);
+					}
 				}
 				return JSONUtils.newSuccessfulResult("发布分享成功", result);
 			} else {
@@ -353,6 +285,40 @@ public class ShareService extends AbstractService {
 		return pushResult;
 	}
 
+	private JSONObject packMultiShare(List<Share> shares) {
+		JSONArray shareArray = new JSONArray();
+		for (Share share : shares) {
+			JSONObject item = new JSONObject();
+			item.put("id", share.getId());
+			item.put("userId", share.getPublisher().getId());
+			item.put("username", share.getPublisher().getUsername());
+			item.put("content", share.getContent());
+			item.put("createTime", share.getCreateTime());
+			item.put("praiseCount", share.getPraiseCount());
+			item.put("commentCount", share.getCommentCount());
+			JSONArray pictureArray = new JSONArray();
+			for (Picture p : share.getPictures()) {
+				pictureArray.add(p.getId());
+			}
+			item.put("pictureIds", pictureArray);
+			shareArray.add(item);
+		}
+		JSONObject result = new JSONObject();
+		result.put("count", shares.size());
+		result.put("shares", shareArray);
+		return result;
+	}
+
+	private String getOrderColumn(int order) {
+		String name = ORDER_FIELD_MAP.get(order);
+		return name == null ? ORDER_FIELD_MAP.get(0) : name;
+	}
+
+	private String getOrderType(int orderType) {
+		String name = ORDER_TYPE_MAP.get(orderType);
+		return name == null ? ORDER_FIELD_MAP.get(0) : name;
+	}
+	
 	private Share newShare(String content, int[] pictureIds, List<Picture> pictures, User user) throws DaoException {
 		Share share = new Share();
 		share.setPublisher(user);
@@ -360,4 +326,46 @@ public class ShareService extends AbstractService {
 		share.setPictures(pictures);
 		return share;
 	}
+	
+	private JSONObject packSingleShare(Share share, List<Picture> pictures, List<Praise> praises, List<Comment> comments) {
+		// praises
+		JSONArray praiseArray = new JSONArray();
+		for (Praise p : praises) {
+			JSONObject item = new JSONObject();
+			item.put("userId", p.getUser().getId());
+			item.put("useranme", p.getUser().getUsername());
+			praiseArray.add(item);
+		}
+		JSONObject praiseInfo = new JSONObject();
+		praiseInfo.put("praiseCount", praises.size());
+		praiseInfo.put("praiseUsers", praiseArray);
+		
+		// comments
+		JSONArray commentArray = new JSONArray();
+		for (Comment c : comments) {
+			JSONObject item = new JSONObject();
+			item.put("commentId", c.getId());
+			item.put("content", c.getContent());
+			item.put("commentTime", c.getCommentTime());
+			item.put("fromUserId", c.getFromUser().getId());
+			item.put("fromUsername", c.getFromUser().getUsername());
+			item.put("toUserId", c.getToUser().getId());
+			item.put("toUsername", c.getToUser().getUsername());
+			commentArray.add(item);
+		}
+		JSONObject commentInfo = new JSONObject();
+		commentInfo.put("commentCount", comments.size());
+		commentInfo.put("commentList", commentArray);
+		
+		JSONObject result = new JSONObject();
+		result.put("id", share.getId());
+		result.put("userId", share.getPublisher().getId());
+		result.put("username", share.getPublisher().getUsername());
+		result.put("content", share.getContent());
+		result.put("createTime", share.getCreateTime());
+		result.put("praiseInfo", praiseInfo);
+		result.put("commentInfo", commentInfo);
+		return result;
+	}
+
 }

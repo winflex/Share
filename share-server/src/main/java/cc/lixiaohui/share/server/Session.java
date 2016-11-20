@@ -2,6 +2,8 @@ package cc.lixiaohui.share.server;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
+import cc.lixiaohui.share.model.bean.Role;
+import cc.lixiaohui.share.model.bean.User;
 import cc.lixiaohui.share.util.IBuilder;
 import cc.lixiaohui.share.util.TimeUtils;
 
@@ -23,31 +25,7 @@ public class Session {
 	 */
 	private volatile boolean logined;
 	
-	/**
-	 * 用户ID
-	 */
-	private volatile int userId; 
-	
-	/**
-	 * 用户名
-	 */
-	private volatile String username; 
-	
-	/**
-	 * 是否是管理员
-	 */
-	private volatile boolean admin;
-	
-	/**
-	 * 自己是否屏蔽了自己
-	 */
-	private volatile boolean selfShield; 
-	
-	/**
-	 * 管理员是否屏蔽了自己
-	 */
-	private volatile boolean adminShield; 
-	
+	private volatile User user = null;
 	
 	/**
 	 * Channel 上下文
@@ -79,22 +57,20 @@ public class Session {
 		this.createTime = builder.createTime();
 		this.lastAccessTime = builder.lastAccessTime();
 		this.logined = builder.isLogined();
-		this.userId = builder.userId();
+		this.user = builder.user;
+		/*this.userId = builder.userId();
 		this.username = builder.username();
-		this.admin = builder.admin();
+		this.roleId = builder.roleId();*/
 		this.sessionManager = builder.sessionManager();
 		this.handshaked = builder.handshaked();
 	}
 	
-	public boolean login(int userId, String username, boolean selfShield, boolean adminShield) {
-		if (logined) { // 已登陆
+	public boolean login(User user) {
+		if (logined) {
 			return false;
 		}
-		this.userId = userId;
-		this.username = username;
-		this.selfShield = selfShield;
-		this.adminShield = adminShield;
-		logined = true; 
+		this.user = user;
+		this.logined = true;
 		return true;
 	}
 	
@@ -127,36 +103,46 @@ public class Session {
 		setLastAccessTime(TimeUtils.currentTimeMillis());
 	}
 	
+	
+	public void setAdminShield(boolean shield) {
+		user.setAdminForbid(shield);
+	}
+	
+	public void setSelfShield(boolean shield) {
+		user.setSelfForbid(shield);
+	}
+	
+	public boolean isAdminShield() {
+		return user.isAdminForbid();
+	}
+	
+	public boolean isSelfShield() {
+		return user.isSelfForbid();
+	}
+	
 	// ---------------------- getters and setters -------------------
 	
 	public void setLogined(boolean logined) {
 		this.logined = logined;
 	}
 
-	public boolean isSelfShield() {
-		return selfShield;
+	public User getUser() {
+		return user;
 	}
 
-	public void setSelfShield(boolean selfShield) {
-		this.selfShield = selfShield;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public boolean isAdminShield() {
-		return adminShield;
-	}
-
-	public void setAdminShield(boolean adminSheild) {
-		this.adminShield = adminSheild;
-	}
 
 	public boolean isAdmin() {
-		return admin;
+		return Role.isAdmin(user.getRole().getId());
 	}
 
-	public void setAdmin(boolean admin) {
-		this.admin = admin;
+	public boolean isSuper() {
+		return Role.isSuper(user.getRole().getId());
 	}
-
+	
 	public long getSessionId() {
 		return sessionId;
 	}
@@ -169,20 +155,6 @@ public class Session {
 		this.context = context;
 	}
 
-	public int getUserId() {
-		return userId;
-	}
-
-	/**
-	 * @param userId the userId to set
-	 */
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
-	/**
-	 * @return the createTime
-	 */
 	public long getCreateTime() {
 		return createTime;
 	}
@@ -201,14 +173,6 @@ public class Session {
 	
 	public static SessionBuilder builder() {
 		return new SessionBuilder();
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
 	}
 	
 	public SessionManager getSessionManager() {
@@ -239,16 +203,13 @@ public class Session {
 		++heartbeatMissTimes;
 	}
 	
-	
 	@Override
 	public String toString() {
 		
 		return new StringBuilder("Session[")
 				.append("id").append("=").append(sessionId)
 				.append(", logined").append("=").append(logined)
-				.append(", username").append("=").append(username)
-				.append(", selfShield").append("=").append(selfShield)
-				.append(", adminShield").append("=").append(adminShield)
+				.append(", user").append("=").append(user.toString())
 				.append(", handshaked").append("=").append(handshaked)
 				.append("]").toString();
 	}
@@ -260,9 +221,7 @@ public class Session {
 		
 		private boolean logined;
 		
-		private int userId;
-		
-		private String username;
+		private User user;
 		
 		private ChannelHandlerContext context;
 		
@@ -270,21 +229,25 @@ public class Session {
 		
 		private long lastAccessTime;
 		
-		private boolean selfShield;
-		
-		private boolean adminShield;
 		
 		private SessionManager sessionManager;
 		
 		private boolean handshaked;
-		
-		private boolean admin;
 		
 		@Override
 		public Session build() {
 			return new Session(this);
 		}
 
+		public User user() {
+			return user;
+		}
+		
+		public SessionBuilder user(User user) {
+			this.user = user;
+			return this;
+		}
+		
 		public boolean handshaked() {
 			return handshaked;
 		}
@@ -309,15 +272,6 @@ public class Session {
 
 		public SessionBuilder logined(boolean logined) {
 			this.logined = logined;
-			return this;
-		}
-
-		public int userId() {
-			return userId;
-		}
-
-		public SessionBuilder userId(int userId) {
-			this.userId = userId;
 			return this;
 		}
 
@@ -348,33 +302,6 @@ public class Session {
 			return this;
 		}
 		
-		public String username() {
-			return username;
-		}
-		
-		public SessionBuilder username(String username) {
-			this.username = username;
-			return this;
-		}
-		
-		public SessionBuilder selfShield(boolean selfShield) {
-			this.selfShield = selfShield;
-			return this;
-		}
-		
-		public boolean selfShield() {
-			return selfShield;
-		}
-		
-		public boolean adminShield() {
-			return adminShield;
-		}
-		
-		public SessionBuilder adminShield(boolean adminShield) {
-			this.adminShield = adminShield;
-			return this;
-		}
-		
 		public SessionBuilder sessionManager(SessionManager manager) {
 			this.sessionManager = manager;
 			return this;
@@ -384,13 +311,5 @@ public class Session {
 			return sessionManager;
 		}
 		
-		public boolean admin() {
-			return admin;
-		}
-		
-		public SessionBuilder admin(boolean admin) {
-			this.admin = admin;
-			return this;
-		}
 	}
 }
