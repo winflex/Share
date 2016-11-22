@@ -1,7 +1,6 @@
 package cc.lixiaohui.share.server.service;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,7 +8,6 @@ import java.util.Map;
 import org.junit.Test;
 
 import cc.lixiaohui.share.model.bean.Share;
-import cc.lixiaohui.share.model.bean.User;
 import cc.lixiaohui.share.model.util.HibernateSessionFactory;
 import cc.lixiaohui.share.server.Session;
 import cc.lixiaohui.share.server.SystemRuntime;
@@ -66,7 +64,7 @@ public class ShareServiceTest {
 		Calendar cal = Calendar.getInstance();
 		cal.set(2016, 10, 18, 1, 1, 1);
 		//long millis = cal.getTimeInMillis();
-		long millis = System.currentTimeMillis() - 1000 * 60 * 60 * 24 * 5;
+		//long millis = System.currentTimeMillis() - 1000 * 60 * 60 * 24 * 5;
 		
 		//params.put("baseTime", millis);
 		//params.put("userId", 11);

@@ -2,8 +2,6 @@ package cc.lixiaohui.share.client;
 
 import org.junit.Test;
 
-import cc.lixiaohui.share.util.lifecycle.LifeCycleException;
-
 /**
  * @author lixiaohui
  * @date 2016年11月16日 下午7:44:49

@@ -1,0 +1,1410 @@
+2016-11-21 11:05:53.386-[INFO ] main AbstractShareServer - server initializing...
+2016-11-21 11:05:54.386-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-21 11:05:54.386-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-21 11:05:54.386-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-21 11:05:54.386-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-21 11:05:54.386-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-21 11:05:55.589-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-21 11:05:55.651-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-21 11:05:55.698-[INFO ] main AbstractShareServer - server initialized
+2016-11-21 11:05:55.745-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-21 11:05:55.745-[INFO ] main AbstractShareServer - server started
+2016-11-21 11:06:43.396-[INFO ] main AbstractShareServer - server initializing...
+2016-11-21 11:06:44.082-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-21 11:06:44.082-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-21 11:06:44.082-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-21 11:06:44.082-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-21 11:06:44.082-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-21 11:06:44.895-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-21 11:06:44.942-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-21 11:06:44.942-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-21 11:06:44.957-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-21 11:06:44.973-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-21 11:06:44.973-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-21 11:06:44.973-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-21 11:06:44.973-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-21 11:06:44.973-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-21 11:06:45.035-[INFO ] main AbstractShareServer - server initialized
+2016-11-21 11:06:45.082-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-21 11:06:45.082-[INFO ] main AbstractShareServer - server started
+2016-11-22 10:09:48.746-[INFO ] main AbstractShareServer - server initializing...
+2016-11-22 10:09:49.850-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-22 10:09:49.850-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-22 10:09:49.850-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-22 10:09:49.850-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-22 10:09:49.851-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-22 10:09:51.149-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-22 10:09:51.395-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-22 10:09:51.395-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-22 10:09:51.396-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-22 10:09:51.396-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-22 10:09:51.397-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-22 10:09:51.397-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-22 10:09:51.397-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-22 10:09:51.397-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-22 10:09:51.398-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-22 10:09:51.398-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-22 10:09:51.398-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-22 10:09:51.398-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-22 10:09:51.399-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-22 10:09:51.399-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-22 10:09:51.401-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-22 10:09:51.401-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-22 10:09:51.401-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-22 10:09:51.401-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-22 10:09:51.402-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-22 10:09:51.402-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-22 10:09:51.403-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-22 10:09:51.404-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-22 10:09:51.404-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-22 10:09:51.405-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-22 10:09:51.405-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-22 10:09:51.405-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-22 10:09:51.406-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-22 10:09:51.408-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-22 10:09:51.408-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-22 10:09:51.408-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-22 10:09:51.409-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-22 10:09:51.409-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-22 10:09:51.410-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-22 10:09:51.410-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-22 10:09:51.410-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-22 10:09:51.410-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-22 10:09:51.602-[INFO ] main AbstractShareServer - server initialized
+2016-11-22 10:09:51.683-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-22 10:09:51.697-[INFO ] main AbstractShareServer - server started
+2016-11-22 10:10:01.627-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0xaf804a1d, /127.0.0.1:50564 => /127.0.0.1:8888]
+2016-11-22 10:10:01.696-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0xaf804a1d, /127.0.0.1:50564 => /127.0.0.1:8888]
+2016-11-22 10:10:01.737-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:10:01.779-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0xaf804a1d, /127.0.0.1:50564 => /127.0.0.1:8888]
+2016-11-22 10:10:01.827-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:10:01.838-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0xaf804a1d, /127.0.0.1:50564 => /127.0.0.1:8888]
+2016-11-22 10:10:01.946-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0xaf804a1d, /127.0.0.1:50564 => /127.0.0.1:8888]
+2016-11-22 10:10:01.946-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:10:02.651-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:10:02.865-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@2aa937cd
+2016-11-22 10:10:02.868-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:10:02.880-[DEBUG] IO-Worker-0 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@3eb52a28 to channel [id: 0xaf804a1d, /127.0.0.1:50564 => /127.0.0.1:8888]
+2016-11-22 10:11:42.942-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:11:42.944-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0xaf804a1d, /127.0.0.1:50564 => /127.0.0.1:8888]
+2016-11-22 10:13:06.534-[INFO ] IO-Worker-1 AbstractShareServer - new channel [id: 0xc25735a8, /127.0.0.1:50686 => /127.0.0.1:8888]
+2016-11-22 10:13:06.535-[INFO ] IO-Worker-1 SessionHandler - attached session for channel [id: 0xc25735a8, /127.0.0.1:50686 => /127.0.0.1:8888]
+2016-11-22 10:13:06.535-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:13:06.540-[INFO ] IO-Worker-1 HandshakeHandler - write handshake to channel [id: 0xc25735a8, /127.0.0.1:50686 => /127.0.0.1:8888]
+2016-11-22 10:13:06.634-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:13:06.634-[INFO ] IO-Worker-1 HandshakeHandler - recieved handshake response from channel [id: 0xc25735a8, /127.0.0.1:50686 => /127.0.0.1:8888]
+2016-11-22 10:13:06.635-[INFO ] IO-Worker-1 HandshakeHandler - connection established [id: 0xc25735a8, /127.0.0.1:50686 => /127.0.0.1:8888]
+2016-11-22 10:13:06.647-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:13:06.671-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:13:06.672-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@2bab5dae
+2016-11-22 10:13:06.672-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:13:06.672-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@7f9360e7 to channel [id: 0xc25735a8, /127.0.0.1:50686 => /127.0.0.1:8888]
+2016-11-22 10:13:06.676-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:13:06.738-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@4d74f02c
+2016-11-22 10:13:06.739-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:13:06.739-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@3844006e to channel [id: 0xc25735a8, /127.0.0.1:50686 => /127.0.0.1:8888]
+2016-11-22 10:13:22.874-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:13:22.875-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0xaf804a1d, /127.0.0.1:50564 => /127.0.0.1:8888]
+2016-11-22 10:14:11.313-[INFO ] IO-Worker-1 SessionHandler - dettached session from channel [id: 0xc25735a8, /127.0.0.1:50686 :> /127.0.0.1:8888]
+2016-11-22 10:14:32.229-[INFO ] IO-Worker-2 AbstractShareServer - new channel [id: 0xe91c1ea7, /127.0.0.1:50714 => /127.0.0.1:8888]
+2016-11-22 10:14:32.230-[INFO ] IO-Worker-2 SessionHandler - attached session for channel [id: 0xe91c1ea7, /127.0.0.1:50714 => /127.0.0.1:8888]
+2016-11-22 10:14:32.231-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:14:32.231-[INFO ] IO-Worker-2 HandshakeHandler - write handshake to channel [id: 0xe91c1ea7, /127.0.0.1:50714 => /127.0.0.1:8888]
+2016-11-22 10:14:32.322-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:14:32.322-[INFO ] IO-Worker-2 HandshakeHandler - recieved handshake response from channel [id: 0xe91c1ea7, /127.0.0.1:50714 => /127.0.0.1:8888]
+2016-11-22 10:14:32.323-[INFO ] IO-Worker-2 HandshakeHandler - connection established [id: 0xe91c1ea7, /127.0.0.1:50714 => /127.0.0.1:8888]
+2016-11-22 10:14:32.334-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:14:32.355-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:14:32.355-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@313d21d6
+2016-11-22 10:14:32.355-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:14:32.356-[DEBUG] IO-Worker-2 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@247881db to channel [id: 0xe91c1ea7, /127.0.0.1:50714 => /127.0.0.1:8888]
+2016-11-22 10:14:32.360-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:14:32.393-[DEBUG] Core-Worker-2 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@5796de29
+2016-11-22 10:14:32.395-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:14:32.399-[DEBUG] IO-Worker-2 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@71d382ab to channel [id: 0xe91c1ea7, /127.0.0.1:50714 => /127.0.0.1:8888]
+2016-11-22 10:14:34.402-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:14:34.545-[ERROR] Core-Worker-3 AbstractService - {}
+java.lang.NullPointerException: null
+	at cc.lixiaohui.share.server.service.UserService.deleteFriend(UserService.java:392) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128) [classes/:na]
+	at cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_45]
+	at java.lang.Thread.run(Thread.java:662) [na:1.6.0_45]
+2016-11-22 10:14:34.572-[DEBUG] Core-Worker-3 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@618eabf6
+2016-11-22 10:14:34.573-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:14:34.574-[DEBUG] IO-Worker-2 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@5dbbd583 to channel [id: 0xe91c1ea7, /127.0.0.1:50714 => /127.0.0.1:8888]
+2016-11-22 10:15:02.874-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:15:02.875-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0xaf804a1d, /127.0.0.1:50564 => /127.0.0.1:8888]
+2016-11-22 10:22:06.317-[INFO ] main AbstractShareServer - server initializing...
+2016-11-22 10:22:07.198-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-22 10:22:07.198-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-22 10:22:07.198-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-22 10:22:07.199-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-22 10:22:07.199-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-22 10:22:08.253-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-22 10:22:08.289-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-22 10:22:08.289-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-22 10:22:08.289-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-22 10:22:08.290-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-22 10:22:08.290-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-22 10:22:08.290-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-22 10:22:08.290-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-22 10:22:08.291-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-22 10:22:08.291-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-22 10:22:08.292-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-22 10:22:08.292-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-22 10:22:08.292-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-22 10:22:08.293-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-22 10:22:08.294-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-22 10:22:08.295-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-22 10:22:08.298-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-22 10:22:08.299-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-22 10:22:08.299-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-22 10:22:08.299-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-22 10:22:08.300-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-22 10:22:08.300-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-22 10:22:08.301-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-22 10:22:08.301-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-22 10:22:08.317-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-22 10:22:08.318-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-22 10:22:08.318-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-22 10:22:08.320-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-22 10:22:08.321-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-22 10:22:08.321-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-22 10:22:08.321-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-22 10:22:08.322-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-22 10:22:08.323-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-22 10:22:08.323-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-22 10:22:08.323-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-22 10:22:08.324-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-22 10:22:08.324-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-22 10:22:08.378-[INFO ] main AbstractShareServer - server initialized
+2016-11-22 10:22:08.446-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-22 10:22:08.447-[INFO ] main AbstractShareServer - server started
+2016-11-22 10:22:53.338-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0xde8d019e, /127.0.0.1:50934 => /127.0.0.1:8888]
+2016-11-22 10:22:53.348-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0xde8d019e, /127.0.0.1:50934 => /127.0.0.1:8888]
+2016-11-22 10:22:53.403-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:22:53.404-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0xde8d019e, /127.0.0.1:50934 => /127.0.0.1:8888]
+2016-11-22 10:22:53.489-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:22:53.505-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0xde8d019e, /127.0.0.1:50934 => /127.0.0.1:8888]
+2016-11-22 10:22:53.510-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0xde8d019e, /127.0.0.1:50934 => /127.0.0.1:8888]
+2016-11-22 10:22:53.511-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:22:53.767-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:22:53.833-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@7a80747
+2016-11-22 10:22:53.834-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:22:53.837-[DEBUG] IO-Worker-0 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@2875ca3e to channel [id: 0xde8d019e, /127.0.0.1:50934 => /127.0.0.1:8888]
+2016-11-22 10:23:13.262-[INFO ] IO-Worker-1 AbstractShareServer - new channel [id: 0x3fee0363, /127.0.0.1:50942 => /127.0.0.1:8888]
+2016-11-22 10:23:13.263-[INFO ] IO-Worker-1 SessionHandler - attached session for channel [id: 0x3fee0363, /127.0.0.1:50942 => /127.0.0.1:8888]
+2016-11-22 10:23:13.263-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:23:13.264-[INFO ] IO-Worker-1 HandshakeHandler - write handshake to channel [id: 0x3fee0363, /127.0.0.1:50942 => /127.0.0.1:8888]
+2016-11-22 10:23:13.353-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:23:13.354-[INFO ] IO-Worker-1 HandshakeHandler - recieved handshake response from channel [id: 0x3fee0363, /127.0.0.1:50942 => /127.0.0.1:8888]
+2016-11-22 10:23:13.355-[INFO ] IO-Worker-1 HandshakeHandler - connection established [id: 0x3fee0363, /127.0.0.1:50942 => /127.0.0.1:8888]
+2016-11-22 10:23:13.369-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:23:13.395-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:23:13.396-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@397577f9
+2016-11-22 10:23:13.396-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:23:13.397-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@4f1799e7 to channel [id: 0x3fee0363, /127.0.0.1:50942 => /127.0.0.1:8888]
+2016-11-22 10:23:13.401-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:23:17.806-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@191e0eb
+2016-11-22 10:23:17.806-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:23:17.807-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@1045651b to channel [id: 0x3fee0363, /127.0.0.1:50942 => /127.0.0.1:8888]
+2016-11-22 10:23:19.809-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:23:19.820-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@3ecb800f
+2016-11-22 10:23:19.821-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:23:19.822-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@224478fe to channel [id: 0x3fee0363, /127.0.0.1:50942 => /127.0.0.1:8888]
+2016-11-22 10:24:00.224-[INFO ] IO-Worker-1 SessionHandler - dettached session from channel [id: 0x3fee0363, /127.0.0.1:50942 :> /127.0.0.1:8888]
+2016-11-22 10:24:33.846-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:24:33.849-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0xde8d019e, /127.0.0.1:50934 => /127.0.0.1:8888]
+2016-11-22 10:24:34.574-[INFO ] IO-Worker-2 AbstractShareServer - new channel [id: 0x142a9da4, /127.0.0.1:50955 => /127.0.0.1:8888]
+2016-11-22 10:24:34.575-[INFO ] IO-Worker-2 SessionHandler - attached session for channel [id: 0x142a9da4, /127.0.0.1:50955 => /127.0.0.1:8888]
+2016-11-22 10:24:34.576-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:24:34.576-[INFO ] IO-Worker-2 HandshakeHandler - write handshake to channel [id: 0x142a9da4, /127.0.0.1:50955 => /127.0.0.1:8888]
+2016-11-22 10:24:34.658-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:24:34.658-[INFO ] IO-Worker-2 HandshakeHandler - recieved handshake response from channel [id: 0x142a9da4, /127.0.0.1:50955 => /127.0.0.1:8888]
+2016-11-22 10:24:34.659-[INFO ] IO-Worker-2 HandshakeHandler - connection established [id: 0x142a9da4, /127.0.0.1:50955 => /127.0.0.1:8888]
+2016-11-22 10:24:34.669-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:24:34.697-[DEBUG] Core-Worker-2 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:24:34.697-[DEBUG] Core-Worker-2 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@58053b2c
+2016-11-22 10:24:34.698-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:24:34.699-[DEBUG] IO-Worker-2 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@3f6ff2d9 to channel [id: 0x142a9da4, /127.0.0.1:50955 => /127.0.0.1:8888]
+2016-11-22 10:24:34.704-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:24:36.516-[DEBUG] Core-Worker-4 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@6140c973
+2016-11-22 10:24:36.516-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:24:36.517-[DEBUG] IO-Worker-2 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@6469cee6 to channel [id: 0x142a9da4, /127.0.0.1:50955 => /127.0.0.1:8888]
+2016-11-22 10:24:38.519-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:24:58.130-[ERROR] Core-Worker-1 AbstractService - {}
+java.lang.NullPointerException: null
+	at cc.lixiaohui.share.server.service.UserService.deleteFriend(UserService.java:399) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128) [classes/:na]
+	at cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_45]
+	at java.lang.Thread.run(Thread.java:662) [na:1.6.0_45]
+2016-11-22 10:24:58.132-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@6eaf721d
+2016-11-22 10:24:58.132-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:24:58.133-[DEBUG] IO-Worker-2 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@406d06b0 to channel [id: 0x142a9da4, /127.0.0.1:50955 => /127.0.0.1:8888]
+2016-11-22 10:27:23.246-[INFO ] main AbstractShareServer - server initializing...
+2016-11-22 10:27:23.891-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-22 10:27:23.891-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-22 10:27:23.892-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-22 10:27:23.892-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-22 10:27:23.892-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-22 10:27:24.844-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-22 10:27:24.878-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-22 10:27:24.879-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-22 10:27:24.879-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-22 10:27:24.879-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-22 10:27:24.879-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-22 10:27:24.880-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-22 10:27:24.880-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-22 10:27:24.880-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-22 10:27:24.880-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-22 10:27:24.881-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-22 10:27:24.882-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-22 10:27:24.883-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-22 10:27:24.883-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-22 10:27:24.884-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-22 10:27:24.885-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-22 10:27:24.886-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-22 10:27:24.888-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-22 10:27:24.888-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-22 10:27:24.888-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-22 10:27:24.889-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-22 10:27:24.890-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-22 10:27:24.890-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-22 10:27:24.890-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-22 10:27:24.891-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-22 10:27:24.892-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-22 10:27:24.892-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-22 10:27:24.894-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-22 10:27:24.894-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-22 10:27:24.894-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-22 10:27:24.894-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-22 10:27:24.895-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-22 10:27:24.896-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-22 10:27:24.896-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-22 10:27:24.896-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-22 10:27:24.897-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-22 10:27:24.897-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-22 10:27:24.947-[INFO ] main AbstractShareServer - server initialized
+2016-11-22 10:27:25.011-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-22 10:27:25.012-[INFO ] main AbstractShareServer - server started
+2016-11-22 10:27:30.143-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0x3c287a3e, /127.0.0.1:51006 => /127.0.0.1:8888]
+2016-11-22 10:27:30.153-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0x3c287a3e, /127.0.0.1:51006 => /127.0.0.1:8888]
+2016-11-22 10:27:30.202-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:27:30.204-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0x3c287a3e, /127.0.0.1:51006 => /127.0.0.1:8888]
+2016-11-22 10:27:30.292-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:27:30.301-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0x3c287a3e, /127.0.0.1:51006 => /127.0.0.1:8888]
+2016-11-22 10:27:30.306-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0x3c287a3e, /127.0.0.1:51006 => /127.0.0.1:8888]
+2016-11-22 10:27:30.310-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:27:30.520-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:27:30.589-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@67723c7f
+2016-11-22 10:27:30.590-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:27:30.591-[DEBUG] IO-Worker-0 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@1d6dba0a to channel [id: 0x3c287a3e, /127.0.0.1:51006 => /127.0.0.1:8888]
+2016-11-22 10:27:54.119-[INFO ] IO-Worker-1 AbstractShareServer - new channel [id: 0x8914de93, /127.0.0.1:51020 => /127.0.0.1:8888]
+2016-11-22 10:27:54.120-[INFO ] IO-Worker-1 SessionHandler - attached session for channel [id: 0x8914de93, /127.0.0.1:51020 => /127.0.0.1:8888]
+2016-11-22 10:27:54.120-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:27:54.120-[INFO ] IO-Worker-1 HandshakeHandler - write handshake to channel [id: 0x8914de93, /127.0.0.1:51020 => /127.0.0.1:8888]
+2016-11-22 10:27:54.217-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:27:54.218-[INFO ] IO-Worker-1 HandshakeHandler - recieved handshake response from channel [id: 0x8914de93, /127.0.0.1:51020 => /127.0.0.1:8888]
+2016-11-22 10:27:54.218-[INFO ] IO-Worker-1 HandshakeHandler - connection established [id: 0x8914de93, /127.0.0.1:51020 => /127.0.0.1:8888]
+2016-11-22 10:27:54.231-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:27:54.254-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:27:54.255-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@6d21f653
+2016-11-22 10:27:54.255-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:27:54.255-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@50b2fb1e to channel [id: 0x8914de93, /127.0.0.1:51020 => /127.0.0.1:8888]
+2016-11-22 10:28:09.630-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:28:09.883-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@4b8bbb61
+2016-11-22 10:28:09.883-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:28:09.883-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@42bb0406 to channel [id: 0x8914de93, /127.0.0.1:51020 => /127.0.0.1:8888]
+2016-11-22 10:28:09.897-[INFO ] IO-Worker-0 SessionManager - push message cc.lixiaohui.share.protocol.PushMessage@9b8119a to session Session[id=0, logined=true, user=User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false], handshaked=true]
+2016-11-22 10:28:45.757-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0x3c287a3e, /127.0.0.1:51006 :> /127.0.0.1:8888]
+2016-11-22 10:28:47.015-[INFO ] IO-Worker-1 SessionHandler - dettached session from channel [id: 0x8914de93, /127.0.0.1:51020 :> /127.0.0.1:8888]
+2016-11-22 10:30:37.778-[INFO ] main AbstractShareServer - server initializing...
+2016-11-22 10:30:38.410-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-22 10:30:38.410-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-22 10:30:38.410-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-22 10:30:38.411-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-22 10:30:38.411-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-22 10:30:39.347-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-22 10:30:39.379-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-22 10:30:39.379-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-22 10:30:39.379-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-22 10:30:39.380-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-22 10:30:39.380-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-22 10:30:39.380-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-22 10:30:39.380-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-22 10:30:39.380-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-22 10:30:39.381-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-22 10:30:39.381-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-22 10:30:39.386-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-22 10:30:39.386-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-22 10:30:39.386-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-22 10:30:39.388-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-22 10:30:39.388-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-22 10:30:39.388-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-22 10:30:39.389-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-22 10:30:39.389-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-22 10:30:39.390-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-22 10:30:39.390-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-22 10:30:39.391-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-22 10:30:39.391-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-22 10:30:39.392-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-22 10:30:39.392-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-22 10:30:39.392-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-22 10:30:39.393-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-22 10:30:39.394-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-22 10:30:39.394-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-22 10:30:39.394-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-22 10:30:39.394-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-22 10:30:39.395-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-22 10:30:39.396-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-22 10:30:39.396-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-22 10:30:39.396-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-22 10:30:39.396-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-22 10:30:39.397-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-22 10:30:39.466-[INFO ] main AbstractShareServer - server initialized
+2016-11-22 10:30:39.522-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-22 10:30:39.523-[INFO ] main AbstractShareServer - server started
+2016-11-22 10:30:48.675-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0xe6096838, /127.0.0.1:51117 => /127.0.0.1:8888]
+2016-11-22 10:30:48.690-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0xe6096838, /127.0.0.1:51117 => /127.0.0.1:8888]
+2016-11-22 10:30:48.732-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:30:48.734-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0xe6096838, /127.0.0.1:51117 => /127.0.0.1:8888]
+2016-11-22 10:30:48.820-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:30:48.828-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0xe6096838, /127.0.0.1:51117 => /127.0.0.1:8888]
+2016-11-22 10:30:48.833-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0xe6096838, /127.0.0.1:51117 => /127.0.0.1:8888]
+2016-11-22 10:30:48.834-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:30:49.034-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:30:49.092-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@7ce1eae7
+2016-11-22 10:30:49.093-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:30:49.094-[DEBUG] IO-Worker-0 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@ed0f59e to channel [id: 0xe6096838, /127.0.0.1:51117 => /127.0.0.1:8888]
+2016-11-22 10:31:12.097-[INFO ] IO-Worker-1 AbstractShareServer - new channel [id: 0x0f5d50aa, /127.0.0.1:51125 => /127.0.0.1:8888]
+2016-11-22 10:31:12.098-[INFO ] IO-Worker-1 SessionHandler - attached session for channel [id: 0x0f5d50aa, /127.0.0.1:51125 => /127.0.0.1:8888]
+2016-11-22 10:31:12.098-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:31:12.098-[INFO ] IO-Worker-1 HandshakeHandler - write handshake to channel [id: 0x0f5d50aa, /127.0.0.1:51125 => /127.0.0.1:8888]
+2016-11-22 10:31:12.203-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:31:12.205-[INFO ] IO-Worker-1 HandshakeHandler - recieved handshake response from channel [id: 0x0f5d50aa, /127.0.0.1:51125 => /127.0.0.1:8888]
+2016-11-22 10:31:12.205-[INFO ] IO-Worker-1 HandshakeHandler - connection established [id: 0x0f5d50aa, /127.0.0.1:51125 => /127.0.0.1:8888]
+2016-11-22 10:31:12.215-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:31:12.242-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:31:12.243-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@6d21f653
+2016-11-22 10:31:12.243-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:31:12.243-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@50b2fb1e to channel [id: 0x0f5d50aa, /127.0.0.1:51125 => /127.0.0.1:8888]
+2016-11-22 10:31:12.248-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:31:12.272-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@156a9424
+2016-11-22 10:31:12.272-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:31:12.273-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@823d278 to channel [id: 0x0f5d50aa, /127.0.0.1:51125 => /127.0.0.1:8888]
+2016-11-22 10:31:59.954-[INFO ] IO-Worker-1 SessionHandler - dettached session from channel [id: 0x0f5d50aa, /127.0.0.1:51125 :> /127.0.0.1:8888]
+2016-11-22 10:32:29.007-[INFO ] IO-Worker-2 AbstractShareServer - new channel [id: 0xdd3cd568, /127.0.0.1:51135 => /127.0.0.1:8888]
+2016-11-22 10:32:29.008-[INFO ] IO-Worker-2 SessionHandler - attached session for channel [id: 0xdd3cd568, /127.0.0.1:51135 => /127.0.0.1:8888]
+2016-11-22 10:32:29.009-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:32:29.009-[INFO ] IO-Worker-2 HandshakeHandler - write handshake to channel [id: 0xdd3cd568, /127.0.0.1:51135 => /127.0.0.1:8888]
+2016-11-22 10:32:29.099-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:32:29.100-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0xe6096838, /127.0.0.1:51117 => /127.0.0.1:8888]
+2016-11-22 10:32:29.108-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:32:29.109-[INFO ] IO-Worker-2 HandshakeHandler - recieved handshake response from channel [id: 0xdd3cd568, /127.0.0.1:51135 => /127.0.0.1:8888]
+2016-11-22 10:32:29.109-[INFO ] IO-Worker-2 HandshakeHandler - connection established [id: 0xdd3cd568, /127.0.0.1:51135 => /127.0.0.1:8888]
+2016-11-22 10:32:29.121-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:32:29.147-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:32:29.148-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@72ebf3f0
+2016-11-22 10:32:29.148-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:32:29.149-[DEBUG] IO-Worker-2 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@60dc4c81 to channel [id: 0xdd3cd568, /127.0.0.1:51135 => /127.0.0.1:8888]
+2016-11-22 10:32:29.155-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:32:29.159-[DEBUG] Core-Worker-3 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@39757337
+2016-11-22 10:32:29.160-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:32:29.162-[DEBUG] IO-Worker-2 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@4ddf3d59 to channel [id: 0xdd3cd568, /127.0.0.1:51135 => /127.0.0.1:8888]
+2016-11-22 10:33:14.622-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:33:14.629-[DEBUG] Core-Worker-2 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@2c704cf5
+2016-11-22 10:33:14.630-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:33:14.631-[DEBUG] IO-Worker-2 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@cc7f9e to channel [id: 0xdd3cd568, /127.0.0.1:51135 => /127.0.0.1:8888]
+2016-11-22 10:33:35.367-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0xe6096838, /127.0.0.1:51117 :> /127.0.0.1:8888]
+2016-11-22 10:33:36.511-[INFO ] IO-Worker-2 SessionHandler - dettached session from channel [id: 0xdd3cd568, /127.0.0.1:51135 :> /127.0.0.1:8888]
+2016-11-22 10:34:03.717-[INFO ] main AbstractShareServer - server initializing...
+2016-11-22 10:34:04.343-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-22 10:34:04.344-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-22 10:34:04.344-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-22 10:34:04.344-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-22 10:34:04.344-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-22 10:34:05.345-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-22 10:34:05.383-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-22 10:34:05.383-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-22 10:34:05.384-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-22 10:34:05.384-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-22 10:34:05.385-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-22 10:34:05.385-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-22 10:34:05.386-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-22 10:34:05.386-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-22 10:34:05.386-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-22 10:34:05.387-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-22 10:34:05.388-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-22 10:34:05.388-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-22 10:34:05.389-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-22 10:34:05.391-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-22 10:34:05.392-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-22 10:34:05.392-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-22 10:34:05.392-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-22 10:34:05.393-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-22 10:34:05.393-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-22 10:34:05.394-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-22 10:34:05.395-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-22 10:34:05.395-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-22 10:34:05.395-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-22 10:34:05.396-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-22 10:34:05.396-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-22 10:34:05.396-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-22 10:34:05.396-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-22 10:34:05.397-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-22 10:34:05.398-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-22 10:34:05.398-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-22 10:34:05.399-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-22 10:34:05.399-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-22 10:34:05.399-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-22 10:34:05.399-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-22 10:34:05.399-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-22 10:34:05.400-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-22 10:34:05.442-[INFO ] main AbstractShareServer - server initialized
+2016-11-22 10:34:05.498-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-22 10:34:05.499-[INFO ] main AbstractShareServer - server started
+2016-11-22 10:34:13.550-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0xdf019f5f, /127.0.0.1:51175 => /127.0.0.1:8888]
+2016-11-22 10:34:13.560-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0xdf019f5f, /127.0.0.1:51175 => /127.0.0.1:8888]
+2016-11-22 10:34:13.608-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:34:13.609-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0xdf019f5f, /127.0.0.1:51175 => /127.0.0.1:8888]
+2016-11-22 10:34:13.696-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:34:13.705-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0xdf019f5f, /127.0.0.1:51175 => /127.0.0.1:8888]
+2016-11-22 10:34:13.710-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0xdf019f5f, /127.0.0.1:51175 => /127.0.0.1:8888]
+2016-11-22 10:34:13.712-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:34:13.922-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:34:13.981-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@6483e5f1
+2016-11-22 10:34:13.982-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:34:13.983-[DEBUG] IO-Worker-0 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@5d85fe0c to channel [id: 0xdf019f5f, /127.0.0.1:51175 => /127.0.0.1:8888]
+2016-11-22 10:34:43.843-[INFO ] IO-Worker-1 AbstractShareServer - new channel [id: 0xa36322f6, /127.0.0.1:51183 => /127.0.0.1:8888]
+2016-11-22 10:34:43.845-[INFO ] IO-Worker-1 SessionHandler - attached session for channel [id: 0xa36322f6, /127.0.0.1:51183 => /127.0.0.1:8888]
+2016-11-22 10:34:43.846-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:34:43.846-[INFO ] IO-Worker-1 HandshakeHandler - write handshake to channel [id: 0xa36322f6, /127.0.0.1:51183 => /127.0.0.1:8888]
+2016-11-22 10:34:43.942-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:34:43.943-[INFO ] IO-Worker-1 HandshakeHandler - recieved handshake response from channel [id: 0xa36322f6, /127.0.0.1:51183 => /127.0.0.1:8888]
+2016-11-22 10:34:43.943-[INFO ] IO-Worker-1 HandshakeHandler - connection established [id: 0xa36322f6, /127.0.0.1:51183 => /127.0.0.1:8888]
+2016-11-22 10:34:43.959-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:34:43.986-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:34:43.986-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@35de4376
+2016-11-22 10:34:43.986-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:34:43.987-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@131f139b to channel [id: 0xa36322f6, /127.0.0.1:51183 => /127.0.0.1:8888]
+2016-11-22 10:34:49.872-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:34:50.003-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@1b4b74a7
+2016-11-22 10:34:50.004-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:34:50.004-[INFO ] IO-Worker-0 SessionManager - push message cc.lixiaohui.share.protocol.PushMessage@6d56d7c8 to session Session[id=0, logined=true, user=User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false], handshaked=true]
+2016-11-22 10:34:50.004-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@41a7c484 to channel [id: 0xa36322f6, /127.0.0.1:51183 => /127.0.0.1:8888]
+2016-11-22 10:35:51.548-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0xdf019f5f, /127.0.0.1:51175 :> /127.0.0.1:8888]
+2016-11-22 10:35:53.636-[INFO ] IO-Worker-1 SessionHandler - dettached session from channel [id: 0xa36322f6, /127.0.0.1:51183 :> /127.0.0.1:8888]
+2016-11-22 10:38:49.409-[INFO ] main AbstractShareServer - server initializing...
+2016-11-22 10:38:50.037-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-22 10:38:50.037-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-22 10:38:50.037-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-22 10:38:50.038-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-22 10:38:50.038-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-22 10:38:51.034-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-22 10:38:51.065-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-22 10:38:51.065-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-22 10:38:51.065-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-22 10:38:51.065-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-22 10:38:51.065-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-22 10:38:51.066-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-22 10:38:51.066-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-22 10:38:51.066-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-22 10:38:51.067-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-22 10:38:51.067-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-22 10:38:51.067-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-22 10:38:51.067-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-22 10:38:51.071-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-22 10:38:51.071-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-22 10:38:51.071-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-22 10:38:51.072-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-22 10:38:51.073-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-22 10:38:51.073-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-22 10:38:51.073-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-22 10:38:51.074-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-22 10:38:51.074-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-22 10:38:51.074-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-22 10:38:51.074-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-22 10:38:51.075-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-22 10:38:51.076-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-22 10:38:51.076-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-22 10:38:51.077-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-22 10:38:51.077-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-22 10:38:51.078-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-22 10:38:51.078-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-22 10:38:51.079-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-22 10:38:51.079-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-22 10:38:51.080-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-22 10:38:51.080-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-22 10:38:51.080-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-22 10:38:51.080-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-22 10:38:51.124-[INFO ] main AbstractShareServer - server initialized
+2016-11-22 10:38:51.176-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-22 10:38:51.177-[INFO ] main AbstractShareServer - server started
+2016-11-22 10:39:18.399-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0xdc3ff5a6, /127.0.0.1:51252 => /127.0.0.1:8888]
+2016-11-22 10:39:18.412-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0xdc3ff5a6, /127.0.0.1:51252 => /127.0.0.1:8888]
+2016-11-22 10:39:18.461-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:39:18.462-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0xdc3ff5a6, /127.0.0.1:51252 => /127.0.0.1:8888]
+2016-11-22 10:39:18.576-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:39:18.585-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0xdc3ff5a6, /127.0.0.1:51252 => /127.0.0.1:8888]
+2016-11-22 10:39:18.589-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0xdc3ff5a6, /127.0.0.1:51252 => /127.0.0.1:8888]
+2016-11-22 10:39:18.592-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:39:18.792-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:39:18.847-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@534a55e5
+2016-11-22 10:39:18.848-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:39:18.849-[DEBUG] IO-Worker-0 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@115af049 to channel [id: 0xdc3ff5a6, /127.0.0.1:51252 => /127.0.0.1:8888]
+2016-11-22 10:39:31.809-[INFO ] IO-Worker-1 AbstractShareServer - new channel [id: 0x58b4049d, /127.0.0.1:51264 => /127.0.0.1:8888]
+2016-11-22 10:39:31.809-[INFO ] IO-Worker-1 SessionHandler - attached session for channel [id: 0x58b4049d, /127.0.0.1:51264 => /127.0.0.1:8888]
+2016-11-22 10:39:31.810-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:39:31.811-[INFO ] IO-Worker-1 HandshakeHandler - write handshake to channel [id: 0x58b4049d, /127.0.0.1:51264 => /127.0.0.1:8888]
+2016-11-22 10:39:31.900-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:39:31.901-[INFO ] IO-Worker-1 HandshakeHandler - recieved handshake response from channel [id: 0x58b4049d, /127.0.0.1:51264 => /127.0.0.1:8888]
+2016-11-22 10:39:31.901-[INFO ] IO-Worker-1 HandshakeHandler - connection established [id: 0x58b4049d, /127.0.0.1:51264 => /127.0.0.1:8888]
+2016-11-22 10:39:31.912-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:39:31.938-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:39:31.938-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@7db06a21
+2016-11-22 10:39:31.943-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:39:31.943-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@4907dcfe to channel [id: 0x58b4049d, /127.0.0.1:51264 => /127.0.0.1:8888]
+2016-11-22 10:39:31.948-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:39:32.053-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@45486306
+2016-11-22 10:39:32.053-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:39:32.054-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@135d4273 to channel [id: 0x58b4049d, /127.0.0.1:51264 => /127.0.0.1:8888]
+2016-11-22 10:39:32.054-[INFO ] IO-Worker-0 SessionManager - push message cc.lixiaohui.share.protocol.PushMessage@4e300429 to session Session[id=0, logined=true, user=User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false], handshaked=true]
+2016-11-22 10:39:32.055-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:39:32.078-[DEBUG] Core-Worker-2 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@4d74f02c
+2016-11-22 10:39:32.079-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:39:32.079-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@3844006e to channel [id: 0x58b4049d, /127.0.0.1:51264 => /127.0.0.1:8888]
+2016-11-22 10:40:58.857-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:40:58.861-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0xdc3ff5a6, /127.0.0.1:51252 => /127.0.0.1:8888]
+2016-11-22 10:41:12.083-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:41:12.083-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x58b4049d, /127.0.0.1:51264 => /127.0.0.1:8888]
+2016-11-22 10:42:38.851-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:42:38.852-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0xdc3ff5a6, /127.0.0.1:51252 => /127.0.0.1:8888]
+2016-11-22 10:42:52.081-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:42:52.082-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x58b4049d, /127.0.0.1:51264 => /127.0.0.1:8888]
+2016-11-22 10:44:18.850-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:44:18.851-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0xdc3ff5a6, /127.0.0.1:51252 => /127.0.0.1:8888]
+2016-11-22 10:44:32.082-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:44:32.083-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x58b4049d, /127.0.0.1:51264 => /127.0.0.1:8888]
+2016-11-22 10:45:58.852-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:45:58.853-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0xdc3ff5a6, /127.0.0.1:51252 => /127.0.0.1:8888]
+2016-11-22 10:46:12.082-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:46:12.083-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x58b4049d, /127.0.0.1:51264 => /127.0.0.1:8888]
+2016-11-22 10:47:09.270-[INFO ] IO-Worker-1 SessionHandler - dettached session from channel [id: 0x58b4049d, /127.0.0.1:51264 :> /127.0.0.1:8888]
+2016-11-22 10:47:10.552-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0xdc3ff5a6, /127.0.0.1:51252 :> /127.0.0.1:8888]
+2016-11-22 10:47:39.638-[INFO ] main AbstractShareServer - server initializing...
+2016-11-22 10:47:40.404-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-22 10:47:40.404-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-22 10:47:40.404-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-22 10:47:40.405-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-22 10:47:40.405-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-22 10:47:41.483-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-22 10:47:41.539-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-22 10:47:41.539-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-22 10:47:41.540-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-22 10:47:41.541-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-22 10:47:41.541-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-22 10:47:41.541-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-22 10:47:41.541-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-22 10:47:41.542-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-22 10:47:41.542-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-22 10:47:41.543-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-22 10:47:41.543-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-22 10:47:41.545-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-22 10:47:41.545-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-22 10:47:41.548-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-22 10:47:41.548-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-22 10:47:41.549-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-22 10:47:41.549-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-22 10:47:41.549-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-22 10:47:41.549-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-22 10:47:41.551-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-22 10:47:41.551-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-22 10:47:41.556-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-22 10:47:41.556-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-22 10:47:41.556-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-22 10:47:41.557-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-22 10:47:41.559-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-22 10:47:41.559-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-22 10:47:41.561-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-22 10:47:41.561-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-22 10:47:41.562-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-22 10:47:41.563-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-22 10:47:41.563-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-22 10:47:41.563-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-22 10:47:41.564-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-22 10:47:41.564-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-22 10:47:41.564-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-22 10:47:41.617-[INFO ] main AbstractShareServer - server initialized
+2016-11-22 10:47:41.692-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-22 10:47:41.693-[INFO ] main AbstractShareServer - server started
+2016-11-22 10:48:05.841-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0x047bf9d5, /127.0.0.1:51339 => /127.0.0.1:8888]
+2016-11-22 10:48:05.852-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0x047bf9d5, /127.0.0.1:51339 => /127.0.0.1:8888]
+2016-11-22 10:48:05.902-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:48:05.904-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0x047bf9d5, /127.0.0.1:51339 => /127.0.0.1:8888]
+2016-11-22 10:48:05.988-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:48:05.998-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0x047bf9d5, /127.0.0.1:51339 => /127.0.0.1:8888]
+2016-11-22 10:48:06.003-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0x047bf9d5, /127.0.0.1:51339 => /127.0.0.1:8888]
+2016-11-22 10:48:06.004-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:48:06.228-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:48:06.288-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@20c39410
+2016-11-22 10:48:06.289-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:48:06.291-[DEBUG] IO-Worker-0 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@82db73e to channel [id: 0x047bf9d5, /127.0.0.1:51339 => /127.0.0.1:8888]
+2016-11-22 10:48:49.000-[INFO ] IO-Worker-1 AbstractShareServer - new channel [id: 0x548bf11f, /127.0.0.1:51374 => /127.0.0.1:8888]
+2016-11-22 10:48:49.001-[INFO ] IO-Worker-1 SessionHandler - attached session for channel [id: 0x548bf11f, /127.0.0.1:51374 => /127.0.0.1:8888]
+2016-11-22 10:48:49.001-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:48:49.001-[INFO ] IO-Worker-1 HandshakeHandler - write handshake to channel [id: 0x548bf11f, /127.0.0.1:51374 => /127.0.0.1:8888]
+2016-11-22 10:48:49.094-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:48:49.095-[INFO ] IO-Worker-1 HandshakeHandler - recieved handshake response from channel [id: 0x548bf11f, /127.0.0.1:51374 => /127.0.0.1:8888]
+2016-11-22 10:48:49.096-[INFO ] IO-Worker-1 HandshakeHandler - connection established [id: 0x548bf11f, /127.0.0.1:51374 => /127.0.0.1:8888]
+2016-11-22 10:48:49.110-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:48:49.136-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:48:49.137-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@10393e97
+2016-11-22 10:48:49.137-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:48:49.138-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@1e3c33d3 to channel [id: 0x548bf11f, /127.0.0.1:51374 => /127.0.0.1:8888]
+2016-11-22 10:48:49.142-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:49:46.297-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:49:46.301-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x047bf9d5, /127.0.0.1:51339 => /127.0.0.1:8888]
+2016-11-22 10:50:17.529-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:50:17.530-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@631d75b9 to channel [id: 0x548bf11f, /127.0.0.1:51374 => /127.0.0.1:8888]
+2016-11-22 10:50:17.530-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@21346812
+2016-11-22 10:50:17.532-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:51:49.229-[INFO ] IO-Worker-0 SessionManager - push message cc.lixiaohui.share.protocol.PushMessage@3fb01949 to session Session[id=0, logined=true, user=User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false], handshaked=true]
+2016-11-22 10:51:52.695-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:51:52.697-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x047bf9d5, /127.0.0.1:51339 => /127.0.0.1:8888]
+2016-11-22 10:51:56.680-[DEBUG] Core-Worker-2 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@73795327
+2016-11-22 10:51:56.680-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 10:51:56.681-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@224260ab to channel [id: 0x548bf11f, /127.0.0.1:51374 => /127.0.0.1:8888]
+2016-11-22 10:52:42.199-[INFO ] IO-Worker-1 SessionHandler - dettached session from channel [id: 0x548bf11f, /127.0.0.1:51374 :> /127.0.0.1:8888]
+2016-11-22 10:52:48.003-[INFO ] IO-Worker-2 AbstractShareServer - new channel [id: 0x12216482, /127.0.0.1:51386 => /127.0.0.1:8888]
+2016-11-22 10:52:48.003-[INFO ] IO-Worker-2 SessionHandler - attached session for channel [id: 0x12216482, /127.0.0.1:51386 => /127.0.0.1:8888]
+2016-11-22 10:52:48.004-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:52:48.005-[INFO ] IO-Worker-2 HandshakeHandler - write handshake to channel [id: 0x12216482, /127.0.0.1:51386 => /127.0.0.1:8888]
+2016-11-22 10:52:48.096-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:52:48.097-[INFO ] IO-Worker-2 HandshakeHandler - recieved handshake response from channel [id: 0x12216482, /127.0.0.1:51386 => /127.0.0.1:8888]
+2016-11-22 10:52:48.097-[INFO ] IO-Worker-2 HandshakeHandler - connection established [id: 0x12216482, /127.0.0.1:51386 => /127.0.0.1:8888]
+2016-11-22 10:52:48.109-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:52:48.128-[DEBUG] Core-Worker-3 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 10:52:48.128-[DEBUG] Core-Worker-3 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@27341e11
+2016-11-22 10:52:48.129-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:52:48.129-[DEBUG] IO-Worker-2 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@4ea20232 to channel [id: 0x12216482, /127.0.0.1:51386 => /127.0.0.1:8888]
+2016-11-22 10:52:48.133-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:53:06.293-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:53:06.294-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x047bf9d5, /127.0.0.1:51339 => /127.0.0.1:8888]
+2016-11-22 10:53:11.144-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@3244331c
+2016-11-22 10:53:11.144-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:53:11.145-[DEBUG] IO-Worker-2 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@1b778d0c to channel [id: 0x12216482, /127.0.0.1:51386 => /127.0.0.1:8888]
+2016-11-22 10:53:11.147-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:54:00.345-[DEBUG] Core-Worker-4 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@58e862c
+2016-11-22 10:54:00.345-[INFO ] IO-Worker-2 SessionHandler - update last IO time for session
+2016-11-22 10:54:00.345-[DEBUG] IO-Worker-2 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@500ab58d to channel [id: 0x12216482, /127.0.0.1:51386 => /127.0.0.1:8888]
+2016-11-22 10:54:31.730-[INFO ] IO-Worker-0 SessionManager - push message cc.lixiaohui.share.protocol.PushMessage@1997f158 to session Session[id=0, logined=true, user=User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false], handshaked=true]
+2016-11-22 10:54:46.293-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 10:54:46.294-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x047bf9d5, /127.0.0.1:51339 => /127.0.0.1:8888]
+2016-11-22 11:00:09.586-[INFO ] main AbstractShareServer - server initializing...
+2016-11-22 11:00:10.349-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-22 11:00:10.349-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-22 11:00:10.350-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-22 11:00:10.350-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-22 11:00:10.350-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-22 11:00:11.440-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-22 11:00:11.482-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-22 11:00:11.483-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-22 11:00:11.484-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-22 11:00:11.484-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-22 11:00:11.485-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-22 11:00:11.485-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-22 11:00:11.486-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-22 11:00:11.488-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-22 11:00:11.489-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-22 11:00:11.490-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-22 11:00:11.490-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-22 11:00:11.494-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-22 11:00:11.494-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-22 11:00:11.495-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-22 11:00:11.498-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-22 11:00:11.498-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-22 11:00:11.498-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-22 11:00:11.498-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-22 11:00:11.500-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-22 11:00:11.501-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-22 11:00:11.501-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-22 11:00:11.501-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-22 11:00:11.507-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-22 11:00:11.508-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-22 11:00:11.508-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-22 11:00:11.508-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-22 11:00:11.511-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-22 11:00:11.512-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-22 11:00:11.512-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-22 11:00:11.513-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-22 11:00:11.513-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-22 11:00:11.514-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-22 11:00:11.514-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-22 11:00:11.514-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-22 11:00:11.514-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-22 11:00:11.515-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-22 11:00:11.573-[INFO ] main AbstractShareServer - server initialized
+2016-11-22 11:00:11.648-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-22 11:00:11.648-[INFO ] main AbstractShareServer - server started
+2016-11-22 11:00:18.967-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0x07bc25a5, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-22 11:00:18.978-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0x07bc25a5, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-22 11:00:19.022-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:00:19.023-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0x07bc25a5, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-22 11:00:19.113-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:00:19.123-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0x07bc25a5, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-22 11:00:19.127-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0x07bc25a5, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-22 11:00:19.129-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:00:19.380-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 11:00:19.444-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@612438f1
+2016-11-22 11:00:19.445-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:00:19.446-[DEBUG] IO-Worker-0 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@1116880a to channel [id: 0x07bc25a5, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-22 11:00:31.007-[INFO ] IO-Worker-1 AbstractShareServer - new channel [id: 0xc6b76103, /127.0.0.1:51486 => /127.0.0.1:8888]
+2016-11-22 11:00:31.008-[INFO ] IO-Worker-1 SessionHandler - attached session for channel [id: 0xc6b76103, /127.0.0.1:51486 => /127.0.0.1:8888]
+2016-11-22 11:00:31.009-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:00:31.009-[INFO ] IO-Worker-1 HandshakeHandler - write handshake to channel [id: 0xc6b76103, /127.0.0.1:51486 => /127.0.0.1:8888]
+2016-11-22 11:00:31.093-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:00:31.093-[INFO ] IO-Worker-1 HandshakeHandler - recieved handshake response from channel [id: 0xc6b76103, /127.0.0.1:51486 => /127.0.0.1:8888]
+2016-11-22 11:00:31.094-[INFO ] IO-Worker-1 HandshakeHandler - connection established [id: 0xc6b76103, /127.0.0.1:51486 => /127.0.0.1:8888]
+2016-11-22 11:00:31.104-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:00:31.133-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 11:00:31.134-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@109aca82
+2016-11-22 11:00:31.134-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:00:31.135-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@22652552 to channel [id: 0xc6b76103, /127.0.0.1:51486 => /127.0.0.1:8888]
+2016-11-22 11:00:31.139-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:01:04.568-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:01:04.570-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@65459c6f to channel [id: 0xc6b76103, /127.0.0.1:51486 => /127.0.0.1:8888]
+2016-11-22 11:01:04.571-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:01:04.572-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@5e159d10
+2016-11-22 11:01:59.452-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:01:59.456-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x07bc25a5, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-22 11:02:44.574-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:02:44.574-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0xc6b76103, /127.0.0.1:51486 => /127.0.0.1:8888]
+2016-11-22 11:02:52.046-[DEBUG] Core-Worker-2 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@47ac1adf
+2016-11-22 11:10:52.021-[INFO ] main AbstractShareServer - server initializing...
+2016-11-22 11:10:52.818-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-22 11:10:52.818-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-22 11:10:52.819-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-22 11:10:52.819-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-22 11:10:52.819-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-22 11:10:53.840-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-22 11:10:53.879-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-22 11:10:53.879-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-22 11:10:53.880-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-22 11:10:53.880-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-22 11:10:53.880-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-22 11:10:53.880-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-22 11:10:53.880-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-22 11:10:53.880-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-22 11:10:53.881-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-22 11:10:53.881-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-22 11:10:53.883-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-22 11:10:53.884-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-22 11:10:53.884-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-22 11:10:53.884-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-22 11:10:53.887-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-22 11:10:53.888-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-22 11:10:53.888-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-22 11:10:53.889-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-22 11:10:53.889-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-22 11:10:53.890-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-22 11:10:53.890-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-22 11:10:53.890-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-22 11:10:53.890-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-22 11:10:53.891-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-22 11:10:53.891-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-22 11:10:53.892-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-22 11:10:53.892-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-22 11:10:53.893-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-22 11:10:53.894-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-22 11:10:53.894-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-22 11:10:53.895-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-22 11:10:53.896-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-22 11:10:53.896-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-22 11:10:53.897-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-22 11:10:53.897-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-22 11:10:53.897-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-22 11:10:53.954-[INFO ] main AbstractShareServer - server initialized
+2016-11-22 11:10:54.027-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-22 11:10:54.028-[INFO ] main AbstractShareServer - server started
+2016-11-22 11:11:07.289-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0x7dfc0684, /127.0.0.1:51950 => /127.0.0.1:8888]
+2016-11-22 11:11:07.303-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0x7dfc0684, /127.0.0.1:51950 => /127.0.0.1:8888]
+2016-11-22 11:11:09.554-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:11:09.555-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0x7dfc0684, /127.0.0.1:51950 => /127.0.0.1:8888]
+2016-11-22 11:11:09.642-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:11:09.652-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0x7dfc0684, /127.0.0.1:51950 => /127.0.0.1:8888]
+2016-11-22 11:11:09.657-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0x7dfc0684, /127.0.0.1:51950 => /127.0.0.1:8888]
+2016-11-22 11:11:09.658-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:11:09.879-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 11:11:09.939-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@6c6742d0
+2016-11-22 11:11:11.527-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:11:11.532-[DEBUG] IO-Worker-0 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@82db73e to channel [id: 0x7dfc0684, /127.0.0.1:51950 => /127.0.0.1:8888]
+2016-11-22 11:11:21.102-[INFO ] IO-Worker-1 AbstractShareServer - new channel [id: 0x7daa3c10, /127.0.0.1:51958 => /127.0.0.1:8888]
+2016-11-22 11:11:21.104-[INFO ] IO-Worker-1 SessionHandler - attached session for channel [id: 0x7daa3c10, /127.0.0.1:51958 => /127.0.0.1:8888]
+2016-11-22 11:11:26.991-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:11:26.992-[INFO ] IO-Worker-1 HandshakeHandler - write handshake to channel [id: 0x7daa3c10, /127.0.0.1:51958 => /127.0.0.1:8888]
+2016-11-22 11:11:27.102-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:11:27.103-[INFO ] IO-Worker-1 HandshakeHandler - recieved handshake response from channel [id: 0x7daa3c10, /127.0.0.1:51958 => /127.0.0.1:8888]
+2016-11-22 11:11:27.104-[INFO ] IO-Worker-1 HandshakeHandler - connection established [id: 0x7daa3c10, /127.0.0.1:51958 => /127.0.0.1:8888]
+2016-11-22 11:11:27.115-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:11:27.140-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 11:11:27.141-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@5e15e68d
+2016-11-22 11:11:35.559-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:11:35.560-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@1acfb11f to channel [id: 0x7daa3c10, /127.0.0.1:51958 => /127.0.0.1:8888]
+2016-11-22 11:11:35.564-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:11:35.753-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@ba679e
+2016-11-22 11:11:35.756-[INFO ] IO-Worker-0 SessionManager - push message cc.lixiaohui.share.protocol.PushMessage@3ba5016 to session Session[id=0, logined=true, user=User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false], handshaked=true]
+2016-11-22 11:11:46.400-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:11:46.401-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@19e142a5 to channel [id: 0x7daa3c10, /127.0.0.1:51958 => /127.0.0.1:8888]
+2016-11-22 11:11:46.403-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:11:46.448-[DEBUG] Core-Worker-2 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@5d4177f3
+2016-11-22 11:11:51.572-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:11:51.573-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@1367f48c to channel [id: 0x7daa3c10, /127.0.0.1:51958 => /127.0.0.1:8888]
+2016-11-22 11:12:51.533-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:12:51.534-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x7dfc0684, /127.0.0.1:51950 => /127.0.0.1:8888]
+2016-11-22 11:13:31.578-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:13:31.579-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x7daa3c10, /127.0.0.1:51958 => /127.0.0.1:8888]
+2016-11-22 11:17:42.522-[INFO ] main AbstractShareServer - server initializing...
+2016-11-22 11:17:43.213-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-22 11:17:43.213-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-22 11:17:43.214-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-22 11:17:43.214-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-22 11:17:43.214-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-22 11:17:44.148-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-22 11:17:44.182-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-22 11:17:44.182-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-22 11:17:44.182-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-22 11:17:44.182-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-22 11:17:44.183-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-22 11:17:44.183-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-22 11:17:44.183-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-22 11:17:44.183-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-22 11:17:44.184-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-22 11:17:44.184-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-22 11:17:44.184-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-22 11:17:44.184-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-22 11:17:44.187-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-22 11:17:44.188-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-22 11:17:44.188-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-22 11:17:44.190-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-22 11:17:44.190-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-22 11:17:44.190-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-22 11:17:44.190-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-22 11:17:44.191-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-22 11:17:44.192-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-22 11:17:44.192-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-22 11:17:44.192-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-22 11:17:44.193-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-22 11:17:44.193-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-22 11:17:44.193-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-22 11:17:44.194-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-22 11:17:44.194-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-22 11:17:44.195-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-22 11:17:44.195-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-22 11:17:44.196-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-22 11:17:44.196-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-22 11:17:44.196-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-22 11:17:44.197-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-22 11:17:44.197-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-22 11:17:44.197-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-22 11:17:44.253-[INFO ] main AbstractShareServer - server initialized
+2016-11-22 11:17:44.301-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-22 11:17:44.302-[INFO ] main AbstractShareServer - server started
+2016-11-22 11:17:52.752-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:17:52.761-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:17:52.795-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:17:52.797-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:17:52.869-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:17:52.877-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:17:52.880-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:17:52.881-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:17:53.054-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 11:17:53.100-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@212cb585
+2016-11-22 11:17:53.101-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:17:53.102-[DEBUG] IO-Worker-0 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@63ff5c98 to channel [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:18:01.700-[INFO ] IO-Worker-1 AbstractShareServer - new channel [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:18:01.701-[INFO ] IO-Worker-1 SessionHandler - attached session for channel [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:18:01.702-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:18:01.702-[INFO ] IO-Worker-1 HandshakeHandler - write handshake to channel [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:18:01.771-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:18:01.772-[INFO ] IO-Worker-1 HandshakeHandler - recieved handshake response from channel [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:18:01.772-[INFO ] IO-Worker-1 HandshakeHandler - connection established [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:18:01.782-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:18:01.809-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-22 11:18:01.810-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@439ce47a
+2016-11-22 11:18:01.810-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:18:01.810-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@715c2843 to channel [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:18:01.815-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:18:02.098-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@1de2481b
+2016-11-22 11:18:02.099-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:18:02.100-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@72ebf3f0 to channel [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:18:02.103-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:18:02.105-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:18:02.105-[INFO ] IO-Worker-0 SessionManager - push message cc.lixiaohui.share.protocol.PushMessage@1f22dad5 to session Session[id=0, logined=true, user=User[id=7, name=小王, password=xiaowang, sex=男, signature=7777777777, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false], handshaked=true]
+2016-11-22 11:18:02.143-[DEBUG] Core-Worker-2 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@40c07527
+2016-11-22 11:18:02.143-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:18:02.144-[DEBUG] IO-Worker-1 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@1b4b74a7 to channel [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:19:42.110-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:19:42.112-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:19:42.149-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:19:42.150-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:21:22.107-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:21:22.108-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:21:22.146-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:21:22.147-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:23:02.107-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:23:02.108-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:23:02.146-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:23:02.147-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:24:42.107-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:24:42.108-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:24:42.147-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:24:42.148-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:26:22.106-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:26:22.107-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:26:22.147-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:26:22.148-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:28:02.108-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:28:02.109-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:28:02.148-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:28:02.149-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:29:42.107-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:29:42.108-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:29:42.147-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:29:42.148-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:31:22.109-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:31:22.110-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:31:22.149-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:31:22.150-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:33:02.110-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:33:02.111-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:33:02.149-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:33:02.150-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:34:42.109-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:34:42.109-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:34:42.148-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:34:42.149-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:36:22.110-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:36:22.111-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:36:22.150-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:36:22.151-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:38:02.110-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:38:02.110-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:38:02.150-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:38:02.151-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:39:42.110-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:39:42.111-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:39:42.151-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:39:42.152-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:41:22.111-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:41:22.112-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:41:22.151-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:41:22.152-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:43:02.112-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:43:02.113-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:43:02.150-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:43:02.151-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:44:42.114-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:44:42.115-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:44:42.152-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:44:42.153-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:46:22.114-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:46:22.115-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:46:22.153-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:46:22.154-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:48:02.114-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:48:02.115-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:48:02.152-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:48:02.153-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:49:42.115-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:49:42.116-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:49:42.153-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:49:42.154-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:51:22.115-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:51:22.116-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:51:22.153-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:51:22.154-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:53:02.116-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:53:02.117-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:53:02.154-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:53:02.156-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:54:42.125-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:54:42.125-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:54:42.154-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:54:42.155-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:56:22.118-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:56:22.119-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:56:22.155-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:56:22.156-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:58:02.118-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:58:02.119-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:58:02.155-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:58:02.155-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 11:59:42.118-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 11:59:42.119-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 11:59:42.155-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 11:59:42.156-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:01:22.120-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:01:22.121-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:01:22.157-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:01:22.158-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:03:02.120-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:03:02.121-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:03:02.158-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:03:02.159-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:04:42.120-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:04:42.121-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:04:42.159-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:04:42.160-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:06:22.120-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:06:22.121-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:06:22.159-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:06:22.160-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:08:02.121-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:08:02.122-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:08:02.160-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:08:02.161-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:09:41.895-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:09:41.896-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:09:41.934-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:09:41.935-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:11:21.897-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:11:21.898-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:11:21.935-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:11:21.936-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:13:01.896-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:13:01.896-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:13:01.934-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:13:01.935-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:14:41.896-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:14:41.896-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:14:41.935-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:14:41.936-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:16:21.897-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:16:21.897-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:16:21.935-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:16:21.936-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:18:01.897-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:18:01.898-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:18:01.935-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:18:01.936-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:19:41.898-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:19:41.899-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:19:41.935-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:19:41.936-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:21:21.899-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:21:21.899-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:21:21.936-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:21:21.937-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:23:01.899-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:23:01.899-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:23:01.936-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:23:01.937-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:24:41.899-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:24:41.900-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:24:41.937-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:24:41.937-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:26:21.899-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:26:21.900-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:26:21.938-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:26:21.939-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:28:01.900-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:28:01.901-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:28:01.938-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:28:01.939-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:29:41.900-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:29:41.901-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:29:41.940-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:29:41.941-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:31:21.901-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:31:21.902-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:31:21.940-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:31:21.941-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:33:01.902-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:33:01.903-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:33:01.940-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:33:01.941-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:34:41.902-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:34:41.903-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:34:41.941-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:34:41.942-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:36:21.903-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:36:21.904-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:36:21.942-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:36:21.943-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:38:01.904-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:38:01.905-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:38:01.942-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:38:01.943-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:39:41.904-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:39:41.905-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:39:41.942-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:39:41.943-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:41:21.904-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:41:21.905-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:41:21.942-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:41:21.943-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:43:01.906-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:43:01.907-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:43:01.943-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:43:01.944-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:44:41.907-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:44:41.908-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:44:41.944-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:44:41.945-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:46:21.907-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:46:21.909-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:46:21.944-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:46:21.945-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:48:01.908-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:48:01.909-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:48:01.946-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:48:01.946-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:49:41.908-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:49:41.909-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:49:41.946-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:49:41.947-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:51:21.909-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:51:21.910-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:51:21.946-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:51:21.947-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:53:01.909-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:53:01.910-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:53:01.946-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:53:01.947-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:54:41.910-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:54:41.911-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:54:41.947-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:54:41.948-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:56:21.911-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:56:21.912-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:56:21.948-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:56:21.949-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:58:01.911-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:58:01.912-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:58:01.947-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:58:01.948-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 12:59:41.912-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 12:59:41.913-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 12:59:41.948-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 12:59:41.949-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:01:21.913-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:01:21.914-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:01:21.948-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:01:21.949-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:03:01.913-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:03:01.913-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:03:01.948-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:03:01.949-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:04:41.913-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:04:41.914-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:04:41.949-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:04:41.950-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:06:21.913-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:06:21.913-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:06:21.949-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:06:21.950-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:08:01.915-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:08:01.916-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:08:01.951-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:08:01.952-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:09:41.914-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:09:41.915-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:09:41.951-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:09:41.952-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:11:21.914-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:11:21.915-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:11:21.952-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:11:21.953-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:13:01.915-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:13:01.916-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:13:01.951-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:13:01.952-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:14:41.915-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:14:41.916-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:14:41.951-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:14:41.952-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:16:21.915-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:16:21.915-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:16:21.953-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:16:21.954-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:18:01.916-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:18:01.917-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:18:01.952-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:18:01.953-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:19:41.916-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:19:41.917-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:19:41.953-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:19:41.954-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:21:21.916-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:21:21.917-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:21:21.952-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:21:21.953-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:23:01.917-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:23:01.918-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:23:01.954-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:23:01.955-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:24:41.917-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:24:41.918-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:24:41.953-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:24:41.954-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:26:21.919-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:26:21.920-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:26:21.954-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:26:21.955-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:28:01.919-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:28:01.920-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:28:01.955-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:28:01.956-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:29:41.919-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:29:41.920-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:29:41.954-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:29:41.955-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:31:21.920-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:31:21.921-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:31:21.956-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:31:21.957-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:33:01.921-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:33:01.922-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:33:01.956-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:33:01.957-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:34:41.920-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:34:41.921-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:34:41.956-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:34:41.957-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:36:21.922-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:36:21.923-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:36:21.957-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:36:21.958-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:38:01.922-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:38:01.923-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:38:01.959-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:38:01.960-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:39:41.922-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:39:41.923-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:39:41.958-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:39:41.959-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:41:21.922-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:41:21.923-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:41:21.958-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:41:21.958-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:43:01.923-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:43:01.924-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:43:01.958-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:43:01.958-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:44:41.924-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:44:41.925-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:44:41.959-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:44:41.960-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:46:21.923-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:46:21.924-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:46:21.959-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:46:21.960-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:48:01.923-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:48:01.924-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:48:01.960-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:48:01.961-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:49:41.923-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:49:41.924-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:49:41.960-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:49:41.961-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:51:21.923-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:51:21.924-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:51:21.961-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:51:21.962-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:53:01.924-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:53:01.925-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:53:01.961-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:53:01.962-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:54:41.926-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:54:41.927-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:54:41.961-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:54:41.961-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 13:56:21.932-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-22 13:56:21.932-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
+2016-11-22 13:56:21.961-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-22 13:56:21.962-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
