@@ -126,7 +126,7 @@ public abstract class AbstractShareServer extends AbstractLifeCycle implements I
 		logger.info("server initializing...");
 		executor = new ScheduledThreadPoolExecutor(config.getPoolConfig().getCorePoolsize(), new NamedThreadFactory("Core-Worker"));
 		try {
-			HibernateSessionFactory.init();
+			HibernateSessionFactory.init(config.getDatabaseConfig());
 		} catch (Exception e) {
 			logger.error("{}", e);
 			throw new LifeCycleException(e);
@@ -197,12 +197,12 @@ public abstract class AbstractShareServer extends AbstractLifeCycle implements I
 				logger.info("new channel {}", ch);
 				ChannelPipeline pl = ch.pipeline();
 				
-				// 会话过滤
-				pl.addLast(HN_SESSION, new SessionHandler(sessionManager));
-				
 				// 编解码器
 				pl.addLast(HN_DECODER, new MessageDecoder(serializeFactory));
 				pl.addLast(HN_ENCODER, new MessageEncoder(serializeFactory));
+				
+				// 会话过滤
+				pl.addLast(HN_SESSION, new SessionHandler(sessionManager));
 				
 				pl.addLast(HN_HANDSHAKE, new HandshakeHandler(handshakeMessage, AbstractShareServer.this));
 			}

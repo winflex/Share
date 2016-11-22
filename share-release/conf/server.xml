@@ -38,10 +38,11 @@
 	
 	<!-- 数据库相关配置 -->
 	<db>
-		<host></host>
-		<port></port>
-		<schema></schema>
-		执行select时默认记录, 若不配置或者配置为非正数, 则硬编码为20
+		<url>jdbc:mysql://localhost:3306/sharing</url>
+		<username>root</username>
+		<password>root</password>
+		<driverClass>com.mysql.jdbc.Driver</driverClass>
+		<!-- 执行select时默认记录, 若不配置或者配置为非正数, 则硬编码为20 -->
 		<defaultPageSize>20</defaultPageSize>
 	</db>
 	

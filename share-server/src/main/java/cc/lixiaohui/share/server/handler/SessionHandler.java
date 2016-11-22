@@ -72,6 +72,7 @@ public class SessionHandler extends ChannelDuplexHandler{
 	 */
 	private Session newSession(ChannelHandlerContext ctx) {
 		return Session.builder().sessionId(sessionManager.generateId())
+				.sessionManager(sessionManager)
 				.context(ctx)
 				.createTime(TimeUtils.currentTimeMillis())
 				.lastAccessTime(TimeUtils.currentTimeMillis()).build();

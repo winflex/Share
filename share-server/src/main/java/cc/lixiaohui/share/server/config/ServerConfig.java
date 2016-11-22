@@ -1,5 +1,7 @@
 package cc.lixiaohui.share.server.config;
 
+import cc.lixiaohui.share.model.util.DatabaseConfig;
+
 /**
  * 服务器配置
  * 

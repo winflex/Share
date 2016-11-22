@@ -20,7 +20,7 @@ import cc.lixiaohui.share.util.future.IFuture;
 import cc.lixiaohui.share.util.future.IFutureListener;
 
 /**
- * 会话管理者
+ *  A SessionManager manage all {@link Session} it holds
  * @author lixiaohui
  * @date 2016年11月7日 下午11:36:13
  */
@@ -28,18 +28,18 @@ public class SessionManager {
 	
 	public static final AttributeKey<Session> ATTR_SESSION = new AttributeKey<Session>("Session");
 	
-	private final AtomicLong SESSION_ID_GENERATOR = new AtomicLong(0);
+	private final AtomicLong idGenerator = new AtomicLong(0);
 	
 	private SessionConfig sessionConfig;
 	
 	/**
-	 * 所有由该SessionManager管理的Session, key为sessionId而不是userId因为一个session不一定有userId, 因为未登录也能执行某些操作
+	 * all sessions, all connected channel has a session
 	 */
 	private Map<Long, Session> sessions = new ConcurrentHashMap<Long, Session>();
 	
-	private static final Logger logger = LoggerFactory.getLogger(SessionManager.class);
-	
 	private ScheduledExecutorService executor;
+	
+	private static final Logger logger = LoggerFactory.getLogger(SessionManager.class);
 	
 	public SessionManager(SessionConfig config, ScheduledExecutorService executor) {
 		this.sessionConfig = config;
@@ -60,7 +60,7 @@ public class SessionManager {
 					if (session.getSessionId() == originSession.getSessionId()) { // skip source
 						continue;
 					}
-					session.getContext().writeAndFlush(message);
+					session.getContext().channel().writeAndFlush(message);
 					++count;
 				}
 				countFuture.success(count);
@@ -94,12 +94,13 @@ public class SessionManager {
 			
 			@Override
 			public void run() {
-				session.getContext().writeAndFlush(message).addListener(new ChannelFutureListener() {
+				session.getContext().channel().writeAndFlush(message).addListener(new ChannelFutureListener() {
 					
 					@Override
 					public void operationComplete(ChannelFuture future) throws Exception {
-						pushFuture.success(1);
+						pushFuture.success(future.isSuccess() ? 1 : 0);
 					}
+					
 				});
 			}
 			
@@ -109,7 +110,11 @@ public class SessionManager {
 
 			@Override
 			public void operationCompleted(IFuture<Integer> future) throws Exception {
-				logger.info("push message {} to session {}", message, session);
+				if (pushFuture.getNow() > 0) {
+					logger.info("push message {} to session {}", message, session);
+				} else {
+					logger.info("failed to push message {} to session {}", message, session);
+				}
 			}
 			
 		});
@@ -187,7 +192,7 @@ public class SessionManager {
 	}
 	
 	public long generateId() {
-		return SESSION_ID_GENERATOR.getAndIncrement();
+		return idGenerator.getAndIncrement();
 	}
 	
 	public SessionConfig getSessionConfig() {
@@ -225,7 +230,7 @@ public class SessionManager {
 		}
 	}
 	
-	private class PushFuture extends AbstractFuture<Integer> {
+	private static class PushFuture extends AbstractFuture<Integer> {
 		
 		public void success(int count) {
 			setSuccess(count);

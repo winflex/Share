@@ -64,12 +64,14 @@ public class ShareServiceTest {
 	public void getShares() throws ServiceException {
 		//params.put("keyword", "大家");
 		Calendar cal = Calendar.getInstance();
-		cal.set(2016, 11, 18, 1, 1, 1);
-		long millis = cal.getTimeInMillis();
+		cal.set(2016, 10, 18, 1, 1, 1);
+		//long millis = cal.getTimeInMillis();
+		long millis = System.currentTimeMillis() - 1000 * 60 * 60 * 24 * 5;
 		
-		params.put("baseTime", millis);
+		//params.put("baseTime", millis);
+		//params.put("userId", 11);
 		
-		Session session = TestUtils.loginSession(TestUtils.newUser(2, 10));
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 7));
 		//Session session = TestUtils.unloginSession();
 		
 		ShareService svc = new ShareService(session, params);

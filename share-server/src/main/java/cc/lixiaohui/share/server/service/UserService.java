@@ -10,6 +10,8 @@ import cc.lixiaohui.share.model.bean.User;
 import cc.lixiaohui.share.model.dao.FriendShipDao;
 import cc.lixiaohui.share.model.dao.PictureDao;
 import cc.lixiaohui.share.model.dao.UserDao;
+import cc.lixiaohui.share.protocol.PushMessage;
+import cc.lixiaohui.share.protocol.PushMessage.Type;
 import cc.lixiaohui.share.server.Session;
 import cc.lixiaohui.share.server.service.util.PrivilegeLevel;
 import cc.lixiaohui.share.server.service.util.ServiceException;
@@ -20,6 +22,7 @@ import cc.lixiaohui.share.util.JSONUtils;
 import cc.lixiaohui.share.util.SQLUtils;
 import cc.lixiaohui.share.util.TimeUtils;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
@@ -270,6 +273,10 @@ public class UserService extends AbstractService{
 		try {
 			int targetUserId = getIntParameter("targetUserId");
 			
+			if (targetUserId == session.getUser().getId()) {
+				return JSONUtils.newFailureResult("不能添加自己为好友", ErrorCode.AUTH, "");
+			}
+			
 			UserDao dao = daofactory.getDao(UserDao.class);
 			FriendShipDao fsDao = daofactory.getDao(FriendShipDao.class);
 			User fromUser = dao.getById(session.getUser().getId());
@@ -284,7 +291,13 @@ public class UserService extends AbstractService{
 			fs.setAskedUser(toUser);
 			if (fsDao.add(fs) > 0) {
 				// TODO 推送
-				
+				try {
+					PushMessage message = PushMessage.builder().type(Type.FRI_REQ)
+							.pushData(packAddFriendPush(fs).toJSONString()).build();
+					session.getSessionManager().pushTo(fs.getAskedUser().getId(), message);
+				} catch (Throwable t) {
+					logger.error("{}", t);
+				}
 				return JSONUtils.newSuccessfulResult("请求已发送");
 			} else {
 				return JSONUtils.newFailureResult("请求发送失败", ErrorCode.UNKOWN, "");
@@ -295,6 +308,12 @@ public class UserService extends AbstractService{
 		}
 	}
 	
+	private JSONObject packAddFriendPush(FriendShip fs) {
+		JSONObject result = new JSONObject();
+		result.put("user", packSingleUser(fs.getAskUser()));
+		return result;
+	}
+
 	/**
 	 * @param start int, nullable
 	 * @param limit int, nullable
@@ -362,14 +381,28 @@ public class UserService extends AbstractService{
 	@Procedure(name = "deleteFriend", level=PrivilegeLevel.LOGGED)
 	public String deleteFriend() {
 		try {
+			int userId = session.getUser().getId();
 			int friendShipId = getIntParameter("friendShipId");
+			
 			FriendShipDao dao = daofactory.getDao(FriendShipDao.class);
-			int result = dao.deleteFriend(session.getUser().getId(), friendShipId);
-			if (result > 0) {
-				return JSONUtils.newSuccessfulResult("删除好友成功");
-			} else {
-				return JSONUtils.newFailureResult("删除好友失败", ErrorCode.UNKOWN, "");
+			//int result = dao.deleteFriend(userId, friendShipId);
+			FriendShip fs = dao.getById(friendShipId);
+			if (fs == null) {
+				return JSONUtils.newFailureResult("好友不存在", ErrorCode.RESOURCE_NOT_FOUND, "");
 			}
+			if (fs.getAskedUser().getId() == userId || fs.getAskedUser().getId() == userId) {
+				if (dao.delete(fs) > 0) {
+					// TODO 推送
+					boolean inverse = fs.getAskedUser().getId() == userId;
+					PushMessage message = PushMessage.builder().type(Type.FRI_REQ)
+							.pushData(packDeleteFriendPush(fs, inverse).toJSONString()).build();
+					session.getSessionManager().pushTo(inverse ? fs.getAskedUser().getId() : fs.getAskUser().getId(), message);
+					return JSONUtils.newSuccessfulResult("删除好友成功");
+				} else {
+					JSONUtils.newFailureResult("删除好友失败", ErrorCode.DATABASE, "");
+				}
+			}
+			return JSONUtils.newFailureResult("删除好友失败", ErrorCode.AUTH, "");
 		} catch (Throwable cause) {
 			logger.error("{}", cause);
 			return JSONUtils.newFailureResult(cause.getMessage(), ErrorCode.wrap(cause), cause);
@@ -377,7 +410,13 @@ public class UserService extends AbstractService{
 	}
 	
 	// -------------------- util methods ------------------
-	
+	// inverse指明当前用户是否是好友关系的主动方
+	private JSON packDeleteFriendPush(FriendShip fs, boolean inverse) {
+		JSONObject result = new JSONObject();
+		result.put("user", packSingleUser(inverse ? fs.getAskUser() : fs.getAskedUser()));
+		return result;
+	}
+
 	private JSONObject packSearchResult(List<User> users) {
 		JSONArray userArray = new JSONArray();
 		for (User user : users) {

@@ -8,6 +8,7 @@ import cc.lixiaohui.share.model.bean.Comment;
 import cc.lixiaohui.share.model.bean.Picture;
 import cc.lixiaohui.share.model.bean.Praise;
 import cc.lixiaohui.share.model.bean.Share;
+import cc.lixiaohui.share.model.bean.ShareReadRecord;
 import cc.lixiaohui.share.model.bean.User;
 import cc.lixiaohui.share.model.dao.PictureDao;
 import cc.lixiaohui.share.model.dao.ShareDao;
@@ -43,7 +44,7 @@ public class ShareService extends AbstractService {
 		ORDER_FIELD_MAP.put(1, "praiseCount");
 		ORDER_FIELD_MAP.put(2, "commentCount");
 		
-		ORDER_TYPE_MAP.put(0, "desc");
+		ORDER_TYPE_MAP.put(0, "desc"); // 逆序, 大到小
 		ORDER_TYPE_MAP.put(1, "asc");
 	}
 	
@@ -94,6 +95,7 @@ public class ShareService extends AbstractService {
 	public String getShares() throws ServiceException {
 		try {
 			String keyword = SQLUtils.toLike(getStringParameter("keyword", ""));
+			int targetUserId = getIntParameter("userId", -1);
 			long baseTime = getLongParameter("baseTime", 0);
 			int orderColumn = getIntParameter("orderColumn", DEFAULT_ORDER_COLUMN_INDEX);
 			int orderType = getIntParameter("orderType", DEFAULT_ORDER_TYPE_INDEX);
@@ -103,8 +105,8 @@ public class ShareService extends AbstractService {
 			
 			ShareDao dao = daofactory.getDao(ShareDao.class);
 			int userId = session.isLogined() ? session.getUser().getId() : -1;
-			List<Share> shares = dao.list(userId, keyword, baseTime, deleted, getOrderColumn(orderColumn), getOrderType(orderType), start, limit);
-			return JSONUtils.newSuccessfulResult("获取分享成功", packMultiShare(shares));
+			List<Share> shares = dao.list(userId, targetUserId, keyword, baseTime, deleted, getOrderColumn(orderColumn), getOrderType(orderType), start, limit);
+			return JSONUtils.newSuccessfulResult("获取分享成功", packMultiShare(shares, session));
 		} catch (Exception e) {
 			logger.error("{}", e);
 			return JSONUtils.newFailureResult(e.getMessage(), ErrorCode.wrap(e), e);
@@ -285,22 +287,37 @@ public class ShareService extends AbstractService {
 		return pushResult;
 	}
 
-	private JSONObject packMultiShare(List<Share> shares) {
+	private JSONObject packMultiShare(List<Share> shares, Session session) {
 		JSONArray shareArray = new JSONArray();
 		for (Share share : shares) {
-			JSONObject item = new JSONObject();
-			item.put("id", share.getId());
-			item.put("userId", share.getPublisher().getId());
-			item.put("username", share.getPublisher().getUsername());
-			item.put("content", share.getContent());
-			item.put("createTime", share.getCreateTime());
-			item.put("praiseCount", share.getPraiseCount());
-			item.put("commentCount", share.getCommentCount());
+			JSONObject shareItem = new JSONObject();
+			shareItem.put("id", share.getId());
+			shareItem.put("userId", share.getPublisher().getId());
+			shareItem.put("username", share.getPublisher().getUsername());
+			shareItem.put("content", share.getContent());
+			shareItem.put("createTime", share.getCreateTime());
+			shareItem.put("praiseCount", share.getPraiseCount());
+			shareItem.put("commentCount", share.getCommentCount());
 			JSONArray pictureArray = new JSONArray();
 			for (Picture p : share.getPictures()) {
 				pictureArray.add(p.getId());
 			}
-			item.put("pictureIds", pictureArray);
+			shareItem.put("pictureIds", pictureArray);
+			
+			JSONObject item = new JSONObject();
+			boolean hasRead = false;
+			if (session.isLogined()) {
+				int userId = session.getUser().getId();
+				for (ShareReadRecord record : share.getReadRecords()) {
+					if (record.getUser().getId() == userId) {
+						hasRead = true;
+						break;
+					}
+				}
+			}
+			item.put("hasRead", hasRead);
+			item.put("readCount", share.getReadRecords().size());
+			item.put("share", shareItem);
 			shareArray.add(item);
 		}
 		JSONObject result = new JSONObject();

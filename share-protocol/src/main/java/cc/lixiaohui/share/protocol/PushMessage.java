@@ -9,7 +9,7 @@ import cc.lixiaohui.share.protocol.util.builder.PushMessageBuilder;
  */
 public class PushMessage extends Message {
 	
-	public static enum Type{
+	public static enum Type {
 		
 		/** 好友添加请求 */
 		FRI_REQ,

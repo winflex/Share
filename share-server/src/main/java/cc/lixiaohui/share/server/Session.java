@@ -1,6 +1,5 @@
 package cc.lixiaohui.share.server;
 
-import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import cc.lixiaohui.share.model.bean.Role;
 import cc.lixiaohui.share.model.bean.User;
@@ -8,47 +7,33 @@ import cc.lixiaohui.share.util.IBuilder;
 import cc.lixiaohui.share.util.TimeUtils;
 
 /**
- * 代表会话, Sessoin都是被绑定到一个个的{@link Channel} 上的
+ * Represent a session, holds all the neccessary informations for a client
  * 
  * @author lixiaohui
  * @date 2016年11月7日 下午11:37:53
  */
 public class Session {
 	
-	/**
-	 * 唯一标识
-	 */
 	private final long sessionId;
 	
-	/**
-	 * 是否登陆
-	 */
 	private volatile boolean logined;
 	
-	private volatile User user = null;
+	/** if {@link #logined} is false, this field would be null */
+	private volatile User user;
 	
-	/**
-	 * Channel 上下文
-	 */
 	private ChannelHandlerContext context;
 	
-	/** 
-	 * 所持有的连接的连接建立时间 
-	 **/
 	private final long createTime;
 	
-	/**
-	 * 最后访问(IO)时间, 用于控制会话超时
-	 */
+	/** lastest read or write time, used for checks of session timeout */
 	private volatile long lastAccessTime;
 
-	/**
-	 * 管理该Session的SessionManager
-	 */
+	/** {@link SessionManager} which this session was bound to */
 	private SessionManager sessionManager;
 	
 	private volatile boolean handshaked;
 	
+	/** heartbeat miss times */
 	private int heartbeatMissTimes = 0;
 	
 	public Session(SessionBuilder builder) {
@@ -58,9 +43,6 @@ public class Session {
 		this.lastAccessTime = builder.lastAccessTime();
 		this.logined = builder.isLogined();
 		this.user = builder.user;
-		/*this.userId = builder.userId();
-		this.username = builder.username();
-		this.roleId = builder.roleId();*/
 		this.sessionManager = builder.sessionManager();
 		this.handshaked = builder.handshaked();
 	}

@@ -192,17 +192,21 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	/**
 	 * 获取share列表
 	 * @param keyword 搜索关键字
-	 * @param baseTime 时间戳, 获取发布时间超过该时间的分享
-	 * @param order 排序方式的ID
+	 * @param userId 用户ID, 若要获取某个用户的分享时才传, 否则传-1
+	 * @param baseTime 时间戳, 获取最新分享时的时间界限, 无需此限制则传-1
+	 * @param orderColumn 排序方式的ID, 
+	 * @param orderType 降序为0, 升序为1, 默认为0
 	 * @param start 起始条数
-	 * @param limit 返回条数
+	 * @param limit 要获取的条数
+	 * @param deleted true获取逻辑删除的记录, 默认为false
 	 * @return json, result内容如下:
 	 * <pre>
 	 *  { 
 	 *   "count":2,    # 所返回的结果条数
 	 *   "shares": [      # 结果数组
 	 *   	{
-	 *   	 "hasRead":0,
+	 *   	 "hasRead":0,					 # 当前用户是否读过该分享, 未登陆时该字段无效
+	 *   	 "readCount":100,				 # 该分享的浏览总数
 	 *   	 "share":
 	 *   		{
 	 *   	 		"id":11,                  # 分享ID
@@ -217,6 +221,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 *      },
 	 *      {
 	 *       "hasRead":0,
+	 *       "readCount":100,
 	 *       "share":
 	 *       	{
 	 *       		"id":12,                  # 分享ID
@@ -233,7 +238,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 * }
 	 * </pre>
 	 */
-	String getShares(String keyword, long baseTime, int orderColumn, int orderType, int start, int limit, boolean deleted) throws ClientException;
+	String getShares(String keyword, int userId, long baseTime, int orderColumn, int orderType, int start, int limit, boolean deleted) throws ClientException;
 
 	/**
 	 * 获取某个分享的所有信息
@@ -246,6 +251,7 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 *       "username":lixiaohui,     # 所属用户名
 	 *       "content":"bad day!!",    # 分享文字内容
 	 *       "createTime":14743432423, # 分享创建时间
+	 *       "readCount":100,			# 浏览数
 	 *       "praiseInfo":             # 点赞信息
 	 *         {
 	 *           "praiseCount":2,      # 赞的个数

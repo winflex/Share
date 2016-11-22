@@ -350,9 +350,11 @@ public class ShareClientImpl extends AbstractShareClient {
 			@Param(index = 5, name = "deleted")
 	})
 	@Override
-	public String getShares(String keyword, long baseTime, int orderColumn, int orderType, int start, int limit, boolean deleted) throws ClientException {
+	public String getShares(String keyword, int userId, long baseTime, int orderColumn, int orderType, int start, int limit, boolean deleted) throws ClientException {
 		CSRequestMessage m = CSRequestMessage.builder().service("ShareService").procedure("getShares")
 				.parameter("orderColumn", orderColumn)
+				.parameter("userId", userId)
+				.parameter("baseTime", baseTime)
 				.parameter("orderType", orderType)
 				.parameter("start", start)
 				.parameter("limit", limit)

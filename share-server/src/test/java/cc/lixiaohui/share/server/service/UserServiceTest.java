@@ -101,7 +101,7 @@ public class UserServiceTest {
 	public void addFriend() {
 		Session session = TestUtils.loginSession(TestUtils.newUser(2, 7));
 		
-		params.put("targetUserId", 7);
+		params.put("targetUserId", 5);
 		
 		UserService svc = new UserService(session, params);
 		String json = svc.addFriend();

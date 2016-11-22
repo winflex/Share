@@ -2,6 +2,7 @@ package cc.lixiaohui.share.model.bean;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 分享内容实体
@@ -32,17 +33,21 @@ public class Share {
 
 	private List<Comment> comments;
 	
+	private Set<ShareReadRecord> readRecords;
 	
-	/**
-	 * @return the comments
-	 */
+
+	public Set<ShareReadRecord> getReadRecords() {
+		return readRecords;
+	}
+
+	public void setReadRecords(Set<ShareReadRecord> readRecords) {
+		this.readRecords = readRecords;
+	}
+
 	public List<Comment> getComments() {
 		return comments;
 	}
 
-	/**
-	 * @param comments the comments to set
-	 */
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
 	}

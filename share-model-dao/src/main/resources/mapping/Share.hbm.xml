@@ -26,7 +26,10 @@
 			<key column="share_id" />
 			<one-to-many class="Comment" />
 		</bag>
-		
+		<set name="readRecords" inverse="true" fetch="join" lazy="false">
+			<key column="share_id" />
+			<one-to-many class="ShareReadRecord" />
+		</set>
 		<property name="deleted" type="boolean" column="deleted" />
 	</class>
 

@@ -11,10 +11,10 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.timeout.IdleStateHandler;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -79,7 +79,7 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	/**
 	 * 消息监听器集
 	 */
-	protected Collection<IMessageListener> messageListeners = new ArrayList<IMessageListener>();
+	protected Collection<IMessageListener> messageListeners = new CopyOnWriteArrayList<IMessageListener>();
 	
 	/**
 	 * 已发送但还未接收到响应的消息
@@ -87,7 +87,7 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	 */
 	private final Map<Long, ResponseFuture> futures = new ConcurrentHashMap<Long, ResponseFuture>();
 	
-	private Collection<IConnectionListener> connectionListeners = new ArrayList<IConnectionListener>();
+	private Collection<IConnectionListener> connectionListeners = new CopyOnWriteArrayList<IConnectionListener>();
 	
 	protected ISerializeFactory serializeFactory;
 	
@@ -462,6 +462,10 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 					case SHARE:
 						l.onShare(message.getPushData());
 						break;
+					case FRI_RESP:
+						l.onFriendResponse(message.getPushData());
+					case UNLIKE:
+						l.onUnlike(message.getPushData());
 					default:
 						break;
 					}

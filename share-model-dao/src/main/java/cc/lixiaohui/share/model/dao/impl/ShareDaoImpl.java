@@ -1,7 +1,11 @@
 package cc.lixiaohui.share.model.dao.impl;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TimeZone;
 
 import org.hibernate.Session;
 
@@ -39,42 +43,43 @@ public class ShareDaoImpl extends AbstractDeleteableDao<Share> implements ShareD
 		return share;
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked" })
 	@Override
-	public List<Share> list(int currentUserId, String keyword, long baseTime, boolean deleted, String orderColumn, String orderType, int start, int limit) throws DaoException {
+	public List<Share> list(int currentUserId, int targetUserId, String keyword, long baseTime, boolean deleted, String orderColumn, String orderType, int start, int limit) throws DaoException {
+		// where condition include targetUserId, keyword, baseTime, deleted
 		Session session = getSession();
+		Map<String, Object> params = new HashMap<String, Object>();
+		StringBuilder hql = new StringBuilder();
+		hql.append("select s from Share s join s.publisher p where ");
 		
-		if (currentUserId > -1) { // TODO 已登陆的会话, 要把别人的selfForbid和adminForbid为true的share去掉
-			if (baseTime > 0 ) {
-				return session.createQuery("select s from Share s join s.publisher p "
-						+ "where (p.id = :userId or (p.id != :userId and p.selfForbid = false and p.adminForbid = false)) and  s.content like :keyword and s.deleted = :deleted  and s.createTime > :baseTime "
-						+ "order by s." + orderColumn + " " + orderType)
-						.setParameter("keyword", keyword).setParameter("deleted", deleted)
-						.setTimestamp("baseTime", new Date(baseTime)).setParameter("userId", currentUserId)
-						.setFirstResult(start).setMaxResults(limit).list();
-			} else {
-				return session.createQuery("select s from Share s join s.publisher p "
-						+ "where (p.id = :userId or (p.id != :userId and p.selfForbid = false and p.adminForbid = false)) and s.content like :keyword and s.deleted = :deleted  "
-						+ "order by s." + orderColumn + " " + orderType)
-						.setParameter("keyword", keyword).setParameter("deleted", deleted)
-						.setParameter("userId", currentUserId)
-						.setFirstResult(start).setMaxResults(limit).list();
-			}
-		} else { // TODO 未登陆的会话需要考虑selfShield和adminShield的情况
-			if (baseTime > 0 ) {
-				return session.createQuery("select s from Share s join s.publisher p "
-						+ "where p.selfForbid = false and p.adminForbid = false and s.content like :keyword and s.deleted = :deleted and s.createTime > :baseTime "
-						+ "order by s." + orderColumn + " " + orderType)
-						.setParameter("keyword", keyword).setParameter("deleted", deleted).setTimestamp("baseTime", new Date(baseTime))
-						.setFirstResult(start).setMaxResults(limit).list();
-			} else {
-				return session.createQuery("select s from Share s join s.publisher p "
-						+ "where p.selfForbid = false and p.adminForbid = false and s.content like :keyword and s.deleted = :deleted "
-						+ "order by s." + orderColumn + " " + orderType)
-						.setParameter("keyword", keyword).setParameter("deleted", deleted)
-						.setFirstResult(start).setMaxResults(limit).list();
-			}
+		hql.append("s.content like :keyword ");
+		params.put("keyword", keyword);
+		hql.append("and s.deleted = :deleted ");
+		params.put("deleted", deleted);
+		if (targetUserId > -1) { // 指定用户
+			hql.append("and p.id = :targetUserId ");
+			params.put("targetUserId", targetUserId);
 		}
+		if (baseTime > 0) { // based on specific time
+			hql.append("and s.createTime > :createTime ");
+			params.put("createTime", new Date(baseTime));
+		}
+		
+		if (currentUserId > 0) { // 已登陆, 此时当分享不是自己发布的时候, 若发布者被屏蔽了, 则该分享对当前用户不可见
+			hql.append("and (p.id = :currentUserId or (p.id != :currentUserId and p.selfForbid = false and p.adminForbid = false)) ");
+			params.put("currentUserId", currentUserId);
+		} else {
+			// 未登陆, 此时若分享的发布者被屏蔽了, 则该分享对当前用户不可见
+			hql.append("and p.selfForbid = false and p.adminForbid = false ");
+		}
+		
+		hql.append("order by s.").append(orderColumn).append(" ").append(orderType).append(" ");
+		
+		List<Share> shares = session.createQuery(hql.toString())
+				.setProperties(params)
+				.setFirstResult(start)
+				.setMaxResults(limit).list();
+		return shares;
 	}
 
 }
