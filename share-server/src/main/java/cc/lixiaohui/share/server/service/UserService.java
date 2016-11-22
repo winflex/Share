@@ -292,6 +292,7 @@ public class UserService extends AbstractService{
 			if (fsDao.add(fs) > 0) {
 				// TODO 推送
 				try {
+					System.out.println(packAddFriendPush(fs).toJSONString());
 					PushMessage message = PushMessage.builder().type(Type.FRI_REQ)
 							.pushData(packAddFriendPush(fs).toJSONString()).build();
 					session.getSessionManager().pushTo(fs.getAskedUser().getId(), message);
@@ -308,8 +309,82 @@ public class UserService extends AbstractService{
 		}
 	}
 	
+	/**
+	 * @param friendShipId int, !nullable
+	 * @param accept boolean, !nullable
+	 * @throws ServiceException
+	 */
+	@Procedure(name="handleFriendRequest", level=PrivilegeLevel.LOGGED)
+	public String handleFriendRequest() throws ServiceException {
+		try {
+			int friendShipId = getIntParameter("friendShipId");
+			boolean accept = getBooleanParameter("accept");
+			
+			FriendShipDao dao = daofactory.getDao(FriendShipDao.class);
+			FriendShip fs = dao.getById(friendShipId);
+			if (fs == null) {
+				return JSONUtils.newFailureResult("好友关系不存在", ErrorCode.RESOURCE_NOT_FOUND, "");
+			}
+			
+			if (fs.getAskedUser().getId() != session.getUser().getId()) {
+				return JSONUtils.newFailureResult("参数错误", ErrorCode.PARAMETER, "");
+			}
+			
+			if (!fs.isPending()) {
+				return JSONUtils.newFailureResult("不能重复确认", ErrorCode.SERVICE, "");
+			}
+			
+			if (accept) { // 好友确立
+				fs.setAnswerTime(TimeUtils.currentTimestamp());
+				fs.setPending(false);
+				if (dao.update(fs) > 0) {
+					// 推送
+					try {
+						//System.out.println(packFriendShipResp(fs, accept).toJSONString());
+						PushMessage message = PushMessage.builder().type(Type.FRI_RESP)
+								.pushData(packFriendShipResp(fs, accept).toJSONString()).build();
+						session.getSessionManager().pushTo(fs.getAskUser().getId(), message);
+					} catch (Throwable cause) {
+						logger.error("{}", cause);
+					}
+					return JSONUtils.newSuccessfulResult("成为好友");
+				} else {
+					return JSONUtils.newFailureResult("请求发送失败", ErrorCode.DATABASE, "");
+				}
+				
+			} else {
+				// 删除该friendShip, 并推送对方
+				if (dao.delete(fs) > 0) {
+					try {
+						//System.out.println(packFriendShipResp(fs, accept).toJSONString());
+						PushMessage message = PushMessage.builder().type(Type.FRI_RESP)
+								.pushData(packFriendShipResp(fs, accept).toJSONString()).build();
+						session.getSessionManager().pushTo(fs.getAskUser().getId(), message);
+					} catch (Throwable cause) {
+						logger.error("{}", cause);
+					}
+					return JSONUtils.newSuccessfulResult("已拒绝");
+				} else {
+					return JSONUtils.newFailureResult("请求发送失败", ErrorCode.DATABASE, "");
+				}
+			}
+		} catch (Throwable cause) {
+			logger.error("{}", cause);
+			return JSONUtils.newFailureResult(cause);
+		}
+	}
+	
+	private JSONObject packFriendShipResp(FriendShip fs, boolean accept) {
+		JSONObject result = new JSONObject();
+		result.put("accept", accept);
+		result.put("friendShipId", fs.getId());
+		result.put("user", packSingleUser(fs.getAskedUser()));
+		return result;
+	}
+
 	private JSONObject packAddFriendPush(FriendShip fs) {
 		JSONObject result = new JSONObject();
+		result.put("friendShipId", fs.getId());
 		result.put("user", packSingleUser(fs.getAskUser()));
 		return result;
 	}
@@ -393,10 +468,14 @@ public class UserService extends AbstractService{
 			if (fs.getAskedUser().getId() == userId || fs.getAskedUser().getId() == userId) {
 				if (dao.delete(fs) > 0) {
 					// TODO 推送
-					boolean inverse = fs.getAskedUser().getId() == userId;
-					PushMessage message = PushMessage.builder().type(Type.FRI_REQ)
-							.pushData(packDeleteFriendPush(fs, inverse).toJSONString()).build();
-					session.getSessionManager().pushTo(inverse ? fs.getAskedUser().getId() : fs.getAskUser().getId(), message);
+					try {
+						boolean inverse = fs.getAskedUser().getId() == userId;
+						PushMessage message = PushMessage.builder().type(Type.FRI_REQ)
+								.pushData(packDeleteFriendPush(fs, inverse).toJSONString()).build();
+						session.getSessionManager().pushTo(inverse ? fs.getAskedUser().getId() : fs.getAskUser().getId(), message);
+					} catch (Throwable cause) {
+						logger.error("{}", cause);
+					}
 					return JSONUtils.newSuccessfulResult("删除好友成功");
 				} else {
 					JSONUtils.newFailureResult("删除好友失败", ErrorCode.DATABASE, "");

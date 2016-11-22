@@ -12,6 +12,10 @@ public class TimeUtils {
 		return System.currentTimeMillis();
 	}
 	
+	public static Timestamp currentTimestamp() {
+		return new Timestamp(currentTimeMillis());
+	}
+	
 	public static long toLong(Timestamp time) {
 		return time.getTime();
 	}

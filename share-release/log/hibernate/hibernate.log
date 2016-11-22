@@ -1712,3 +1712,81 @@
 2016-11-22 11:17:43.656-[INFO ] main SettingsFactory - Named query checking : enabled
 2016-11-22 11:17:43.705-[INFO ] main SessionFactoryImpl - building session factory
 2016-11-22 11:17:43.998-[INFO ] main SessionFactoryObjectFactory - Not binding factory to JNDI, no JNDI name configured
+2016-11-22 16:27:09.301-[INFO ] main Environment - Hibernate 3.3.2.GA
+2016-11-22 16:27:09.304-[INFO ] main Environment - hibernate.properties not found
+2016-11-22 16:27:09.307-[INFO ] main Environment - Bytecode provider name : javassist
+2016-11-22 16:27:09.312-[INFO ] main Environment - using JDK 1.4 java.sql.Timestamp handling
+2016-11-22 16:27:09.370-[INFO ] main Configuration - configuring from resource: hibernate.cfg.xml
+2016-11-22 16:27:09.370-[INFO ] main Configuration - Configuration resource: hibernate.cfg.xml
+2016-11-22 16:27:09.415-[INFO ] main Configuration - Reading mappings from resource : mapping/Role.hbm.xml
+2016-11-22 16:27:09.500-[INFO ] main HbmBinder - Mapping class: cc.lixiaohui.share.model.bean.Role -> role
+2016-11-22 16:27:09.517-[INFO ] main Configuration - Reading mappings from resource : mapping/User.hbm.xml
+2016-11-22 16:27:09.549-[INFO ] main HbmBinder - Mapping class: cc.lixiaohui.share.model.bean.User -> user
+2016-11-22 16:27:09.597-[INFO ] main Configuration - Reading mappings from resource : mapping/Share.hbm.xml
+2016-11-22 16:27:09.617-[INFO ] main HbmBinder - Mapping class: cc.lixiaohui.share.model.bean.Share -> share
+2016-11-22 16:27:09.618-[INFO ] main HbmBinder - Mapping collection: cc.lixiaohui.share.model.bean.Share.pictures -> share_picture_relation
+2016-11-22 16:27:09.619-[INFO ] main Configuration - Reading mappings from resource : mapping/Picture.hbm.xml
+2016-11-22 16:27:09.635-[INFO ] main HbmBinder - Mapping class: cc.lixiaohui.share.model.bean.Picture -> picture
+2016-11-22 16:27:09.636-[INFO ] main Configuration - Reading mappings from resource : mapping/Praise.hbm.xml
+2016-11-22 16:27:09.652-[INFO ] main HbmBinder - Mapping class: cc.lixiaohui.share.model.bean.Praise -> praise
+2016-11-22 16:27:09.653-[INFO ] main Configuration - Reading mappings from resource : mapping/ShareCollection.hbm.xml
+2016-11-22 16:27:09.669-[INFO ] main HbmBinder - Mapping class: cc.lixiaohui.share.model.bean.ShareCollection -> share_collection
+2016-11-22 16:27:09.670-[INFO ] main Configuration - Reading mappings from resource : mapping/UserCollection.hbm.xml
+2016-11-22 16:27:09.691-[INFO ] main HbmBinder - Mapping class: cc.lixiaohui.share.model.bean.UserCollection -> user_collection
+2016-11-22 16:27:09.694-[INFO ] main Configuration - Reading mappings from resource : mapping/Comment.hbm.xml
+2016-11-22 16:27:09.710-[INFO ] main HbmBinder - Mapping class: cc.lixiaohui.share.model.bean.Comment -> comment
+2016-11-22 16:27:09.711-[INFO ] main Configuration - Reading mappings from resource : mapping/ForbidenWord.hbm.xml
+2016-11-22 16:27:09.724-[INFO ] main HbmBinder - Mapping class: cc.lixiaohui.share.model.bean.ForbidenWord -> forbidenword
+2016-11-22 16:27:09.724-[INFO ] main Configuration - Reading mappings from resource : mapping/FriendShip.hbm.xml
+2016-11-22 16:27:09.739-[INFO ] main HbmBinder - Mapping class: cc.lixiaohui.share.model.bean.FriendShip -> friendship
+2016-11-22 16:27:09.740-[INFO ] main Configuration - Reading mappings from resource : mapping/Sorting.hbm.xml
+2016-11-22 16:27:09.757-[INFO ] main HbmBinder - Mapping class: cc.lixiaohui.share.model.bean.Sorting -> sorting
+2016-11-22 16:27:09.766-[INFO ] main Configuration - Reading mappings from resource : mapping/ShareReadRecord.hbm.xml
+2016-11-22 16:27:09.787-[INFO ] main HbmBinder - Mapping class: cc.lixiaohui.share.model.bean.ShareReadRecord -> share_read_record
+2016-11-22 16:27:09.788-[INFO ] main Configuration - Configured SessionFactory: null
+2016-11-22 16:27:09.790-[INFO ] main HbmBinder - Mapping collection: cc.lixiaohui.share.model.bean.User.shares -> share
+2016-11-22 16:27:09.790-[INFO ] main HbmBinder - Mapping collection: cc.lixiaohui.share.model.bean.User.shareCollections -> share_collection
+2016-11-22 16:27:09.790-[INFO ] main HbmBinder - Mapping collection: cc.lixiaohui.share.model.bean.User.userCollections -> user_collection
+2016-11-22 16:27:09.790-[INFO ] main HbmBinder - Mapping collection: cc.lixiaohui.share.model.bean.User.commentsByMe -> comment
+2016-11-22 16:27:09.791-[INFO ] main HbmBinder - Mapping collection: cc.lixiaohui.share.model.bean.User.commentsForMe -> comment
+2016-11-22 16:27:09.791-[INFO ] main HbmBinder - Mapping collection: cc.lixiaohui.share.model.bean.Share.praises -> praise
+2016-11-22 16:27:09.791-[INFO ] main HbmBinder - Mapping collection: cc.lixiaohui.share.model.bean.Share.comments -> comment
+2016-11-22 16:27:09.791-[INFO ] main HbmBinder - Mapping collection: cc.lixiaohui.share.model.bean.Share.readRecords -> share_read_record
+2016-11-22 16:27:09.800-[INFO ] main DriverManagerConnectionProvider - Using Hibernate built-in connection pool (not for production use!)
+2016-11-22 16:27:09.801-[INFO ] main DriverManagerConnectionProvider - Hibernate connection pool size: 20
+2016-11-22 16:27:09.802-[INFO ] main DriverManagerConnectionProvider - autocommit mode: false
+2016-11-22 16:27:09.832-[INFO ] main DriverManagerConnectionProvider - using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/sharing
+2016-11-22 16:27:09.832-[INFO ] main DriverManagerConnectionProvider - connection properties: {user=root, password=****}
+2016-11-22 16:27:10.361-[INFO ] main SettingsFactory - RDBMS: MySQL, version: 5.5.40
+2016-11-22 16:27:10.361-[INFO ] main SettingsFactory - JDBC driver: MySQL Connector Java, version: mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )
+2016-11-22 16:27:10.391-[INFO ] main Dialect - Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2016-11-22 16:27:10.399-[INFO ] main TransactionFactoryFactory - Using default transaction strategy (direct JDBC transactions)
+2016-11-22 16:27:10.402-[INFO ] main TransactionManagerLookupFactory - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2016-11-22 16:27:10.403-[INFO ] main SettingsFactory - Automatic flush during beforeCompletion(): disabled
+2016-11-22 16:27:10.403-[INFO ] main SettingsFactory - Automatic session close at end of transaction: disabled
+2016-11-22 16:27:10.403-[INFO ] main SettingsFactory - JDBC batch size: 15
+2016-11-22 16:27:10.403-[INFO ] main SettingsFactory - JDBC batch updates for versioned data: disabled
+2016-11-22 16:27:10.405-[INFO ] main SettingsFactory - Scrollable result sets: enabled
+2016-11-22 16:27:10.405-[INFO ] main SettingsFactory - JDBC3 getGeneratedKeys(): enabled
+2016-11-22 16:27:10.405-[INFO ] main SettingsFactory - Connection release mode: auto
+2016-11-22 16:27:10.406-[INFO ] main SettingsFactory - Maximum outer join fetch depth: 2
+2016-11-22 16:27:10.407-[INFO ] main SettingsFactory - Default batch fetch size: 1
+2016-11-22 16:27:10.407-[INFO ] main SettingsFactory - Generate SQL with comments: enabled
+2016-11-22 16:27:10.407-[INFO ] main SettingsFactory - Order SQL updates by primary key: disabled
+2016-11-22 16:27:10.407-[INFO ] main SettingsFactory - Order SQL inserts for batching: disabled
+2016-11-22 16:27:10.408-[INFO ] main SettingsFactory - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2016-11-22 16:27:10.412-[INFO ] main ASTQueryTranslatorFactory - Using ASTQueryTranslatorFactory
+2016-11-22 16:27:10.412-[INFO ] main SettingsFactory - Query language substitutions: {}
+2016-11-22 16:27:10.412-[INFO ] main SettingsFactory - JPA-QL strict compliance: disabled
+2016-11-22 16:27:10.413-[INFO ] main SettingsFactory - Second-level cache: enabled
+2016-11-22 16:27:10.413-[INFO ] main SettingsFactory - Query cache: disabled
+2016-11-22 16:27:10.413-[INFO ] main SettingsFactory - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2016-11-22 16:27:10.413-[INFO ] main SettingsFactory - Optimize cache for minimal puts: disabled
+2016-11-22 16:27:10.414-[INFO ] main SettingsFactory - Structured second-level cache entries: disabled
+2016-11-22 16:27:10.419-[INFO ] main SettingsFactory - Echoing all SQL to stdout
+2016-11-22 16:27:10.421-[INFO ] main SettingsFactory - Statistics: disabled
+2016-11-22 16:27:10.421-[INFO ] main SettingsFactory - Deleted entity synthetic identifier rollback: disabled
+2016-11-22 16:27:10.421-[INFO ] main SettingsFactory - Default entity-mode: pojo
+2016-11-22 16:27:10.421-[INFO ] main SettingsFactory - Named query checking : enabled
+2016-11-22 16:27:10.473-[INFO ] main SessionFactoryImpl - building session factory
+2016-11-22 16:27:10.827-[INFO ] main SessionFactoryObjectFactory - Not binding factory to JNDI, no JNDI name configured

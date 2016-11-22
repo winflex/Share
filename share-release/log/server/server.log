@@ -1408,3 +1408,49 @@ java.lang.NullPointerException: null
 2016-11-22 13:56:21.932-[DEBUG] IO-Worker-0 HeartbeatHandler - recieved heartbeat from [id: 0x0ecd653f, /127.0.0.1:52094 => /127.0.0.1:8888]
 2016-11-22 13:56:21.961-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
 2016-11-22 13:56:21.962-[DEBUG] IO-Worker-1 HeartbeatHandler - recieved heartbeat from [id: 0x6e40e451, /127.0.0.1:52099 => /127.0.0.1:8888]
+2016-11-22 16:27:09.235-[INFO ] main AbstractShareServer - server initializing...
+2016-11-22 16:27:09.788-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-22 16:27:09.789-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-22 16:27:09.789-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-22 16:27:09.789-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-22 16:27:09.789-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-22 16:27:11.059-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-22 16:27:11.086-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-22 16:27:11.086-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-22 16:27:11.087-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-22 16:27:11.087-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-22 16:27:11.087-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-22 16:27:11.088-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-22 16:27:11.089-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-22 16:27:11.089-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-22 16:27:11.089-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-22 16:27:11.089-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-22 16:27:11.090-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-22 16:27:11.090-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-22 16:27:11.094-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-22 16:27:11.094-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-22 16:27:11.094-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-22 16:27:11.094-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-22 16:27:11.096-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-22 16:27:11.096-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-22 16:27:11.096-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-22 16:27:11.096-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-22 16:27:11.097-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-22 16:27:11.097-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-22 16:27:11.097-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-22 16:27:11.097-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-22 16:27:11.099-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-22 16:27:11.100-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-22 16:27:11.100-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-22 16:27:11.100-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-22 16:27:11.102-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-22 16:27:11.102-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-22 16:27:11.102-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-22 16:27:11.103-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-22 16:27:11.103-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-22 16:27:11.103-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-22 16:27:11.103-[INFO ] main AbstractShareServer - total 9 service class and 34 service procedure found
+2016-11-22 16:27:11.103-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-22 16:27:11.180-[INFO ] main AbstractShareServer - server initialized
+2016-11-22 16:27:11.274-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-22 16:27:11.275-[INFO ] main AbstractShareServer - server started

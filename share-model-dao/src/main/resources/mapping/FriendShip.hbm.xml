@@ -11,7 +11,7 @@
 		<many-to-one name="askedUser" class="User" fetch="join" lazy="false" column="asked_user_id" />
 		<property name="pending" type="boolean" insert="false"/>
 		<property name="askTime" column="ask_time" type="java.sql.Timestamp" update="false" />
-		<property name="answerTime" column="answer_time" type="java.sql.Timestamp" update="false" insert="false"/>
+		<property name="answerTime" column="answer_time" type="java.sql.Timestamp" insert="false"/>
 	</class>
 
 </hibernate-mapping>

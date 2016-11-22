@@ -474,6 +474,18 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 */
 	String addFriend(int targetUserId) throws ClientException;
 	
+	/**
+	 * 处理他人发来的好友请求
+	 * 
+	 * @param friendShipId 
+	 * @param accept 是否同意
+	 * @return
+	 * <pre>
+	 * {}
+	 * </pre>
+	 * @throws ClientException
+	 */
+	String handleFriendRequest(int friendShipId, boolean accept) throws ClientException;
 	
 	// *****************************************************************
 	// *********************** Picture Operations **********************

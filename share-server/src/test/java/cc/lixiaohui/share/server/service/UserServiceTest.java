@@ -127,5 +127,15 @@ public class UserServiceTest {
 		String json = svc.deleteFriend();
 		System.out.println(json);
 	}
-	
+	@Test
+	public void friendResponse() throws Exception {
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 5));
+		
+		params.put("friendShipId", 15);
+		params.put("accept", false);
+		
+		UserService svc = new UserService(session, params);
+		String json = svc.handleFriendRequest();
+		System.out.println(json);
+	}
 }

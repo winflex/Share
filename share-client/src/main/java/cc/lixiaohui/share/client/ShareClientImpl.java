@@ -427,4 +427,12 @@ public class ShareClientImpl extends AbstractShareClient {
 				.parameter("praiseId", praiseId).build();
 		return syncSend(m);
 	}
+
+	@Override
+	public String handleFriendRequest(int friendShipId, boolean accept) throws ClientException {
+		CSRequestMessage m = CSRequestMessage.builder().service("PraiseService").procedure("unlike")
+				.parameter("accept", accept)
+				.parameter("friendShipId", friendShipId).build();
+		return syncSend(m);
+	}
 }

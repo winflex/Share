@@ -46,9 +46,22 @@ public interface IMessageListener {
 	 *  <pre>
 	 * json格式:
 	 * {
-	 *   "userId":1,			# 对方的ID
-	 *   "username":"猪八叽"		# 对方的用户名
-	 * }
+	 *  "friendShipId":13
+		"user":{
+			"selfShield":false,
+			"sex":"男",
+			"username":"小王",
+			"userId":7,
+			"role":{
+				"id":2,
+				"description":"普通用户"
+			},
+			"headImageId":4,
+			"registerTime":1478937008000,
+			"signature":"7777777777",
+			"adminShield":false
+			},
+		}
 	 * </pre>
 	 */
 	void onFriendRequest(String json);
@@ -59,11 +72,23 @@ public interface IMessageListener {
 	 * json格式:
 	 * <pre>
 	 * 	{
-	 * 		"targetUserId":1,			# 对方用户的ID
-	 * 		"targetUsername":"猪八戒"		# 对方用户名
-	 * 		"accept":false,				# true说明朋友关系确立, false 说明对方拒绝添加, 此时可以通过拿msg字段获取拒绝理由
-	 * 		"msg":"丑拒"					# 说明			
-	 * 	}
+    		"accept":true,				# true 同意, false 拒绝
+    		"user":{
+        		"selfShield":false,
+        		"sex":"男",
+        		"username":"小明",
+        		"userId":5,
+        		"role":{
+            		"id":2,
+            		"description":"普通用户"
+        		},
+        		"headImageId":4,
+        		"registerTime":1477812053000,
+        		"signature":"我是水货",
+        		"adminShield":false
+    		},
+    		"friendShipId":13
+		}
 	 * </pre>
 	 */
 	void onFriendResponse(String json);
