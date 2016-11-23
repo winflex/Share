@@ -508,7 +508,7 @@ public class UserService extends AbstractService{
  		return result;
 	}
 	
-	private JSONObject packSingleUser(User user) {
+	static JSONObject packSingleUser(User user) {
 		JSONObject result = new JSONObject();
 		
 		JSONObject role = new JSONObject();

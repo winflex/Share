@@ -50,7 +50,7 @@ public class ShareServiceTest {
 	
 	@Test
 	public void getShare() throws ServiceException {
-		params.put("shareId", 9);
+		params.put("shareId", 10);
 		
 		ShareService svc = new ShareService(null, params);
 		String json = svc.getShare();

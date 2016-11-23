@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
+import cc.lixiaohui.share.server.Session;
 import cc.lixiaohui.share.server.SystemRuntime;
 import cc.lixiaohui.share.server.service.util.ServiceException;
 
@@ -22,10 +23,11 @@ public class PictureServiceTest {
 	
 	@Test
 	public void upload() throws ServiceException {
-		params.put("userId", 5);
+		Session session = TestUtils.loginSession(TestUtils.newUser(2, 5));
+		
 		params.put("suffix", "jpg");
 		params.put("bytes", "起始我是我是图片".getBytes());
-		PictureService svc = new PictureService(null, params);
+		PictureService svc = new PictureService(session, params);
 		String json =  svc.uploadPicture();
 		System.out.println(json);
 	}

@@ -48,12 +48,10 @@ public class PictureService extends AbstractService{
 			return JSONUtils.newFailureResult("您未登录", ErrorCode.AUTH, "");
 		}
 		
-		int userId;
 		String suffix = null;
 		byte[] bytes = null;
 		
 		try {
-			userId = getIntParameter("userId");
 			suffix = getStringParameter("suffix", "");
 			bytes = getObjectParameter("bytes");
 		} catch (Throwable t) {
@@ -70,7 +68,7 @@ public class PictureService extends AbstractService{
 			fullPath = FileUtils.saveFile(SystemRuntime.picturePath(), generatePictureName(dao, suffix), bytes);
 			fileSaved = true;
 			// 2.保存记录到库
-			Picture picture = newPicture(userId, suffix, fullPath);
+			Picture picture = newPicture(session.getUser().getId(), suffix, fullPath);
 			
 			if (dao.add(picture) > 0) { // 保存成功
 				JSONObject result = new JSONObject();
