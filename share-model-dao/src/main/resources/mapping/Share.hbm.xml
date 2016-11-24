@@ -14,7 +14,7 @@
 		<property name="praiseCount" type="int" column="praises" insert="false"/>
 		<property name="commentCount" type="int" column="comments" insert="false"/>
 		
-		<bag name="pictures" inverse="true" table="share_picture_relation" lazy="false" fetch="join" cascade="delete">
+		<bag name="pictures" inverse="false" table="share_picture_relation" lazy="false" fetch="join" cascade="delete">
 			<key column="share_id"/>
 			<many-to-many class="Picture" column="picture_id" />
 		</bag>

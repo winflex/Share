@@ -31,8 +31,8 @@ public class ShareServiceTest {
 		Session session = TestUtils.loginSession(TestUtils.newUser(2, 11));
 		
 		
-		params.put("content", "不好");
-		params.put("pictureIds", new int[]{1, 2});
+		params.put("content", "fdafdsfdsdsfdfsss");
+		params.put("pictureIds", new int[]{3,4});
 		
 		ShareService svc = new ShareService(session, params);
 		String json = svc.publishShare();

@@ -2,6 +2,8 @@ package cc.lixiaohui.share.client;
 
 import org.junit.Test;
 
+import cc.lixiaohui.share.util.lifecycle.LifeCycleException;
+
 /**
  * @author lixiaohui
  * @date 2016年11月16日 下午7:44:49
@@ -98,5 +100,19 @@ public class ClientTest {
 		System.out.println(json);
 		//Thread.sleep(2 * 1000);
 		System.in.read();
+	}
+	@Test
+	public void uploadPicture() throws Exception {
+		final IShareClient client = ShareClientFactory.newInstance("", 8888);
+		client.start();
+		client.addMessageListener(l);
+		
+		String json = client.login("李小辉", "lixiaohui");
+		System.out.println(json);
+		
+		json = client.uploadPicture("", "dsa".getBytes());
+		System.out.println(json);
+		System.in.read();
+		
 	}
 }

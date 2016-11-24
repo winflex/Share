@@ -1454,3 +1454,67 @@ java.lang.NullPointerException: null
 2016-11-22 16:27:11.180-[INFO ] main AbstractShareServer - server initialized
 2016-11-22 16:27:11.274-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
 2016-11-22 16:27:11.275-[INFO ] main AbstractShareServer - server started
+2016-11-23 19:06:15.120-[INFO ] main AbstractShareServer - server initializing...
+2016-11-23 19:06:15.758-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-23 19:06:15.761-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-23 19:06:15.761-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-23 19:06:15.762-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-23 19:06:15.763-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-23 19:06:16.808-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-23 19:06:16.915-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-23 19:06:16.916-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-23 19:06:16.918-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-23 19:06:16.921-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-23 19:06:16.923-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-23 19:06:16.923-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-23 19:06:16.924-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-23 19:06:16.925-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-23 19:06:16.926-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-23 19:06:16.926-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-23 19:06:16.931-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-23 19:06:16.932-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-23 19:06:16.932-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-23 19:06:16.935-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-23 19:06:16.936-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-23 19:06:16.936-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-23 19:06:16.937-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-23 19:06:16.938-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-23 19:06:16.938-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-23 19:06:16.940-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-23 19:06:16.943-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-23 19:06:16.943-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-23 19:06:16.946-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-23 19:06:16.948-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-23 19:06:16.949-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-23 19:06:16.950-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-23 19:06:16.951-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-23 19:06:16.954-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-23 19:06:16.955-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-23 19:06:16.958-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-23 19:06:16.959-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-23 19:06:16.959-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-23 19:06:16.962-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-23 19:06:16.962-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-23 19:06:16.963-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-23 19:06:16.966-[INFO ] main AbstractShareServer - total 9 service class and 35 service procedure found
+2016-11-23 19:06:16.966-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-23 19:06:17.096-[INFO ] main AbstractShareServer - server initialized
+2016-11-23 19:06:17.221-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-23 19:06:17.221-[INFO ] main AbstractShareServer - server started
+2016-11-23 19:10:27.239-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0xc4b5d431, /127.0.0.1:50094 => /127.0.0.1:8888]
+2016-11-23 19:10:27.295-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0xc4b5d431, /127.0.0.1:50094 => /127.0.0.1:8888]
+2016-11-23 19:10:27.295-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-23 19:10:27.370-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0xc4b5d431, /127.0.0.1:50094 => /127.0.0.1:8888]
+2016-11-23 19:10:27.516-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-23 19:10:27.516-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0xc4b5d431, /127.0.0.1:50094 => /127.0.0.1:8888]
+2016-11-23 19:10:27.519-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0xc4b5d431, /127.0.0.1:50094 => /127.0.0.1:8888]
+2016-11-23 19:10:27.545-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-23 19:10:27.755-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=4, name=李小辉, password=lixiaohui, sex=男, signature=哈哈哈哈, role=Role[id=1, desc=管理员, createTime=2016-10-29 21:38:32.0, deleted=false], headImage=Picture[id=3, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Payload of OK Packet.PNG, suffix=PNG, uploadTime=2016-11-12 14:44:41.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-23 19:10:27.989-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@303ec561
+2016-11-23 19:10:27.989-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-23 19:10:27.993-[DEBUG] IO-Worker-0 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@79429cb2 to channel [id: 0xc4b5d431, /127.0.0.1:50094 => /127.0.0.1:8888]
+2016-11-23 19:10:28.017-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-23 19:10:28.098-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message cc.lixiaohui.share.protocol.CSRequestMessage@5ee04fd
+2016-11-23 19:10:28.098-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-23 19:10:28.105-[DEBUG] IO-Worker-0 AbstractShareServer - write message cc.lixiaohui.share.protocol.CSResponseMessage@4d898115 to channel [id: 0xc4b5d431, /127.0.0.1:50094 => /127.0.0.1:8888]
+2016-11-23 19:10:53.085-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0xc4b5d431, /127.0.0.1:50094 :> /127.0.0.1:8888]
