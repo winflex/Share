@@ -115,7 +115,8 @@ public abstract class AbstractShareServer extends AbstractLifeCycle implements I
 	
 	protected AbstractShareServer(ServerConfig config) {
 		this.config = config;
-		handshakeMessage = HandShakeRequestMessage.builder().heartbeatInterval(config.getSocketConfig().getHeartbeatInterval())
+		handshakeMessage = HandShakeRequestMessage.builder()
+				.heartbeatInterval(config.getSocketConfig().getHeartbeatInterval())
 				.reconnectInterval(config.getSocketConfig().getReconnectInterval())
 				.requestTimeout(config.getSessionConfig().getMessageTimeout())
 				.reconnectTimes(config.getSocketConfig().getReconnectTimes()).build();

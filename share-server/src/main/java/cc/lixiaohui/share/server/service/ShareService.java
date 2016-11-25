@@ -270,6 +270,104 @@ public class ShareService extends AbstractService {
 			return JSONUtils.newFailureResult(t.getMessage(), ErrorCode.wrap(t), t);
 		}
 	}
+	
+	
+	/**
+	 * 获取当前用户点赞过的分享
+	 * @param start int, nullable 
+	 * @param limit int, nullable
+	 * @return
+	 * @throws ServiceException
+	 */
+	@Procedure(name="getCommentedShares", level=PrivilegeLevel.LOGGED)
+	public String getCommentedShares() throws ServiceException {
+		try {
+			int start = getIntParameter("start", DEFAULT_START);
+			int limit = getIntParameter("limit", DEFAULT_LIMIT);
+			ShareDao shareDao = daofactory.getDao(ShareDao.class);
+			List<Object[]> commentAndShares = shareDao.listCommentedByUser(session.getUser().getId(), start, limit);
+			return JSONUtils.newSuccessfulResult("获取分享成功", packCommentedShares(commentAndShares));
+		} catch (Throwable cause) {
+			logger.error("{}", cause);
+			return JSONUtils.newFailureResult(cause);
+		}
+	}
+
+	@Procedure(name="getLikedShares", level=PrivilegeLevel.LOGGED)
+	public String getLikedShares() throws ServiceException {
+		try {
+			int start = getIntParameter("start", DEFAULT_START);
+			int limit = getIntParameter("limit", DEFAULT_LIMIT);
+			ShareDao shareDao = daofactory.getDao(ShareDao.class);
+			List<Object[]> shareAndPraises = shareDao.listLikedByUser(session.getUser().getId(), start, limit);
+			return JSONUtils.newSuccessfulResult("获取分享成功", packLikedShares(shareAndPraises));
+		} catch (Throwable cause) {
+			logger.error("{}", cause);
+			return JSONUtils.newFailureResult(cause);
+		}
+	}
+	
+	private JSONObject packLikedShares(List<Object[]> shareAndPraises) {
+		JSONArray items = new JSONArray();
+		for (Object[] arr : shareAndPraises) {
+			Share share = (Share) arr[0];
+			Praise praise = (Praise) arr[1];
+			
+			JSONObject shareObject = new JSONObject();
+			shareObject.put("id", share.getId());
+			shareObject.put("userId", share.getPublisher().getId());
+			shareObject.put("username", share.getPublisher().getUsername());
+			shareObject.put("content", share.getContent());
+			shareObject.put("createTime", share.getCreateTime());
+			shareObject.put("praiseCount", share.getPraiseCount());
+			shareObject.put("commentCount", share.getCommentCount());
+			
+			JSONObject praiseObject = new JSONObject();
+			praiseObject.put("id", praise.getId());
+			praiseObject.put("praiseTime", praise.getPraiseTime());
+			praiseObject.put("userId", praise.getUser().getId());
+			praiseObject.put("share", shareObject);
+			
+			items.add(praiseObject);
+		}
+		JSONObject result = new JSONObject();
+		result.put("count", shareAndPraises.size());
+		result.put("list", items);
+		return result;
+	}
+
+	private JSONObject packCommentedShares(List<Object[]> commentAndShares) {
+		JSONArray items = new JSONArray();
+		for (Object[] arr : commentAndShares) {
+			Share share = (Share) arr[0];
+			Comment comment = (Comment) arr[1];
+			
+			JSONObject shareObject = new JSONObject();
+			shareObject.put("id", share.getId());
+			shareObject.put("userId", share.getPublisher().getId());
+			shareObject.put("username", share.getPublisher().getUsername());
+			shareObject.put("content", share.getContent());
+			shareObject.put("createTime", share.getCreateTime());
+			shareObject.put("praiseCount", share.getPraiseCount());
+			shareObject.put("commentCount", share.getCommentCount());
+			
+			JSONObject commentObject = new JSONObject();
+			commentObject.put("id", comment.getId());
+			commentObject.put("content", comment.getContent());
+			commentObject.put("commentTime", comment.getCommentTime());
+			commentObject.put("share", shareObject);
+			commentObject.put("fromUserId", comment.getFromUser().getId());
+			commentObject.put("fromUsername", comment.getFromUser().getUsername());
+			commentObject.put("toUserId", comment.getToUser().getId());
+			commentObject.put("toUsername", comment.getToUser().getUsername());
+			
+			items.add(commentObject);
+		}
+		JSONObject result = new JSONObject();
+		result.put("count", commentAndShares.size());
+		result.put("list", items);
+		return result;
+	}
 
 	private JSONObject packSharePushResult(Share share) {
 		JSONArray pictureArray = new JSONArray();

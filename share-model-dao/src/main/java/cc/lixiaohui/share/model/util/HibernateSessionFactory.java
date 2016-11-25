@@ -84,7 +84,7 @@ public class HibernateSessionFactory {
 			}
 		}
 		factory = conf.buildSessionFactory();
-		factory.openSession();
+		//factory.openSession();
 	}
 
 	

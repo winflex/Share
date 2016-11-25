@@ -314,6 +314,71 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	String publishShare(String content, int[] picturesIds) throws ClientException;
 	
 	
+	/**
+	 * 获取我点赞过的分享
+	 * @param start 起始条数
+	 * @param limit 总条数
+	 * @return 
+	 * <pre>
+	 * {
+        "count":1,
+        "list":[
+            {
+                "praiseTime":1480080895000,
+                "id":7,
+                "share":{
+                    "content":"不好",
+                    "id":12,
+                    "createTime":1479650781000,
+                    "praiseCount":1,
+                    "username":"李酷酷",
+                    "userId":11,
+                    "commentCount":0
+                },
+                "userId":6
+            }
+        ]
+       }
+	 * </pre>
+	 * @throws ClientException
+	 */
+	String getLikedShares(int start, int limit) throws ClientException;
+	
+	/**
+	 * 获取我评论过的分享
+	 * @param start 起始条数
+	 * @param limit 总条数
+	 * @return
+	 * <pre>
+	 * {
+        "count":1,
+        "list":[
+            {
+                "content":"lureogjgdlk",
+                "id":6,
+                "share":{
+                    "content":"的洒家打开了打卡时间的咯",
+                    "id":4,
+                    "createTime":1479046241000,
+                    "praiseCount":0,
+                    "username":"小明",
+                    "userId":5,
+                    "commentCount":1
+                },
+                "fromUsername":"小明",
+                "commentTime":1480072104000,
+                "toUserId":5,
+                "toUsername":"小明",
+                "fromUserId":5
+            }
+        ]
+    }
+	 * </pre>
+	 * @throws ClientException
+	 */
+	String getCommentedShares(int start, int limit) throws ClientException;
+	
+	
 	// *****************************************************************
 	// *********************** Comment Operations **********************
 	// *****************************************************************

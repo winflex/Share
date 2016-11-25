@@ -57,4 +57,5 @@ public class ResponseMessage extends Message {
 	public static ResponseBuilder builder() {
 		return new ResponseBuilder();
 	}
+	
 }

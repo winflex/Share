@@ -95,4 +95,31 @@ public class ShareServiceTest {
 		System.out.println(cal.getTime().toLocaleString());
 	}
 	
+	@Test
+	public void getCommentedShares() throws Exception {
+		Session session = TestUtils.loginSession(2, 5);
+		
+		params.put("start", 0);
+		params.put("limit", 20);
+		ShareService svc = new ShareService(session, params);
+		
+		String json = svc.getCommentedShares();
+		System.out.println(json);
+		
+	}
+	
+	@Test
+	public void getLikedShares() throws Exception {
+		Session session = TestUtils.loginSession(2, 6);
+		
+		params.put("start", 0);
+		params.put("limit", 20);
+		ShareService svc = new ShareService(session, params);
+		
+		String json = svc.getLikedShares();
+		System.out.println(json);
+		
+	}
+	
+	
 }

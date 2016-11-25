@@ -22,11 +22,6 @@ public abstract class AbstractService {
 	 */
 	public static final Class<?>[] CONSTRUCTOR_TYPES = new Class<?>[]{Session.class, Map.class};
 	
-	/**
-	 * 管理员权限ID最大值(0=super, 1=admin, any other are normal)
-	 */
-	protected static final int ADMIN_THRESHOLD = 1;
-	
 	protected Map<String, Object> parameters = new HashMap<String, Object>();
 	
 	protected Session session;
@@ -51,7 +46,7 @@ public abstract class AbstractService {
 		try {
 			return daofactory.getDao(daoClass);
 		} catch (Exception e) {
-			return null;
+			throw new RuntimeException("no such dao class: " + daoClass.getSimpleName());
 		}
 	}
 	

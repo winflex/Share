@@ -22,21 +22,20 @@ public class CSCResponseMessage extends ResponseMessage {
 		this.responseTime = builder.responseTime();
 	}
 	
-	/**
-	 * @return the responseTime
-	 */
 	public long getResponseTime() {
 		return responseTime;
 	}
 
-	/**
-	 * @param responseTime the responseTime to set
-	 */
 	public void setResponseTime(long responseTime) {
 		this.responseTime = responseTime;
 	}
 	
 	public static CSCResponseBuilder builder() {
 		return new CSCResponseBuilder();
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("CSCResponseMessage[id=%d, corrId=%d, respJson=%s]", id, correlationId, respJson);
 	}
 }

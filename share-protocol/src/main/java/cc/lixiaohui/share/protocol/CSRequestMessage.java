@@ -63,4 +63,9 @@ public class CSRequestMessage extends RequestMessage {
 	public static CSRequestBuilder builder() {
 		return new CSRequestBuilder();
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("CSRequestMessage[id=%s, s=%s, p=%s, args=%s]", id, service, procedure, properties);
+	}
 }

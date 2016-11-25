@@ -11,9 +11,14 @@ import cc.lixiaohui.share.model.dao.util.DaoException;
  */
 public interface ShareDao extends DeleteableDao<Share> {
 	
-	public Share getByIdForDetail(int shareId);
+	public Share getByIdForDetail(int shareId) throws DaoException;
 	
-	public Share getByIdForComment(int shareId);
+	public Share getByIdForComment(int shareId) throws DaoException;
 	
 	public List<Share> list(int currentUserId, int targetUserId, String keyword, long baseTime, boolean deleted, String orderColumnName, String orderTypeName, int start, int limit) throws DaoException;
+	
+	public List<Object[]> listLikedByUser(int userId, int start, int limit) throws DaoException;
+	
+	public List<Object[]> listCommentedByUser(int userId, int start, int limit) throws DaoException;
+	
 }

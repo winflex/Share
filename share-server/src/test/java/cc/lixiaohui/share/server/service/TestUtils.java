@@ -31,6 +31,10 @@ public class TestUtils {
 		return session;
 	}
 	
+	public static Session loginSession(int roleId, int userId) {
+		return loginSession(newUser(roleId, userId));
+	}
+	
 	public static Session unloginSession() {
 		return Session.builder().build();
 	}

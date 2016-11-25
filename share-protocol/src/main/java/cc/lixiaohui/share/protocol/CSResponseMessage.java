@@ -20,4 +20,9 @@ public class CSResponseMessage extends ResponseMessage {
 	public static CSResponseBuilder builder() {
 		return new CSResponseBuilder();
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("CSResponseMessage[id=%d, corrId=%d, respJson=%s]", id, correlationId, respJson);
+	}
 }

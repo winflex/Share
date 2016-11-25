@@ -435,4 +435,20 @@ public class ShareClientImpl extends AbstractShareClient {
 				.parameter("friendShipId", friendShipId).build();
 		return syncSend(m);
 	}
+	
+	@Override
+	public String getCommentedShares(int start, int limit) throws ClientException {
+		CSRequestMessage m = CSRequestMessage.builder().service("ShareService").procedure("getCommentedShares")
+				.parameter("start", start)
+				.parameter("limit", limit).build();
+		return syncSend(m);
+	}
+	
+	@Override
+	public String getLikedShares(int start, int limit) throws ClientException {
+		CSRequestMessage m = CSRequestMessage.builder().service("ShareService").procedure("getLikedShares")
+				.parameter("start", start)
+				.parameter("limit", limit).build();
+		return syncSend(m);
+	}
 }

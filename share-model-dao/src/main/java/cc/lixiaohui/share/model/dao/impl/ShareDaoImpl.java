@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.hibernate.Session;
 
+import cc.lixiaohui.share.model.bean.Comment;
+import cc.lixiaohui.share.model.bean.Praise;
 import cc.lixiaohui.share.model.bean.Share;
 import cc.lixiaohui.share.model.dao.AbstractDeleteableDao;
 import cc.lixiaohui.share.model.dao.ShareDao;
@@ -54,7 +56,7 @@ public class ShareDaoImpl extends AbstractDeleteableDao<Share> implements ShareD
 		params.put("keyword", keyword);
 		hql.append("and s.deleted = :deleted ");
 		params.put("deleted", deleted);
-		if (targetUserId > -1) { // 指定用户
+		if (targetUserId > -1) { // specified user
 			hql.append("and p.id = :targetUserId ");
 			params.put("targetUserId", targetUserId);
 		}
@@ -80,4 +82,30 @@ public class ShareDaoImpl extends AbstractDeleteableDao<Share> implements ShareD
 		return shares;
 	}
 
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object[]> listLikedByUser(int userId, int start, int limit) throws DaoException {
+		return getSession().createSQLQuery("select {s.*}, {p.*} "
+				+ "from share s join praise p on s.id = p.share_id "
+				+ "where p.user_id = :userId order by p.praise_time desc")
+				.addEntity("s", Share.class)
+				.addEntity("p", Praise.class)
+				.setParameter("userId", userId)
+				.setFirstResult(start)
+				.setMaxResults(limit).list();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object[]> listCommentedByUser(int userId, int start, int limit) throws DaoException {
+		return getSession().createSQLQuery("select {s.*}, {c.*} "
+				+ "from share s join comment c on s.id = c.share_id "
+				+ "where c.from_user_id = :userId order by c.comment_time desc")
+			.addEntity("s", Share.class)
+			.addEntity("c", Comment.class)
+			.setParameter("userId", userId)
+			.setFirstResult(start)
+			.setMaxResults(limit).list();
+	}
 }

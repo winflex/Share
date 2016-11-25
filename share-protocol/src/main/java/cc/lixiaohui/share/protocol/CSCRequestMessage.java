@@ -87,4 +87,9 @@ public class CSCRequestMessage extends RequestMessage {
 	public static CSCRequestBuilder builder() {
 		return new CSCRequestBuilder();
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("CSCRequestMessage[id=%d, toUserId=%d, text=%s]", id, toUserId, text);
+	}
 }
