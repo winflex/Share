@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cc.lixiaohui.share.server.model.bean">
+	<class name="Share" table="share">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+		<many-to-one name="publisher" class="User" fetch="join" column="user_id" lazy="false" />
+		
+		<property name="content" type="java.lang.String" column="content" />
+		<property name="createTime" type="java.sql.Timestamp" column="create_time" insert="false" update="false"/>
+		<property name="praiseCount" type="int" column="praises" insert="false"/>
+		<property name="commentCount" type="int" column="comments" insert="false"/>
+		
+		<bag name="pictures" inverse="false" table="share_picture_relation" lazy="false" fetch="join" cascade="delete">
+			<key column="share_id"/>
+			<many-to-many class="Picture" column="picture_id" />
+		</bag>
+		<bag name="praises" inverse="true" cascade="delete" fetch="select">
+			<key column="share_id" />
+			<one-to-many class="Praise" />
+		</bag>
+		<bag name="comments" inverse="true" cascade="delete" fetch="select">
+			<key column="share_id" />
+			<one-to-many class="Comment" />
+		</bag>
+		<set name="readRecords" inverse="true" fetch="join" lazy="false">
+			<key column="share_id" />
+			<one-to-many class="ShareReadRecord" />
+		</set>
+		<property name="deleted" type="boolean" column="deleted" />
+	</class>
+
+</hibernate-mapping>

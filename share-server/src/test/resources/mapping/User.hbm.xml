@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cc.lixiaohui.share.server.model.bean">
+	<class name="User" table="user">
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+		<property name="username" type="java.lang.String" column="username" />
+		<property name="password" type="java.lang.String" column="password" />
+		<property name="sex" type="java.lang.String" column="sex" insert="false"/>
+		<property name="signature" type="java.lang.String" column="signature"  insert="false"/>
+		<property name="registerTime" type="java.sql.Timestamp" column="register_time" update="false" insert="false"/>
+		<property name="selfForbid" type="boolean" column="self_forbid"  insert="false"/>
+		<property name="adminForbid" type="boolean" column="admin_forbid"  insert="false"/>
+		<property name="deleted" type="boolean" column="deleted"  insert="false"/>
+		
+		<many-to-one name="role" class="Role" fetch="select" column="role_id" lazy="false" update="false"/> 
+		<many-to-one name="headImage" class="Picture" fetch="select" column="head_image_id" lazy="false" insert="false"/>
+		
+		
+		<bag name="shares" inverse="true" fetch="select" lazy="false">
+			<key column="user_id" />
+			<one-to-many class="Share" />
+		</bag>
+		<bag name="shareCollections" inverse="true">
+			<key column="user_id" />
+			<one-to-many class="ShareCollection" />
+		</bag>
+		<bag name="userCollections" inverse="true" fetch="select">
+			<key column="user_id" />
+			<one-to-many class="UserCollection" />
+		</bag>
+		<bag name="commentsByMe" inverse="true" fetch="select">
+			<key column="user_id" />
+			<one-to-many class="Comment" />
+		</bag>
+		<bag name="commentsForMe" inverse="true" fetch="select">
+			<key column="user_id" />
+			<one-to-many class="Comment" />
+		</bag>
+		
+		<!-- <bag name="myFriendShips" inverse="true" fetch="select">
+			<key column="ask_user_id" />
+			<one-to-many class="FriendShip"/>
+		</bag>
+		
+		<bag name="friendShipOfMine" inverse="true" fetch="select">
+			<key column="asked_user_id" />
+			<one-to-many class="FriendShip"/>
+		</bag> -->
+		
+	</class>
+</hibernate-mapping>

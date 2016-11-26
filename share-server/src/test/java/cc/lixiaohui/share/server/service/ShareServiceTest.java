@@ -7,10 +7,10 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import cc.lixiaohui.share.model.bean.Share;
-import cc.lixiaohui.share.model.util.HibernateSessionFactory;
 import cc.lixiaohui.share.server.Session;
 import cc.lixiaohui.share.server.SystemRuntime;
+import cc.lixiaohui.share.server.model.bean.Share;
+import cc.lixiaohui.share.server.model.util.HibernateSessionFactory;
 import cc.lixiaohui.share.server.service.util.ServiceException;
 
 /**

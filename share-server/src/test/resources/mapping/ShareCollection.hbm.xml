@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cc.lixiaohui.share.server.model.bean">
+	<class name="ShareCollection" table="share_collection">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="collectTime" type="java.sql.Timestamp">
+			<column name="collect_time" />
+		</property>
+		<!-- many to one -->
+		<many-to-one name="user" class="User" fetch="join" lazy="false">
+			<column name="user_id" />
+		</many-to-one>
+		<many-to-one name="share" class="Share" fetch="join" lazy="false">
+			<column name="share_id" />
+		</many-to-one>
+	</class>
+
+</hibernate-mapping>

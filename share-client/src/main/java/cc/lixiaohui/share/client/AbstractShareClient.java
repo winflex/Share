@@ -414,16 +414,9 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	}
 	
 	protected void fireConnontionClosed(final Throwable cause) {
-		executor.execute(new Runnable() {
-			 
-			@Override
-			public void run() {
-				for (IConnectionListener l : connectionListeners) {
-					l.onClosed(cause);
-				}
-			}
-		});
-		
+		for (IConnectionListener l : connectionListeners) {
+			l.onClosed(cause);
+		}
 	}
 	
 	protected void fireConnectionConnected() {

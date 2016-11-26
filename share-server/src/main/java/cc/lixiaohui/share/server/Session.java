@@ -1,8 +1,8 @@
 package cc.lixiaohui.share.server;
 
 import io.netty.channel.ChannelHandlerContext;
-import cc.lixiaohui.share.model.bean.Role;
-import cc.lixiaohui.share.model.bean.User;
+import cc.lixiaohui.share.server.model.bean.Role;
+import cc.lixiaohui.share.server.model.bean.User;
 import cc.lixiaohui.share.util.IBuilder;
 import cc.lixiaohui.share.util.TimeUtils;
 

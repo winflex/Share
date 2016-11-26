@@ -2,7 +2,7 @@ package cc.lixiaohui.share.server.config.loader.rule;
 
 import org.apache.commons.digester3.Digester;
 
-import cc.lixiaohui.share.model.util.DatabaseConfig;
+import cc.lixiaohui.share.server.config.DatabaseConfig;
 
 
 /**

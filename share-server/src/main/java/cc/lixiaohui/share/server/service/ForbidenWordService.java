@@ -3,9 +3,9 @@ package cc.lixiaohui.share.server.service;
 import java.util.List;
 import java.util.Map;
 
-import cc.lixiaohui.share.model.bean.ForbidenWord;
-import cc.lixiaohui.share.model.dao.ForbidenWordDao;
 import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.model.bean.ForbidenWord;
+import cc.lixiaohui.share.server.model.dao.ForbidenWordDao;
 import cc.lixiaohui.share.server.service.util.PrivilegeLevel;
 import cc.lixiaohui.share.server.service.util.ServiceException;
 import cc.lixiaohui.share.server.service.util.annotation.Procedure;

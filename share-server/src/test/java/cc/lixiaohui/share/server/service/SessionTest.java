@@ -5,8 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.junit.Test;
 
-import cc.lixiaohui.share.model.bean.User;
-import cc.lixiaohui.share.model.util.HibernateSessionFactory;
+import cc.lixiaohui.share.server.model.bean.User;
+import cc.lixiaohui.share.server.model.util.HibernateSessionFactory;
 
 /**
  * @author lixiaohui

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/sharing</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="use_sql_comments">true</property>
+        <property name="current_session_context_class">thread</property>
+        
+		<mapping resource="mapping/Role.hbm.xml"/>        
+		<mapping resource="mapping/User.hbm.xml"/>        
+		<mapping resource="mapping/Share.hbm.xml"/>        
+		<mapping resource="mapping/Picture.hbm.xml"/>        
+		<mapping resource="mapping/Praise.hbm.xml"/>        
+		<mapping resource="mapping/ShareCollection.hbm.xml"/>        
+		<mapping resource="mapping/UserCollection.hbm.xml"/>        
+		<mapping resource="mapping/Comment.hbm.xml"/>        
+		<mapping resource="mapping/ForbidenWord.hbm.xml"/>        
+		<mapping resource="mapping/FriendShip.hbm.xml"/>        
+		<mapping resource="mapping/Sorting.hbm.xml"/>        
+		<mapping resource="mapping/ShareReadRecord.hbm.xml"/>        
+    </session-factory>
+    
+</hibernate-configuration>

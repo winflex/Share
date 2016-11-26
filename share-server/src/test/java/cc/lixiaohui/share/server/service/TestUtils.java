@@ -1,8 +1,8 @@
 package cc.lixiaohui.share.server.service;
 
-import cc.lixiaohui.share.model.bean.Role;
-import cc.lixiaohui.share.model.bean.User;
 import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.model.bean.Role;
+import cc.lixiaohui.share.server.model.bean.User;
 
 /**
  * @author lixiaohui

@@ -26,11 +26,6 @@
 		</dependency>
 		<dependency>
 			<groupId>cc.lixiaohui.share</groupId>
-			<artifactId>share-core</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>cc.lixiaohui.share</groupId>
 			<artifactId>share-protocol</artifactId>
 			<version>${project.version}</version>
 		</dependency>
@@ -40,9 +35,19 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>cc.lixiaohui.share</groupId>
-			<artifactId>share-model-dao</artifactId>
-			<version>${project.version}</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.38</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>3.3.2.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.9.0.GA</version>
 		</dependency>
 	</dependencies>
 	

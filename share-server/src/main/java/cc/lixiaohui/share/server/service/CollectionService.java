@@ -3,11 +3,11 @@ package cc.lixiaohui.share.server.service;
 import java.util.List;
 import java.util.Map;
 
-import cc.lixiaohui.share.model.bean.ShareCollection;
-import cc.lixiaohui.share.model.bean.UserCollection;
-import cc.lixiaohui.share.model.dao.ShareCollectionDao;
-import cc.lixiaohui.share.model.dao.UserCollectionDao;
 import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.model.bean.ShareCollection;
+import cc.lixiaohui.share.server.model.bean.UserCollection;
+import cc.lixiaohui.share.server.model.dao.ShareCollectionDao;
+import cc.lixiaohui.share.server.model.dao.UserCollectionDao;
 import cc.lixiaohui.share.server.service.util.PrivilegeLevel;
 import cc.lixiaohui.share.server.service.util.ServiceException;
 import cc.lixiaohui.share.server.service.util.annotation.Procedure;

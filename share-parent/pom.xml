@@ -24,7 +24,6 @@
 		<module>../share-protocol</module>
 		<module>../share-server</module>
 		<module>../share-util</module>
-		<module>../share-model-dao</module>
 	</modules>
 
 	<dependencies>
