@@ -158,4 +158,19 @@ public class ClientTest {
 		System.in.read();
 	}
 	
+	
+	@Test
+	public void getPictures() throws Exception {
+		final IShareClient client = ShareClientFactory.newInstance("", 8888);
+		client.start();
+		client.addMessageListener(l);
+		
+		String json = client.login("小明", "xiaoming");
+		System.out.println(json);
+		
+		json = client.getPictures(true, new int[]{10,11,54,32});
+		System.out.println(json);
+		System.in.read();
+	}
+	
 }

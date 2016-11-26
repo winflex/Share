@@ -11,6 +11,7 @@ import cc.lixiaohui.share.server.service.util.PrivilegeLevel;
 import cc.lixiaohui.share.server.service.util.ServiceException;
 import cc.lixiaohui.share.server.service.util.annotation.Procedure;
 import cc.lixiaohui.share.server.service.util.annotation.Service;
+import cc.lixiaohui.share.util.ArrayUtils;
 import cc.lixiaohui.share.util.ErrorCode;
 import cc.lixiaohui.share.util.FileUtils;
 import cc.lixiaohui.share.util.JSONUtils;
@@ -120,10 +121,10 @@ public class PictureService extends AbstractService{
 	 */
 	@Procedure(name = "getPictures")
 	public String getPictures() throws ServiceException {
-		boolean ignoreIfNotExist;
+		//boolean ignoreIfNotExist;
 		int[] pictureIds = null;
 		try {
-			ignoreIfNotExist = getBooleanParameter("ignoreIfNotExist", true);
+			//ignoreIfNotExist = getBooleanParameter("ignoreIfNotExist", true);
 			pictureIds = getObjectParameter("pictureIds");
 		} catch (Throwable e) {
 			logger.error("参数错误");
@@ -137,7 +138,17 @@ public class PictureService extends AbstractService{
 			for (int pictureId : pictureIds) {
 				try {
 					Picture picture = dao.getById(pictureId);
+					if (picture == null) {
+						array.add(emptyPictureObject(pictureId));
+						continue;
+					} 
+					
 					byte[] content = FileUtils.getResourceAsBytes(picture.getPath());
+					if (content == null) {
+						array.add(emptyPictureObject(pictureId));
+						continue;
+					}
+					
 					JSONObject o = new JSONObject();
 					o.put("id", picture.getId());
 					o.put("bytes", content);
@@ -145,11 +156,9 @@ public class PictureService extends AbstractService{
 					o.put("uploadUserId", picture.getUploadUserId());
 					array.add(o);
 				} catch (Exception e1) {
-					if (ignoreIfNotExist) {
-						continue;
-					} else {
-						throw e1;
-					}
+					logger.error("{}", e1);
+					array.add(emptyPictureObject(pictureId));
+					continue;
 				}
 			}
 			JSONObject result = new JSONObject();
@@ -160,6 +169,15 @@ public class PictureService extends AbstractService{
 			logger.error("{}", e);
 			return JSONUtils.newFailureResult("获取图片出错", ErrorCode.wrap(e), e);
 		}
+	}
+	
+	private JSONObject emptyPictureObject(int id) {
+		JSONObject p = new JSONObject();
+		p.put("id", id);
+		p.put("bytes", ArrayUtils.EMPTY_BYTE_ARRAY);
+		p.put("uploadTime", 0);
+		p.put("uploadUserId", 0);
+		return p;
 	}
 	
 	/**

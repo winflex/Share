@@ -10,7 +10,7 @@ import cc.lixiaohui.share.util.FileUtils;
 import cc.lixiaohui.share.util.lifecycle.LifeCycleException;
 
 /**
- * Share 引导启动类
+ * 启动类
  * @author lixiaohui
  * @date 2016年11月8日 下午11:33:22
  */

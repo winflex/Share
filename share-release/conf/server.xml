@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <server name="shareServer">
-	<!-- 业务线程池参数-->
-	<pool>
-		<corePoolsize>5</corePoolsize>
-		<maxPoolSize>5</maxPoolSize>
-		<keepAliveTime>30000</keepAliveTime>
-		<blockingQueue>java.util.concurrent.LinkedBlockingQueue</blockingQueue>
-	</pool>
-	
 	<!-- 网络相关配置 -->
 	<socket>
 		<port>8888</port>
 		<bindAddress>0.0.0.0</bindAddress>
 		
 		<!-- 默认为1 -->
-		<acceptorThreads>0</acceptorThreads>
+		<acceptorThreads>1</acceptorThreads>
 		
 		<!-- IO线程数,当值为0时实际线程数为(处理器线程数 + 1)-->
 		<ioEventThreads>0</ioEventThreads>
@@ -27,6 +19,14 @@
 		<!-- 序列化工厂 -->
 		<serializeFactoryClass>cc.lixiaohui.share.protocol.codec.serialize.factory.HessianSerializeFactory</serializeFactoryClass>
 	</socket>
+	
+	<!-- 业务线程池参数-->
+	<pool>
+		<corePoolsize>5</corePoolsize>
+		<maxPoolSize>5</maxPoolSize>
+		<keepAliveTime>30000</keepAliveTime>
+		<blockingQueue>java.util.concurrent.LinkedBlockingQueue</blockingQueue>
+	</pool>
 	
 	<session>
 		<!-- 会话超时时间ms, 设置0不启用会话超时 -->

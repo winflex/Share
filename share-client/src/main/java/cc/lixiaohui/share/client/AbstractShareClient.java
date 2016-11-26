@@ -274,14 +274,14 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	}
 	
 	@Override
-	public void handleCSCRequest(ChannelHandlerContext ctx, CSCRequestMessage message) {
+	public void handleCSCRequest(ChannelHandlerContext ctx, final CSCRequestMessage message) {
 		// TODO 构造响应
 		CSCResponseMessage resp = CSCResponseMessage.builder().correlationId(message.getId())
 			.responseTime(TimeUtils.currentTimeMillis())
 			.responseJson(JSONUtils.newSuccessfulResult("发送成功")).build();
 		// write response
 		writeMessage(ctx, resp);
-		// notify listeners
+		// notify listeners asyncly
 		for (IMessageListener l : messageListeners) {
 			l.onChat(message.getFromUserId(), message.getText(), message.getRequestTime());
 		}
@@ -427,52 +427,38 @@ public abstract class AbstractShareClient extends AbstractLifeCycle implements I
 	}
 	
 	protected void fireConnectionConnected() {
-		executor.execute(new Runnable() {
-			
-			@Override
-			public void run() {
-				for (IConnectionListener l : connectionListeners) {
-					l.onConnected();
-				}
-			}
-		});
-	
+		for (IConnectionListener l : connectionListeners) {
+			l.onConnected();
+		}
 	}
 	
 	
 	protected void fireOnMessagePushed(final PushMessage message) {
-		executor.execute(new Runnable() {
-			
-			@Override
-			public void run() {
-				for (IMessageListener l : messageListeners) {
-					switch (message.getType()) {
-					case COMMENT:
-						l.onComment(message.getPushData());
-						break;
-					case FRI_REQ:
-						l.onFriendRequest(message.getPushData());
-						break;
-					case FRI_DEL:
-						l.onFriendDeleted(message.getPushData());
-						break;
-					case LIKE:
-						l.onLike(message.getPushData());
-						break;
-					case SHARE:
-						l.onShare(message.getPushData());
-						break;
-					case FRI_RESP:
-						l.onFriendResponse(message.getPushData());
-					case UNLIKE:
-						l.onUnlike(message.getPushData());
-					default:
-						break;
-					}
-				}
+		for (IMessageListener l : messageListeners) {
+			switch (message.getType()) {
+			case COMMENT:
+				l.onComment(message.getPushData());
+				break;
+			case FRI_REQ:
+				l.onFriendRequest(message.getPushData());
+				break;
+			case FRI_DEL:
+				l.onFriendDeleted(message.getPushData());
+				break;
+			case LIKE:
+				l.onLike(message.getPushData());
+				break;
+			case SHARE:
+				l.onShare(message.getPushData());
+				break;
+			case FRI_RESP:
+				l.onFriendResponse(message.getPushData());
+			case UNLIKE:
+				l.onUnlike(message.getPushData());
+			default:
+				break;
 			}
-		});
-		
+		}
 	}
 	
 	

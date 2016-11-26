@@ -6,6 +6,8 @@ package cc.lixiaohui.share.util;
  */
 public class ArrayUtils {
 	
+	public static final byte[] EMPTY_BYTE_ARRAY=  new byte[0];
+	
 	public static <T> T[] asArray(T... items) {
 		return items;
 	}

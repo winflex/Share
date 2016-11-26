@@ -5,6 +5,9 @@ import java.util.Map;
 
 import org.junit.Test;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+
 import cc.lixiaohui.share.server.Session;
 import cc.lixiaohui.share.server.SystemRuntime;
 import cc.lixiaohui.share.server.service.util.ServiceException;
@@ -43,9 +46,18 @@ public class PictureServiceTest {
 	@Test
 	public void getPictures() throws ServiceException {
 		params.put("ignoreIfNotExist", false);
-		params.put("pictureIds", new int[]{10, 11});
+		params.put("pictureIds", new int[]{10, 11,88,99});
 		PictureService svc = new PictureService(null, params);
 		String json = svc.getPictures();
 		System.out.println(json);
+	}
+	
+	@Test
+	public void test() {
+		JSONArray arr = new JSONArray();
+		arr.add("aaa");
+		arr.add("ccc");
+		arr.add("bbb");
+		System.out.println(JSON.toJSONString(arr));
 	}
 }

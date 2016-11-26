@@ -86,7 +86,7 @@ public class ShareClientImpl extends AbstractShareClient {
 			future.await(handshakeMessage.getRequestTimeout(), TimeUnit.MILLISECONDS);
 		} catch (Exception e) {
 			logger.error("{}", e);
-			throw new ClientException(e);
+			return JSONUtils.newFailureResult("请求超时", ErrorCode.TIMEOUT, "");
 		} finally {
 			// 保证能删除future
 			removeFuture(message.getId());

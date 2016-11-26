@@ -2109,3 +2109,169 @@ java.lang.NullPointerException: null
 2016-11-25 21:49:09.894-[INFO ] IO-Worker-2 SessionHandler - dettached session from channel [id: 0xa0cf780c, /127.0.0.1:55628 :> /127.0.0.1:8888]
 2016-11-25 21:49:10.918-[INFO ] IO-Worker-1 SessionHandler - dettached session from channel [id: 0xdd0604da, /127.0.0.1:55623 :> /127.0.0.1:8888]
 2016-11-25 21:49:11.816-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0x516c4ae1, /127.0.0.1:55586 :> /127.0.0.1:8888]
+2016-11-26 17:26:11.441-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 17:26:12.265-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 17:26:12.267-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-26 17:26:12.267-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-26 17:26:12.268-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-26 17:26:12.268-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-26 17:26:13.506-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-26 17:26:13.908-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-26 17:26:13.908-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-26 17:26:13.909-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-26 17:26:13.909-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-26 17:26:13.911-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-26 17:26:13.911-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-26 17:26:13.911-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-26 17:26:13.911-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-26 17:26:13.912-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-26 17:26:13.912-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-26 17:26:13.912-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-26 17:26:13.912-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-26 17:26:13.913-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-26 17:26:13.915-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-26 17:26:13.916-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-26 17:26:13.916-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-26 17:26:13.916-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-26 17:26:13.917-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-26 17:26:13.918-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-26 17:26:13.918-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-26 17:26:13.918-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-26 17:26:13.921-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-26 17:26:13.922-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-26 17:26:13.922-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-26 17:26:13.922-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-26 17:26:13.923-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-26 17:26:13.925-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-26 17:26:13.925-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-26 17:26:13.925-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-26 17:26:13.926-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-26 17:26:13.926-[INFO ] main AbstractShareServer - Procedure ShareService#getCommentedShares mapped
+2016-11-26 17:26:13.926-[INFO ] main AbstractShareServer - Procedure ShareService#getLikedShares mapped
+2016-11-26 17:26:13.927-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-26 17:26:13.927-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-26 17:26:13.927-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-26 17:26:13.929-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-26 17:26:13.929-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-26 17:26:13.930-[INFO ] main AbstractShareServer - total 9 service class and 37 service procedure found
+2016-11-26 17:26:13.931-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-26 17:26:14.278-[INFO ] main AbstractShareServer - server initialized
+2016-11-26 17:26:14.875-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-26 17:26:14.891-[INFO ] main AbstractShareServer - server started
+2016-11-26 17:26:24.828-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0xb0b8bb05, /127.0.0.1:51409 => /127.0.0.1:8888]
+2016-11-26 17:26:24.898-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0xb0b8bb05, /127.0.0.1:51409 => /127.0.0.1:8888]
+2016-11-26 17:26:24.898-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 17:26:25.030-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0xb0b8bb05, /127.0.0.1:51409 => /127.0.0.1:8888]
+2016-11-26 17:26:25.100-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 17:26:25.100-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0xb0b8bb05, /127.0.0.1:51409 => /127.0.0.1:8888]
+2016-11-26 17:26:25.158-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0xb0b8bb05, /127.0.0.1:51409 => /127.0.0.1:8888]
+2016-11-26 17:26:25.181-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 17:26:25.532-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-26 17:26:25.657-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 17:26:25.684-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=1, s=SessionService, p=login, args={}]
+2016-11-26 17:26:25.687-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=1, corrId=1, respJson={"timestamp":1480152385539,"result":{"selfShield":false,"userId":5,"role":{"description":"普通用户","roleId":2},"adminShield":false},"status":0,"msg":"登陆成功"}] to channel [id: 0xb0b8bb05, /127.0.0.1:51409 => /127.0.0.1:8888]
+2016-11-26 17:26:25.693-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 17:26:25.704-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 17:26:25.704-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=2, s=PictureService, p=getPictures, args={}]
+2016-11-26 17:26:25.705-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=2, corrId=2, respJson={"timestamp":1480152385702,"result":{"count":3,"pictures":[{"id":8,"uploadUserId":0,"bytes":"","uploadTime":0},{"id":54,"uploadUserId":0,"bytes":"","uploadTime":0},{"id":32,"uploadUserId":0,"bytes":"","uploadTime":0}]},"status":0,"msg":"获取图片成功"}] to channel [id: 0xb0b8bb05, /127.0.0.1:51409 => /127.0.0.1:8888]
+2016-11-26 17:27:34.216-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0xb0b8bb05, /127.0.0.1:51409 :> /127.0.0.1:8888]
+2016-11-26 17:27:39.230-[INFO ] IO-Worker-1 AbstractShareServer - new channel [id: 0xd01e74a9, /127.0.0.1:51432 => /127.0.0.1:8888]
+2016-11-26 17:27:39.231-[INFO ] IO-Worker-1 SessionHandler - attached session for channel [id: 0xd01e74a9, /127.0.0.1:51432 => /127.0.0.1:8888]
+2016-11-26 17:27:39.231-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-26 17:27:39.232-[INFO ] IO-Worker-1 HandshakeHandler - write handshake to channel [id: 0xd01e74a9, /127.0.0.1:51432 => /127.0.0.1:8888]
+2016-11-26 17:27:39.328-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-26 17:27:39.329-[INFO ] IO-Worker-1 HandshakeHandler - recieved handshake response from channel [id: 0xd01e74a9, /127.0.0.1:51432 => /127.0.0.1:8888]
+2016-11-26 17:27:39.329-[INFO ] IO-Worker-1 HandshakeHandler - connection established [id: 0xd01e74a9, /127.0.0.1:51432 => /127.0.0.1:8888]
+2016-11-26 17:27:39.342-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-26 17:27:39.367-[DEBUG] Core-Worker-1 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-26 17:27:39.368-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-26 17:27:39.368-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message CSRequestMessage[id=1, s=SessionService, p=login, args={}]
+2016-11-26 17:27:39.369-[DEBUG] IO-Worker-1 AbstractShareServer - write message CSResponseMessage[id=3, corrId=1, respJson={"timestamp":1480152459367,"result":{"selfShield":false,"userId":5,"role":{"description":"普通用户","roleId":2},"adminShield":false},"status":0,"msg":"登陆成功"}] to channel [id: 0xd01e74a9, /127.0.0.1:51432 => /127.0.0.1:8888]
+2016-11-26 17:27:39.375-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-26 17:27:39.394-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-26 17:27:39.394-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=2, s=PictureService, p=getPictures, args={}]
+2016-11-26 17:27:39.395-[DEBUG] IO-Worker-1 AbstractShareServer - write message CSResponseMessage[id=4, corrId=2, respJson={"timestamp":1480152459391,"result":{"count":4,"pictures":[{"id":10,"uploadUserId":5,"bytes":"6LW35aeL5oiR5piv5oiR5piv5Zu+54mH","uploadTime":1478960949000},{"id":11,"uploadUserId":5,"bytes":"6LW35aeL5oiR5piv5oiR5piv5Zu+54mH","uploadTime":1479898540000},{"id":54,"uploadUserId":0,"bytes":"","uploadTime":0},{"id":32,"uploadUserId":0,"bytes":"","uploadTime":0}]},"status":0,"msg":"获取图片成功"}] to channel [id: 0xd01e74a9, /127.0.0.1:51432 => /127.0.0.1:8888]
+2016-11-26 17:27:54.460-[INFO ] IO-Worker-1 SessionHandler - dettached session from channel [id: 0xd01e74a9, /127.0.0.1:51432 :> /127.0.0.1:8888]
+2016-11-26 17:30:11.347-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 17:30:12.169-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 17:30:12.170-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-26 17:30:12.170-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-26 17:30:12.170-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-26 17:30:12.170-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-26 17:30:13.252-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-26 17:30:13.289-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-26 17:30:13.289-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-26 17:30:13.289-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-26 17:30:13.289-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-26 17:30:13.290-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-26 17:30:13.290-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-26 17:30:13.290-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-26 17:30:13.290-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-26 17:30:13.290-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-26 17:30:13.293-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-26 17:30:13.293-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-26 17:30:13.294-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-26 17:30:13.295-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-26 17:30:13.295-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-26 17:30:13.296-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-26 17:30:13.296-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-26 17:30:13.296-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-26 17:30:13.297-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-26 17:30:13.297-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-26 17:30:13.297-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-26 17:30:13.298-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-26 17:30:13.298-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-26 17:30:13.298-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-26 17:30:13.298-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-26 17:30:13.300-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-26 17:30:13.300-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-26 17:30:13.301-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-26 17:30:13.301-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-26 17:30:13.301-[INFO ] main AbstractShareServer - Procedure ShareService#getCommentedShares mapped
+2016-11-26 17:30:13.302-[INFO ] main AbstractShareServer - Procedure ShareService#getLikedShares mapped
+2016-11-26 17:30:13.303-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-26 17:30:13.304-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-26 17:30:13.304-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-26 17:30:13.304-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-26 17:30:13.305-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-26 17:30:13.305-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-26 17:30:13.305-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-26 17:30:13.305-[INFO ] main AbstractShareServer - total 9 service class and 37 service procedure found
+2016-11-26 17:30:13.305-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-26 17:30:13.349-[INFO ] main AbstractShareServer - server initialized
+2016-11-26 17:30:13.407-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-26 17:30:13.407-[INFO ] main AbstractShareServer - server started
+2016-11-26 17:30:35.635-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0xe8ce0f52, /127.0.0.1:51473 => /127.0.0.1:8888]
+2016-11-26 17:30:35.645-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0xe8ce0f52, /127.0.0.1:51473 => /127.0.0.1:8888]
+2016-11-26 17:30:35.645-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 17:30:35.693-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0xe8ce0f52, /127.0.0.1:51473 => /127.0.0.1:8888]
+2016-11-26 17:30:35.796-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 17:30:35.797-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0xe8ce0f52, /127.0.0.1:51473 => /127.0.0.1:8888]
+2016-11-26 17:30:35.800-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0xe8ce0f52, /127.0.0.1:51473 => /127.0.0.1:8888]
+2016-11-26 17:30:35.805-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 17:30:36.056-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-26 17:30:36.147-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 17:30:36.147-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=1, s=SessionService, p=login, args={}]
+2016-11-26 17:30:36.149-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=1, corrId=1, respJson={"timestamp":1480152636061,"result":{"selfShield":false,"userId":5,"role":{"description":"普通用户","roleId":2},"adminShield":false},"status":0,"msg":"登陆成功"}] to channel [id: 0xe8ce0f52, /127.0.0.1:51473 => /127.0.0.1:8888]
+2016-11-26 17:30:36.154-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 17:30:36.171-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 17:30:36.171-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=2, s=PictureService, p=getPictures, args={}]
+2016-11-26 17:30:36.172-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=2, corrId=2, respJson={"timestamp":1480152636167,"result":{"count":4,"pictures":[{"id":10,"uploadUserId":5,"bytes":"6LW35aeL5oiR5piv5oiR5piv5Zu+54mH","uploadTime":1478960949000},{"id":11,"uploadUserId":5,"bytes":"6LW35aeL5oiR5piv5oiR5piv5Zu+54mH","uploadTime":1479898540000},{"id":54,"uploadUserId":0,"bytes":"","uploadTime":0},{"id":32,"uploadUserId":0,"bytes":"","uploadTime":0}]},"status":0,"msg":"获取图片成功"}] to channel [id: 0xe8ce0f52, /127.0.0.1:51473 => /127.0.0.1:8888]
+2016-11-26 17:31:05.069-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0xe8ce0f52, /127.0.0.1:51473 :> /127.0.0.1:8888]
+2016-11-26 17:31:12.121-[INFO ] IO-Worker-1 AbstractShareServer - new channel [id: 0xaaee167a, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-26 17:31:12.122-[INFO ] IO-Worker-1 SessionHandler - attached session for channel [id: 0xaaee167a, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-26 17:31:12.122-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-26 17:31:12.123-[INFO ] IO-Worker-1 HandshakeHandler - write handshake to channel [id: 0xaaee167a, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-26 17:31:12.223-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-26 17:31:12.224-[INFO ] IO-Worker-1 HandshakeHandler - recieved handshake response from channel [id: 0xaaee167a, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-26 17:31:12.224-[INFO ] IO-Worker-1 HandshakeHandler - connection established [id: 0xaaee167a, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-26 17:31:12.234-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-26 17:31:12.259-[DEBUG] Core-Worker-1 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-26 17:31:12.260-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-26 17:31:12.260-[DEBUG] Core-Worker-1 MessageDispatcher - dispatch message CSRequestMessage[id=1, s=SessionService, p=login, args={}]
+2016-11-26 17:31:12.261-[DEBUG] IO-Worker-1 AbstractShareServer - write message CSResponseMessage[id=3, corrId=1, respJson={"timestamp":1480152672260,"result":{"selfShield":false,"userId":5,"role":{"description":"普通用户","roleId":2},"adminShield":false},"status":0,"msg":"登陆成功"}] to channel [id: 0xaaee167a, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-26 17:31:12.267-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-26 17:31:12.417-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=2, s=ShareService, p=getCommentedShares, args={}]
+2016-11-26 17:31:12.417-[INFO ] IO-Worker-1 SessionHandler - update last IO time for session
+2016-11-26 17:31:12.418-[DEBUG] IO-Worker-1 AbstractShareServer - write message CSResponseMessage[id=4, corrId=2, respJson={"timestamp":1480152672416,"result":{"count":3,"list":[{"content":"lureogjgdlk","id":6,"share":{"content":"的洒家打开了打卡时间的咯","id":4,"createTime":1479046241000,"praiseCount":1,"username":"小明","userId":5,"commentCount":1},"fromUsername":"小明","commentTime":1480072104000,"toUserId":5,"toUsername":"小明","fromUserId":5},{"content":"的开始垃圾的咯","id":5,"share":{"content":"不好","id":10,"createTime":1479452432000,"praiseCount":0,"username":"李酷酷","userId":11,"commentCount":2},"fromUsername":"小明","commentTime":1479455733000,"toUserId":10,"toUsername":"张学友","fromUserId":5},{"content":"的开始垃圾的咯","id":4,"share":{"content":"不好","id":10,"createTime":1479452432000,"praiseCount":0,"username":"李酷酷","userId":11,"commentCount":2},"fromUsername":"小明","commentTime":1479455185000,"toUserId":10,"toUsername":"张学友","fromUserId":5}]},"status":0,"msg":"获取分享成功"}] to channel [id: 0xaaee167a, /127.0.0.1:51480 => /127.0.0.1:8888]
+2016-11-26 17:31:19.124-[INFO ] IO-Worker-1 SessionHandler - dettached session from channel [id: 0xaaee167a, /127.0.0.1:51480 :> /127.0.0.1:8888]
