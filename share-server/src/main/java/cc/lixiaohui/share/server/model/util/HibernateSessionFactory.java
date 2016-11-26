@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import cc.lixiaohui.share.server.config.DatabaseConfig;
+import cc.lixiaohui.share.server.config.util.Property;
 
 /**
  * HibernateSessionFactory工厂, 单例, 线程安全
@@ -68,25 +69,12 @@ public class HibernateSessionFactory {
 			logger.info("using internal hibernate.cfg.xml");
 		}
 		if (config != null) {
-			if (config.getUrl() != null && !config.getUrl().equals("")) {
-				conf.setProperty("hibernate.connection.url", config.getUrl());
-				logger.debug("replacing hibernate.connection.url with {}", config.getUrl());
-			}
-			if (config.getDriverClass() != null && !config.equals("")) {
-				conf.setProperty("hibernate.connection.driver_class", config.getDriverClass());
-				logger.debug("replacing hibernate.connection.driver_class with {}", config.getDriverClass());
-			}
-			if (config.getUsername() != null && !config.getUsername().equals("")) {
-				conf.setProperty("hibernate.connection.username", config.getUsername());
-				logger.debug("replacing hibernate.connection.username with {}", config.getUsername());
-			}
-			if (config.getPassword() != null && !config.getPassword().equals("")) {
-				conf.setProperty("hibernate.connection.password", config.getPassword());
-				logger.debug("replacing hibernate.connection.password with {}", config.getPassword());
+			for (Property property : config.getProperties()) {
+				conf.setProperty(property.getName(), property.getValue());
 			}
 		}
 		factory = conf.buildSessionFactory();
-		//factory.openSession();
+		factory.openSession();
 	}
 
 	

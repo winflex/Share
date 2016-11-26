@@ -44,6 +44,7 @@ public class Bootstrap {
 			new Bootstrap().start(args);
 		} catch (Exception e) {
 			logger.error("failed to start server, exit right now, cause: {}", e.getMessage());
+			System.exit(-1);
 		}
 	}
 }

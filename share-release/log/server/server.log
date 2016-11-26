@@ -393,3 +393,1138 @@ Caused by: org.hibernate.MappingException: An association from the table share_c
 2016-11-26 18:22:38.654-[INFO ] main AbstractShareServer - server initialized
 2016-11-26 18:22:38.712-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
 2016-11-26 18:22:38.712-[INFO ] main AbstractShareServer - server started
+2016-11-26 18:38:12.758-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:38:13.930-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:38:13.930-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-26 18:38:13.931-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-26 18:38:13.933-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-26 18:38:13.933-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-26 18:39:32.639-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:39:33.521-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:39:33.521-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.url with jdbc:mysql://localhost:3306/sharing
+2016-11-26 18:39:33.522-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.driver_class with com.mysql.jdbc.Driver
+2016-11-26 18:39:33.523-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.username with root
+2016-11-26 18:39:33.523-[DEBUG] main HibernateSessionFactory - replacing hibernate.connection.password with root
+2016-11-26 18:39:35.045-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-26 18:39:35.433-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-26 18:39:35.433-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-26 18:39:35.434-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-26 18:39:35.434-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-26 18:39:35.435-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-26 18:39:35.435-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-26 18:39:35.436-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-26 18:39:35.436-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-26 18:39:35.436-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-26 18:39:35.436-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-26 18:39:35.438-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-26 18:39:35.438-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-26 18:39:35.438-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-26 18:39:35.438-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-26 18:39:35.442-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-26 18:39:35.442-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-26 18:39:35.443-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-26 18:39:35.443-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-26 18:39:35.443-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-26 18:39:35.443-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-26 18:39:35.443-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-26 18:39:35.443-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-26 18:39:35.443-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-26 18:39:35.483-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-26 18:39:35.483-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-26 18:39:35.484-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-26 18:39:35.485-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-26 18:39:35.485-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-26 18:39:35.485-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-26 18:39:35.486-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-26 18:39:35.486-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-26 18:39:35.488-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-26 18:39:35.488-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-26 18:39:35.488-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-26 18:39:35.488-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-26 18:39:35.488-[INFO ] main AbstractShareServer - Procedure ShareService#getCommentedShares mapped
+2016-11-26 18:39:35.489-[INFO ] main AbstractShareServer - Procedure ShareService#getLikedShares mapped
+2016-11-26 18:39:35.489-[INFO ] main AbstractShareServer - total 9 service class and 37 service procedure found
+2016-11-26 18:39:35.489-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-26 18:39:35.819-[INFO ] main AbstractShareServer - server initialized
+2016-11-26 18:39:35.999-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-26 18:39:36.001-[INFO ] main AbstractShareServer - server started
+2016-11-26 18:43:24.273-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:43:24.930-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:43:49.489-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-26 18:43:49.541-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-26 18:43:49.542-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-26 18:43:49.543-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-26 18:43:49.543-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-26 18:43:49.546-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-26 18:43:49.546-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-26 18:43:49.547-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-26 18:43:49.548-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-26 18:43:49.548-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-26 18:43:49.548-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-26 18:43:49.549-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-26 18:43:49.552-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-26 18:43:49.552-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-26 18:43:49.553-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-26 18:43:49.553-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-26 18:43:49.553-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-26 18:43:49.553-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-26 18:43:49.553-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-26 18:43:49.553-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-26 18:43:49.554-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-26 18:43:49.555-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-26 18:43:49.555-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-26 18:43:49.555-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-26 18:43:49.555-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-26 18:43:49.555-[INFO ] main AbstractShareServer - Procedure ShareService#getCommentedShares mapped
+2016-11-26 18:43:49.556-[INFO ] main AbstractShareServer - Procedure ShareService#getLikedShares mapped
+2016-11-26 18:43:49.556-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-26 18:43:49.556-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-26 18:43:49.557-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-26 18:43:49.558-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-26 18:43:49.558-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-26 18:43:49.558-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-26 18:43:49.559-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-26 18:43:49.559-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-26 18:43:49.559-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-26 18:43:49.560-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-26 18:43:49.560-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-26 18:43:49.560-[INFO ] main AbstractShareServer - total 9 service class and 37 service procedure found
+2016-11-26 18:43:49.560-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-26 18:43:49.611-[INFO ] main AbstractShareServer - server initialized
+2016-11-26 18:43:49.686-[ERROR] main Bootstrap - failed to start server, exit right now, cause: Address already in use: bind
+2016-11-26 18:44:39.023-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:44:39.670-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:44:40.650-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-26 18:44:40.689-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-26 18:44:40.689-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-26 18:44:40.689-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-26 18:44:40.689-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-26 18:44:40.690-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-26 18:44:40.690-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-26 18:44:40.690-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-26 18:44:40.690-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-26 18:44:40.690-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-26 18:44:40.691-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-26 18:44:40.691-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-26 18:44:40.695-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-26 18:44:40.695-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-26 18:44:40.696-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-26 18:44:40.696-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-26 18:44:40.696-[INFO ] main AbstractShareServer - Procedure ShareService#getCommentedShares mapped
+2016-11-26 18:44:40.696-[INFO ] main AbstractShareServer - Procedure ShareService#getLikedShares mapped
+2016-11-26 18:44:40.697-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-26 18:44:40.698-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-26 18:44:40.701-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-26 18:44:40.701-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-26 18:44:40.702-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-26 18:44:40.704-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-26 18:44:40.704-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-26 18:44:40.705-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-26 18:44:40.705-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-26 18:44:40.706-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-26 18:44:40.706-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-26 18:44:40.706-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-26 18:44:40.708-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-26 18:44:40.708-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-26 18:44:40.709-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-26 18:44:40.710-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-26 18:44:40.711-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-26 18:44:40.712-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-26 18:44:40.713-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-26 18:44:40.713-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-26 18:44:40.713-[INFO ] main AbstractShareServer - total 9 service class and 37 service procedure found
+2016-11-26 18:44:40.713-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-26 18:44:40.767-[INFO ] main AbstractShareServer - server initialized
+2016-11-26 18:44:40.827-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-26 18:44:40.828-[INFO ] main AbstractShareServer - server started
+2016-11-26 18:44:47.994-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:44:48.666-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:44:49.628-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-26 18:44:49.666-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-26 18:44:49.667-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-26 18:44:49.667-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-26 18:44:49.667-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-26 18:44:49.669-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-26 18:44:49.670-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-26 18:44:49.670-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-26 18:44:49.670-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-26 18:44:49.671-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-26 18:44:49.671-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-26 18:44:49.672-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-26 18:44:49.672-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-26 18:44:49.672-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-26 18:44:49.673-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-26 18:44:49.673-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-26 18:44:49.675-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-26 18:44:49.676-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-26 18:44:49.676-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-26 18:44:49.676-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-26 18:44:49.677-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-26 18:44:49.677-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-26 18:44:49.680-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-26 18:44:49.680-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-26 18:44:49.680-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-26 18:44:49.681-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-26 18:44:49.681-[INFO ] main AbstractShareServer - Procedure ShareService#getCommentedShares mapped
+2016-11-26 18:44:49.682-[INFO ] main AbstractShareServer - Procedure ShareService#getLikedShares mapped
+2016-11-26 18:44:49.693-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-26 18:44:49.699-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-26 18:44:49.710-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-26 18:44:49.710-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-26 18:44:49.712-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-26 18:44:49.712-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-26 18:44:49.712-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-26 18:44:49.714-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-26 18:44:49.715-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-26 18:44:49.715-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-26 18:44:49.715-[INFO ] main AbstractShareServer - total 9 service class and 37 service procedure found
+2016-11-26 18:44:49.715-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-26 18:44:49.764-[INFO ] main AbstractShareServer - server initialized
+2016-11-26 18:44:49.815-[ERROR] main Bootstrap - failed to start server, exit right now, cause: Address already in use: bind
+2016-11-26 18:45:04.008-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0x2b58b46e, /127.0.0.1:52555 => /127.0.0.1:8888]
+2016-11-26 18:45:04.114-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0x2b58b46e, /127.0.0.1:52555 => /127.0.0.1:8888]
+2016-11-26 18:45:04.114-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:45:04.232-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0x2b58b46e, /127.0.0.1:52555 => /127.0.0.1:8888]
+2016-11-26 18:45:04.352-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:45:04.352-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0x2b58b46e, /127.0.0.1:52555 => /127.0.0.1:8888]
+2016-11-26 18:45:04.452-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0x2b58b46e, /127.0.0.1:52555 => /127.0.0.1:8888]
+2016-11-26 18:45:04.543-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:45:05.175-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-26 18:45:05.643-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:45:05.666-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=1, s=SessionService, p=login, args={}]
+2016-11-26 18:45:05.669-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=1, corrId=1, respJson={"timestamp":1480157105230,"result":{"selfShield":false,"userId":5,"role":{"description":"普通用户","roleId":2},"adminShield":false},"status":0,"msg":"登陆成功"}] to channel [id: 0x2b58b46e, /127.0.0.1:52555 => /127.0.0.1:8888]
+2016-11-26 18:45:05.689-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:45:05.699-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:45:05.699-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=2, s=UserService, p=getUser, args={}]
+2016-11-26 18:45:05.701-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=2, corrId=2, respJson={"timestamp":1480157105699,"result":{"selfShield":false,"sex":"男","username":"李小辉","userId":4,"role":{"id":1,"description":"管理员"},"headImageId":3,"registerTime":1477795027000,"signature":"哈哈哈哈","adminShield":false},"status":0,"msg":"获取用户成功"}] to channel [id: 0x2b58b46e, /127.0.0.1:52555 => /127.0.0.1:8888]
+2016-11-26 18:45:07.784-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0x2b58b46e, /127.0.0.1:52555 :> /127.0.0.1:8888]
+2016-11-26 18:45:40.622-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:45:41.387-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:45:41.435-[ERROR] main AbstractShareServer - {}
+org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+	at org.hibernate.dialect.resolver.DialectFactory.buildDialect(DialectFactory.java:107) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:138) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettingsInternal(Configuration.java:2119) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2115) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1339) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.newSessionFactory(HibernateSessionFactory.java:76) ~[classes/:na]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.init(HibernateSessionFactory.java:33) ~[classes/:na]
+	at cc.lixiaohui.share.server.AbstractShareServer.initInternal(AbstractShareServer.java:130) ~[classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.init(AbstractLifeCycle.java:43) [classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.start(AbstractLifeCycle.java:67) [classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.start(Bootstrap.java:26) [classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.main(Bootstrap.java:44) [classes/:na]
+2016-11-26 18:45:41.438-[ERROR] main Bootstrap - failed to start server, {}
+cc.lixiaohui.share.util.lifecycle.LifeCycleException: org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+	at cc.lixiaohui.share.server.AbstractShareServer.initInternal(AbstractShareServer.java:133) ~[classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.init(AbstractLifeCycle.java:43) ~[classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.start(AbstractLifeCycle.java:67) ~[classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.start(Bootstrap.java:26) [classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.main(Bootstrap.java:44) [classes/:na]
+Caused by: org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+	at org.hibernate.dialect.resolver.DialectFactory.buildDialect(DialectFactory.java:107) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:138) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettingsInternal(Configuration.java:2119) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2115) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1339) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.newSessionFactory(HibernateSessionFactory.java:76) ~[classes/:na]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.init(HibernateSessionFactory.java:33) ~[classes/:na]
+	at cc.lixiaohui.share.server.AbstractShareServer.initInternal(AbstractShareServer.java:130) ~[classes/:na]
+	... 4 common frames omitted
+2016-11-26 18:45:41.439-[ERROR] main Bootstrap - failed to start server, exit right now, cause: org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+2016-11-26 18:47:01.809-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:47:02.469-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:47:36.640-[ERROR] main AbstractShareServer - {}
+org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+	at org.hibernate.dialect.resolver.DialectFactory.buildDialect(DialectFactory.java:107) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:138) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettingsInternal(Configuration.java:2119) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2115) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1339) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.newSessionFactory(HibernateSessionFactory.java:76) ~[classes/:na]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.init(HibernateSessionFactory.java:33) ~[classes/:na]
+	at cc.lixiaohui.share.server.AbstractShareServer.initInternal(AbstractShareServer.java:130) ~[classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.init(AbstractLifeCycle.java:43) [classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.start(AbstractLifeCycle.java:67) [classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.start(Bootstrap.java:26) [classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.main(Bootstrap.java:44) [classes/:na]
+2016-11-26 18:47:36.641-[ERROR] main Bootstrap - failed to start server, {}
+cc.lixiaohui.share.util.lifecycle.LifeCycleException: org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+	at cc.lixiaohui.share.server.AbstractShareServer.initInternal(AbstractShareServer.java:133) ~[classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.init(AbstractLifeCycle.java:43) ~[classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.start(AbstractLifeCycle.java:67) ~[classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.start(Bootstrap.java:26) [classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.main(Bootstrap.java:44) [classes/:na]
+Caused by: org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+	at org.hibernate.dialect.resolver.DialectFactory.buildDialect(DialectFactory.java:107) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:138) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettingsInternal(Configuration.java:2119) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2115) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1339) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.newSessionFactory(HibernateSessionFactory.java:76) ~[classes/:na]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.init(HibernateSessionFactory.java:33) ~[classes/:na]
+	at cc.lixiaohui.share.server.AbstractShareServer.initInternal(AbstractShareServer.java:130) ~[classes/:na]
+	... 4 common frames omitted
+2016-11-26 18:47:36.642-[ERROR] main Bootstrap - failed to start server, exit right now, cause: org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+2016-11-26 18:48:39.886-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:48:40.448-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:48:41.274-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-26 18:48:41.311-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-26 18:48:41.311-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-26 18:48:41.312-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-26 18:48:41.315-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-26 18:48:41.315-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-26 18:48:41.315-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-26 18:48:41.317-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-26 18:48:41.317-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-26 18:48:41.317-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-26 18:48:41.318-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-26 18:48:41.319-[INFO ] main AbstractShareServer - Procedure ShareService#getCommentedShares mapped
+2016-11-26 18:48:41.319-[INFO ] main AbstractShareServer - Procedure ShareService#getLikedShares mapped
+2016-11-26 18:48:41.320-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-26 18:48:41.321-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-26 18:48:41.324-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-26 18:48:41.325-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-26 18:48:41.325-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-26 18:48:41.326-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-26 18:48:41.326-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-26 18:48:41.326-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-26 18:48:41.326-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-26 18:48:41.327-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-26 18:48:41.327-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-26 18:48:41.328-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-26 18:48:41.328-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-26 18:48:41.329-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-26 18:48:41.330-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-26 18:48:41.330-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-26 18:48:41.331-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-26 18:48:41.332-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-26 18:48:41.332-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-26 18:48:41.332-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-26 18:48:41.333-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-26 18:48:41.335-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-26 18:48:41.335-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-26 18:48:41.335-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-26 18:48:41.335-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-26 18:48:41.336-[INFO ] main AbstractShareServer - total 9 service class and 37 service procedure found
+2016-11-26 18:48:41.336-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-26 18:48:41.385-[INFO ] main AbstractShareServer - server initialized
+2016-11-26 18:48:41.456-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-26 18:48:41.457-[INFO ] main AbstractShareServer - server started
+2016-11-26 18:49:00.231-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:49:01.006-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:49:02.216-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-26 18:49:02.248-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-26 18:49:02.248-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-26 18:49:02.248-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-26 18:49:02.248-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-26 18:49:02.249-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-26 18:49:02.249-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-26 18:49:02.249-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-26 18:49:02.249-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-26 18:49:02.249-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-26 18:49:02.251-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-26 18:49:02.252-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-26 18:49:02.252-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-26 18:49:02.254-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-26 18:49:02.254-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-26 18:49:02.254-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-26 18:49:02.255-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-26 18:49:02.255-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-26 18:49:02.255-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-26 18:49:02.256-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-26 18:49:02.257-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-26 18:49:02.257-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-26 18:49:02.257-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-26 18:49:02.258-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-26 18:49:02.258-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-26 18:49:02.261-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-26 18:49:02.261-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-26 18:49:02.261-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-26 18:49:02.262-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-26 18:49:02.263-[INFO ] main AbstractShareServer - Procedure ShareService#getCommentedShares mapped
+2016-11-26 18:49:02.263-[INFO ] main AbstractShareServer - Procedure ShareService#getLikedShares mapped
+2016-11-26 18:49:02.265-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-26 18:49:02.266-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-26 18:49:02.267-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-26 18:49:02.267-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-26 18:49:02.268-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-26 18:49:02.269-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-26 18:49:02.269-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-26 18:49:02.269-[INFO ] main AbstractShareServer - total 9 service class and 37 service procedure found
+2016-11-26 18:49:02.270-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-26 18:49:02.335-[INFO ] main AbstractShareServer - server initialized
+2016-11-26 18:49:02.411-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-26 18:49:02.412-[INFO ] main AbstractShareServer - server started
+2016-11-26 18:49:14.104-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0x06d7fe5d, /127.0.0.1:52623 => /127.0.0.1:8888]
+2016-11-26 18:49:14.116-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0x06d7fe5d, /127.0.0.1:52623 => /127.0.0.1:8888]
+2016-11-26 18:49:14.116-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:49:14.163-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0x06d7fe5d, /127.0.0.1:52623 => /127.0.0.1:8888]
+2016-11-26 18:49:14.269-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:49:14.269-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0x06d7fe5d, /127.0.0.1:52623 => /127.0.0.1:8888]
+2016-11-26 18:49:14.274-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0x06d7fe5d, /127.0.0.1:52623 => /127.0.0.1:8888]
+2016-11-26 18:49:14.278-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:49:14.541-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-26 18:49:14.608-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:49:14.609-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=1, s=SessionService, p=login, args={}]
+2016-11-26 18:49:14.611-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=1, corrId=1, respJson={"timestamp":1480157354545,"result":{"selfShield":false,"userId":5,"role":{"description":"普通用户","roleId":2},"adminShield":false},"status":0,"msg":"登陆成功"}] to channel [id: 0x06d7fe5d, /127.0.0.1:52623 => /127.0.0.1:8888]
+2016-11-26 18:49:14.615-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:49:14.625-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:49:14.625-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=2, s=UserService, p=getUser, args={}]
+2016-11-26 18:49:14.626-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=2, corrId=2, respJson={"timestamp":1480157354624,"result":{"selfShield":false,"sex":"男","username":"李小辉","userId":4,"role":{"id":1,"description":"管理员"},"headImageId":3,"registerTime":1477795027000,"signature":"哈哈哈哈","adminShield":false},"status":0,"msg":"获取用户成功"}] to channel [id: 0x06d7fe5d, /127.0.0.1:52623 => /127.0.0.1:8888]
+2016-11-26 18:49:24.362-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0x06d7fe5d, /127.0.0.1:52623 :> /127.0.0.1:8888]
+2016-11-26 18:55:32.254-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:55:33.951-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:57:35.434-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:57:36.450-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:58:20.902-[ERROR] main AbstractShareServer - {}
+org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+	at org.hibernate.dialect.resolver.DialectFactory.buildDialect(DialectFactory.java:107) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:138) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettingsInternal(Configuration.java:2119) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2115) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1339) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.newSessionFactory(HibernateSessionFactory.java:76) ~[classes/:na]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.init(HibernateSessionFactory.java:33) ~[classes/:na]
+	at cc.lixiaohui.share.server.AbstractShareServer.initInternal(AbstractShareServer.java:130) ~[classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.init(AbstractLifeCycle.java:43) [classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.start(AbstractLifeCycle.java:67) [classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.start(Bootstrap.java:26) [classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.main(Bootstrap.java:44) [classes/:na]
+2016-11-26 18:58:20.903-[ERROR] main Bootstrap - failed to start server, {}
+cc.lixiaohui.share.util.lifecycle.LifeCycleException: org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+	at cc.lixiaohui.share.server.AbstractShareServer.initInternal(AbstractShareServer.java:133) ~[classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.init(AbstractLifeCycle.java:43) ~[classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.start(AbstractLifeCycle.java:67) ~[classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.start(Bootstrap.java:26) [classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.main(Bootstrap.java:44) [classes/:na]
+Caused by: org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+	at org.hibernate.dialect.resolver.DialectFactory.buildDialect(DialectFactory.java:107) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:138) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettingsInternal(Configuration.java:2119) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2115) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1339) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.newSessionFactory(HibernateSessionFactory.java:76) ~[classes/:na]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.init(HibernateSessionFactory.java:33) ~[classes/:na]
+	at cc.lixiaohui.share.server.AbstractShareServer.initInternal(AbstractShareServer.java:130) ~[classes/:na]
+	... 4 common frames omitted
+2016-11-26 18:58:20.903-[ERROR] main Bootstrap - failed to start server, exit right now, cause: org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+2016-11-26 18:58:40.918-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:58:41.561-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:58:42.236-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-26 18:58:42.578-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-26 18:58:42.578-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-26 18:58:42.578-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-26 18:58:42.578-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-26 18:58:42.579-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-26 18:58:42.579-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-26 18:58:42.590-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-26 18:58:42.591-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-26 18:58:42.591-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-26 18:58:42.591-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-26 18:58:42.591-[INFO ] main AbstractShareServer - Procedure ShareService#getCommentedShares mapped
+2016-11-26 18:58:42.591-[INFO ] main AbstractShareServer - Procedure ShareService#getLikedShares mapped
+2016-11-26 18:58:42.591-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-26 18:58:42.592-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-26 18:58:42.593-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-26 18:58:42.593-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-26 18:58:42.593-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-26 18:58:42.595-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-26 18:58:42.595-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-26 18:58:42.595-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-26 18:58:42.595-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-26 18:58:42.597-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-26 18:58:42.598-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-26 18:58:42.598-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-26 18:58:42.598-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-26 18:58:42.598-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-26 18:58:42.598-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-26 18:58:42.598-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-26 18:58:42.598-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-26 18:58:42.598-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-26 18:58:42.599-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-26 18:58:42.600-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-26 18:58:42.600-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-26 18:58:42.600-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-26 18:58:42.612-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-26 18:58:42.612-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-26 18:58:42.612-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-26 18:58:42.612-[INFO ] main AbstractShareServer - total 9 service class and 37 service procedure found
+2016-11-26 18:58:42.613-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-26 18:58:42.919-[INFO ] main AbstractShareServer - server initialized
+2016-11-26 18:58:43.122-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-26 18:58:43.147-[INFO ] main AbstractShareServer - server started
+2016-11-26 18:58:56.435-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0xefe1aa36, /127.0.0.1:52771 => /127.0.0.1:8888]
+2016-11-26 18:58:56.520-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0xefe1aa36, /127.0.0.1:52771 => /127.0.0.1:8888]
+2016-11-26 18:58:56.520-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:58:56.635-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0xefe1aa36, /127.0.0.1:52771 => /127.0.0.1:8888]
+2016-11-26 18:58:56.762-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:58:56.762-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0xefe1aa36, /127.0.0.1:52771 => /127.0.0.1:8888]
+2016-11-26 18:58:56.832-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0xefe1aa36, /127.0.0.1:52771 => /127.0.0.1:8888]
+2016-11-26 18:58:56.916-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:58:57.367-[ERROR] Core-Worker-0 AbstractDao - {}
+java.lang.UnsupportedOperationException: The user must supply a JDBC connection
+	at org.hibernate.connection.UserSuppliedConnectionProvider.getConnection(UserSuppliedConnectionProvider.java:54) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:696) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doList(Loader.java:2232) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2129) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.list(Loader.java:2124) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:401) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:363) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1149) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:102) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.AbstractQueryImpl.uniqueResult(AbstractQueryImpl.java:835) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:25) ~[classes/:na]
+	at cc.lixiaohui.share.server.service.SessionService.login(SessionService.java:151) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128) [classes/:na]
+	at cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_45]
+	at java.lang.Thread.run(Thread.java:662) [na:1.6.0_45]
+2016-11-26 18:58:57.370-[ERROR] Core-Worker-0 AbstractService - {}
+cc.lixiaohui.share.server.model.dao.util.DaoException: java.lang.UnsupportedOperationException: The user must supply a JDBC connection
+	at cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:30) ~[classes/:na]
+	at cc.lixiaohui.share.server.service.SessionService.login(SessionService.java:151) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128) [classes/:na]
+	at cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_45]
+	at java.lang.Thread.run(Thread.java:662) [na:1.6.0_45]
+Caused by: java.lang.UnsupportedOperationException: The user must supply a JDBC connection
+	at org.hibernate.connection.UserSuppliedConnectionProvider.getConnection(UserSuppliedConnectionProvider.java:54) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:696) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doList(Loader.java:2232) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2129) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.list(Loader.java:2124) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:401) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:363) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1149) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:102) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.AbstractQueryImpl.uniqueResult(AbstractQueryImpl.java:835) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:25) ~[classes/:na]
+	... 15 common frames omitted
+2016-11-26 18:58:57.668-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:58:57.694-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=1, s=SessionService, p=login, args={}]
+2016-11-26 18:58:57.699-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=1, corrId=1, respJson={"timestamp":1480157937427,"expmsg":"cc.lixiaohui.share.server.model.dao.util.DaoException: java.lang.UnsupportedOperationException: The user must supply a JDBC connection\r\n\tat cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:30)\r\n\tat cc.lixiaohui.share.server.service.SessionService.login(SessionService.java:151)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\r\n\tat java.lang.reflect.Method.invoke(Method.java:597)\r\n\tat cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128)\r\n\tat cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)\r\n\tat java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:138)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)\r\n\tat java.lang.Thread.run(Thread.java:662)\r\nCaused by: java.lang.UnsupportedOperationException: The user must supply a JDBC connection\r\n\tat org.hibernate.connection.UserSuppliedConnectionProvider.getConnection(UserSuppliedConnectionProvider.java:54)\r\n\tat org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446)\r\n\tat org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167)\r\n\tat org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161)\r\n\tat org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577)\r\n\tat org.hibernate.loader.Loader.doQuery(Loader.java:696)\r\n\tat org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259)\r\n\tat org.hibernate.loader.Loader.doList(Loader.java:2232)\r\n\tat org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2129)\r\n\tat org.hibernate.loader.Loader.list(Loader.java:2124)\r\n\tat org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:401)\r\n\tat org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:363)\r\n\tat org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196)\r\n\tat org.hibernate.impl.SessionImpl.list(SessionImpl.java:1149)\r\n\tat org.hibernate.impl.QueryImpl.list(QueryImpl.java:102)\r\n\tat org.hibernate.impl.AbstractQueryImpl.uniqueResult(AbstractQueryImpl.java:835)\r\n\tat cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:25)\r\n\t... 15 more\r\n","status":1,"errmsg":"java.lang.UnsupportedOperationException: The user must supply a JDBC connection","errcode":0}] to channel [id: 0xefe1aa36, /127.0.0.1:52771 => /127.0.0.1:8888]
+2016-11-26 18:58:57.716-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:58:57.721-[ERROR] Core-Worker-0 AbstractService - {}
+java.lang.UnsupportedOperationException: The user must supply a JDBC connection
+	at org.hibernate.connection.UserSuppliedConnectionProvider.getConnection(UserSuppliedConnectionProvider.java:54) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:696) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.loadEntity(Loader.java:1885) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:71) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:65) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:3062) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:434) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:415) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.load(DefaultLoadEventListener.java:165) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:223) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:126) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.fireLoad(SessionImpl.java:906) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.get(SessionImpl.java:843) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.get(SessionImpl.java:836) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.dao.AbstractDao.getById(AbstractDao.java:94) ~[classes/:na]
+	at cc.lixiaohui.share.server.service.UserService.getUser(UserService.java:74) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128) [classes/:na]
+	at cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_45]
+	at java.lang.Thread.run(Thread.java:662) [na:1.6.0_45]
+2016-11-26 18:58:57.725-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 18:58:57.725-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=2, s=UserService, p=getUser, args={}]
+2016-11-26 18:58:57.727-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=2, corrId=2, respJson={"timestamp":1480157937723,"expmsg":"java.lang.UnsupportedOperationException: The user must supply a JDBC connection\r\n\tat org.hibernate.connection.UserSuppliedConnectionProvider.getConnection(UserSuppliedConnectionProvider.java:54)\r\n\tat org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446)\r\n\tat org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167)\r\n\tat org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161)\r\n\tat org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577)\r\n\tat org.hibernate.loader.Loader.doQuery(Loader.java:696)\r\n\tat org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259)\r\n\tat org.hibernate.loader.Loader.loadEntity(Loader.java:1885)\r\n\tat org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:71)\r\n\tat org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:65)\r\n\tat org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:3062)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:434)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:415)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.load(DefaultLoadEventListener.java:165)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:223)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:126)\r\n\tat org.hibernate.impl.SessionImpl.fireLoad(SessionImpl.java:906)\r\n\tat org.hibernate.impl.SessionImpl.get(SessionImpl.java:843)\r\n\tat org.hibernate.impl.SessionImpl.get(SessionImpl.java:836)\r\n\tat cc.lixiaohui.share.server.model.dao.AbstractDao.getById(AbstractDao.java:94)\r\n\tat cc.lixiaohui.share.server.service.UserService.getUser(UserService.java:74)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\r\n\tat java.lang.reflect.Method.invoke(Method.java:597)\r\n\tat cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128)\r\n\tat cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)\r\n\tat java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:138)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)\r\n\tat java.lang.Thread.run(Thread.java:662)\r\n","status":1,"errmsg":"The user must supply a JDBC connection","errcode":0}] to channel [id: 0xefe1aa36, /127.0.0.1:52771 => /127.0.0.1:8888]
+2016-11-26 18:59:14.689-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0xefe1aa36, /127.0.0.1:52771 :> /127.0.0.1:8888]
+2016-11-26 18:59:40.886-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 18:59:41.508-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 18:59:41.552-[ERROR] main AbstractShareServer - {}
+org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+	at org.hibernate.dialect.resolver.DialectFactory.buildDialect(DialectFactory.java:107) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:138) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettingsInternal(Configuration.java:2119) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2115) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1339) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.newSessionFactory(HibernateSessionFactory.java:76) ~[classes/:na]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.init(HibernateSessionFactory.java:33) ~[classes/:na]
+	at cc.lixiaohui.share.server.AbstractShareServer.initInternal(AbstractShareServer.java:130) ~[classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.init(AbstractLifeCycle.java:43) [classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.start(AbstractLifeCycle.java:67) [classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.start(Bootstrap.java:26) [classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.main(Bootstrap.java:44) [classes/:na]
+2016-11-26 18:59:41.554-[ERROR] main Bootstrap - failed to start server, {}
+cc.lixiaohui.share.util.lifecycle.LifeCycleException: org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+	at cc.lixiaohui.share.server.AbstractShareServer.initInternal(AbstractShareServer.java:133) ~[classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.init(AbstractLifeCycle.java:43) ~[classes/:na]
+	at cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle.start(AbstractLifeCycle.java:67) ~[classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.start(Bootstrap.java:26) [classes/:na]
+	at cc.lixiaohui.share.server.Bootstrap.main(Bootstrap.java:44) [classes/:na]
+Caused by: org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+	at org.hibernate.dialect.resolver.DialectFactory.buildDialect(DialectFactory.java:107) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.SettingsFactory.buildSettings(SettingsFactory.java:138) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettingsInternal(Configuration.java:2119) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSettings(Configuration.java:2115) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1339) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.newSessionFactory(HibernateSessionFactory.java:76) ~[classes/:na]
+	at cc.lixiaohui.share.server.model.util.HibernateSessionFactory.init(HibernateSessionFactory.java:33) ~[classes/:na]
+	at cc.lixiaohui.share.server.AbstractShareServer.initInternal(AbstractShareServer.java:130) ~[classes/:na]
+	... 4 common frames omitted
+2016-11-26 18:59:41.554-[ERROR] main Bootstrap - failed to start server, exit right now, cause: org.hibernate.HibernateException: 'hibernate.dialect' must be set when no Connection avalable
+2016-11-26 19:00:25.938-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 19:00:26.585-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 19:00:27.220-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-26 19:00:27.264-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-26 19:00:27.264-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-26 19:00:27.267-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-26 19:00:27.267-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-26 19:00:27.268-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-26 19:00:27.270-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-26 19:00:27.271-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-26 19:00:27.271-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-26 19:00:27.271-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-26 19:00:27.272-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-26 19:00:27.272-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-26 19:00:27.272-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-26 19:00:27.272-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-26 19:00:27.273-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-26 19:00:27.275-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-26 19:00:27.275-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-26 19:00:27.275-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-26 19:00:27.277-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-26 19:00:27.277-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-26 19:00:27.277-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-26 19:00:27.277-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-26 19:00:27.277-[INFO ] main AbstractShareServer - Procedure ShareService#getCommentedShares mapped
+2016-11-26 19:00:27.277-[INFO ] main AbstractShareServer - Procedure ShareService#getLikedShares mapped
+2016-11-26 19:00:27.278-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-26 19:00:27.279-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-26 19:00:27.279-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-26 19:00:27.279-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-26 19:00:27.280-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-26 19:00:27.280-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-26 19:00:27.280-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-26 19:00:27.281-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-26 19:00:27.282-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-26 19:00:27.282-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-26 19:00:27.282-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-26 19:00:27.282-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-26 19:00:27.283-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-26 19:00:27.283-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-26 19:00:27.283-[INFO ] main AbstractShareServer - total 9 service class and 37 service procedure found
+2016-11-26 19:00:27.283-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-26 19:00:27.346-[INFO ] main AbstractShareServer - server initialized
+2016-11-26 19:00:27.424-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-26 19:00:27.425-[INFO ] main AbstractShareServer - server started
+2016-11-26 19:00:39.423-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0xd7a47c38, /127.0.0.1:52802 => /127.0.0.1:8888]
+2016-11-26 19:00:39.432-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0xd7a47c38, /127.0.0.1:52802 => /127.0.0.1:8888]
+2016-11-26 19:00:39.432-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:00:39.490-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0xd7a47c38, /127.0.0.1:52802 => /127.0.0.1:8888]
+2016-11-26 19:00:39.594-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:00:39.594-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0xd7a47c38, /127.0.0.1:52802 => /127.0.0.1:8888]
+2016-11-26 19:00:39.599-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0xd7a47c38, /127.0.0.1:52802 => /127.0.0.1:8888]
+2016-11-26 19:00:39.605-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:00:39.756-[ERROR] Core-Worker-0 AbstractDao - {}
+java.lang.UnsupportedOperationException: The user must supply a JDBC connection
+	at org.hibernate.connection.UserSuppliedConnectionProvider.getConnection(UserSuppliedConnectionProvider.java:54) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:696) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doList(Loader.java:2232) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2129) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.list(Loader.java:2124) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:401) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:363) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1149) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:102) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.AbstractQueryImpl.uniqueResult(AbstractQueryImpl.java:835) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:25) ~[classes/:na]
+	at cc.lixiaohui.share.server.service.SessionService.login(SessionService.java:151) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128) [classes/:na]
+	at cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_45]
+	at java.lang.Thread.run(Thread.java:662) [na:1.6.0_45]
+2016-11-26 19:00:39.759-[ERROR] Core-Worker-0 AbstractService - {}
+cc.lixiaohui.share.server.model.dao.util.DaoException: java.lang.UnsupportedOperationException: The user must supply a JDBC connection
+	at cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:30) ~[classes/:na]
+	at cc.lixiaohui.share.server.service.SessionService.login(SessionService.java:151) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128) [classes/:na]
+	at cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_45]
+	at java.lang.Thread.run(Thread.java:662) [na:1.6.0_45]
+Caused by: java.lang.UnsupportedOperationException: The user must supply a JDBC connection
+	at org.hibernate.connection.UserSuppliedConnectionProvider.getConnection(UserSuppliedConnectionProvider.java:54) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:696) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doList(Loader.java:2232) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2129) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.list(Loader.java:2124) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:401) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:363) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1149) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:102) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.AbstractQueryImpl.uniqueResult(AbstractQueryImpl.java:835) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:25) ~[classes/:na]
+	... 15 common frames omitted
+2016-11-26 19:00:39.844-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:00:39.846-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=1, s=SessionService, p=login, args={}]
+2016-11-26 19:00:39.849-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=1, corrId=1, respJson={"timestamp":1480158039766,"expmsg":"cc.lixiaohui.share.server.model.dao.util.DaoException: java.lang.UnsupportedOperationException: The user must supply a JDBC connection\r\n\tat cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:30)\r\n\tat cc.lixiaohui.share.server.service.SessionService.login(SessionService.java:151)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\r\n\tat java.lang.reflect.Method.invoke(Method.java:597)\r\n\tat cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128)\r\n\tat cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)\r\n\tat java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:138)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)\r\n\tat java.lang.Thread.run(Thread.java:662)\r\nCaused by: java.lang.UnsupportedOperationException: The user must supply a JDBC connection\r\n\tat org.hibernate.connection.UserSuppliedConnectionProvider.getConnection(UserSuppliedConnectionProvider.java:54)\r\n\tat org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446)\r\n\tat org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167)\r\n\tat org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161)\r\n\tat org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577)\r\n\tat org.hibernate.loader.Loader.doQuery(Loader.java:696)\r\n\tat org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259)\r\n\tat org.hibernate.loader.Loader.doList(Loader.java:2232)\r\n\tat org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2129)\r\n\tat org.hibernate.loader.Loader.list(Loader.java:2124)\r\n\tat org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:401)\r\n\tat org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:363)\r\n\tat org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196)\r\n\tat org.hibernate.impl.SessionImpl.list(SessionImpl.java:1149)\r\n\tat org.hibernate.impl.QueryImpl.list(QueryImpl.java:102)\r\n\tat org.hibernate.impl.AbstractQueryImpl.uniqueResult(AbstractQueryImpl.java:835)\r\n\tat cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:25)\r\n\t... 15 more\r\n","status":1,"errmsg":"java.lang.UnsupportedOperationException: The user must supply a JDBC connection","errcode":0}] to channel [id: 0xd7a47c38, /127.0.0.1:52802 => /127.0.0.1:8888]
+2016-11-26 19:00:39.857-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:00:39.866-[ERROR] Core-Worker-0 AbstractService - {}
+java.lang.UnsupportedOperationException: The user must supply a JDBC connection
+	at org.hibernate.connection.UserSuppliedConnectionProvider.getConnection(UserSuppliedConnectionProvider.java:54) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:696) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.loadEntity(Loader.java:1885) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:71) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:65) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:3062) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:434) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:415) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.load(DefaultLoadEventListener.java:165) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:223) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:126) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.fireLoad(SessionImpl.java:906) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.get(SessionImpl.java:843) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.get(SessionImpl.java:836) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.dao.AbstractDao.getById(AbstractDao.java:94) ~[classes/:na]
+	at cc.lixiaohui.share.server.service.UserService.getUser(UserService.java:74) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128) [classes/:na]
+	at cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_45]
+	at java.lang.Thread.run(Thread.java:662) [na:1.6.0_45]
+2016-11-26 19:00:39.869-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:00:39.877-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=2, corrId=2, respJson={"timestamp":1480158039868,"expmsg":"java.lang.UnsupportedOperationException: The user must supply a JDBC connection\r\n\tat org.hibernate.connection.UserSuppliedConnectionProvider.getConnection(UserSuppliedConnectionProvider.java:54)\r\n\tat org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446)\r\n\tat org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167)\r\n\tat org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161)\r\n\tat org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577)\r\n\tat org.hibernate.loader.Loader.doQuery(Loader.java:696)\r\n\tat org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259)\r\n\tat org.hibernate.loader.Loader.loadEntity(Loader.java:1885)\r\n\tat org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:71)\r\n\tat org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:65)\r\n\tat org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:3062)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:434)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:415)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.load(DefaultLoadEventListener.java:165)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:223)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:126)\r\n\tat org.hibernate.impl.SessionImpl.fireLoad(SessionImpl.java:906)\r\n\tat org.hibernate.impl.SessionImpl.get(SessionImpl.java:843)\r\n\tat org.hibernate.impl.SessionImpl.get(SessionImpl.java:836)\r\n\tat cc.lixiaohui.share.server.model.dao.AbstractDao.getById(AbstractDao.java:94)\r\n\tat cc.lixiaohui.share.server.service.UserService.getUser(UserService.java:74)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\r\n\tat java.lang.reflect.Method.invoke(Method.java:597)\r\n\tat cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128)\r\n\tat cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)\r\n\tat java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:138)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)\r\n\tat java.lang.Thread.run(Thread.java:662)\r\n","status":1,"errmsg":"The user must supply a JDBC connection","errcode":0}] to channel [id: 0xd7a47c38, /127.0.0.1:52802 => /127.0.0.1:8888]
+2016-11-26 19:00:39.878-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=2, s=UserService, p=getUser, args={}]
+2016-11-26 19:00:51.327-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0xd7a47c38, /127.0.0.1:52802 :> /127.0.0.1:8888]
+2016-11-26 19:02:42.453-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 19:02:43.095-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 19:02:46.243-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-26 19:02:46.275-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-26 19:02:46.275-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-26 19:02:46.275-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-26 19:02:46.275-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-26 19:02:46.275-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-26 19:02:46.275-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-26 19:02:46.275-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-26 19:02:46.276-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-26 19:02:46.276-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-26 19:02:46.277-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-26 19:02:46.277-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-26 19:02:46.277-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-26 19:02:46.277-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-26 19:02:46.280-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-26 19:02:46.281-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-26 19:02:46.281-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-26 19:02:46.282-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-26 19:02:46.283-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-26 19:02:46.283-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-26 19:02:46.284-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-26 19:02:46.285-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-26 19:02:46.285-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-26 19:02:46.285-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-26 19:02:46.285-[INFO ] main AbstractShareServer - Procedure ShareService#getCommentedShares mapped
+2016-11-26 19:02:46.285-[INFO ] main AbstractShareServer - Procedure ShareService#getLikedShares mapped
+2016-11-26 19:02:46.286-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-26 19:02:46.287-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-26 19:02:46.287-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-26 19:02:46.288-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-26 19:02:46.288-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-26 19:02:46.288-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-26 19:02:46.289-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-26 19:02:46.289-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-26 19:02:46.290-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-26 19:02:46.291-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-26 19:02:46.291-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-26 19:02:46.291-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-26 19:02:46.291-[INFO ] main AbstractShareServer - total 9 service class and 37 service procedure found
+2016-11-26 19:02:46.291-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-26 19:02:46.333-[INFO ] main AbstractShareServer - server initialized
+2016-11-26 19:02:46.396-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-26 19:02:46.397-[INFO ] main AbstractShareServer - server started
+2016-11-26 19:03:02.888-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0x9b092ced, /127.0.0.1:52876 => /127.0.0.1:8888]
+2016-11-26 19:03:02.900-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0x9b092ced, /127.0.0.1:52876 => /127.0.0.1:8888]
+2016-11-26 19:03:02.901-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:03:02.950-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0x9b092ced, /127.0.0.1:52876 => /127.0.0.1:8888]
+2016-11-26 19:03:03.056-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:03:03.056-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0x9b092ced, /127.0.0.1:52876 => /127.0.0.1:8888]
+2016-11-26 19:03:03.061-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0x9b092ced, /127.0.0.1:52876 => /127.0.0.1:8888]
+2016-11-26 19:03:03.065-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:03:05.230-[ERROR] Core-Worker-0 AbstractDao - {}
+org.hibernate.exception.JDBCConnectionException: Cannot open connection
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:97) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:52) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:449) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:696) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doList(Loader.java:2232) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2129) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.list(Loader.java:2124) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:401) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:363) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1149) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:102) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.AbstractQueryImpl.uniqueResult(AbstractQueryImpl.java:835) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:25) ~[classes/:na]
+	at cc.lixiaohui.share.server.service.SessionService.login(SessionService.java:151) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128) [classes/:na]
+	at cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_45]
+	at java.lang.Thread.run(Thread.java:662) [na:1.6.0_45]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27) ~[na:1.6.0_45]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513) ~[na:1.6.0_45]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:981) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2253) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27) ~[na:1.6.0_45]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513) ~[na:1.6.0_45]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at java.sql.DriverManager.getConnection(DriverManager.java:582) ~[na:1.6.0_45]
+	at java.sql.DriverManager.getConnection(DriverManager.java:154) ~[na:1.6.0_45]
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	... 30 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.6.0_45]
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:351) ~[na:1.6.0_45]
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:213) ~[na:1.6.0_45]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:200) ~[na:1.6.0_45]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366) ~[na:1.6.0_45]
+	at java.net.Socket.connect(Socket.java:529) ~[na:1.6.0_45]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	... 46 common frames omitted
+2016-11-26 19:03:05.238-[ERROR] Core-Worker-0 AbstractService - {}
+cc.lixiaohui.share.server.model.dao.util.DaoException: org.hibernate.exception.JDBCConnectionException: Cannot open connection
+	at cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:30) ~[classes/:na]
+	at cc.lixiaohui.share.server.service.SessionService.login(SessionService.java:151) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128) [classes/:na]
+	at cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_45]
+	at java.lang.Thread.run(Thread.java:662) [na:1.6.0_45]
+Caused by: org.hibernate.exception.JDBCConnectionException: Cannot open connection
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:97) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:52) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:449) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:696) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doList(Loader.java:2232) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2129) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.list(Loader.java:2124) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:401) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:363) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1149) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:102) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.AbstractQueryImpl.uniqueResult(AbstractQueryImpl.java:835) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:25) ~[classes/:na]
+	... 15 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27) ~[na:1.6.0_45]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513) ~[na:1.6.0_45]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:981) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2253) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27) ~[na:1.6.0_45]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513) ~[na:1.6.0_45]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at java.sql.DriverManager.getConnection(DriverManager.java:582) ~[na:1.6.0_45]
+	at java.sql.DriverManager.getConnection(DriverManager.java:154) ~[na:1.6.0_45]
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	... 30 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.6.0_45]
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:351) ~[na:1.6.0_45]
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:213) ~[na:1.6.0_45]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:200) ~[na:1.6.0_45]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366) ~[na:1.6.0_45]
+	at java.net.Socket.connect(Socket.java:529) ~[na:1.6.0_45]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	... 46 common frames omitted
+2016-11-26 19:03:05.321-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:03:05.321-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=1, s=SessionService, p=login, args={}]
+2016-11-26 19:03:05.337-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=1, corrId=1, respJson={"timestamp":1480158185264,"expmsg":"cc.lixiaohui.share.server.model.dao.util.DaoException: org.hibernate.exception.JDBCConnectionException: Cannot open connection\r\n\tat cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:30)\r\n\tat cc.lixiaohui.share.server.service.SessionService.login(SessionService.java:151)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\r\n\tat java.lang.reflect.Method.invoke(Method.java:597)\r\n\tat cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128)\r\n\tat cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)\r\n\tat java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:138)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)\r\n\tat java.lang.Thread.run(Thread.java:662)\r\nCaused by: org.hibernate.exception.JDBCConnectionException: Cannot open connection\r\n\tat org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:97)\r\n\tat org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)\r\n\tat org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:52)\r\n\tat org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:449)\r\n\tat org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167)\r\n\tat org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161)\r\n\tat org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577)\r\n\tat org.hibernate.loader.Loader.doQuery(Loader.java:696)\r\n\tat org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259)\r\n\tat org.hibernate.loader.Loader.doList(Loader.java:2232)\r\n\tat org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2129)\r\n\tat org.hibernate.loader.Loader.list(Loader.java:2124)\r\n\tat org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:401)\r\n\tat org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:363)\r\n\tat org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196)\r\n\tat org.hibernate.impl.SessionImpl.list(SessionImpl.java:1149)\r\n\tat org.hibernate.impl.QueryImpl.list(QueryImpl.java:102)\r\n\tat org.hibernate.impl.AbstractQueryImpl.uniqueResult(AbstractQueryImpl.java:835)\r\n\tat cc.lixiaohui.share.server.model.dao.impl.UserDaoImpl.get(UserDaoImpl.java:25)\r\n\t... 15 more\r\nCaused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure\n\nThe last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:513)\r\n\tat com.mysql.jdbc.Util.handleNewInstance(Util.java:404)\r\n\tat com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:981)\r\n\tat com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339)\r\n\tat com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2253)\r\n\tat com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286)\r\n\tat com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085)\r\n\tat com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)\r\n\tat com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:513)\r\n\tat com.mysql.jdbc.Util.handleNewInstance(Util.java:404)\r\n\tat com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)\r\n\tat com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)\r\n\tat java.sql.DriverManager.getConnection(DriverManager.java:582)\r\n\tat java.sql.DriverManager.getConnection(DriverManager.java:154)\r\n\tat org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133)\r\n\tat org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446)\r\n\t... 30 more\r\nCaused by: java.net.ConnectException: Connection refused: connect\r\n\tat java.net.PlainSocketImpl.socketConnect(Native Method)\r\n\tat java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:351)\r\n\tat java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:213)\r\n\tat java.net.PlainSocketImpl.connect(PlainSocketImpl.java:200)\r\n\tat java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)\r\n\tat java.net.Socket.connect(Socket.java:529)\r\n\tat com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)\r\n\tat com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)\r\n\t... 46 more\r\n","status":1,"errmsg":"org.hibernate.exception.JDBCConnectionException: Cannot open connection","errcode":0}] to channel [id: 0x9b092ced, /127.0.0.1:52876 => /127.0.0.1:8888]
+2016-11-26 19:03:05.340-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:03:07.357-[ERROR] Core-Worker-0 AbstractService - {}
+org.hibernate.exception.JDBCConnectionException: Cannot open connection
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:97) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:52) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:449) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:696) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.Loader.loadEntity(Loader.java:1885) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:71) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:65) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:3062) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:434) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:415) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.load(DefaultLoadEventListener.java:165) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:223) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.event.def.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:126) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.fireLoad(SessionImpl.java:906) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.get(SessionImpl.java:843) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.impl.SessionImpl.get(SessionImpl.java:836) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at cc.lixiaohui.share.server.model.dao.AbstractDao.getById(AbstractDao.java:94) ~[classes/:na]
+	at cc.lixiaohui.share.server.service.UserService.getUser(UserService.java:74) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25) ~[na:1.6.0_45]
+	at java.lang.reflect.Method.invoke(Method.java:597) ~[na:1.6.0_45]
+	at cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128) [classes/:na]
+	at cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64) [classes/:na]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303) [na:1.6.0_45]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98) [na:1.6.0_45]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895) [na:1.6.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918) [na:1.6.0_45]
+	at java.lang.Thread.run(Thread.java:662) [na:1.6.0_45]
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27) ~[na:1.6.0_45]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513) ~[na:1.6.0_45]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:981) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2253) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.6.0_45]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39) ~[na:1.6.0_45]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27) ~[na:1.6.0_45]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513) ~[na:1.6.0_45]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at java.sql.DriverManager.getConnection(DriverManager.java:582) ~[na:1.6.0_45]
+	at java.sql.DriverManager.getConnection(DriverManager.java:154) ~[na:1.6.0_45]
+	at org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	at org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446) ~[hibernate-core-3.3.2.GA.jar:3.3.2.GA]
+	... 33 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.6.0_45]
+	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:351) ~[na:1.6.0_45]
+	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:213) ~[na:1.6.0_45]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:200) ~[na:1.6.0_45]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366) ~[na:1.6.0_45]
+	at java.net.Socket.connect(Socket.java:529) ~[na:1.6.0_45]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298) ~[mysql-connector-java-5.1.38.jar:5.1.38]
+	... 49 common frames omitted
+2016-11-26 19:03:07.363-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:03:07.363-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=2, s=UserService, p=getUser, args={}]
+2016-11-26 19:03:07.367-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=2, corrId=2, respJson={"timestamp":1480158187362,"expmsg":"org.hibernate.exception.JDBCConnectionException: Cannot open connection\r\n\tat org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:97)\r\n\tat org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)\r\n\tat org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:52)\r\n\tat org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:449)\r\n\tat org.hibernate.jdbc.ConnectionManager.getConnection(ConnectionManager.java:167)\r\n\tat org.hibernate.jdbc.AbstractBatcher.prepareQueryStatement(AbstractBatcher.java:161)\r\n\tat org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1577)\r\n\tat org.hibernate.loader.Loader.doQuery(Loader.java:696)\r\n\tat org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259)\r\n\tat org.hibernate.loader.Loader.loadEntity(Loader.java:1885)\r\n\tat org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:71)\r\n\tat org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:65)\r\n\tat org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:3062)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:434)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:415)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.load(DefaultLoadEventListener.java:165)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:223)\r\n\tat org.hibernate.event.def.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:126)\r\n\tat org.hibernate.impl.SessionImpl.fireLoad(SessionImpl.java:906)\r\n\tat org.hibernate.impl.SessionImpl.get(SessionImpl.java:843)\r\n\tat org.hibernate.impl.SessionImpl.get(SessionImpl.java:836)\r\n\tat cc.lixiaohui.share.server.model.dao.AbstractDao.getById(AbstractDao.java:94)\r\n\tat cc.lixiaohui.share.server.service.UserService.getUser(UserService.java:74)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)\r\n\tat java.lang.reflect.Method.invoke(Method.java:597)\r\n\tat cc.lixiaohui.share.server.ShareServer.handleCSRequest(ShareServer.java:128)\r\n\tat cc.lixiaohui.share.server.handler.MessageDispatcher$MessageHandlingTask.run(MessageDispatcher.java:64)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)\r\n\tat java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:138)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)\r\n\tat java.lang.Thread.run(Thread.java:662)\r\nCaused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure\n\nThe last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:513)\r\n\tat com.mysql.jdbc.Util.handleNewInstance(Util.java:404)\r\n\tat com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:981)\r\n\tat com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339)\r\n\tat com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2253)\r\n\tat com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286)\r\n\tat com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085)\r\n\tat com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)\r\n\tat com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:513)\r\n\tat com.mysql.jdbc.Util.handleNewInstance(Util.java:404)\r\n\tat com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)\r\n\tat com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)\r\n\tat java.sql.DriverManager.getConnection(DriverManager.java:582)\r\n\tat java.sql.DriverManager.getConnection(DriverManager.java:154)\r\n\tat org.hibernate.connection.DriverManagerConnectionProvider.getConnection(DriverManagerConnectionProvider.java:133)\r\n\tat org.hibernate.jdbc.ConnectionManager.openConnection(ConnectionManager.java:446)\r\n\t... 33 more\r\nCaused by: java.net.ConnectException: Connection refused: connect\r\n\tat java.net.PlainSocketImpl.socketConnect(Native Method)\r\n\tat java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:351)\r\n\tat java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:213)\r\n\tat java.net.PlainSocketImpl.connect(PlainSocketImpl.java:200)\r\n\tat java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)\r\n\tat java.net.Socket.connect(Socket.java:529)\r\n\tat com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)\r\n\tat com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)\r\n\t... 49 more\r\n","status":1,"errmsg":"Cannot open connection","errcode":0}] to channel [id: 0x9b092ced, /127.0.0.1:52876 => /127.0.0.1:8888]
+2016-11-26 19:03:47.932-[INFO ] main AbstractShareServer - server initializing...
+2016-11-26 19:03:48.557-[INFO ] main HibernateSessionFactory - using internal hibernate.cfg.xml
+2016-11-26 19:03:49.767-[INFO ] main AbstractShareServer - initialing procedures...
+2016-11-26 19:03:49.798-[INFO ] main AbstractShareServer - Procedure CollectionService#getUserCollection mapped
+2016-11-26 19:03:49.798-[INFO ] main AbstractShareServer - Procedure CollectionService#getShareCollection mapped
+2016-11-26 19:03:49.798-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectUser mapped
+2016-11-26 19:03:49.798-[INFO ] main AbstractShareServer - Procedure CollectionService#unCollectShare mapped
+2016-11-26 19:03:49.800-[INFO ] main AbstractShareServer - Procedure UserService#getUser mapped
+2016-11-26 19:03:49.801-[INFO ] main AbstractShareServer - Procedure UserService#shield mapped
+2016-11-26 19:03:49.801-[INFO ] main AbstractShareServer - Procedure UserService#searchUser mapped
+2016-11-26 19:03:49.802-[INFO ] main AbstractShareServer - Procedure UserService#updateUser mapped
+2016-11-26 19:03:49.802-[INFO ] main AbstractShareServer - Procedure UserService#unshield mapped
+2016-11-26 19:03:49.802-[INFO ] main AbstractShareServer - Procedure UserService#addFriend mapped
+2016-11-26 19:03:49.802-[INFO ] main AbstractShareServer - Procedure UserService#handleFriendRequest mapped
+2016-11-26 19:03:49.802-[INFO ] main AbstractShareServer - Procedure UserService#getFriends mapped
+2016-11-26 19:03:49.803-[INFO ] main AbstractShareServer - Procedure UserService#deleteFriend mapped
+2016-11-26 19:03:49.803-[INFO ] main AbstractShareServer - Procedure SortingService#getSortings mapped
+2016-11-26 19:03:49.804-[INFO ] main AbstractShareServer - Procedure SortingService#deleteSorting mapped
+2016-11-26 19:03:49.806-[INFO ] main AbstractShareServer - Procedure SessionService#register mapped
+2016-11-26 19:03:49.806-[INFO ] main AbstractShareServer - Procedure SessionService#login mapped
+2016-11-26 19:03:49.806-[INFO ] main AbstractShareServer - Procedure SessionService#logout mapped
+2016-11-26 19:03:49.807-[INFO ] main AbstractShareServer - Procedure SessionService#registerAdmin mapped
+2016-11-26 19:03:49.807-[INFO ] main AbstractShareServer - Procedure PraiseService#like mapped
+2016-11-26 19:03:49.808-[INFO ] main AbstractShareServer - Procedure PraiseService#unlike mapped
+2016-11-26 19:03:49.811-[INFO ] main AbstractShareServer - Procedure ShareService#getShares mapped
+2016-11-26 19:03:49.811-[INFO ] main AbstractShareServer - Procedure ShareService#getShare mapped
+2016-11-26 19:03:49.812-[INFO ] main AbstractShareServer - Procedure ShareService#deleteShare mapped
+2016-11-26 19:03:49.812-[INFO ] main AbstractShareServer - Procedure ShareService#publishShare mapped
+2016-11-26 19:03:49.812-[INFO ] main AbstractShareServer - Procedure ShareService#getCommentedShares mapped
+2016-11-26 19:03:49.812-[INFO ] main AbstractShareServer - Procedure ShareService#getLikedShares mapped
+2016-11-26 19:03:49.814-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getForbidenWords mapped
+2016-11-26 19:03:49.814-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#getDeletedForbidenWords mapped
+2016-11-26 19:03:49.814-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#deleteForbidenWord mapped
+2016-11-26 19:03:49.815-[INFO ] main AbstractShareServer - Procedure ForbidenWordService#recoverForbidenWord mapped
+2016-11-26 19:03:49.815-[INFO ] main AbstractShareServer - Procedure CommentService#getComments mapped
+2016-11-26 19:03:49.816-[INFO ] main AbstractShareServer - Procedure CommentService#deleteComment mapped
+2016-11-26 19:03:49.816-[INFO ] main AbstractShareServer - Procedure CommentService#publishComment mapped
+2016-11-26 19:03:49.818-[INFO ] main AbstractShareServer - Procedure PictureService#getPictures mapped
+2016-11-26 19:03:49.818-[INFO ] main AbstractShareServer - Procedure PictureService#uploadPicture mapped
+2016-11-26 19:03:49.818-[INFO ] main AbstractShareServer - Procedure PictureService#deletePicture mapped
+2016-11-26 19:03:49.819-[INFO ] main AbstractShareServer - total 9 service class and 37 service procedure found
+2016-11-26 19:03:49.819-[INFO ] main AbstractShareServer - procedures initialized
+2016-11-26 19:03:49.873-[INFO ] main AbstractShareServer - server initialized
+2016-11-26 19:03:49.931-[INFO ] main AbstractShareServer - Server was successfully bound to 0.0.0.0:8888
+2016-11-26 19:03:49.932-[INFO ] main AbstractShareServer - server started
+2016-11-26 19:04:00.164-[INFO ] IO-Worker-0 AbstractShareServer - new channel [id: 0x803ec3af, /127.0.0.1:52917 => /127.0.0.1:8888]
+2016-11-26 19:04:00.175-[INFO ] IO-Worker-0 SessionHandler - attached session for channel [id: 0x803ec3af, /127.0.0.1:52917 => /127.0.0.1:8888]
+2016-11-26 19:04:00.175-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:04:00.226-[INFO ] IO-Worker-0 HandshakeHandler - write handshake to channel [id: 0x803ec3af, /127.0.0.1:52917 => /127.0.0.1:8888]
+2016-11-26 19:04:00.338-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:04:00.338-[INFO ] IO-Worker-0 HandshakeHandler - recieved handshake response from channel [id: 0x803ec3af, /127.0.0.1:52917 => /127.0.0.1:8888]
+2016-11-26 19:04:00.342-[INFO ] IO-Worker-0 HandshakeHandler - connection established [id: 0x803ec3af, /127.0.0.1:52917 => /127.0.0.1:8888]
+2016-11-26 19:04:00.346-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:04:00.657-[DEBUG] Core-Worker-0 AbstractService - user logined User[id=5, name=小明, password=xiaoming, sex=男, signature=我是水货, role=Role[id=2, desc=普通用户, createTime=2016-10-29 22:33:02.0, deleted=false], headImage=Picture[id=4, path=C:\Users\lixiaohui\Pictures\MySQL Protocol\Status_Flag.PNG, suffix=PNG, uploadTime=2016-11-12 14:45:32.0], selfFirbid=false, adminForbid=false, deleted=false]
+2016-11-26 19:04:00.723-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:04:00.724-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=1, s=SessionService, p=login, args={}]
+2016-11-26 19:04:00.725-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=1, corrId=1, respJson={"timestamp":1480158240662,"result":{"selfShield":false,"userId":5,"role":{"description":"普通用户","roleId":2},"adminShield":false},"status":0,"msg":"登陆成功"}] to channel [id: 0x803ec3af, /127.0.0.1:52917 => /127.0.0.1:8888]
+2016-11-26 19:04:00.729-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:04:00.737-[INFO ] IO-Worker-0 SessionHandler - update last IO time for session
+2016-11-26 19:04:00.737-[DEBUG] Core-Worker-0 MessageDispatcher - dispatch message CSRequestMessage[id=2, s=UserService, p=getUser, args={}]
+2016-11-26 19:04:00.737-[DEBUG] IO-Worker-0 AbstractShareServer - write message CSResponseMessage[id=2, corrId=2, respJson={"timestamp":1480158240736,"result":{"selfShield":false,"sex":"男","username":"李小辉","userId":4,"role":{"id":1,"description":"管理员"},"headImageId":3,"registerTime":1477795027000,"signature":"哈哈哈哈","adminShield":false},"status":0,"msg":"获取用户成功"}] to channel [id: 0x803ec3af, /127.0.0.1:52917 => /127.0.0.1:8888]
+2016-11-26 19:04:06.200-[INFO ] IO-Worker-0 SessionHandler - dettached session from channel [id: 0x803ec3af, /127.0.0.1:52917 :> /127.0.0.1:8888]

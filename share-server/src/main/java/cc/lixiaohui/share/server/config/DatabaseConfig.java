@@ -1,5 +1,10 @@
 package cc.lixiaohui.share.server.config;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import cc.lixiaohui.share.server.config.util.Property;
+
 /**
  * 数据库相关配置
  * 
@@ -18,6 +23,20 @@ public class DatabaseConfig {
 	
 	private String password;
 	
+	private List<Property> properties = new ArrayList<Property>();
+	
+	public void addProperty(Property property) {
+		properties.add(property);
+	}
+	
+	public List<Property> getProperties() {
+		return properties;
+	}
+
+	public void setProperties(List<Property> properties) {
+		this.properties = properties;
+	}
+
 	public int getDefaultPageSize() {
 		return defaultPageSize;
 	}
