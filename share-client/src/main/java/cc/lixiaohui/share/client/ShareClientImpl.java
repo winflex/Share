@@ -451,4 +451,12 @@ public class ShareClientImpl extends AbstractShareClient {
 				.parameter("limit", limit).build();
 		return syncSend(m);
 	}
+	
+	@Override
+	public String getUsers(int start, int limit) throws ClientException {
+		CSRequestMessage m = CSRequestMessage.builder().service("UserService").procedure("getUsers")
+				.parameter("start", start)
+				.parameter("limit", limit).build();
+		return syncSend(m);
+	}
 }

@@ -33,6 +33,7 @@ public class CommentService extends AbstractService {
 	}
 
 	/**
+	 * 获取指定分享的评论
 	 * int shareId, int start, int limit
 	 * @param share int, !nullable
 	 * @param start int, nullable
@@ -85,6 +86,7 @@ public class CommentService extends AbstractService {
 	}
 	
 	/**
+	 * 删除评论
 	 * int commentId
 	 * {}
 	 * @return
@@ -115,7 +117,6 @@ public class CommentService extends AbstractService {
 			return JSONUtils.newFailureResult(t.getMessage(), ErrorCode.wrap(t), t);
 		}
 	}
-	
 	
 	/**
 	 * 发布评论

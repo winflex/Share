@@ -32,6 +32,7 @@ public class SessionService extends AbstractService {
 	}
 
 	/**
+	 * 注册
 	 * <pre>
 	 * {
 	 * 		"userId":1,
@@ -79,6 +80,7 @@ public class SessionService extends AbstractService {
 	}
 	
 	/**
+	 * 添加管理员账号
 	 * @param username String, !nullable
 	 * @param password String, !nullable
 	 * @return
@@ -119,7 +121,7 @@ public class SessionService extends AbstractService {
 	}
 	
 	/**
-	 * 
+	 * 登陆
 	 * @param username String, !nullable
 	 * @param password String, !nullable
 	 * @return
@@ -163,6 +165,7 @@ public class SessionService extends AbstractService {
 	}
 
 	/**
+	 * 注销
 	 * {}
 	 * @return
 	 * @throws ServiceException

@@ -33,6 +33,7 @@ public class PictureService extends AbstractService{
 	}
 	
 	/**
+	 * 上传图片
 	 * <pre>
 	 * int userId, String suffix, byte[] bytes
 	 * {
@@ -95,6 +96,7 @@ public class PictureService extends AbstractService{
 	}
 
 	/**
+	 * 获取图片信息
 	 * <pre>
 	 * boolean ignoreIfNotExist, int[] pictureIds
 	 * {
@@ -171,16 +173,8 @@ public class PictureService extends AbstractService{
 		}
 	}
 	
-	private JSONObject emptyPictureObject(int id) {
-		JSONObject p = new JSONObject();
-		p.put("id", id);
-		p.put("bytes", ArrayUtils.EMPTY_BYTE_ARRAY);
-		p.put("uploadTime", 0);
-		p.put("uploadUserId", 0);
-		return p;
-	}
-	
 	/**
+	 * 删除图片
 	 * <pre>
 	 * int pictureId
 	 * {}
@@ -225,6 +219,15 @@ public class PictureService extends AbstractService{
 		picture.setSuffix(suffix == null ? "" : suffix);
 		picture.setUploadUserId(userId);
 		return picture;
+	}
+	
+	private JSONObject emptyPictureObject(int id) {
+		JSONObject p = new JSONObject();
+		p.put("id", id);
+		p.put("bytes", ArrayUtils.EMPTY_BYTE_ARRAY);
+		p.put("uploadTime", 0);
+		p.put("uploadUserId", 0);
+		return p;
 	}
 	
 	private synchronized String generatePictureName(PictureDao dao, String suffix) throws DaoException {

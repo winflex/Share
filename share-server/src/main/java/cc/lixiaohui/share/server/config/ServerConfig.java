@@ -9,14 +9,19 @@ package cc.lixiaohui.share.server.config;
  */
 public class ServerConfig {
 	
+	/** 服务器名字 */
 	private String name;
 	
+	/**业务线程池参数*/
 	private PoolConfig poolConfig;
 	
+	/** Socket参数配置 */
 	private SocketConfig socketConfig;
 	
+	/** 数据库参数配置 */
 	private DatabaseConfig databaseConfig;
 	
+	/** 会话参数配置 */
 	private SessionConfig sessionConfig;
 
 	/**

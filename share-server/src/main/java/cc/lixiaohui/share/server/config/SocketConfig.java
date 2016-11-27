@@ -8,13 +8,6 @@ package cc.lixiaohui.share.server.config;
  */
 public class SocketConfig {
 	
-	public static final String DEFAULT_BIND_ADDRESS = "127.0.0.1";
-	public static final int DEFAULT_BIND_PORT = 9999;
-	public static final int DEFAULT_HEARTBEAT_INTERVAL = 10 * 1000; //ms
-	public static final int MAX_HEARTBEAT_MISSTIMES = 10; //ms
-	public static final int DEFAULT_IO_THREADS = Runtime.getRuntime().availableProcessors() + 1;
-	public static final String DEFAULT_SERIALIZE_FACTORY = "cc.lixiaohui.share.protocol.codec.serialize.factory.HessianSerializeFactory";
-	
 	private int port = DEFAULT_BIND_PORT;
 	
 	private String bindAddress = DEFAULT_BIND_ADDRESS;
@@ -33,6 +26,15 @@ public class SocketConfig {
 	
 	private String serializeFactoryClass = DEFAULT_SERIALIZE_FACTORY;
 
+	
+
+	public static final String DEFAULT_BIND_ADDRESS = "127.0.0.1";
+	public static final int DEFAULT_BIND_PORT = 9999;
+	public static final int DEFAULT_HEARTBEAT_INTERVAL = 10 * 1000; //ms
+	public static final int MAX_HEARTBEAT_MISSTIMES = 10; //ms
+	public static final int DEFAULT_IO_THREADS = Runtime.getRuntime().availableProcessors() + 1;
+	public static final String DEFAULT_SERIALIZE_FACTORY = "cc.lixiaohui.share.protocol.codec.serialize.factory.HessianSerializeFactory";
+	
 	/**
 	 * @return the serializeFactoryClass
 	 */

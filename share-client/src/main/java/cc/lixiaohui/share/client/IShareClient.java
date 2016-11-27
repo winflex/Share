@@ -184,6 +184,33 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 */
 	String searchUser(String keyword, int start, int limit) throws ClientException;
 	
+	/**
+	 * 获取用户列表(需管理员权限)
+	 * @param start
+	 * @param limit
+	 * @return result如下
+	 * {
+        "count":1,
+        "list":[
+            {
+                "selfShield":false,
+                "sex":"男",
+                "username":"李小辉",
+                "userId":4,
+                "role":{
+                    "id":1,
+                    "description":"管理员"
+                },
+                "headImageId":3,
+                "registerTime":1477795027000,
+                "signature":"哈哈哈哈",
+                "adminShield":false
+            }
+        ]
+    }
+	 * @throws ClientException
+	 */
+	String getUsers(int start, int limit) throws ClientException;
 	
 	// *****************************************************************
 	// *********************** Share Operations ************************

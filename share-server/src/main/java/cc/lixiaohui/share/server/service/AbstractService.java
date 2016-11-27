@@ -137,7 +137,6 @@ public abstract class AbstractService {
 		return s == null ? defValue : Float.valueOf(s);
 	}
 	
-	
 	protected double getDoubleParameter(String name) {
 		return Double.valueOf(getStringParameter(name));
 	}

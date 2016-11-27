@@ -7,7 +7,6 @@ package cc.lixiaohui.share.client;
  * @date 2016年10月31日 下午4:14:58
  */
 public interface IMessageListener {
-	
 	/**
 	 * 收到聊天信息
 	 * 
@@ -21,7 +20,6 @@ public interface IMessageListener {
 	 * @param sendTime 发送时间
 	 */
 	void onChat(int fromUserId, String content, long sendTime);
-	
 	
 	/**
 	 * 新的分享推送
@@ -138,7 +136,6 @@ public interface IMessageListener {
 	 * </pre>
 	 */
 	void onLike(String json);
-	
 	/**
 	 * 收到取消点赞的通知
 	 * @param json

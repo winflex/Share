@@ -138,4 +138,15 @@ public class UserServiceTest {
 		String json = svc.handleFriendRequest();
 		System.out.println(json);
 	}
+	@Test
+	public void getUsers() throws Exception {
+		Session session = TestUtils.loginSession(TestUtils.newUser(1, 5));
+		
+		params.put("start", 0);
+		params.put("limit", 5);
+		
+		UserService svc = new UserService(session, params);
+		String json = svc.getUsers();
+		System.out.println(json);
+	}
 }

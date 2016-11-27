@@ -30,6 +30,7 @@ public class CollectionService extends AbstractService {
 	}
 
 	/**
+	 * 获取收藏的用户
 	 * int start, int limit
 	 * @param start int, nullable default 0
 	 * @param limit int, nullable default 20
@@ -69,6 +70,7 @@ public class CollectionService extends AbstractService {
 	}
 	
 	/**
+	 * 获取收藏的分享
 	 * <pre>
 	 * int start, int limit
 	 * {
@@ -162,7 +164,6 @@ public class CollectionService extends AbstractService {
 			return JSONUtils.newFailureResult(cause.getMessage(), ErrorCode.wrap(cause), cause.getMessage());
 		}
 	}
-	
 	
 	
 	private JSONObject packUserCollection(List<UserCollection> collections) {

@@ -8,15 +8,19 @@ import cc.lixiaohui.share.server.Session;
  * @date 2016年11月15日 上午11:43:38
  */
 public enum PrivilegeLevel {
-	
+	/**未握手*/
 	NOT_HANDSHAKED(0),
 	
+	/**已握手*/
 	HANDSHAKED(10),
 	
+	/**登陆*/
 	LOGGED(20),
 	
+	/**管理员*/
 	ADMIN(30),
 	
+	/**超级管理员*/
 	SUPER(40);
 	
 	private int value;

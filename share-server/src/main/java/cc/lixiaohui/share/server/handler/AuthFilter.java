@@ -36,8 +36,8 @@ public class AuthFilter extends SimpleChannelInboundHandler<Message> {
 		
 		if (msg instanceof CSRequestMessage) { // 据接口不同权限不同
 			CSRequestMessage req = (CSRequestMessage) msg;
-			Method method = PROCEDURE_MAP.get(req.getService() + AbstractShareServer.SP_SPLITER + req.getProcedure());
-			
+			Method method = PROCEDURE_MAP.get(req.getService() + AbstractShareServer.SP_SPLITER 
+					+ req.getProcedure());
 			boolean qulified = method.getAnnotation(Procedure.class).level()
 					.isQulified(ctx.channel().attr(SessionManager.ATTR_SESSION).get());
 			if (!qulified) { // 不符合权限
@@ -47,7 +47,6 @@ public class AuthFilter extends SimpleChannelInboundHandler<Message> {
 				return;
 			}
 		}
-		
 		if (msg instanceof CSCRequestMessage) { // 聊天消息必须登陆
 			CSCRequestMessage req = (CSCRequestMessage) msg;
 			if (!ctx.channel().attr(SessionManager.ATTR_SESSION).get().isLogined()) {
@@ -57,7 +56,6 @@ public class AuthFilter extends SimpleChannelInboundHandler<Message> {
 				return;
 			}
 		}
-		
 		ctx.fireChannelRead(msg);
 	}
 

@@ -56,7 +56,7 @@ public class ShareService extends AbstractService {
 	}
 
 	/**
-	 * 获取分享
+	 * 获取多个分享
 	 * 1.若当前session未登陆, 则要考虑屏蔽情况
 	 * 2.否则, 自己的selfForbid和adminForbid忽略, 但是他人的selfForbid和adminForbid要考虑
 	 * <pre>
@@ -114,6 +114,7 @@ public class ShareService extends AbstractService {
 	}
 	
 	/**
+	 * 获取单个分享的详细信息
 	 * int shareId
 	 * @param shareId int, !nullable
 	 * @return
@@ -178,6 +179,7 @@ public class ShareService extends AbstractService {
 	}
 	
 	/**
+	 * 删除分享
 	 * @param shareId int !nullable
 	 * @param physically boolean nullable default false 是否物理删除
 	 * <pre>
@@ -213,7 +215,7 @@ public class ShareService extends AbstractService {
 	}
 	
 	/**
-	 * 
+	 * 发布分享
 	 * @param content String, nullable
 	 * @param pictureIds int[], nullable
 	 * @return
@@ -271,9 +273,8 @@ public class ShareService extends AbstractService {
 		}
 	}
 	
-	
 	/**
-	 * 获取当前用户点赞过的分享
+	 * 获取评论过的分享
 	 * @param start int, nullable 
 	 * @param limit int, nullable
 	 * @return
@@ -293,6 +294,11 @@ public class ShareService extends AbstractService {
 		}
 	}
 
+	/**
+	 * 获取点赞过的分享
+	 * @return
+	 * @throws ServiceException
+	 */
 	@Procedure(name="getLikedShares", level=PrivilegeLevel.LOGGED)
 	public String getLikedShares() throws ServiceException {
 		try {

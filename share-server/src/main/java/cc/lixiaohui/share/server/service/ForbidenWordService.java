@@ -30,7 +30,8 @@ public class ForbidenWordService extends AbstractService {
 	}
 
 	/**
-	 * int start, int limit 获取所有敏感词汇集合
+	 * 获取敏感词汇集合
+	 * int start, int limit 
 	 * 
 	 * <pre>
 	 * result json format:
@@ -77,6 +78,7 @@ public class ForbidenWordService extends AbstractService {
 	}
 
 	/**
+	 * 获取逻辑删除的敏感词
 	 * int start, int limit
 	 * @param start
 	 * @param limit
@@ -105,6 +107,7 @@ public class ForbidenWordService extends AbstractService {
 	}
 
 	/**
+	 * 逻辑删除敏感词
 	 * int id
 	 * {}
 	 * 
@@ -140,6 +143,7 @@ public class ForbidenWordService extends AbstractService {
 	}
 
 	/**
+	 * 恢复已逻辑删除的敏感词
 	 * int id
 	 * @param id
 	 * @return

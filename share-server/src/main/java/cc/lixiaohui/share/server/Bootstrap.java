@@ -19,7 +19,8 @@ public class Bootstrap {
 	private static final Logger logger = LoggerFactory.getLogger(Bootstrap.class);
 	
 	public void start(String[] args) throws ConfigException, LifeCycleException {
-		String confPath = FileUtils.concatPath(findServerHome(), SystemRuntime.DIR_CONF, SystemRuntime.CONF_NAME);
+		String confPath = FileUtils.concatPath(findServerHome(), 
+				SystemRuntime.DIR_CONF, SystemRuntime.CONF_NAME);
 		ServerConfig config = new ServerConfigLoader(confPath).load();
 		ShareServer server = new ShareServer(config);
 		try {

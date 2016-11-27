@@ -39,6 +39,7 @@ public class UserService extends AbstractService{
 	}
 
 	/**
+	 * 获取用户详细信息
 	 * @param userId int, !nullable
 	 * @return
 	 * <pre>
@@ -85,6 +86,39 @@ public class UserService extends AbstractService{
 	}
 
 	/**
+	 * 获取用户列表
+	 * @param start int, nullable
+	 * @param limit int, nullable
+	 * @return
+	 * @throws ServiceException
+	 */
+	@Procedure(name="getUsers", level=PrivilegeLevel.ADMIN)
+	public String getUsers() throws ServiceException {
+		try {
+			int start = getIntParameter("start");
+			int limit = getIntParameter("limit");
+			
+			UserDao dao = daofactory.getDao(UserDao.class);
+			List<User> users = dao.listSome(start, limit);
+			return JSONUtils.newSuccessfulResult("获取用户成功", packUsersResult(users));
+		} catch (Throwable cause) {
+			logger.error("{}", cause);
+			return JSONUtils.newFailureResult(cause);
+		}
+	}
+	
+	private JSONObject packUsersResult(List<User> users) {
+		JSONArray items = new JSONArray();
+		for (User user : users) {
+			items.add(packSingleUser(user));
+		}
+		JSONObject result = new JSONObject();
+		result.put("count", users.size());
+		result.put("list", items);
+		return result;
+	}
+
+	/**
 	 * 搜索用户
 	 * 
 	 * @param keyword string, !nullable
@@ -109,6 +143,7 @@ public class UserService extends AbstractService{
 	}
 	
 	/**
+	 * 更新用户信息
 	 * <b><em>Node: need to be logged to perform this operation</em><b>
 	 * 
 	 * @param password String, nullable
@@ -310,6 +345,7 @@ public class UserService extends AbstractService{
 	}
 	
 	/**
+	 * 处理好友请求
 	 * @param friendShipId int, !nullable
 	 * @param accept boolean, !nullable
 	 * @throws ServiceException
@@ -373,23 +409,9 @@ public class UserService extends AbstractService{
 			return JSONUtils.newFailureResult(cause);
 		}
 	}
-	
-	private JSONObject packFriendShipResp(FriendShip fs, boolean accept) {
-		JSONObject result = new JSONObject();
-		result.put("accept", accept);
-		result.put("friendShipId", fs.getId());
-		result.put("user", packSingleUser(fs.getAskedUser()));
-		return result;
-	}
-
-	private JSONObject packAddFriendPush(FriendShip fs) {
-		JSONObject result = new JSONObject();
-		result.put("friendShipId", fs.getId());
-		result.put("user", packSingleUser(fs.getAskUser()));
-		return result;
-	}
 
 	/**
+	 * 获取好友
 	 * @param start int, nullable
 	 * @param limit int, nullable
 	 * <pre>
@@ -450,6 +472,7 @@ public class UserService extends AbstractService{
 	}
 	
 	/**
+	 * 删除好友
 	 * @param friendShipId int, !nullable
 	 * @return {}
 	 */
@@ -548,4 +571,18 @@ public class UserService extends AbstractService{
 		return result;
 	}
 
+	private JSONObject packFriendShipResp(FriendShip fs, boolean accept) {
+		JSONObject result = new JSONObject();
+		result.put("accept", accept);
+		result.put("friendShipId", fs.getId());
+		result.put("user", packSingleUser(fs.getAskedUser()));
+		return result;
+	}
+
+	private JSONObject packAddFriendPush(FriendShip fs) {
+		JSONObject result = new JSONObject();
+		result.put("friendShipId", fs.getId());
+		result.put("user", packSingleUser(fs.getAskUser()));
+		return result;
+	}
 }

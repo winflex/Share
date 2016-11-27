@@ -175,7 +175,7 @@ public class AbstractFuture<V> implements IFuture<V> {
 						}
 					}
 				}
-			}
+			}	
 			if (interrupted) {
 				// 为什么这里要设中断标志位？因为从wait方法返回后, 中断标志是被clear了的, 
 				// 这里重新设置以便让其它代码知道这里被中断了。

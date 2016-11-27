@@ -13,9 +13,6 @@ import cc.lixiaohui.share.server.config.ServerConfig;
  */
 public class ServerConfigRuleSet extends RuleSetSupport {
 
-	/* 
-	 * @see org.apache.commons.digester3.RuleSet#addRuleInstances(org.apache.commons.digester3.Digester)
-	 */
 	@Override
 	public void addRuleInstances(Digester digester) {
 		digester.addRule(RULE_SERVER, createObjectCreateRule(ServerConfig.class));

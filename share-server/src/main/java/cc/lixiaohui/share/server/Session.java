@@ -14,23 +14,28 @@ import cc.lixiaohui.share.util.TimeUtils;
  */
 public class Session {
 	
+	/**会话标识*/
 	private final long sessionId;
 	
+	/** 是否登陆*/
 	private volatile boolean logined;
 	
-	/** if {@link #logined} is false, this field would be null */
+	/** 会话对应的用户 */
 	private volatile User user;
 	
+	/** 连接 */
 	private ChannelHandlerContext context;
 	
+	/** 会话创建时间 */
 	private final long createTime;
 	
-	/** lastest read or write time, used for checks of session timeout */
+	/** 最后IO时间, 用于控制session timeout */
 	private volatile long lastAccessTime;
 
-	/** {@link SessionManager} which this session was bound to */
+	/** 管理该session的sessionmanager */
 	private SessionManager sessionManager;
 	
+	/** 是否完成握手 */
 	private volatile boolean handshaked;
 	
 	/** heartbeat miss times */
