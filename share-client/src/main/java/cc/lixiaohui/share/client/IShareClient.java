@@ -805,6 +805,17 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	String deleteForbidendWord(int wordId) throws ClientException;
 	
 	/**
+	 * 添加敏感词
+	 * @param content
+	 * @return
+	 * {
+	 * 	"id":111
+	 * }
+	 * @throws ClientException
+	 */
+	String addForbidenWord(String content) throws ClientException;
+	
+	/**
 	 * 恢复删除的敏感词
 	 * @param wordId 敏感词ID
 	 * @return 

@@ -9,8 +9,8 @@ import org.slf4j.LoggerFactory;
 
 import cc.lixiaohui.share.protocol.HeartbeatMessage;
 import cc.lixiaohui.share.protocol.Message;
-import cc.lixiaohui.share.server.SessionManager;
-import cc.lixiaohui.share.server.config.SocketConfig;
+import cc.lixiaohui.share.server.core.SessionManager;
+import cc.lixiaohui.share.server.core.config.SocketConfig;
 
 /**
  * 心跳处理器

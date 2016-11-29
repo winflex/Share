@@ -235,5 +235,114 @@ public class ClientTest {
 		System.in.read();
 	}
 	
+	@Test
+	public void getForbidenWords() throws Exception {
+		final IShareClient client = ShareClientFactory.newInstance("", 8888);
+		client.start();
+		client.addMessageListener(l);
+		
+		String json = client.login("李小辉", "lixiaohui");
+		System.out.println(json);
+		
+		json = client.getForbidenWords(0, 20);
+		System.out.println(json);
+		System.in.read();
+	}
+	
+	@Test
+	public void publishShare() throws Exception {
+		final IShareClient client = ShareClientFactory.newInstance("", 8888);
+		client.start();
+		client.addMessageListener(l);
+		
+		String json = client.login("李小辉", "lixiaohui");
+		System.out.println(json);
+		
+		json = client.publishShare("暴的电影", new int[0]);
+		System.out.println(json);
+		System.in.read();
+	}
+	
+	@Test
+	public void addForbidenWord() throws Exception {
+		final IShareClient client = ShareClientFactory.newInstance("", 8888);
+		client.start();
+		client.addMessageListener(l);
+		
+		String json = client.login("李小辉", "lixiaohui");
+		System.out.println(json);
+		
+		json = client.addForbidenWord("恶心");
+		System.out.println(json);
+		System.in.read();
+	}
+	
+	@Test
+	public void deleteForbidenWord() throws Exception {
+		final IShareClient client = ShareClientFactory.newInstance("", 8888);
+		client.start();
+		client.addMessageListener(l);
+		
+		String json = client.login("李小辉", "lixiaohui");
+		System.out.println(json);
+		
+		json = client.deleteForbidendWord(4);
+		System.out.println(json);
+		System.in.read();
+	}
+	
+	@Test
+	public void getForbidenWord() throws Exception {
+		final IShareClient client = ShareClientFactory.newInstance("", 8888);
+		client.start();
+		client.addMessageListener(l);
+		
+		String json = client.login("李小辉", "lixiaohui");
+		System.out.println(json);
+		
+		json = client.getDeletedForbidenWords(0, 20);
+		System.out.println(json);
+		
+		json = client.getForbidenWords(0, 20);
+		System.out.println(json);
+		System.in.read();
+	}
+	
+	@Test
+	public void forbidenWordTest() throws Exception {
+		final IShareClient client = ShareClientFactory.newInstance("", 8888);
+		client.start();
+		client.addMessageListener(l);
+		
+		String json = client.login("李小辉", "lixiaohui");
+		System.out.println(json);
+		
+		json = client.addForbidenWord("国歌");
+		int id = JSON.parseObject(json).getJSONObject("result").getIntValue("id");
+		System.out.println(json);
+		
+		json = client.getForbidenWords(0, 20);
+		System.out.println(json);
+		
+		json = client.publishShare("我拍的国歌的", new int[0]);
+		
+		System.out.println(json); // reject
+		
+		json = client.deleteForbidendWord(id);
+		System.out.println(json);
+		
+		json = client.publishShare("我拍的国歌的", new int[0]);
+		System.out.println(json); // ok
+		
+		json = client.recoverForbidendWord(id);
+		System.out.println(json);
+		
+		json = client.publishShare("我国歌的", new int[0]);
+		System.out.println(json); // reject
+		
+		json = client.deleteForbidendWord(id);
+		System.in.read();
+	}
+	
 	
 }

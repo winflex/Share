@@ -6,8 +6,8 @@ import org.slf4j.LoggerFactory;
 import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
-import cc.lixiaohui.share.server.Session;
-import cc.lixiaohui.share.server.SessionManager;
+import cc.lixiaohui.share.server.core.Session;
+import cc.lixiaohui.share.server.core.SessionManager;
 import cc.lixiaohui.share.util.TimeUtils;
 
 /**

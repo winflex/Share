@@ -1,9 +1,9 @@
-package cc.lixiaohui.share.server.config;
+package cc.lixiaohui.share.server.core.config;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cc.lixiaohui.share.server.config.util.Property;
+import cc.lixiaohui.share.server.core.config.util.Property;
 
 /**
  * 数据库相关配置

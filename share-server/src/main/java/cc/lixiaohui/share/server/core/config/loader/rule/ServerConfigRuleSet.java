@@ -1,8 +1,8 @@
-package cc.lixiaohui.share.server.config.loader.rule;
+package cc.lixiaohui.share.server.core.config.loader.rule;
 
 import org.apache.commons.digester3.Digester;
 
-import cc.lixiaohui.share.server.config.ServerConfig;
+import cc.lixiaohui.share.server.core.config.ServerConfig;
 
 
 /**

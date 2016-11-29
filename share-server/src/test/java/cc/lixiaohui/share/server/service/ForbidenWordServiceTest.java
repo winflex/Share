@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import cc.lixiaohui.share.server.SystemRuntime;
+import cc.lixiaohui.share.server.core.SystemRuntime;
 
 /**
  * @author lixiaohui
@@ -50,5 +50,6 @@ public class ForbidenWordServiceTest {
 		String json = svc.deleteForbidenWord();
 		System.out.println(json);
 	}
+	
 	
 }

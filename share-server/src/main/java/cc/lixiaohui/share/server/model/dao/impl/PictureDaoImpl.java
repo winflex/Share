@@ -1,5 +1,6 @@
 package cc.lixiaohui.share.server.model.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -15,11 +16,21 @@ import cc.lixiaohui.share.server.model.dao.util.DaoException;
  */
 public class PictureDaoImpl extends AbstractDao<Picture> implements PictureDao {
 
+	static final String EMPTY_STRING = "";
+	
+	static final List<Picture> EMPTY_LIST = new ArrayList<Picture>();
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Picture> getPictures(int[] ids) throws DaoException {
 		Session session = getSession();
-		return session.createQuery("from Picture p where p.id in " + "(" + concatId(ids) +")").list();
+		String idString = concatId(ids);
+		if (EMPTY_STRING.equals(idString)) {
+			return EMPTY_LIST;
+		} else {
+			return session.createQuery("from Picture p where p.id in " + "(" + concatId(ids) +")").list();
+		}
+		
 	}
 
 	
@@ -28,6 +39,9 @@ public class PictureDaoImpl extends AbstractDao<Picture> implements PictureDao {
 		for (int id : ids) {
 			sb.append(id).append(',');
 		}
-		return sb.subSequence(0, sb.length() - 1).toString();
+		if (ids.length > 0) {
+			return sb.subSequence(0, sb.length() - 1).toString();
+		}
+		return sb.toString();
 	}
 }

@@ -33,7 +33,9 @@ public enum ErrorCode {
 	
 	NAME_EXIST(10),
 	
-	WRONG_NAME_OR_PASSWD(11);
+	WRONG_NAME_OR_PASSWD(11),
+	
+	CONTAIN_FORBIDEN_WORD(12);
 	
 	private int value;
 	

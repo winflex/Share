@@ -8,8 +8,8 @@ import org.junit.Test;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 
-import cc.lixiaohui.share.server.Session;
-import cc.lixiaohui.share.server.SystemRuntime;
+import cc.lixiaohui.share.server.core.Session;
+import cc.lixiaohui.share.server.core.SystemRuntime;
 import cc.lixiaohui.share.server.service.util.ServiceException;
 
 /**

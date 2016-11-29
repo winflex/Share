@@ -3,7 +3,7 @@ package cc.lixiaohui.share.server.service;
 import java.util.List;
 import java.util.Map;
 
-import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.core.Session;
 import cc.lixiaohui.share.server.model.bean.ForbidenWord;
 import cc.lixiaohui.share.server.model.dao.ForbidenWordDao;
 import cc.lixiaohui.share.server.service.util.PrivilegeLevel;
@@ -116,22 +116,18 @@ public class ForbidenWordService extends AbstractService {
 	 */
 	@Procedure(name = "deleteForbidenWord", level=PrivilegeLevel.ADMIN)
 	public String deleteForbidenWord() {
-		
 		int id;
 		try {
-			id = getIntParameter("id");
+			id = getIntParameter("wordId");
 		} catch (Throwable t) {
 			return JSONUtils.newFailureResult(t.getMessage(), ErrorCode.PARAMETER, t);
 		}
-		
-		/*if (!session.isLogined()) {
-			return JSONUtils.newFailureResult("无权限执行此操作", ErrorCode.AUTH, "");
-		}*/
 		
 		try {
 			ForbidenWordDao dao = daofactory.getDao(ForbidenWordDao.class);
 			int result = dao.vitualDelete(id);
 			if (result > 0) {
+				session.getSessionManager().getWordFilter().getHolder().unableWord(id);
 				return JSONUtils.newSuccessfulResult("删除成功");
 			} else {
 				return JSONUtils.newFailureResult("删除失败", ErrorCode.UNKOWN, "");
@@ -152,7 +148,7 @@ public class ForbidenWordService extends AbstractService {
 	public String recoverForbidenWord() {
 		int id;
 		try {
-			id = getIntParameter("id");
+			id = getIntParameter("wordId");
 		} catch (Throwable t) {
 			return JSONUtils.newFailureResult(t.getMessage(), ErrorCode.PARAMETER, t);
 		}
@@ -161,6 +157,7 @@ public class ForbidenWordService extends AbstractService {
 			ForbidenWordDao dao = daofactory.getDao(ForbidenWordDao.class);
 			int result = dao.recover(id);
 			if (result > 0) {
+				session.getSessionManager().getWordFilter().getHolder().enableWord(id);
 				return JSONUtils.newSuccessfulResult("恢复成功");
 			} else {
 				return JSONUtils.newFailureResult("恢复失败", ErrorCode.UNKOWN, "");
@@ -168,6 +165,28 @@ public class ForbidenWordService extends AbstractService {
 		} catch (Exception e) {
 			logger.error("{}", e);
 			return JSONUtils.newFailureResult(e.getMessage(), ErrorCode.DATABASE, e);
+		}
+	}
+	
+	@Procedure(name = "addForbidenWord", level=PrivilegeLevel.ADMIN)
+	public String addForbidenWord() throws ServiceException {
+		try {
+			String content = getStringParameter("content");
+			ForbidenWordDao dao = daofactory.getDao(ForbidenWordDao.class);
+			ForbidenWord word = new ForbidenWord(content);
+			if (dao.add(word) > 0) {
+				JSONObject result = new JSONObject();
+				result.put("id", word.getId());
+				
+				session.getSessionManager().getWordFilter().getHolder().addWord(word);
+				
+				return JSONUtils.newSuccessfulResult("添加成功", result);
+			} else {
+				return JSONUtils.newFailureResult("添加失败", ErrorCode.DATABASE, "");
+			}
+		} catch (Throwable cause) {
+			logger.error("{}", cause);
+			return JSONUtils.newFailureResult(cause);
 		}
 	}
 	

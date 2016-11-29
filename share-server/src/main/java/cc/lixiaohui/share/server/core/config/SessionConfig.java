@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.server.config;
+package cc.lixiaohui.share.server.core.config;
 
 /**
  * 会话配置

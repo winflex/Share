@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.server;
+package cc.lixiaohui.share.server.core;
 
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -13,18 +13,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import cc.lixiaohui.share.protocol.PushMessage;
-import cc.lixiaohui.share.server.config.SessionConfig;
+import cc.lixiaohui.share.server.core.config.SessionConfig;
 import cc.lixiaohui.share.util.TimeUtils;
 import cc.lixiaohui.share.util.future.AbstractFuture;
 import cc.lixiaohui.share.util.future.IFuture;
 import cc.lixiaohui.share.util.future.IFutureListener;
+import cc.lixiaohui.share.util.lifecycle.AbstractLifeCycle;
+import cc.lixiaohui.share.util.lifecycle.LifeCycleException;
 
 /**
  *  A SessionManager manage all {@link Session} it holds
  * @author lixiaohui
  * @date 2016年11月7日 下午11:36:13
  */
-public class SessionManager {
+public class SessionManager extends AbstractLifeCycle{
 	
 	public static final AttributeKey<Session> ATTR_SESSION = new AttributeKey<Session>("Session");
 	
@@ -37,6 +39,8 @@ public class SessionManager {
 	 */
 	private Map<Long, Session> sessions = new ConcurrentHashMap<Long, Session>();
 	
+	private ForbidenWordFilter wordFilter;
+	
 	private ScheduledExecutorService executor;
 	
 	private static final Logger logger = LoggerFactory.getLogger(SessionManager.class);
@@ -44,6 +48,13 @@ public class SessionManager {
 	public SessionManager(SessionConfig config, ScheduledExecutorService executor) {
 		this.sessionConfig = config;
 		this.executor = executor;
+	}
+	
+	@Override
+	protected void initInternal() throws LifeCycleException {
+		ForbidenWordsHolder holder = new ForbidenWordsHolder();
+		holder.init();
+		wordFilter = new ForbidenWordFilter(holder);
 	}
 	
 	/**
@@ -199,6 +210,11 @@ public class SessionManager {
 		return sessionConfig;
 	}
 	
+	public ForbidenWordFilter getWordFilter() {
+		return wordFilter;
+	}
+
+
 	/**
 	 * 会话超时探测任务
 	 */
@@ -236,4 +252,6 @@ public class SessionManager {
 			setSuccess(count);
 		}
 	}
+	
+	
 }

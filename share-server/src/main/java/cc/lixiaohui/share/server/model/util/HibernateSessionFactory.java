@@ -7,8 +7,8 @@ import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cc.lixiaohui.share.server.config.DatabaseConfig;
-import cc.lixiaohui.share.server.config.util.Property;
+import cc.lixiaohui.share.server.core.config.DatabaseConfig;
+import cc.lixiaohui.share.server.core.config.util.Property;
 
 /**
  * HibernateSessionFactory工厂, 单例, 线程安全

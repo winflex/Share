@@ -5,7 +5,7 @@ import java.util.Map;
 
 import cc.lixiaohui.share.protocol.PushMessage;
 import cc.lixiaohui.share.protocol.PushMessage.Type;
-import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.core.Session;
 import cc.lixiaohui.share.server.model.bean.FriendShip;
 import cc.lixiaohui.share.server.model.bean.Picture;
 import cc.lixiaohui.share.server.model.bean.Role;

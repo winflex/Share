@@ -11,7 +11,7 @@ import cc.lixiaohui.share.protocol.CSRequestMessage;
 import cc.lixiaohui.share.protocol.CSResponseMessage;
 import cc.lixiaohui.share.protocol.Message;
 import cc.lixiaohui.share.server.AbstractShareServer;
-import cc.lixiaohui.share.server.SessionManager;
+import cc.lixiaohui.share.server.core.SessionManager;
 import cc.lixiaohui.share.server.service.util.annotation.Procedure;
 import cc.lixiaohui.share.util.ErrorCode;
 import cc.lixiaohui.share.util.JSONUtils;

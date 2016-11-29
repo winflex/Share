@@ -3,7 +3,7 @@ package cc.lixiaohui.share.server.service;
 import java.util.List;
 import java.util.Map;
 
-import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.core.Session;
 import cc.lixiaohui.share.server.model.bean.Sorting;
 import cc.lixiaohui.share.server.model.dao.SortingDao;
 import cc.lixiaohui.share.server.service.util.PrivilegeLevel;

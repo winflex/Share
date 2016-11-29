@@ -6,7 +6,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.core.Session;
 import cc.lixiaohui.share.server.model.dao.BaseDao;
 import cc.lixiaohui.share.server.model.util.DaoFactory;
 

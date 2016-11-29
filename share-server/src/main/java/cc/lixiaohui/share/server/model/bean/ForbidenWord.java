@@ -12,6 +12,12 @@ public class ForbidenWord {
 	
 	private boolean deleted;
 
+	
+	public ForbidenWord(){}
+	
+	public ForbidenWord(String content){
+		this.content = content;
+	}
 	/**
 	 * @return the id
 	 */
@@ -56,6 +62,7 @@ public class ForbidenWord {
 		return new StringBuilder().append("ForbidenWord[")
 				.append("id").append("=").append(id)
 				.append(",content").append("=").append(content)
+				.append(",deleted").append("=").append(deleted)
 				.append("]").toString();
 	}
 }

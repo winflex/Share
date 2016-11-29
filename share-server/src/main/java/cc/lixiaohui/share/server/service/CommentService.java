@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import cc.lixiaohui.share.protocol.PushMessage;
-import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.core.Session;
 import cc.lixiaohui.share.server.model.bean.Comment;
 import cc.lixiaohui.share.server.model.bean.Share;
 import cc.lixiaohui.share.server.model.bean.User;

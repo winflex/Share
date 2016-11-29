@@ -308,7 +308,7 @@ public class ShareClientImpl extends AbstractShareClient {
 			@Param(index = 1, name = "limit")})
 	@Override
 	public String getForbidenWords(int start, int limit) throws ClientException {
-		CSRequestMessage m = CSRequestMessage.builder().service("ForbidenWordService").procedure("getSortings")
+		CSRequestMessage m = CSRequestMessage.builder().service("ForbidenWordService").procedure("getForbidenWords")
 				.parameter("start", start).parameter("limit", limit).build();
 		return syncSend(m);
 	}
@@ -327,7 +327,7 @@ public class ShareClientImpl extends AbstractShareClient {
 			@Param(index = 0, name = "wordId")})
 	@Override
 	public String deleteForbidendWord(int wordId) throws ClientException {
-		CSRequestMessage m = CSRequestMessage.builder().service("ForbidenWordService").procedure("deleteForbidendWord")
+		CSRequestMessage m = CSRequestMessage.builder().service("ForbidenWordService").procedure("deleteForbidenWord")
 				.parameter("wordId", wordId).build();
 		return syncSend(m);
 	}
@@ -336,7 +336,7 @@ public class ShareClientImpl extends AbstractShareClient {
 			@Param(index = 0, name = "wordId")})
 	@Override
 	public String recoverForbidendWord(int wordId) throws ClientException {
-		CSRequestMessage m = CSRequestMessage.builder().service("ForbidenWordService").procedure("recoverForbidendWord")
+		CSRequestMessage m = CSRequestMessage.builder().service("ForbidenWordService").procedure("recoverForbidenWord")
 				.parameter("wordId", wordId).build();
 		return syncSend(m);
 	}
@@ -464,6 +464,13 @@ public class ShareClientImpl extends AbstractShareClient {
 	public String unshield(int userId) throws ClientException {
 		CSRequestMessage m = CSRequestMessage.builder().service("UserService").procedure("unshield")
 				.parameter("userId", userId).build();
+		return syncSend(m);
+	}
+	
+	@Override
+	public String addForbidenWord(String content) throws ClientException {
+		CSRequestMessage m = CSRequestMessage.builder().service("ForbidenWordService").procedure("addForbidenWord")
+				.parameter("content", content).build();
 		return syncSend(m);
 	}
 }

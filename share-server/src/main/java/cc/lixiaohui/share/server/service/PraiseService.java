@@ -3,7 +3,7 @@ package cc.lixiaohui.share.server.service;
 import java.util.Map;
 
 import cc.lixiaohui.share.protocol.PushMessage;
-import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.core.Session;
 import cc.lixiaohui.share.server.model.bean.Praise;
 import cc.lixiaohui.share.server.model.bean.Share;
 import cc.lixiaohui.share.server.model.dao.PraiseDao;

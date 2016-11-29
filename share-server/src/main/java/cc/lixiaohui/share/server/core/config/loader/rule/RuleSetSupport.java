@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.server.config.loader.rule;
+package cc.lixiaohui.share.server.core.config.loader.rule;
 
 import org.apache.commons.digester3.BeanPropertySetterRule;
 import org.apache.commons.digester3.CallMethodRule;

@@ -13,7 +13,7 @@ import cc.lixiaohui.share.protocol.CSCResponseMessage;
 import cc.lixiaohui.share.protocol.CSRequestMessage;
 import cc.lixiaohui.share.protocol.CSResponseMessage;
 import cc.lixiaohui.share.protocol.Message;
-import cc.lixiaohui.share.server.handler.message.IMessageHandler;
+import cc.lixiaohui.share.server.IMessageHandler;
 
 /**
  * 业务处理器

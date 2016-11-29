@@ -1,6 +1,6 @@
 package cc.lixiaohui.share.server.service.util;
 
-import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.core.Session;
 
 /**
  * 定义服务操作所需权限等级

@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.server;
+package cc.lixiaohui.share.server.core;
 
 import cc.lixiaohui.share.util.FileUtils;
 

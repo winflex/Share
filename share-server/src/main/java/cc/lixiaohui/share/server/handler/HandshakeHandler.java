@@ -16,7 +16,7 @@ import cc.lixiaohui.share.protocol.HandShakeRequestMessage;
 import cc.lixiaohui.share.protocol.HandshakeResponseMessage;
 import cc.lixiaohui.share.protocol.Message;
 import cc.lixiaohui.share.server.AbstractShareServer;
-import cc.lixiaohui.share.server.SessionManager;
+import cc.lixiaohui.share.server.core.SessionManager;
 
 /**
  * 握手处理

@@ -5,8 +5,8 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import cc.lixiaohui.share.server.Session;
-import cc.lixiaohui.share.server.SystemRuntime;
+import cc.lixiaohui.share.server.core.Session;
+import cc.lixiaohui.share.server.core.SystemRuntime;
 import cc.lixiaohui.share.server.service.util.ServiceException;
 
 /**

@@ -35,13 +35,14 @@ import cc.lixiaohui.share.protocol.Message;
 import cc.lixiaohui.share.protocol.codec.MessageDecoder;
 import cc.lixiaohui.share.protocol.codec.MessageEncoder;
 import cc.lixiaohui.share.protocol.codec.serialize.factory.ISerializeFactory;
-import cc.lixiaohui.share.server.config.ServerConfig;
+import cc.lixiaohui.share.server.core.Session;
+import cc.lixiaohui.share.server.core.SessionManager;
+import cc.lixiaohui.share.server.core.config.ServerConfig;
 import cc.lixiaohui.share.server.handler.AuthFilter;
 import cc.lixiaohui.share.server.handler.HandshakeHandler;
 import cc.lixiaohui.share.server.handler.HeartbeatHandler;
 import cc.lixiaohui.share.server.handler.MessageDispatcher;
 import cc.lixiaohui.share.server.handler.SessionHandler;
-import cc.lixiaohui.share.server.handler.message.IMessageHandler;
 import cc.lixiaohui.share.server.model.util.HibernateSessionFactory;
 import cc.lixiaohui.share.server.service.AbstractService;
 import cc.lixiaohui.share.server.service.util.AnnotationUtils;
@@ -143,6 +144,7 @@ public abstract class AbstractShareServer extends AbstractLifeCycle implements I
 
 	private void initSessionManager() throws LifeCycleException {
 		sessionManager = new SessionManager(config.getSessionConfig(), executor);
+		sessionManager.init();
 	}
 
 	/**
@@ -240,6 +242,7 @@ public abstract class AbstractShareServer extends AbstractLifeCycle implements I
 	
 	@Override
 	protected void startInternal() throws LifeCycleException {
+		sessionManager.start();
 		String bindAddress = config.getSocketConfig().getBindAddress();
 		int port = config.getSocketConfig().getPort();
 		try {

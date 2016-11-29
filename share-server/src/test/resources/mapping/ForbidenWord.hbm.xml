@@ -4,7 +4,9 @@
 
 <hibernate-mapping package="cc.lixiaohui.share.server.model.bean">
 	<class name="ForbidenWord" table="forbidenword">
-		<id name="id" type="int" column="id" />
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
 		<property name="content" type="java.lang.String" column="content" />
 		<property name="deleted" type="boolean" column="deleted" />
 	</class>

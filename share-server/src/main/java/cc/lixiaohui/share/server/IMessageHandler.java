@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.server.handler.message;
+package cc.lixiaohui.share.server;
 
 import io.netty.channel.ChannelHandlerContext;
 import cc.lixiaohui.share.protocol.CSCRequestMessage;

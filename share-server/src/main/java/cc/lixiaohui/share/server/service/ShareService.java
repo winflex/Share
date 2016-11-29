@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import cc.lixiaohui.share.protocol.PushMessage;
-import cc.lixiaohui.share.server.Session;
+import cc.lixiaohui.share.server.core.Session;
 import cc.lixiaohui.share.server.model.bean.Comment;
 import cc.lixiaohui.share.server.model.bean.Picture;
 import cc.lixiaohui.share.server.model.bean.Praise;
@@ -239,6 +239,11 @@ public class ShareService extends AbstractService {
 			
 			if (content.equals("") && pictureIds.length == 0) {
 				return JSONUtils.newFailureResult("不能发布空的分享", ErrorCode.UNKOWN, "");
+			}
+			
+			// 是否有敏感词
+			if (!session.getSessionManager().getWordFilter().filter(content)) {
+				return JSONUtils.newFailureResult("分享包含敏感词汇", ErrorCode.CONTAIN_FORBIDEN_WORD, "");
 			}
 			
 			UserDao userDao = daofactory.getDao(UserDao.class);

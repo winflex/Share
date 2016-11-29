@@ -1,4 +1,4 @@
-package cc.lixiaohui.share.server;
+package cc.lixiaohui.share.server.core;
 
 import io.netty.channel.ChannelHandlerContext;
 import cc.lixiaohui.share.server.model.bean.Role;

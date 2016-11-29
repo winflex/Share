@@ -2,8 +2,8 @@ package cc.lixiaohui.share.server.service;
 
 import java.util.Map;
 
-import cc.lixiaohui.share.server.Session;
-import cc.lixiaohui.share.server.SystemRuntime;
+import cc.lixiaohui.share.server.core.Session;
+import cc.lixiaohui.share.server.core.SystemRuntime;
 import cc.lixiaohui.share.server.model.bean.Picture;
 import cc.lixiaohui.share.server.model.dao.PictureDao;
 import cc.lixiaohui.share.server.model.dao.util.DaoException;
