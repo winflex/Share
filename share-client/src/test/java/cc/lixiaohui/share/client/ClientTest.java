@@ -201,4 +201,39 @@ public class ClientTest {
 		System.in.read();
 	}
 	
+	@Test
+	public void selfShield() throws Exception {
+		final IShareClient client = ShareClientFactory.newInstance("", 8888);
+		client.start();
+		client.addMessageListener(l);
+		
+		String json = client.login("小王", "xiaowang");
+		System.out.println(json);
+		
+		json = client.shield(7);
+		System.out.println(json);
+		
+		json = client.unshield(7);
+		System.out.println(json);
+		System.in.read();
+	}
+	
+	@Test
+	public void adminShield() throws Exception {
+		final IShareClient client = ShareClientFactory.newInstance("", 8888);
+		client.start();
+		client.addMessageListener(l);
+		
+		String json = client.login("李小辉", "lixiaohui");
+		System.out.println(json);
+		
+		json = client.shield(7);
+		System.out.println(json);
+		
+		json = client.unshield(7);
+		System.out.println(json);
+		System.in.read();
+	}
+	
+	
 }

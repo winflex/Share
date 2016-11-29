@@ -19,20 +19,24 @@ import cc.lixiaohui.share.protocol.codec.serialize.factory.ISerializeFactory;
  */
 public class PipelineTest {
 	
-	@SuppressWarnings("unused")
 	@Test
 	public void test() throws IOException {
 		final ISerializeFactory factory = new HessianSerializeFactory();
-		EmbeddedChannel channel = new EmbeddedChannel(new MessageDecoder(factory), new MessageEncoder(factory));
-		
-		HandShakeRequestMessage message = HandShakeRequestMessage.builder().reconnectInterval(1).reconnectTimes(1).requestTimeout(1).heartbeatInterval(1).build();
-		
+		EmbeddedChannel channel = new EmbeddedChannel(new MessageDecoder(factory), 
+				new MessageEncoder(factory));
+		HandShakeRequestMessage message = HandShakeRequestMessage.builder()
+				.reconnectInterval(1).reconnectTimes(1)
+				.requestTimeout(1).heartbeatInterval(1).build();
 		channel.writeOutbound(message);
 		ByteBuf buf =  (ByteBuf) channel.readOutbound();
-		
 		channel.writeInbound(buf);
-		Object o = channel.readInbound();
-		System.out.println();
+		Object object = channel.readInbound();
+		assert object instanceof HandShakeRequestMessage;
+		HandShakeRequestMessage m = (HandShakeRequestMessage) object;
+		assert message.getId() == m.getId();
+		assert message.getHeartbeatInterval() == m.getHeartbeatInterval();
+		assert message.getReconnectInterval() == m.getReconnectInterval();
+		assert message.getRequestTimeout() == m.getRequestTimeout();
 	}
 	
 }
