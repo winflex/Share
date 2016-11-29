@@ -158,6 +158,16 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 */
 	String shield(int userId) throws ClientException;
 	
+	
+	/**
+	 * 取消隔离某用户
+	 * @param userId 用户ID
+	 * @return json, result内容如下:
+	 * {}
+	 * @throws ClientException
+	 */
+	String unshield(int userId) throws ClientException; 
+	
 	/**
 	 * 根据关键字搜索用户(添加朋友时会用到)
 	 * @param keyword 用户名搜索关键字

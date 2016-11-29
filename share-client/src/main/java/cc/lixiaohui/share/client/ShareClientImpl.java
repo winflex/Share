@@ -459,4 +459,11 @@ public class ShareClientImpl extends AbstractShareClient {
 				.parameter("limit", limit).build();
 		return syncSend(m);
 	}
+	
+	@Override
+	public String unshield(int userId) throws ClientException {
+		CSRequestMessage m = CSRequestMessage.builder().service("UserService").procedure("unshield")
+				.parameter("userId", userId).build();
+		return syncSend(m);
+	}
 }

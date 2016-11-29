@@ -27,14 +27,12 @@ public class PictureServiceTest {
 	@Test
 	public void upload() throws ServiceException {
 		Session session = TestUtils.loginSession(TestUtils.newUser(2, 5));
-		
 		params.put("suffix", "jpg");
 		params.put("bytes", "起始我是我是图片".getBytes());
 		PictureService svc = new PictureService(session, params);
 		String json =  svc.uploadPicture();
 		System.out.println(json);
 	}
-	
 	@Test
 	public void delete () throws ServiceException {
 		params.put("pictureId", 9);
@@ -42,7 +40,6 @@ public class PictureServiceTest {
 		String json = svc.deletePicture();
 		System.out.println(json);
 	}
-	
 	@Test
 	public void getPictures() throws ServiceException {
 		params.put("ignoreIfNotExist", false);
@@ -50,14 +47,5 @@ public class PictureServiceTest {
 		PictureService svc = new PictureService(null, params);
 		String json = svc.getPictures();
 		System.out.println(json);
-	}
-	
-	@Test
-	public void test() {
-		JSONArray arr = new JSONArray();
-		arr.add("aaa");
-		arr.add("ccc");
-		arr.add("bbb");
-		System.out.println(JSON.toJSONString(arr));
 	}
 }

@@ -17,10 +17,12 @@ public class DecoderTest {
 	@Test
 	public void test() throws IOException {
 		ISerializeFactory factory = new HessianSerializeFactory();
-		PushMessage message = PushMessage.builder().pushData("dsa").type(PushMessage.Type.FRI_REQ).build();
+		PushMessage message = PushMessage.builder().pushData("测试数据").type(PushMessage.Type.FRI_REQ).build();
 		byte[] bytes = factory.get().serialize(message);
 		PushMessage m = factory.get().deserialize(bytes);
-		System.out.println(m);
+		assert message.getId() == m.getId();
+		assert message.getPushData().equals(m.getPushData());
+		assert message.getType().equals(m.getType());
 	}
 	
 }

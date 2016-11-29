@@ -29,8 +29,6 @@ public class SessionServiceTest {
 		String json = svc.registerAdmin();
 		System.out.println(json);
 	}
-	
-	
 	@Test
 	public void login() throws ServiceException {
 		params.put("username", "李酷酷");
@@ -39,7 +37,5 @@ public class SessionServiceTest {
 		SessionService svc = new SessionService(session, params);
 		String json = svc.login();
 		System.out.println(json);
-		
-		System.out.println(svc.logout());
 	}
 }
