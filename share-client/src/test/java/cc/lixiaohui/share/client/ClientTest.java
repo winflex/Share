@@ -3,6 +3,7 @@ package cc.lixiaohui.share.client;
 import org.junit.Test;
 
 import cc.lixiaohui.share.util.FileUtils;
+import cc.lixiaohui.share.util.lifecycle.LifeCycleException;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -344,5 +345,14 @@ public class ClientTest {
 		System.in.read();
 	}
 	
-	
+	@Test
+	public void getShares() throws Exception {
+		final IShareClient client = ShareClientFactory.newInstance("", 8888);
+		client.start();
+		client.addMessageListener(l);
+		
+		String json = client.getShares(null, -1, -1, 0, 0, 0, 20, false);
+		System.out.println(json);
+		
+	}
 }
