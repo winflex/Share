@@ -355,4 +355,15 @@ public class ClientTest {
 		System.out.println(json);
 		
 	}
+	
+	@Test
+	public void getShare() throws Exception {
+		final IShareClient client = ShareClientFactory.newInstance("", 8888);
+		client.start();
+		client.addMessageListener(l);
+		
+		String json = client.getShare(10);
+		System.out.println(json);
+		
+	}
 }

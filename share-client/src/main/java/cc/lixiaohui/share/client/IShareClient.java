@@ -282,43 +282,38 @@ public interface IShareClient extends LifeCycle, IImmediateShareClient {
 	 * @param shareId 分享ID
 	 * @return json, result内容如下:
 	 * <pre>
-	 *     {
-	 *       "id":321,                 # 分享的ID
-	 *       "userId":12,              # 所属用户ID
-	 *       "username":lixiaohui,     # 所属用户名
-	 *       "content":"bad day!!",    # 分享文字内容
-	 *       "createTime":14743432423, # 分享创建时间
-	 *       "readCount":100,			# 浏览数
-	 *       "praiseInfo":             # 点赞信息
-	 *         {
-	 *           "praiseCount":2,      # 赞的个数
-	 *           "praiseUsers":        # 所有点赞的用户
-	 *             [
-	 *               {"userId":1, "username":"李小辉"},
-	 *               {"userId":2, "username":"李大辉"}
-	 *             ]
-	 *         }
-	 *       "comments":               # 评论信息
-	 *         {
-	 *           "commentCount":1,     # 评论总数
-	 *           "commentList":
-	 *             [
-	 *               {
-	 *                 "commentId":1,             # 评论ID
-	 *                 "shareId":2,               # 所属分享的ID
-	 *                 "content":"哈哈啊哈哈",       # 评论的内容
-	 *                 "kind":1,                  # 评论的类型, 0 = 直接评论的分享, 1 = 回复别人的评论
-	 *                 "commentTime":1467326722,  # 评论时间
-	 *                 "fromUserId":1             # 评论者ID
-	 *                 "fromUsername":"lixiaohui" # 评论者用户名
-	 *                 "toUserId":2               # 被评论的用户ID
-	 *                 "toUsername":"zhangsan"    # 被评论的用户ID
-	 *               }
-	 *             ]
-	 *         }
-	 *       "pictures":[12,32,43,43]  # 分享包含的图片, 请另外使用getPicture(int pictureId)获取图片字节流
-	 *     }
-	 * }
+	    "result":{
+	        "content":"不好",
+	        "id":10,
+	        "createTime":1479452432000,
+	        "username":"李酷酷",
+	        "userId":11,
+	        "praiseInfo":{
+	            "praiseList":[
+	                {
+	                    "praiseTime":1480591810000,
+	                    "praiseId":8,
+	                    "userId":6,
+	                    "useranme":"老王"
+	                }
+	            ],
+	            "praiseCount":1
+	        },
+	        "commentInfo":{
+	            "commentCount":1,
+	            "commentList":[
+	                {
+	                    "content":"的开始垃圾的咯",
+	                    "fromUsername":"小明",
+	                    "commentTime":1479455185000,
+	                    "toUserId":10,
+	                    "toUsername":"张学友",
+	                    "fromUserId":5,
+	                    "commentId":4
+	                }
+	            ]
+	        }
+	    }
 	 * </pre>
 	 * @throws ClientException
 	 */

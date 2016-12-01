@@ -458,13 +458,15 @@ public class ShareService extends AbstractService {
 		JSONArray praiseArray = new JSONArray();
 		for (Praise p : praises) {
 			JSONObject item = new JSONObject();
+			item.put("praiseId", p.getId());
+			item.put("praiseTime", p.getPraiseTime());
 			item.put("userId", p.getUser().getId());
 			item.put("useranme", p.getUser().getUsername());
 			praiseArray.add(item);
 		}
 		JSONObject praiseInfo = new JSONObject();
 		praiseInfo.put("praiseCount", praises.size());
-		praiseInfo.put("praiseUsers", praiseArray);
+		praiseInfo.put("praiseList", praiseArray);
 		
 		// comments
 		JSONArray commentArray = new JSONArray();
